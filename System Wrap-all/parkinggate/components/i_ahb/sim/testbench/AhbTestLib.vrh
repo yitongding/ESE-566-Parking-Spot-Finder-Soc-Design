@@ -1,0 +1,267 @@
+#pragma vip(a21a7503, 864acf3d, 00000000, 0000365f, "Jun 16 2014", "16:48:58")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_ahb/amba_dev/sim/testbench/AhbTestLib.vrh#3 $
+
+
+#ifndef AHBTESTLIB_VRH
+#define AHBTESTLIB_VRH
+#include "AhbTestHarness.vrh"
+#include "vera_top_defines.vri"
+#ifndef AHBTESTLIB_VR
+#define AHBTESTLIB_EXTERN extern
+#else
+#define AHBTESTLIB_EXTERN
+#endif
+
+enum ReportLevel = REP_INFO, REP_ERROR, REP_DEBUG, REP_UNMASKED;
+#define REGISTER_WIDTH 32
+#define CMD_WRITE 1
+#define CMD_READ 0
+
+extern event e_sim_terminated;
+
+typedef class AhbTestVars;
+typedef class AhbTestArbIf;
+typedef class AhbTokenCounters;
+typedef class AhbTestMasking;
+typedef class AhbTestDefaultSlv;
+typedef class AhbTestDummyMst;
+AHBTESTLIB_EXTERN class AhbTestLib
+{
+   public AhbTestHarness   m_th;
+   public string           m_tclass = "unknown";
+   public event            e_tok_total_count;
+   public int              m_clock_period;
+#ifdef AHBTESTLIB_VR
+   // public members in the private section needed to compile test.vr
+   public AhbTestArbIf      m_aif;
+   public AhbTokenCounters  m_tok;
+   public AhbTestMasking    m_msk;
+   public AhbTestDefaultSlv m_dfs;
+   public AhbTestDummyMst   m_dms;
+   event m_s02_event;
+
+   local string            m_dot_str;
+   local int               m_max_length = 90;
+   local bit [15:0]        m_hgrantx;
+   local event             e_int_asserted;
+   local event             e_int_deasserted;
+   local event             e_hmaster_changed;
+   local event             e_hgrantx_changed;
+   local event             e_hburst_incr;
+   local event             e_start_locked[16];
+   local event             e_end_locked[16];
+   local int               f_hburst_incr;
+   local int               m_mailbox_id;
+   local int               cc_num_ahb_masters;
+   local int               cc_num_iahb_slaves;
+   local int               cc_ahb_data_width;
+   local int               cc_remap;
+   local int               cc_hc_priorities;
+   local int               cc_hc_dflt_mstr;
+   local int               cc_dflt_mstr_num;
+   local int               cc_gen_hsel0;
+   local int               cc_ebten;
+   local int               cc_wten;
+   local int               cc_ahb_hc_tokens;
+   local int               cc_ahb_lite;
+   local int               cc_ahb_has_arbif;
+   local int               cc_ahb_tps_mode;
+   local DutAhbBusPort     p_bus;
+   local DutAhbAuxPort     p_aux;
+   local string            m_config_name;
+   local int               m_start_mode;
+   local int               m_burst_beat = 0;
+   local int               m_ebt_flag;
+   local int               m_ebt_lb_flag;
+   local bit [15:0]        m_hbusreq_corrected_1;
+   local bit [15:0]        m_splitted_masters;
+   local bit [15:0]        m_retried_masters;
+   local bit [15:0]        m_errored_masters;
+   local int               m_new_line = 1;
+   local int               m_verbose = 0;
+   local int               m_nxt_bbc = 0;
+   local int               m_bbc = 0;
+   local integer           find_a_slave;
+   local integer           m_SlaveNumber;
+
+   local bit [31:0]        SLAVE_OKAY_0_ADDR;
+   local bit [31:0]        SLAVE_OKAY_1_ADDR;
+   local bit [31:0]        SLAVE_OKAY_2_ADDR;
+   local bit [31:0]        SLAVE_ERROR_0_ADDR;
+   local bit [31:0]        SLAVE_ERROR_1_ADDR;
+   local bit [31:0]        SLAVE_RETRY_0_ADDR;
+   local bit [31:0]        SLAVE_RETRY_1_ADDR;
+   local bit [31:0]        SLAVE_SPLIT_0_ADDR;
+   local bit [31:0]        SLAVE_SPLIT_1_ADDR;
+
+   local integer          SLAVE_OKAY_0;
+   local integer          SLAVE_OKAY_1;
+   local integer          SLAVE_OKAY_2;
+   local integer          SLAVE_ERROR_0; 
+   local integer          SLAVE_ERROR_1;
+   local integer          SLAVE_RETRY_0;
+   local integer          SLAVE_RETRY_1;
+   local integer          SLAVE_SPLIT_0;
+   local integer          SLAVE_SPLIT_1;
+
+#endif
+   public task             new(AhbTestHarness th, (string config = ""), (string test_name = ""));
+   public task             test_header();
+   public task             test_trailer();
+   public function int     get_mm_mode();
+   public task             set_mm_mode(int mode);
+   public task             change_mm_mode();
+   public task             drive_reset(int cycles);
+   public function int     get_max_hsize();
+   public function int     get_address(var AhbAddrType addr, var int slave_num);
+   public function int     get_split_address(var AhbAddrType addr, var int slave_num);
+   public function int     get_slave_contiguous_space(AhbAddrType addr, var AhbAddrType space);
+   public task             test_auto_align(int litendian, int auto_align);
+   public task             dec_test_oaddr();
+   public task             configure_vip_severity(Logger_severity stdo_severity);
+   public task             gnt_2mst_lock_driver(var int status);
+   public task             gnt_nmst_random_driver(var int status);
+   public task             gnt_xmst_stimuli(int max_master, AhbAddrType addr, int burst_type, int busy_cycles,
+                                            int incr_beats, int wait_states, int num_transfers, int cycles_delay, var int status);
+   public task             gnt_nmst_par_w_stimuli(bit [15:0] unmask_master, AhbAddrType addr, int burst_type, int busy_cycles,
+                                            int incr_beats, int wait_states, int resp_type, int num_transfers, int cycles_delay, var int status);
+   public task             error_log(string str);
+   public task             warning_log(string str);
+   public task             note_log(string str);
+   public task             info_log(string str);
+   public task             debug_log(string str, (int arg0 = -99999));
+   public task             fatal_log(string str);
+   public task             test_result(var int status, (string str = ""), (string str1 = ""));
+
+   public task             dcd_test_1_scan(var int status);
+   public task             mux_test_1_scan(var int status);
+   public task             aif_test_1_regs(var int status);
+   public task             gnt_test_1_seq_access(var int status);
+   public task             gnt_test_2_fairness(var int status);
+   public task             gnt_test_3_2mst(var int status);
+   public task             gnt_test_4_default(var int status);
+   public task             gnt_test_5_par_access(var int status);
+   public task             gnt_test_5_1_par_access(var int status);
+   public task             gnt_test_6_pause(var int status);
+   public task             lck_test_0_quick(var int status);
+   public task             lck_test_1_retry(var int status);
+   public task             lck_test_2_split(int end_split_delay, var int status);
+   public task             lck_test_3_err(var int status);
+   public task             lck_test_4_msplit_return(var int status);
+   public task             tok_test_1_par_access(var int status);
+   public task             msk_test_1(var int status);
+   public task             dfs_test_1(var int status);
+   public task             dms_test_1(var int status);
+   public task             write_zero_all_priorities();
+
+   public task MstIdle(integer NumCycles, (integer master_num = 1));
+   public task check_coreKit_version (bit [31:0] version);
+   public task index_test(string label);
+   public task RandomRegAddress(var integer TestRegister, (integer top_addr = 0));
+   public task Random2RegAddress(var integer TestRegister, var integer AltTestRegister, (integer top_addr = 0));
+   public task report(ReportLevel level, string msg, (integer sim_time = -1));
+   public function integer calculate_xfer_attr(integer size, integer burst);
+   public task write_bursts(bit [31:0] address, integer burst_length, integer number_of_busy_cycles, integer transfer_size, integer transfer_burst_type);
+ 
+#ifdef AHBTESTLIB_VR  
+   local task              get_clock_period();
+   local task              gnt_test(var int status);
+   local task              gnt_test_quick(var int status);
+   local task              gnt_test_2t(var int status);
+   local task              gnt_noreqburst_stimuli(int burst_type, int busy_cycles, int incr_beats, int wait_states, var int status);
+   local task              gnt_reqburst_stimuli(int burst_type, int busy_cycles, int incr_beats, int wait_states, var int status);
+   local task              gnt_2mst_lock_stimuli(int mst_1, int mst_2, AhbAddrType addr, int burst_type, int busy_cycles,
+                                                 int incr_beats, int wait_states, int num_transfers, int cycles_delay, var int status);
+   local task              gnt_1mst_stimuli_random(int mst_nr, AhbAddrType addr, int burst_type);
+   local task              gnt_nmst_stimuli_random(AhbAddrType addr, int burst_type, var int status);
+   local task                  gen_hgrant_exp(int default_mst, bit [15:0] hbusreq, bit [15:0] retry_masked, int priority[16], var bit [15:0] hgrant_exp);
+   local task                  gen_retry_mask(int hmaster, int priority[16], var bit [15:0] retry_mask);
+   local task                  req_filter_driver();
+   local task                  req_filter(var bit [15:0] hbusreq_corrected);
+   local function int          comb_bbc(bit [2:0] hburst, bit [1:0] htrans, int bbc);
+   local function int          reg_bbc(bit hready, int nxt_bbc, int bbc);
+   local function bit [15:0]   comb_ireq(int nxt_bbc, bit [15:0] hbusreq, int hmaster);
+   local task              configure_ahb_slv(AmbaConfigs ctype, int arg_0, (int arg_1 = 10));
+   local task              configure_ahb_mst(AmbaConfigs ctype, int arg_0);
+   local task              configure_ahb_slv_random(int p_okay, int p_error, int p_retry, int p_split,
+                                                    int ws_min, int ws_max);
+   local task              configure_ahb_slv_response(bit [1:0] resp, int wait_states, (int max_nookay = -1));
+   local task              configure_ahb_slv_response_on_read(bit [1:0] resp, int wait_states);
+   local task              configure_ahb_slv_response_on_new_read(bit [1:0] resp, int wait_states);
+   local task              tfail();
+   local task              tok();
+   local task              tskip();
+   local task              check_rbuf_error(int mst_nr, int i_min, int i_max, var int status);
+   local task              check_rbuf_okay(int mst_nr, int i_min, int i_max, var int status);
+   local function string   error_slog(string str);
+   local function int      set_default_mst(int default_mst);
+   local function int      get_default_mst(var int default_mst);
+   local function int      set_priority(int mst_nr, int priority);
+   local function int      get_priority(var int priority[16]);
+   local function int      set_weighted_token(int enable);
+   local function integer  adjust_slave_num(integer slave_num);
+   local function integer  find_a_slave_that_is_visible_in_normal_mode();
+
+   local task readRegister(integer Address, var bit [REGISTER_WIDTH-1:0] Result, integer Width, (bit doPrint = 1), (integer master_num = 1), (bit get_res = 1), (integer size=SIZE32));
+   local task writeRegister(integer Address, bit [REGISTER_WIDTH-1:0] Data, integer Width, (bit doPrint = 1), (integer master_num = 1), (integer size=SIZE32));
+   local task doRegisterTransfer(integer Address, var bit [REGISTER_WIDTH-1:0] Data, integer wen, integer Width, bit doPrint, integer master_num, bit get_res, (integer size=SIZE32), (bit compare_data = 1'b0));
+   local task setup_other_command_slave(integer slave_num, bit[1:0] resp, integer wait_states);
+   local task setup_okay_0ws();
+   local task setup_okay_1ws();
+   local task setup_okay_2ws();
+   local task burst_access(integer Addr, integer Width, integer Num_Words, integer Write, (integer Insert_Busy = 0), (integer Num_Busy = 1) , (integer Burst_type = 1) , (integer Lock_en = 0));
+
+   /* AhbTestStimuli */
+   local task              stim_loop(AhbAddrType addr, AhbTestVars tv, var int status);
+   local task              stim_par_wr(AhbAddrType addr, AhbTestVars tv, var int status);
+   local task              stim_dummy(AhbAddrType addr, AhbTestVars tv, var int status);
+   local task              stim_2mst(int m1, int m2, AhbAddrType addr, AhbTestVars tv, var int status);
+   local task              stim_dcd(var int status);
+   local task              stim_mux(var int status);
+   local task              stim_aif_check_defaults(var int status);
+   local task              stim_aif_check_rw_registers(var int status);
+   local task              stim_aif_check_dflt_mstr(var int status);
+   local task              stim_aif_check_size(var int status);
+   local task              stim_aif_scan_map(var int status);
+   local task              stim_aif_int_handler(var int status);
+   local task              stim_aif_gen_ebt(var int status);
+   local task              bus_rw(int mst, int dir, var AhbAddrType addr, bit req, bit lock, AhbTestVars tv, int trans_space);
+
+   /* AhbTestChecks */
+   local task              check_hlock_trans_integrity();
+   local task              check_hmastlock();
+   local task              check_hgrant((int en_skip_on_equal = 1), (int en_token_mode = 0));
+   local task              check_hsel();
+   local task              check_mux();
+   local task              check_ebt(var int status);
+   local task              check_fairness();
+   local task              snoop_hmaster();
+   local task              snoop_hgrantx();
+   local task              snoop_hsplit();
+   local task              snoop_hresp();
+   local task              snoop_hburst_incr();
+   local task              snoop_aif_int();
+   local task              sync_aif_int(var int status);
+   local task              sync_sig_ebt();
+   local task              dump_description(AhbTestVars tv);
+   local task              check_service((int en_default_support = 0));
+   local task              check_wt_period();
+   local task              check_wt_mask();
+   local task              check_wt_masking();
+#endif
+}
+#endif /* AHBTESTLIB_VRH */

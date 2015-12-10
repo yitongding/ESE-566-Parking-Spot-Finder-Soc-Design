@@ -1,0 +1,168 @@
+#pragma vip(eb3fa231, cdb594b9, 00000000, 000010a3, "Jun 16 2014", "19:40:41")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/AhbApbI2cTestHarness.vrh#5 $
+
+#ifndef AHBAPBI2CTESTHARNESS_VRH
+#define AHBAPBI2CTESTHARNESS_VRH
+
+#include "Logger.vrh"
+#include "AhbApbTestHarness.vrh"
+#include "AhbDmaBfm.vrh"
+
+#ifdef __VMT_I2C_MODEL_INCLUDED__
+#include "I2cTxrx.vri"
+#endif
+
+#include "Syn_I2C_defines.vrh"
+#include "Syn_I2C_printout.vrh"
+#include "Syn_I2C_test_generator.vrh"
+
+#ifndef AHBAPBI2CTESTHARNESS_VR
+#define AHBAPBI2CTESTHARNESS_EXTERN   extern
+#else
+#define AHBAPBI2CTESTHARNESS_EXTERN
+#endif
+
+// port for the APB peripheral
+port ApbPeriphPort
+{
+   pclk;
+   ic_intr;
+   ic_rx_under_intr;
+   ic_rx_over_intr;
+   ic_rx_full_intr;
+   ic_tx_over_intr;
+   ic_tx_empty_intr;
+   ic_rd_req_intr;
+   ic_tx_abrt_intr;
+   ic_rx_done_intr;
+   ic_activity_intr;
+   ic_stop_det_intr;
+   ic_start_det_intr;
+   ic_gen_call_intr;
+   ic_restart_det_intr;
+   ic_mst_on_hold_intr;
+   ic_current_src_en;
+   dma_tx_ack;
+   dma_tx_req;
+   dma_tx_single;
+   dma_rx_ack;
+   dma_rx_req;
+   dma_rx_single;
+}
+
+AHBAPBI2CTESTHARNESS_EXTERN class AhbApbI2cDutHarness extends AhbApbTestHarness
+{
+   public ApbPeriphPort       periph_port;
+   public ApbPeriphPort       periph_port_alt;
+   public ParseDefines        periph_cc;
+   public Syn_I2C_Test_Gen    testgen;
+   public AhbDmaBfmPort       dma_port;
+   public AhbDmaBfmPort       alt_dma_port;
+#ifdef __VMT_I2C_MODEL_INCLUDED__
+   public I2cTxrx             i2c_master;
+   public I2cTxrx             i2c_slave;
+   public I2cTxrxPort         i2c_master_port;
+   public I2cTxrxPort         i2c_slave_port;
+#endif
+   public integer             slave_sid;
+   public integer             master_sid;
+
+#ifdef AHBAPBI2CTESTHARNESS_VR
+   local bit [7:0]        m_reset_pol;
+   local bit              m_loop_back;
+   local string           m_cfg_sc_clock_ic;
+   local string           m_cfg_sc_clock_ic_scl;
+#endif
+
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      var ParseDefines periph_cc,
+      bit[15:0]    ahb_mst_bfm,
+      bit[15:0]    ahb_slv_bfm,
+      bit[15:0]    apb_slv_bfm,
+      bit          ahb_mon_present,
+      bit          apb_mon_present
+      );
+
+   public task SetLoopBackMode(integer val);
+   
+#ifdef AHBAPBI2CTESTHARNESS_VR
+   local task connect_hdl2vera();
+   local task connect_dma_bfm_port();
+#ifdef __VMT_I2C_MODEL_INCLUDED__
+   local task setup_i2c_txrx();
+   local task connect_i2c_txrx();
+#endif
+
+#endif /* AHBAPBI2CTESTHARNESS_VR */
+}
+
+AHBAPBI2CTESTHARNESS_EXTERN class AhbApbI2cTestHarness extends AhbApbI2cDutHarness
+{
+  public AhbDmaBfm dma_bfm;
+  public AhbDmaBfm alt_dma_bfm;
+
+  public task new(
+    var ParseDefines ahb_cc,
+    var ParseDefines apb_cc,
+    var ParseDefines periph_cc,
+    (bit[15:0]    ahb_mst_bfm      = 16'hffff),
+    (bit[15:0]    ahb_slv_bfm      = 16'hfffd),
+    (bit[15:0]    apb_slv_bfm      = 16'hfffc),
+    (bit          ahb_mon_present  = 1'h1),
+    (bit          apb_mon_present  = 1'h1)
+    );
+}
+
+#endif /* AHBAPBI2CTESTHARNESS_VRH */
+
+// -------------------------------------------------------------------------
+// $Log: AhbApbI2cTestHarness.vrh,v $
+// Revision 1.20  2004/06/10 17:17:09  rayb
+// updated copright notices
+//
+// Revision 1.19  2004/01/02 19:26:23  pgillen
+// Added in test code for the DMA and also the component parameter
+//
+// Revision 1.18  2003/12/13 00:42:57  pgillen
+// Added in for DMA test changes
+//
+// Revision 1.17  2003/05/20 16:45:41  pgillen
+// Updates for adding in second DUT into testbench, default parameter fix, slave disable
+//
+// Revision 1.16  2003/02/05 16:45:29  jmccann
+// bug fix on nc_verilog signal_connect
+//
+// Revision 1.15  2002/11/11 19:53:57  rayfes
+// change rx_abrt to rx_done
+//
+// Revision 1.14  2002/10/21 16:40:30  rayfes
+// changed s/p_det s/p_gen
+//
+// Revision 1.13  2002/10/17 13:05:04  rayfes
+// fixing conditional ports
+//
+// Revision 1.12  2002/09/30 15:02:53  rayfes
+// many changes to test harness
+//
+// modified I2C BFMs
+//
+// Revision 1.11  2002/09/16 13:46:07  mbologna
+// adapted to VHDL-compatible harness
+//
+// -------------------------------------------------------------------------

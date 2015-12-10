@@ -1,0 +1,656 @@
+<HTML>
+  <HEAD> <title>Synopsys - coreConsultant DC Report Summary</title>  </HEAD>
+  <BODY text="#000000" bgcolor="#FFFFFF">
+  <A NAME=TOP></A>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+<H1><CENTER>DC Report Summary</CENTER></H1>
+<TABLE BORDER=0 WIDTH="100%">
+  <TR VALIGN=top><TD>
+    <H2><A NAME="Compile Summary">Compile Summary</A></H2>
+
+    <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+      <TR> <TD> Top Design: </TD> <TD> parking </TD> </TR>
+      <TR> <TD> Technology: </TD> <TD><A HREF="parking_setup.html">target_library
+</A></TD> </TR>
+      <TR> <TD> CPU Time: </TD> <TD> 00:05:59 </TD> </TR>
+      <TR> <TD> DC Version: </TD> <TD> J-2014.09-SP5 </TD> </TR>
+    </TABLE></TD></TR></TABLE>
+  </TD>
+  <TD></TD>  <TD></TD>
+  <TD>
+  <TABLE BORDER=1>
+    <TR><TD>
+      <A HREF="#Timing Summary">Timing Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Area Summary">Area Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Constraint Report Summary">Constraint Report Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Top Level Port Timing Summary">Top Level Port Timing Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Design Checks Summary">Design Checks Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Verify Budgets Summary">Verify Budgets Summary</A>
+    </TD></TR>
+    <TR><TD>
+      <A HREF="#Report Index">Report Index</A>
+    </TD></TR>
+  </TABLE>
+  </TD></TR></TABLE>
+      <H2><A NAME="Timing Summary">Timing Summary</A></H2>
+
+      <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD> <b>Clock Name</b> </TD>
+              <TD ALIGN=right> <b>Timing Path</b> </TD>
+              <TD ALIGN=right> <b>Critical Path Slack (ns)</b> </TD>
+              <TD ALIGN=right> <b>Total Negative Slack (ns)</b> </TD>
+              <TD ALIGN=right> <b>Target Frequency</b> </TD>
+              <TD ALIGN=right> <b>Operating Frequency</b> </TD>
+        </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>PCLK_pclk</TD>
+               <TD ALIGN=right> <A HREF="parking_qor.html#parking_1156">Register to Register</A> </TD>
+               <TD ALIGN=right> -4.02 </TD>
+               <TD ALIGN=right> -1190.29 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.667 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 99.8004 MHz </TD>
+         </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>HCLK_hclk</TD>
+               <TD ALIGN=right> <A HREF="parking_qor.html#parking_705">Register to Register</A> </TD>
+               <TD ALIGN=right> -6.20 </TD>
+               <TD ALIGN=right> -1148.11 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.667 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 81.9672 MHz </TD>
+         </TR>
+          <TR>  <TD ROWSPAN=1 ALIGN=right>i_i2c_ic_clk</TD>
+               <TD ALIGN=right> <A HREF="parking_qor.html#parking_2505">Register to Register</A> </TD>
+               <TD ALIGN=right> -9.38 </TD>
+               <TD ALIGN=right> -2089.95 </TD>
+                <TD ROWSPAN=1 ALIGN=right> 166.667 MHz </TD>
+                <TD ROWSPAN=1 ALIGN=right> 65.0195 MHz </TD>
+         </TR>
+      <TR>  <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ALIGN=right> <A HREF="parking_qor.html#parking_254">FEEDTHROUGH</A> </TD>
+            <TD ALIGN=right> -1.49 </TD>
+            <TD ALIGN=right> -3.01 </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+      </TR>
+      <TR>  <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ALIGN=right> <A HREF="parking_qor.html#parking_2051">REGOUT</A> </TD>
+            <TD ALIGN=right> -2.06 </TD>
+            <TD ALIGN=right> -115.39 </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+      </TR>
+      <TR>  <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ALIGN=right> <A HREF="parking_qor.html#parking_1603">REGIN</A> </TD>
+            <TD ALIGN=right> -5.98 </TD>
+            <TD ALIGN=right> -1045.17 </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+            <TD ROWSPAN=1 ALIGN=right> </TD>
+      </TR>
+</TABLE></TD></TR></TABLE><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+    <H2><A NAME="Area Summary">Area Summary</A></H2>
+
+    <TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0 CELLPADDING=1 CELLSPACING=1>
+    <TR> 
+      <TD> <A HREF="parking_area.html">Total Area:</A> </TD> 
+      <TD ALIGN=right> 21418.000000 libArea </TD> 
+      <TD>  </TD>
+    </TR>
+    <TR> 
+      <TD> <A HREF="parking_reference.html">Cell Area:</A> </TD> 
+      <TD ALIGN=right> 21418.000000 libArea </TD> 
+      <TD> </TD>
+    </TR>
+    </TABLE></TD></TR></TABLE>
+    <A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<H2><A NAME="Constraint Report Summary">Constraint Report Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+<TR><TD>There are 6 failing <A HREF="parking_constraints.html#parking_244">   max_delay/setup ('FEEDTHROUGH' group)
+</A> constraints.</TD></TR>
+<TR><TD>There are 235 failing <A HREF="parking_constraints.html#parking_51783">   max_delay/setup ('REGIN' group)
+</A> constraints.</TD></TR>
+<TR><TD>There are 91 failing <A HREF="parking_constraints.html#parking_71703">   max_delay/setup ('REGOUT' group)
+</A> constraints.</TD></TR>
+<TR><TD>There are 354 failing <A HREF="parking_constraints.html#parking_20869">   max_delay/setup ('PCLK_pclk' group)
+</A> constraints.</TD></TR>
+<TR><TD>There are 235 failing <A HREF="parking_constraints.html#parking_948">   max_delay/setup ('HCLK_hclk' group)
+</A> constraints.</TD></TR>
+<TR><TD>There are 340 failing <A HREF="parking_constraints.html#parking_79125">   max_delay/setup ('i_i2c_ic_clk' group)
+</A> constraints.</TD></TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<H2><A NAME="Top Level Port Timing Summary">Top Level Port Timing Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD>
+<H3>Input Ports</H3>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Manually exported pins
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ns)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_34988">i_apb_pclk_en</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 2.04 </TD>
+              <TD ALIGN=right> 3.96 </TD>
+              <TD ALIGN=right> -5.98 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_33088">i_ahb_pause</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 4.80 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> -0.71 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_36898">i_i2c_ic_clk_in_a</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 3.60 </TD>
+              <TD ALIGN=right> 2.40 </TD>
+              <TD ALIGN=right> 2.22 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_38878">i_i2c_ic_data_in_a</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 3.60 </TD>
+              <TD ALIGN=right> 2.40 </TD>
+              <TD ALIGN=right> 2.55 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ns)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_26730">ex_i_ahb_AHB_Slave_hready_resp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.63 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 0.37 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_29898">ex_i_ahb_AHB_Slave_hresp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.39 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 0.61 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_24910">ex_i_ahb_AHB_Slave_hrdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1.74 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 1.26 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Master
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Input Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ns)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_8724">ex_i_ahb_AHB_Master_hlock</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 4.80 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> -3.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_481">ex_i_ahb_AHB_Master_haddr</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 4.49 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> -1.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_6812">ex_i_ahb_AHB_Master_hbusreq</A> </TD>
+              <TD> <A HREF="">REGIN</A> </TD>
+              <TD ALIGN=right> 4.80 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> -1.23 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_15365">ex_i_ahb_AHB_Master_htrans</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 3.17 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> -0.17 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_3647">ex_i_ahb_AHB_Master_hburst</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.69 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 0.31 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_12199">ex_i_ahb_AHB_Master_hsize</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.46 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 0.54 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_21696">ex_i_ahb_AHB_Master_hwrite</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.19 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 0.81 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_10639">ex_i_ahb_AHB_Master_hprot</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1.85 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 1.15 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_18538">ex_i_ahb_AHB_Master_hwdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1.55 </TD>
+              <TD ALIGN=right> 1.20 </TD>
+              <TD ALIGN=right> 1.45 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<TABLE BORDER=0><TR><TD></TD><TD>
+<H3>Output Ports</H3>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Manually exported pins
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ns)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_118691">i_ahb_hready_resp_s0</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 3.23 </TD>
+              <TD ALIGN=right> -4.20 </TD>
+              <TD ALIGN=right> -1.43 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_122340">i_ahb_hsel_s0</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 4.08 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> -1.08 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_116863">i_ahb_hrdata_s0</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.36 </TD>
+              <TD ALIGN=right> -4.20 </TD>
+              <TD ALIGN=right> -0.56 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_120524">i_ahb_hresp_s0</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.06 </TD>
+              <TD ALIGN=right> -4.20 </TD>
+              <TD ALIGN=right> -0.26 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_81984">i_i2c_ic_en</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.21 </TD>
+              <TD ALIGN=right> -3.60 </TD>
+              <TD ALIGN=right> 0.19 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_115028">i_ahb_hmaster_data</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.90 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 1.30 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_89323">i_i2c_ic_data_oe</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.21 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 1.99 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_94835">i_i2c_debug_wr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.06 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.14 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_113205">i_ahb_ahbarbint</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.77 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.43 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_91156">i_i2c_ic_clk_oe</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.77 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.43 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_107713">i_i2c_ic_tx_abrt_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_104029">i_i2c_ic_start_det_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_138640">i_i2c_debug_s_gen</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_131277">i_i2c_debug_master_act</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_129100">i_i2c_debug_slv_cstate</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_111382">i_i2c_debug_data</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_92993">i_i2c_ic_activity_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_98512">i_i2c_ic_rx_full_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_105873">i_i2c_ic_stop_det_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_102187">i_i2c_ic_rx_under_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_96675">i_i2c_ic_rx_done_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_109550">i_i2c_ic_tx_over_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_125412">i_i2c_debug_addr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_140478">i_i2c_debug_slave_act</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_127250">i_i2c_debug_addr_10bit</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_83809">i_i2c_ic_rd_req_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_134978">i_i2c_debug_p_gen</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_87486">i_i2c_ic_tx_empty_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_136809">i_i2c_debug_rd</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_100349">i_i2c_ic_rx_over_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_85645">i_i2c_ic_gen_call_intr</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_133127">i_i2c_debug_mst_cstate</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Slave
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ns)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_66500">ex_i_ahb_AHB_Slave_hsel</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 4.49 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> -1.49 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_52321">ex_i_ahb_AHB_Slave_haddr</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 3.17 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> -0.17 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_72669">ex_i_ahb_AHB_Slave_htrans</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 3.17 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> -0.17 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_55411">ex_i_ahb_AHB_Slave_hburst</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.69 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 0.31 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_63423">ex_i_ahb_AHB_Slave_hready</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 0.37 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_69580">ex_i_ahb_AHB_Slave_hsize</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.46 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 0.54 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_78850">ex_i_ahb_AHB_Slave_hwrite</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.19 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 0.81 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_60333">ex_i_ahb_AHB_Slave_hprot</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1.85 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 1.15 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_75760">ex_i_ahb_AHB_Slave_hwdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1.55 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 1.45 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_58507">ex_i_ahb_AHB_Slave_hmastlock</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 1.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 2.57 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE><TABLE BORDER=0><TR><TD></TD><TD>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1 WIDTH="90%">
+	<TR>  <TD WIDTH="40%" ALIGN=center> <b> Port Group: Interface ex_i_ahb_AHB_Master
+ </b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Clock</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>External Output Delay (ns)</b> </TD>
+              <TD WIDTH="10%" ALIGN=center> <b>Slack (ns)</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_44280">ex_i_ahb_AHB_Master_hready</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.63 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 0.37 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_47357">ex_i_ahb_AHB_Master_hresp</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 2.39 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 0.61 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_40937">ex_i_ahb_AHB_Master_hrdata</A> </TD>
+              <TD> <A HREF="">FEEDTHROUGH</A> </TD>
+              <TD ALIGN=right> 1.74 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 1.26 </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html#parking_50448">ex_i_ahb_AHB_Master_hgrant</A> </TD>
+              <TD> <A HREF="">REGOUT</A> </TD>
+              <TD ALIGN=right> 2.36 </TD>
+              <TD ALIGN=right> -1.80 </TD>
+              <TD ALIGN=right> 1.84 </TD>
+        </TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<TABLE BORDER=0><TR><TD></TD><TD>
+</TABLE>
+<H2><A NAME="Design Checks Summary">Design Checks Summary</A></H2>
+<TABLE BORDER=0><TR><TD></TD><TD><TABLE BORDER=0>
+<TR><TD> There are <A HREF="parking_checkdes.html#parking_68">no</A> check_design errors. </TD></TR>
+<TR><TD> There are <A HREF="parking_checkdes.html#parking_68">no</A> check_design warnings. </TD></TR>
+<TR><TD> There are <A HREF="parking_latches.html#parking_69">no</A> latches. </TD></TR>
+<TR><TD> There are <A HREF="parking_throughpath.html#parking_46">112</A> through paths. </TD></TR>
+<TR><TD> There are <A HREF="parking_loops.html#parking_81">no</A> timing loops. </TD></TR>
+<TR><TD> There are <A HREF="parking_ioreg.html#parking_271">118</A> unregistered inputs. </TD></TR>
+<TR><TD> There are <A HREF="parking_ioreg.html#parking_271">136</A> unregistered outputs. </TD></TR>
+</TABLE></TD></TR></TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+<H2><A NAME="Verify Budgets Summary">Verify Budgets Summary</A></H2>
+<UL>Verify Budgets Reports not generated.</UL><A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+      <H2><A NAME="Report Index">Report Index</A></H2>
+      <TABLE BORDER=1 CELLPADDING=1 CELLSPACING=1>
+	<TR>  <TD> <b>Report File</b> </TD>
+              <TD> <b>Report Type</b> </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_area.html">parking_area.html</A> </TD>
+              <TD> area </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_checkdes.html">parking_checkdes.html</A> </TD>
+              <TD> check_design </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_latches.html">parking_latches.html</A> </TD>
+              <TD> check_latches </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_loops.html">parking_loops.html</A> </TD>
+              <TD> check_loops </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_notest.html">parking_notest.html</A> </TD>
+              <TD> check_test </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_throughpath.html">parking_throughpath.html</A> </TD>
+              <TD> check_through_paths </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_ioreg.html">parking_ioreg.html</A> </TD>
+              <TD> check_unregistered_io </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_clock.html">parking_clock.html</A> </TD>
+              <TD> clocks </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_constraints.html">parking_constraints.html</A> </TD>
+              <TD> constraint </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_hierarchy.html">parking_hierarchy.html</A> </TD>
+              <TD> hierarchy </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_path_group.html">parking_path_group.html</A> </TD>
+              <TD> path_group </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_power_domains.html">parking_power_domains.html</A> </TD>
+              <TD> power_domain </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_qor.html">parking_qor.html</A> </TD>
+              <TD> qor </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_reference.html">parking_reference.html</A> </TD>
+              <TD> reference </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_register_count.html">parking_register_count.html</A> </TD>
+              <TD> register count </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_resources.html">parking_resources.html</A> </TD>
+              <TD> resources </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_setup.html">parking_setup.html</A> </TD>
+              <TD> setup </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_long_endpoint.html">parking_long_endpoint.html</A> </TD>
+              <TD> timing </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_short_endpoint.html">parking_short_endpoint.html</A> </TD>
+              <TD> timing </TD>
+        </TR>
+	<TR>  <TD> <A HREF="parking_timing.html">parking_timing.html</A> </TD>
+              <TD> timing </TD>
+        </TR>
+
+</TABLE>
+<A HREF="#TOP"><div ALIGN=right>Top of report.</div></A>
+    <table COLS=2 WIDTH="100%">
+      <tr>
+         <td><IMG SRC="synopsys_logo.gif" ALT="Synopsys"></td>
+         <td><div align=right></div></td>
+      </tr>
+    </table>
+</BODY></HTML>

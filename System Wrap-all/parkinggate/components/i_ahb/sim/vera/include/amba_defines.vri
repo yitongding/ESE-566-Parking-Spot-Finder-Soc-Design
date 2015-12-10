@@ -1,0 +1,123 @@
+#pragma vip(b4943a45, 8fa0863d, 00000000, 0000118c, "Mar  4 2004", "13:48:29")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+`ifdef AMBA_DEFINES_VRI
+`else
+`define AMBA_DEFINES_VRI
+`define AHB_DBW_MAX  1024
+`define AHB_ABW_MAX  64
+`define APB_DBW_MAX  32
+`define APB_ABW_MAX  32
+`define AhbDataType bit[AHB_DBW_MAX-1:0]
+`define AhbAddrType bit[AHB_ABW_MAX-1:0]
+`define ApbDataType bit[APB_DBW_MAX-1:0]
+`define ApbAddrType bit[APB_ABW_MAX-1:0]
+`define SIG_EARLYBURSTTERM    0
+`define SIG_RDATAMISMATCH     1
+`define SIG_ERRSRESP1         2
+`define SIG_ERRSRESP2         3
+`define SIG_NUMBER            4
+
+/* from vera_ocb_defines.vri */
+`define _MAX_AHB_SLAVES_        16
+`define _MAX_AHB_MASTERS_       16
+`define _MAX_AHB_DBWIDTH_       AHB_DBW_MAX
+//`define _MAX_AHB_ABWIDTH_       64
+`define _MAX_APB_SLAVES_        16
+`define _MAX_APB_DBWIDTH_       32
+`define _AHB_TRANS_IDLE_        2'b00
+`define _AHB_TRANS_BUSY_        2'b01
+`define _AHB_TRANS_NSEQ_        2'b10
+`define _AHB_TRANS_SEQ_         2'b11
+`define _AHB_BURST_SINGLE_      3'b000
+`define _AHB_BURST_INCR_        3'b001
+`define _AHB_BURST_WRAP4_       3'b010
+`define _AHB_BURST_INCR4_       3'b011
+`define _AHB_BURST_WRAP8_       3'b100
+`define _AHB_BURST_INCR8_       3'b101
+`define _AHB_BURST_WRAP16_      3'b110
+`define _AHB_BURST_INCR16_      3'b111
+`define _AHB_SIZE_8BIT_         3'b000
+`define _AHB_SIZE_16BIT_        3'b001
+`define _AHB_SIZE_32BIT_        3'b010
+`define _AHB_SIZE_64BIT_        3'b011
+`define _AHB_SIZE_128BIT_       3'b100
+`define _AHB_SIZE_256BIT_       3'b101
+`define _AHB_SIZE_512BIT_       3'b110
+`define _AHB_SIZE_1024BIT_      3'b111
+`define _AHB_SIZE_BYTE_         3'b000
+`define _AHB_SIZE_WORD16_       3'b001
+`define _AHB_SIZE_WORD32_       3'b010
+`define _AHB_SIZE_WORD64_       3'b011
+`define _AHB_SIZE_WORD128_      3'b100
+`define _AHB_SIZE_WORD256_      3'b101
+`define _AHB_SIZE_WORD512_      3'b110
+`define _AHB_SIZE_WORD1024_     3'b111
+`define _AHB_PROT_DATA_         0
+`define _AHB_PROT_PRIV_         1
+`define _AHB_PROT_BUFF_         2
+`define _AHB_PROT_CACHE_        3
+`define _AHB_PROT_0_            4'b0000
+`define _AHB_PROT_1_            4'b0001
+`define _AHB_PROT_2_            4'b0010
+`define _AHB_PROT_3_            4'b0011
+`define _AHB_PROT_4_            4'b0100
+`define _AHB_PROT_5_            4'b0101
+`define _AHB_PROT_6_            4'b0110
+`define _AHB_PROT_7_            4'b0111
+`define _AHB_PROT_8_            4'b1000
+`define _AHB_PROT_9_            4'b1001
+`define _AHB_PROT_10_           4'b1010
+`define _AHB_PROT_11_           4'b1011
+`define _AHB_PROT_12_           4'b1100
+`define _AHB_PROT_13_           4'b1101
+`define _AHB_PROT_14_           4'b1110
+`define _AHB_PROT_15_           4'b1111
+`define _AHB_RESP_OKAY_         2'b00
+`define _AHB_RESP_ERROR_        2'b01
+`define _AHB_RESP_RETRY_        2'b10
+`define _AHB_RESP_SPLIT_        2'b11
+`define _TRANS_ANY_             0
+`define _TRANS_IDLE_            1
+`define _TRANS_BUSY_            2
+`define _TRANS_READ_            3
+`define _TRANS_WRITE_           4
+`define _TRANS_NEW_READ_        5
+`define _TRANS_NEW_WRITE_       6
+`define _NO_MASK_               8'b_00000000
+`define _NO_DEBUG_              8'b_00000001
+`define _NO_INFO_               8'b_00000010
+`define _NO_WARNING_            8'b_00000100
+`define _NO_ERROR_              8'b_00001000
+`define _NO_FAILURE_            8'b_00010000
+`define _NO_FATAL_              8'b_00100000
+`define _AHB_HADDR_             0
+`define _AHB_HBURST_            1
+`define _AHB_HBUSREQ_           2
+`define _AHB_HLOCK_             3
+`define _AHB_HPROT_             4
+`define _AHB_HSIZE_             5
+`define _AHB_HTRANS_            6
+`define _AHB_HWDATA_            7
+`define _AHB_HWRITE_            8
+`define _AHB_HGRANT_            9
+`define _AHB_HRDATA_            10
+`define _AHB_HREADY_            11
+`define _AHB_HRESETN_           12
+`define _AHB_HRESP_             13
+`define EXCL                    0       
+`define INCL                    1       
+`define _APB_FSM_IDLE_	      	2'b00
+`define _APB_FSM_DESELECT_	2'b10
+`define _APB_FSM_SETUP_		2'b01
+`define _APB_FSM_ENABLE_	2'b11
+
+`endif

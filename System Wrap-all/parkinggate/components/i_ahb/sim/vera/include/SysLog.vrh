@@ -1,0 +1,55 @@
+#pragma vip(c8dbec92, 916576f7, 00000004, 00000837, "Mar  4 2004", "13:48:28")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef SYSLOG_VRH
+#define SYSLOG_VRH
+#define SYSLOG_FNAME          "syslog.log"
+#define SYSLOG_ACCESS_MODE    "w"
+#define SYSLOG_MAX_NAME_LEN   8
+#ifndef SYSLOG_VR
+#define SYSLOG_EXTERN extern
+#else
+#define SYSLOG_EXTERN
+#endif
+typedef class DateTime;
+SYSLOG_EXTERN class SysLog {
+#ifdef SYSLOG_VR
+    local static integer     m_init_done = 0;     
+    local static integer     m_file_descr;        
+    local static string      m_string_table[];    
+    local static DateTime    m_time_obj;          
+    local bit[7:0]           m_stdo_mask;         
+    local bit[7:0]           m_file_mask;         
+    local string             m_logger_name;       
+    local integer            m_msg_count[8];      
+    local task               init_static(string file_name, string access_mode);
+    local task               write(integer severity, var string msg);
+#endif 
+    public task new(
+        (integer logger_id = -1),
+        string logger_name, 
+        (string file_name = SYSLOG_FNAME),
+        ((string access_mode = SYSLOG_ACCESS_MODE)),
+        (((integer max_name_len = SYSLOG_MAX_NAME_LEN)))
+    );
+    public task     debug(string msg);
+    public task     info(string msg);
+    public task     warning(string msg);
+    public task     error(string msg);
+    public task     failure(string msg);
+    public task     fatal(string msg);
+    public task     set_stdo_mask(integer report_mask);
+    public task     set_file_mask(integer report_mask);
+    public task     set_stdo_severity(integer severity);
+    public task     set_file_severity(integer severity);
+    public task     report();
+}
+#endif 

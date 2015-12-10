@@ -1,0 +1,100 @@
+#pragma vip(77586529, ece97c0f, 00000000, 00000b50, "May 25 2014", "00:13:57")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/ApbTestLib.vrh#5 $
+#pragma vip(e757d7c4, 5c4179d7, 00000004, 00000bb8, "Jul 15 2002", "18:04:58")
+
+
+#ifndef APBTESTLIB_VRH
+#define APBTESTLIB_VRH
+
+#include "AhbApbTestHarness.vrh"
+#include "Logger.vrh"
+
+#ifndef APBTESTLIB_VR
+#define APBTESTLIB_EXTERN extern
+#else
+#define APBTESTLIB_EXTERN
+#endif
+
+enum e_direction = READ, WRITE;
+
+APBTESTLIB_EXTERN class ApbTestLib
+{
+   
+#ifdef APBTESTLIB_VR
+
+   local AhbApbTestHarness            m_th;
+   local integer                      apb_clk_ratio;
+   local integer                      m_success;
+   local integer                      m_mismatch;  
+   local integer                      m_sim_time;
+   local integer                      m_trans_nr;
+   local integer                      m_ahb_dbw;
+   local integer                      m_apb_dbw;
+   local integer                      m_index;
+   local integer                      m_handle;
+   local integer                      m_res_handle;
+   local integer                      m_addr_inc;
+   local integer                      m_busy;
+   local integer                      m_xfer_size;
+   local integer                      m_xfer_attr;
+   local integer                      m_shift_max;
+   
+   local bit [2:0]                    m_size;
+   local bit [2:0]                    m_hsize;
+   local bit                          m_request;
+   local bit                          m_lock;
+   local bit                          m_active;
+   local bit [7:0]                    m_active_rst;
+
+   local bit                          m_hready;
+   local bit [1:0]                    m_hresp;
+   local bit [31:0]                   m_addr;
+   local bit [31:0]                   m_datamask;
+   local AhbDataType                  m_hwdata;  
+   local AhbDataType                  m_hrdata;
+   local bit [_MAX_AHB_DBWIDTH_-1:0]  m_apb_mask;
+   local Logger                       m_log;
+   local static integer               m_test_num=1;
+   local string		              msg;
+
+#endif /* APBTESTLIB_VR */
+
+   task new(AhbApbTestHarness th, integer apb_clk_ratio);
+   task test_x_2_11_2_14();
+   task test_x_2_2_2_10();
+   task test_2_1_2_7();
+   task test_x_2_6();
+   task test_x_2_15();
+   task test_4_2_5(integer type1, integer type2, bit[2:0] tfer2);
+   task test_4_2_1(integer type1, bit[2:0] tfer1);
+   task test_slicer();
+   task run_bursts();
+   function integer calculate_xfer_attr(integer size, integer burst);
+   task run_random_xfers();
+
+#ifdef APBTESTLIB_VR
+   
+   local task mstcmd(string cmd);
+   local task fetch_exp_data( (integer burst = 0) );
+   local task set_apb_mask(integer slv_num);
+   local function bit [67:0] get_rand_address();
+
+#endif /* APBTESTLIB_VR */
+
+} // class
+
+#endif /* APBTESTLIB_VRH */

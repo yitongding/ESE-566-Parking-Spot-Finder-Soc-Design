@@ -1,0 +1,39 @@
+##
+1. Introduction
+
+The QuickStart Example Designs are static non-reconfigurable examples 
+of complete complex subsystems utilizing our AMBA RTL (IIP) and verification 
+(VIP) components. The purpose of these examples is to provide examples of 
+how to integrate and test the different components in the context of a real 
+subsystem. Programming examples for each device are provided in both Verilog 
+and C code. The stimulus runs from either a Synopsys AHB master BFM 
+(under the control of Verilog or C commands) or from a real CPU simulation 
+model running the C code from within the AMBA subsystem. Support for ARM-946 
+and MIPS-4KE CPU's is provided. Simulation scripts that run out-of-the-box 
+will help you get to waves within 30 minutes.
+
+
+2. Getting Started
+
+A coreConsultant user preferences file called .synopsys_rt.setup is supplied and 
+can be copied as follows into your home (~) directory. 
+
+cp $DESIGNWARE_HOME/iip/data/amba_html/latest/synopsys_rt.setup ~/.synopsys_rt.setup
+
+
+3. Documentation
+
+Relevant documentation is available on the AMBA Welcome HTML Page in coreConsultant and
+also at the following locations:
+
+Guide to DesignWare AMBA IP Components Documentation: 
+   $DESIGNWARE_HOME/doc/amba/latest/intro.pdf
+
+Designware AMBA Synthesizable Components Installation Guide:
+  $DESIGNWARE_HOME/doc/amba/latest/dw_amba_install.pdf
+
+
+##
+
+
+

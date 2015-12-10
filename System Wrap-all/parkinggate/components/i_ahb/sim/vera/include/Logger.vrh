@@ -1,0 +1,106 @@
+#pragma vip(1179a9ef, 0752fe7b, 00000004, 00001104, "Mar  4 2004", "13:48:27")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_LOGGER_VRH__
+#define __INC_LOGGER_VRH__
+enum Logger_severity =
+  SEV_MASKED,
+  SEV_DEBUG,
+  SEV_INFO,
+  SEV_WARN,
+  SEV_ERROR,
+  SEV_FATAL,
+  SEV_PRAGMA,
+  SEV_UNMASKED;
+extern class Logger
+{
+  static integer debugs = 0;        
+  static integer infos  = 0;        
+  static integer warns  = 0;        
+  static integer errors = 0;        
+  static integer max_debugs = 0;   
+  static integer max_infos  = 0;   
+  static integer max_warns  = 0;   
+  static integer max_errors = 0;   
+  static Logger_severity last_log_type[];
+  task new ((integer filehandle = 0));
+  task set_severity_level (Logger_severity stdo_level,
+                           Logger_severity file_level);
+  task set_log_max (integer max_debugs, integer max_infos,
+                    integer max_warns, integer max_errors );
+  task make_report ( Logger_severity severity,
+                    string  object_name,
+                    integer object_id,
+                    string  message );
+  task print   (Logger_severity severity, string context, string message,
+		(bit [31:0] n1 = 0, (bit [31:0] n2 = 0, (bit [31:0] n3 = 0,
+		(bit [31:0] n4 = 0, (bit [31:0] n5 = 0, (bit [31:0] n6 = 0,
+		(bit [31:0] n7 = 0, (bit [31:0] n8 = 0)))))))));
+  task print64 (Logger_severity severity, string context, string message,
+		(bit [63:0] n1 = 0, (bit [63:0] n2 = 0, (bit [63:0] n3 = 0,
+		(bit [63:0] n4 = 0, (bit [63:0] n5 = 0, (bit [63:0] n6 = 0,
+		(bit [63:0] n7 = 0, (bit [63:0] n8 = 0)))))))));
+  task printstr (Logger_severity severity, string context, string message,
+		 (string n1 = "", (string n2 = "", (string n3 = "", 
+		 (string n4 = "", (string n5 = "", (string n6 = "",
+	         (string n7 = "", (string n8 = "")))))))));
+  task print_summary();
+} 
+#ifdef __INC_LOGGER_LOCAL__
+#include <vera_defines.vrh>
+class Logger
+{
+  static integer debugs = 0;        
+  static integer infos  = 0;        
+  static integer warns  = 0;        
+  static integer errors = 0;        
+  static integer max_debugs = 0;   
+  static integer max_infos  = 0;   
+  static integer max_warns  = 0;   
+  static integer max_errors = 0;   
+  static Logger_severity last_log_type[];
+  local integer     logfile;          
+  local integer     valid_file;       
+  local Logger_severity stdo_level;   
+  local Logger_severity file_level;   
+  task new ((integer filehandle = 0));
+  task set_severity_level (Logger_severity stdo_level,
+                           Logger_severity file_level);
+  task set_log_max (integer max_debugs, integer max_infos,
+                    integer max_warns, integer max_errors );
+  task make_report ( Logger_severity severity,
+                    string  object_name,
+                    integer object_id,
+                    string  message );
+  task print   (Logger_severity severity, string context, string message,
+		(bit [31:0] n1 = 0, (bit [31:0] n2 = 0, (bit [31:0] n3 = 0,
+		(bit [31:0] n4 = 0, (bit [31:0] n5 = 0, (bit [31:0] n6 = 0,
+		(bit [31:0] n7 = 0, (bit [31:0] n8 = 0)))))))));
+  task print64 (Logger_severity severity, string context, string message,
+		(bit [63:0] n1 = 0, (bit [63:0] n2 = 0, (bit [63:0] n3 = 0,
+		(bit [63:0] n4 = 0, (bit [63:0] n5 = 0, (bit [63:0] n6 = 0,
+		(bit [63:0] n7 = 0, (bit [63:0] n8 = 0)))))))));
+  task printstr (Logger_severity severity, string context, string message,
+		 (string n1 = "", (string n2 = "", (string n3 = "", 
+		 (string n4 = "", (string n5 = "", (string n6 = "",
+	         (string n7 = "", (string n8 = "")))))))));
+  task print_summary();
+  local function integer do_log(Logger_severity severity,
+                                Logger_severity level);
+  local task final_error(string message);
+  local task doprint( integer log2stdo,
+                      integer log2file,
+                      string level,
+                      string context,
+                      string message );
+} 
+#endif  
+#endif  

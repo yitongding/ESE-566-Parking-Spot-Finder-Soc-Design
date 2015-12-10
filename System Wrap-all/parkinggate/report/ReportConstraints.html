@@ -1,0 +1,40 @@
+<HTML>
+<HEAD><TITLE>Synopsys - Constraint Initialization Report</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+<HR WIDTH="100%">
+<H1>Constraint Initialization Report</H1>
+<H1 align="center">Subsystem Clocks</H1>
+<TABLE BORDER WIDTH="100%" CELLPADDING=1 CELLSPACING=1>
+<TR bgcolor="#C0C0C0"><TH>Clock</TH><TH>Type</TH><TH>Source</TH>
+<TH>Cycle Time</TH><TH>Connected Clocks</TH></TR>
+<TR><TD>HCLK_hclk</TD>
+<TD>regular</TD>
+<TD>HCLK_hclk</TD>
+<TD>6ns</TD>
+<TD>
+<UL>
+<LI>hclk in /i_ahb</LI>
+<LI>hclk in /i_apb</LI>
+</UL>
+</TD></TR>
+<TR><TD>PCLK_pclk</TD>
+<TD>regular</TD>
+<TD>PCLK_pclk</TD>
+<TD>6ns</TD>
+<TD>
+pclk in /i_i2c
+</TD></TR>
+<TR><TD>i_i2c_ic_clk</TD>
+<TD>regular</TD>
+<TD>i_i2c_ic_clk</TD>
+<TD>6ns</TD>
+<TD>
+ic_clk in /i_i2c
+</TD></TR>
+</TABLE>

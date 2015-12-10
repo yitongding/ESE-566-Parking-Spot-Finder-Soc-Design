@@ -1,0 +1,1031 @@
+<HTML>
+<HEAD><TITLE>Report Subsystem</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+<HR WIDTH="100%">
+<H1><font=+1><center>Subsystem Report</center></font></H1>
+<table BORDER=0 CELLSPACING=1 CELLPADDING=1 WIDTH="100%"><b><tr><td>
+<H2>Subsystem Summary</H2>
+<table BORDER=4 CELLSPACING=1 CELL PADDING=1 WIDTH="100%">
+
+<tr>
+<td>Workspace Name</td>
+<td>parkinggate</td>
+</tr>
+<tr>
+
+<td>Top Design Name</td>
+
+<td>parking</td>
+</tr>
+<tr>
+<td>Subsystem Errors</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Parameter Compatibility Errors</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Unconnected Interfaces</td>
+<td>0</td>
+</tr>
+<tr>
+<td><a HREF="#Subsystem Components">Subsystem Components</a></td>
+<td>3</td>
+</tr>
+<tr>
+<td><a HREF="#Exported Interface Connections">Exported Interface Connections</a></td>
+<td>6</td>
+</tr>
+<tr>
+<td><a HREF="#Component Interface Connections">
+Component Interface Connections</a></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a HREF="#Subsystem ports to be created">Subsystem ports to be created</a></td>
+<td>39</td>
+</tr>
+</table><pre>
+
+</pre>
+</td>
+<td>
+<H2><a NAME="Hierarchical Subsystem Reports"></a>
+Hierarchical Subsystem Reports</center></H2>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%">
+<tr>
+<td><a href=".././report/SubsystemContents.html">parking</a></td>
+</tr>
+</table></center><pre>
+
+</pre>
+</td></tr></b></table>
+<H2><center><a NAME="Subsystem Components"></a>
+Subsystem Components</center></H2>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Instance Name</b></td>
+<td><b>Is Hierarchical</b></td>
+<td><b>Design Name</b></td>
+<td><b>Component Name</b></td>
+<td><b>Component Version</b></td>
+<td><b>Latest Available Version (in search path)</b></td>
+</tr>
+<tr>
+<td><a href="#component_i_ahb">i_ahb</a></td>
+<td>0</td>
+<td>i_ahb_DW_ahb</td>
+<td>DW_ahb</td>
+<td>2.11a</td>
+
+<td>2.11a</td>
+</tr>
+<tr>
+<td><a href="#component_i_apb">i_apb</a></td>
+<td>0</td>
+<td>i_apb_DW_apb</td>
+<td>DW_apb</td>
+<td>2.03a</td>
+
+<td>2.03a</td>
+</tr>
+<tr>
+<td><a href="#component_i_i2c">i_i2c</a></td>
+<td>0</td>
+<td>i_i2c_DW_apb_i2c</td>
+<td>DW_apb_i2c</td>
+<td>1.22a</td>
+
+<td>1.22a</td>
+</tr>
+</table></center><pre>
+
+</pre>
+<H2><center><a NAME="Exported Interface Connections"></a>
+Exported Interface Connections</center></H2>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Exported Interface</b></td>
+<td><b>Interface Definition</b></td>
+<td><b>Interface Version</b></td>
+<td><b>Connections</b></td>
+<td><b>Interface Description</b></td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#HCLK">
+HCLK</a></td>
+<td>DW-SoC::AHB-Clock</td>
+<td>7.0</td>
+<td><pre>i_apb/HCLK
+i_ahb/HCLK</pre></td>
+<td>Clock signal for AHB masters and slaves.
+Connections typically go from an exported interface to 
+each AHB master/slave and the bus itself.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#HRESETn">
+HRESETn</a></td>
+<td>DW-SoC::AHB-Reset</td>
+<td>7.0</td>
+<td><pre>i_apb/HRESETn
+i_ahb/HRESETn</pre></td>
+<td>Reset signal for AHB masters and slaves.
+Connections typically go from an exported interface to 
+each AHB master/slave and the bus itself.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#PCLK">
+PCLK</a></td>
+<td>DW-SoC::APB-Clock</td>
+<td>4.3</td>
+<td><pre>i_i2c/PCLK</pre></td>
+<td>Clock signal for APB slaves (peripherals).
+Connections typically go from an exported interface to 
+each APB master/slave.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#PRESETn">
+PRESETn</a></td>
+<td>DW-SoC::APB-Reset</td>
+<td>4.3</td>
+<td><pre>i_i2c/PRESETn</pre></td>
+<td>Reset signal for APB slaves (peripherals).
+Connections typically go from an exported interface to 
+each APB master/slave.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>DW-SoC::AHB-Master</td>
+<td>7.0</td>
+<td><pre>i_ahb/AHB_Master</pre></td>
+<td>Bus Master side of the AHB.
+On this interface the 'consumer's are AHB masters,
+and the 'provider' is the central bus IP.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>DW-SoC::AHB-Slave</td>
+<td>7.0</td>
+<td><pre>i_ahb/AHB_Slave</pre></td>
+<td>Bus Slave side of the AHB.
+On this interface the 'consumer's are AHB slaves,
+and the 'provider' is the central bus IP.</td>
+</tr>
+</table></center><pre>
+
+</pre>
+<H2><center><a NAME="Component Interface Connections"></a>
+Component Interface Connections</center></H2>
+<a NAME="component_i_ahb"></a>
+<H3>Instance Name:&nbsp;&nbsp;&nbsp;i_ahb</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface Instance</b></td>
+<td><b>Interface Definition</b></td>
+<td><b>Interface Version</b></td>
+<td><b>Connections</b></td>
+<td><b>Interface Description</b></td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_ahb/AHB_Master">
+AHB_Master</a></td>
+<td>DW-SoC::AHB-Master</td>
+<td>7.0</td>
+<td><pre>ex_i_ahb_AHB_Master</pre></td>
+<td>Bus Master side of the AHB.
+On this interface the 'consumer's are AHB masters,
+and the 'provider' is the central bus IP.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_ahb/AHB_Slave">
+AHB_Slave</a></td>
+<td>DW-SoC::AHB-Slave</td>
+<td>7.0</td>
+<td><pre>i_apb/AHB_Slave
+ex_i_ahb_AHB_Slave</pre></td>
+<td>Bus Slave side of the AHB.
+On this interface the 'consumer's are AHB slaves,
+and the 'provider' is the central bus IP.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_ahb/HCLK">
+HCLK</a></td>
+<td>DW-SoC::AHB-Clock</td>
+<td>7.0</td>
+<td><pre>HCLK</pre></td>
+<td>Clock signal for AHB masters and slaves.
+Connections typically go from an exported interface to 
+each AHB master/slave and the bus itself.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_ahb/HRESETn">
+HRESETn</a></td>
+<td>DW-SoC::AHB-Reset</td>
+<td>7.0</td>
+<td><pre>HRESETn</pre></td>
+<td>Reset signal for AHB masters and slaves.
+Connections typically go from an exported interface to 
+each AHB master/slave and the bus itself.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_ahb/Intr">
+Intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_ahb/Remap-Pause">
+Remap-Pause</a></td>
+<td>DW-SoC::Remap-Pause</td>
+<td>1.1</td>
+<td><pre>NONE -- Unused Interface</pre></td>
+<td>Defines the interface between the 'remap and pause'
+block (DW_apb_rap) and the remap and pause inputs of the AHB.</td>
+</tr>
+</table></center><pre>
+
+</pre>
+<a NAME="component_i_ahb"></a>
+<H3>Component i_ahb Instantiation parameters:</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Name</b></td>
+<td><b>Value</b></td>
+<td><b>Description</b></td>
+<td><b>Related Interfaces</b></td>
+</tr>
+<tr>
+<td>AHB_LITE</td>
+<td>0</td>
+<td>{If set to True (1), the system is configured with only
+one master that never requests ownership of the bus, but is
+always granted the bus. No dummy master is required, as the
+slaves are not split-capable so the only master is always
+the bus owner. The master will drive IDLE cycles when it 
+does not want the bus.
+
+In addition
+  - Pause mode is not enabled
+  - The default master number is changed to 1
+  - The number of masters is changed to 1
+  - The arbiter interface is removed
+  - All slaves are made non split capable}</td>
+<td>{<a href="ReportInterfaceInstances.html#i_ahb/Intr">Intr</a>}</td>
+</tr>
+<tr>
+<td>XDCDR_SUPPLIES_HSELS2AHB</td>
+<td>0</td>
+<td>{If True (1), the decoder supplies hsels to the DW_ahb for rerouting
+If False (0), the decoder routes the hsels to the slaves}</td>
+<td></td>
+</tr>
+<tr>
+<td>EBTEN</td>
+<td>1</td>
+<td>{The Early Burst Termination logic is included
+when this parameter is set; otherwise the ahbarbint
+signal is removed. If there is no Arbiter Slave
+Interface, this parameter is dimmed and set to No.
+This allows long transfers to be broken up by the arbiter.
+If this is set to False (0) it will not prevent the
+arbiter from breaking up a burst transfer cause by SPLIT
+or RETRY. This should be used to break up long bursts.
+It is not possible to terminate a locked transfer.}</td>
+<td>{<a href="ReportInterfaceInstances.html#i_ahb/Intr">Intr</a>}</td>
+</tr>
+<tr>
+<td>AHB_HAS_ARBIF</td>
+<td>1</td>
+<td>{If the user decides that there is no requirement
+for the programmability features within the AHB arbiter
+interface, this feature can be disabled (set to False).
+The peripheral slot (s0) is not available to other slaves,
+meaning it is unused. 
+There is no arbiter interface when the system is an AHB Lite system.}</td>
+<td></td>
+</tr>
+<tr>
+<td>AHB_HAS_XDCDR</td>
+<td>0</td>
+<td>{If True (1), the decoder is external to the DW_ahb.
+If False (0), the decoder is internal to the DW_ahb.
+For an internal decoder, the addresses need to be supplied 
+by the DW_ahb at configuration.
+An external decoder allows users to connect any decoder with any
+number of remap options.}</td>
+<td></td>
+</tr>
+</table></center><pre>
+
+</pre>
+<a NAME="component_i_apb"></a>
+<H3>Instance Name:&nbsp;&nbsp;&nbsp;i_apb</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface Instance</b></td>
+<td><b>Interface Definition</b></td>
+<td><b>Interface Version</b></td>
+<td><b>Connections</b></td>
+<td><b>Interface Description</b></td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_apb/AHB_Slave">
+AHB_Slave</a></td>
+<td>DW-SoC::AHB-Slave</td>
+<td>7.0</td>
+<td><pre>i_ahb/AHB_Slave</pre></td>
+<td>Bus Slave side of the AHB.
+On this interface the 'consumer's are AHB slaves,
+and the 'provider' is the central bus IP.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_apb/APB_Slave">
+APB_Slave</a></td>
+<td>DW-SoC::APB-Slave</td>
+<td>4.3</td>
+<td><pre>i_i2c/APB_Slave</pre></td>
+<td>Bus slave side of the APB (Peripherals).
+On this interface the 'consumer's are APB slaves,
+and the 'provider' is the APB master.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_apb/HCLK">
+HCLK</a></td>
+<td>DW-SoC::AHB-Clock</td>
+<td>7.0</td>
+<td><pre>HCLK</pre></td>
+<td>Clock signal for AHB masters and slaves.
+Connections typically go from an exported interface to 
+each AHB master/slave and the bus itself.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_apb/HRESETn">
+HRESETn</a></td>
+<td>DW-SoC::AHB-Reset</td>
+<td>7.0</td>
+<td><pre>HRESETn</pre></td>
+<td>Reset signal for AHB masters and slaves.
+Connections typically go from an exported interface to 
+each AHB master/slave and the bus itself.</td>
+</tr>
+</table></center><pre>
+
+</pre>
+<a NAME="component_i_apb"></a>
+<H3>Component i_apb Instantiation parameters:</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Name</b></td>
+<td><b>Value</b></td>
+<td><b>Description</b></td>
+<td><b>Related Interfaces</b></td>
+</tr>
+<tr>
+<td>APB_HAS_XDCDR</td>
+<td>0</td>
+<td>{If True (1), the decoder is external to the DW_apb.
+If False (0), the decoder is internal to the DW_apb.
+For an internal decoder, the addresses need to be supplied
+by the DW_apb at configuration.
+An external decoder allows users to connect any decoder}</td>
+<td></td>
+</tr>
+</table></center><pre>
+
+</pre>
+<a NAME="component_i_i2c"></a>
+<H3>Instance Name:&nbsp;&nbsp;&nbsp;i_i2c</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Interface Instance</b></td>
+<td><b>Interface Definition</b></td>
+<td><b>Interface Version</b></td>
+<td><b>Connections</b></td>
+<td><b>Interface Description</b></td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/APB_Slave">
+APB_Slave</a></td>
+<td>DW-SoC::APB-Slave</td>
+<td>4.3</td>
+<td><pre>i_apb/APB_Slave</pre></td>
+<td>Bus slave side of the APB (Peripherals).
+On this interface the 'consumer's are APB slaves,
+and the 'provider' is the APB master.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/PCLK">
+PCLK</a></td>
+<td>DW-SoC::APB-Clock</td>
+<td>4.3</td>
+<td><pre>PCLK</pre></td>
+<td>Clock signal for APB slaves (peripherals).
+Connections typically go from an exported interface to 
+each APB master/slave.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/PRESETn">
+PRESETn</a></td>
+<td>DW-SoC::APB-Reset</td>
+<td>4.3</td>
+<td><pre>PRESETn</pre></td>
+<td>Reset signal for APB slaves (peripherals).
+Connections typically go from an exported interface to 
+each APB master/slave.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_activity_intr">
+ic_activity_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_gen_call_intr">
+ic_gen_call_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_rd_req_intr">
+ic_rd_req_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_rx_done_intr">
+ic_rx_done_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_rx_full_intr">
+ic_rx_full_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_rx_over_intr">
+ic_rx_over_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_rx_under_intr">
+ic_rx_under_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_start_det_intr">
+ic_start_det_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_stop_det_intr">
+ic_stop_det_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_tx_abrt_intr">
+ic_tx_abrt_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_tx_empty_intr">
+ic_tx_empty_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+<tr>
+<td><a href="ReportInterfaceInstances.html#i_i2c/ic_tx_over_intr">
+ic_tx_over_intr</a></td>
+<td>DW-SoC::Source-Interrupt</td>
+<td>2.0</td>
+<td><pre></pre></td>
+<td>Source interrupt signals connected to an interrupt controller.</td>
+</tr>
+</table></center><pre>
+
+</pre>
+<a NAME="component_i_i2c"></a>
+<H3>Component i_i2c Instantiation parameters:</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Name</b></td>
+<td><b>Value</b></td>
+<td><b>Description</b></td>
+<td><b>Related Interfaces</b></td>
+</tr>
+<tr>
+<td>IC_INTR_IO</td>
+<td>0x0</td>
+<td>{Controls which interrupt outputs are present.
+Individual: each interrupt source has its own output.
+Combined: all interrupt sources are combined in to a single output.}</td>
+<td>{<a href="ReportInterfaceInstances.html#i_i2c/ic_activity_intr">ic_activity_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_gen_call_intr">ic_gen_call_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_rd_req_intr">ic_rd_req_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_rx_done_intr">ic_rx_done_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_rx_full_intr">ic_rx_full_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_rx_over_intr">ic_rx_over_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_rx_under_intr">ic_rx_under_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_start_det_intr">ic_start_det_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_stop_det_intr">ic_stop_det_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_tx_abrt_intr">ic_tx_abrt_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_tx_empty_intr">ic_tx_empty_intr</a>} {<a href="ReportInterfaceInstances.html#i_i2c/ic_tx_over_intr">ic_tx_over_intr</a>}</td>
+</tr>
+<tr>
+<td>IC_INTR_POL</td>
+<td>0x1</td>
+<td>{Configures the active level of the output interrupt lines.}</td>
+<td></td>
+</tr>
+</table></center><pre>
+
+</pre>
+<a NAME="Subsystem ports to be created"></a>
+<H3>Subsystem ports to be created:</H3>
+<center>
+<table BORDER=4 CELLSPACING=1 CELLPADDING=1 WIDTH="100%" >
+<tr>
+<td><b>Port Name</b></td>
+<td><b>Direction</b></td>
+<td><b>Interface Port Name</b></td>
+<td><b>Interface Name</b></td>
+<td><b>Description</b></td>
+</tr>
+<tr>
+<td>HCLK_hclk</td>
+<td>input</td>
+<td>hclk</td>
+<td><a href="ReportInterfaceInstances.html#HCLK">
+HCLK</a></td>
+<td>{AHB clock signal.}</td>
+</tr>
+<tr>
+<td>HRESETn_hresetn</td>
+<td>input</td>
+<td>hresetn</td>
+<td><a href="ReportInterfaceInstances.html#HRESETn">
+HRESETn</a></td>
+<td>{AHB reset signal (low active).}</td>
+</tr>
+<tr>
+<td>PCLK_pclk</td>
+<td>input</td>
+<td>pclk</td>
+<td><a href="ReportInterfaceInstances.html#PCLK">
+PCLK</a></td>
+<td>{APB clock signal.}</td>
+</tr>
+<tr>
+<td>PRESETn_presetn</td>
+<td>input</td>
+<td>presetn</td>
+<td><a href="ReportInterfaceInstances.html#PRESETn">
+PRESETn</a></td>
+<td>{APB reset signal (active low).}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hrdata</td>
+<td>output</td>
+<td>hrdata</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{AHB read data bus: Master receives readback data from slave.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hburst</td>
+<td>input</td>
+<td>hburst</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Indicates if the transfer constitutes part of a burst.
+Encoded as follows:
+ 000: SINGLE: Not a burst
+ 001: INCR:   Incrementing burst of unspecified length
+ 010: WRAP4:  4-beat wrapping burst
+ 011: INCR4:  4-beat incrementing burst
+ 100: WRAP8:  8-beat wrapping burst
+ 101: INCR8:  8-beat incrementing burst
+ 110: WRAP16: 16-beat wrapping burst
+ 111: INCR16: 16-beat incrementing burst}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hgrant</td>
+<td>output</td>
+<td>hgrant</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Bus grant signal:
+When high, indicates that the arbiter granted ownership
+of the bus to this master.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hlock</td>
+<td>input</td>
+<td>hlock</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Bus lock request signal:
+When high, indicates that the bus master wishes to carry out
+a locked transaction.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hprot</td>
+<td>input</td>
+<td>hprot</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Protection control signals.
+Encoded as follows:
+ xxx0: Opcode Fetch
+ xxx1: Data Access
+ xx0x: User Access
+ xx1x: Privileged Access
+ x0xx: Not bufferable
+ x1xx: Bufferable
+ 0xxx: Not cacheable
+ 1xxx: Cacheable}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hwrite</td>
+<td>input</td>
+<td>hwrite</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{AHB read/write signal:
+When high, a write is being performed;
+when low, a read is being carried out.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hbusreq</td>
+<td>input</td>
+<td>hbusreq</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Bus Request signal:
+When high, indicates that the master requests access to the bus.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_haddr</td>
+<td>input</td>
+<td>haddr</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{AHB address bus.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hsize</td>
+<td>input</td>
+<td>hsize</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Indicates size of transfer.
+Encoded as follows:
+ 000: 8 bits
+ 001: 16 bits
+ 010: 32 bits
+ 011: 64 bits
+ 100: 128 bits
+ 101: 256 bits
+ 110: 512 bits
+ 111: 1024 bits}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_htrans</td>
+<td>input</td>
+<td>htrans</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Indicates the nature of the transfer being performed.
+Encoded as follows:
+ 00: IDLE: No transfer required.
+ 01: BUSY: Master cannot continue immediately with transfer burst.
+ 10: NONSEQUENTIAL:
+           Indicates the first transfer of a burst or a single transfer.
+ 11: SEQUENTIAL:
+           The address of each transfer is related to the address
+           of its predecessor.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hwdata</td>
+<td>input</td>
+<td>hwdata</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{AHB write data bus: Master writes data to slave.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hready</td>
+<td>output</td>
+<td>hready</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Ready response from selected slave.
+When high, the ready signal indicates that a transfer has finished on the bus.
+This signal may be driven low to extend a transfer.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Master_hresp</td>
+<td>output</td>
+<td>hresp</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Master">
+ex_i_ahb_AHB_Master</a></td>
+<td>{Slave response, providing additional information to the master
+on the status of a transfer.
+Encoded as follows:
+ 00: OKAY:  Transfer successfully completed.
+ 01: ERROR: An error has occurred.
+ 10: RETRY: Transfer has not yet completed.
+            The master should retry until the transfer is complete.
+ 11: SPLIT: The transfer has not completed.
+            The master must retry the transfer when it is
+            next granted access to the bus.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hrdata</td>
+<td>input</td>
+<td>hrdata</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{AHB read data bus: Master receives readback data from slave.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_5</td>
+<td>output</td>
+<td>hsel_5</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #5 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hburst</td>
+<td>output</td>
+<td>hburst</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Indicates if the transfer constitutes part of a burst.
+Encoded as follows:
+ 000: SINGLE: Not a burst
+ 001: INCR:   Incrementing burst of unspecified length
+ 010: WRAP4:  4-beat wrapping burst
+ 011: INCR4:  4-beat incrementing burst
+ 100: WRAP8:  8-beat wrapping burst
+ 101: INCR8:  8-beat incrementing burst
+ 110: WRAP16: 16-beat wrapping burst
+ 111: INCR16: 16-beat incrementing burst}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hresp</td>
+<td>input</td>
+<td>hresp</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Slave response, providing additional information to the master
+on the status of a transfer.
+Encoded as follows:
+ 00: OKAY:  Transfer successfully completed.
+ 01: ERROR: An error has occurred.
+ 10: RETRY: Transfer has not yet completed.
+            The master should retry until the transfer is complete.
+ 11: SPLIT: The transfer has not completed.
+            The master must retry the transfer when it is
+            next granted access to the bus.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hready</td>
+<td>output</td>
+<td>hready</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Ready response from selected slave.
+When high, the ready signal indicates that a transfer has finished on the bus.
+This signal may be driven low to extend a transfer.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_1</td>
+<td>output</td>
+<td>hsel_1</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #1 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_haddr</td>
+<td>output</td>
+<td>haddr</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{AHB address bus.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_2</td>
+<td>output</td>
+<td>hsel_2</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #2 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_4</td>
+<td>output</td>
+<td>hsel_4</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #4 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_6</td>
+<td>output</td>
+<td>hsel_6</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #6 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_3</td>
+<td>output</td>
+<td>hsel_3</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #3 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hwrite</td>
+<td>output</td>
+<td>hwrite</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{AHB read/write signal:
+When high, a write is being performed;
+when low, a read is being carried out.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hprot</td>
+<td>output</td>
+<td>hprot</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Protection control signals.
+Encoded as follows:
+ xxx0: Opcode Fetch
+ xxx1: Data Access
+ xx0x: User Access
+ xx1x: Privileged Access
+ x0xx: Not bufferable
+ x1xx: Bufferable
+ 0xxx: Not cacheable
+ 1xxx: Cacheable}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hmastlock</td>
+<td>output</td>
+<td>hmastlock</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Asserted to indicate that the transfer currently in progress is part
+of a locked transaction.
+Required for split capability.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel</td>
+<td>output</td>
+<td>hsel</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hmaster</td>
+<td>output</td>
+<td>hmaster</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Indicates which master currently has ownership of the bus.
+Required for split capability.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsel_7</td>
+<td>output</td>
+<td>hsel_7</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Select line for extra slot #7 from AHB decoder.
+When high, indicates that this slave has been selected.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsize</td>
+<td>output</td>
+<td>hsize</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Indicates size of transfer.
+Encoded as follows:
+ 000: 8 bits
+ 001: 16 bits
+ 010: 32 bits
+ 011: 64 bits
+ 100: 128 bits
+ 101: 256 bits
+ 110: 512 bits
+ 111: 1024 bits}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_htrans</td>
+<td>output</td>
+<td>htrans</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Indicates the nature of the transfer being performed.
+Encoded as follows:
+ 00: IDLE: No transfer required.
+ 01: BUSY: Master cannot continue immediately with transfer burst.
+ 10: NONSEQUENTIAL:
+           Indicates the first transfer of a burst or a single transfer.
+ 11: SEQUENTIAL:
+           The address of each transfer is related to the address
+           of its predecessor.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hready_resp</td>
+<td>input</td>
+<td>hready_resp</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{Ready response from this slave.
+When high, the ready signal indicates that a transfer has finished on the bus.
+This signal may be driven low to extend a transfer.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hwdata</td>
+<td>output</td>
+<td>hwdata</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{AHB write data bus: Master writes data to slave.}</td>
+</tr>
+<tr>
+<td>ex_i_ahb_AHB_Slave_hsplit</td>
+<td>input</td>
+<td>hsplit</td>
+<td><a href="ReportInterfaceInstances.html#ex_i_ahb_AHB_Slave">
+ex_i_ahb_AHB_Slave</a></td>
+<td>{This signal is driven by split-capable slaves to indicate
+to the AHB arbiter which master may proceed to complete
+a split transaction.}</td>
+</tr>
+</table></center><pre>
+
+</pre>
+
+<HR WIDTH="100%">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+</BODY></HTML>
+

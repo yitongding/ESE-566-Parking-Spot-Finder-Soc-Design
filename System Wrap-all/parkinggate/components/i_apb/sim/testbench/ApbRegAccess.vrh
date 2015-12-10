@@ -1,0 +1,188 @@
+#pragma vip(0d08f40f, cd2534ac, 00000000, 00001368, "May 25 2014", "00:13:53")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/ApbRegAccess.vrh#4 $
+// Abstract: This class is used to access all of the SW register on
+//           APB macrocell under test.
+//
+//           The class can perform automatic APB interface tests on
+//           true write/read & read only registers.
+//
+//           The class can perform automatic reset tests on all of
+//           SW registers in the macrocell.
+
+#ifndef APBREGACCESS_VRH
+#define APBREGACCESS_VRH
+
+#include <vera_defines.vrh>
+#include "Reporter.vrh"
+#include "AhbMstCmd.vrh"
+#include "proj_defines.vri"
+#include "amba_defines.vri"
+#include "AhbMaster.vri"
+
+
+
+#ifndef APBREGACCESS_VR
+#define APBREGACCESS_EXTERN extern
+#else
+#define APBREGACCESS_EXTERN
+#endif
+
+
+//-: --------------------------------------------------------
+//-: CLASS       : RegStructure
+//-:
+//-: DESCRIPTION : This class is a structure contianing all
+//-:               the required information for a single SW
+//-:               register within the macrocell under test.
+//-: --------------------------------------------------------
+APBREGACCESS_EXTERN class RegStructure
+{
+  public string           name   ;  // register name
+  public integer          size   ;  // register size
+  public bit [31:0]       addr   ;  // register address
+  public bit [31:0]       reset  ;  // register reset value
+  public integer          access ;  // register access : 0=No access 1=Write/Read access 2=Read Only access 
+  public integer          present;  // defines if register is physically present for this configuration
+}
+
+
+//-: --------------------------------------------------------
+//-: CLASS       : ApbRegAccess
+//-:
+//-: DESCRIPTION : This class is used to access all of the
+//-:               software registers in an APB macrocell.
+//-: --------------------------------------------------------
+APBREGACCESS_EXTERN class ApbRegAccess
+{
+  
+#ifdef APBREGACCESS_VR
+  
+  local Reporter             m_log       ;  // Logger object for reporting
+  local AhbMstCmd            m_mst       ;  // AHB master command object
+  local RegStructure         m_reg[]     ;  // hash table of register objects
+
+  local AhbAddrType          m_address   ;  // register address variable
+  local AhbDataType          m_hwdata    ;  // register write data
+  local AhbDataType          m_hrdata    ;  // register read data
+  local AhbAddrType          m_bfm_addr  ;  // apb slv bfm address
+
+  local integer              m_apb_dbw   ;  // APB data bus width
+  local integer              m_addr_inc  ;  // AHB address increment
+  local integer              m_reg_size  ;  // register size variable
+  
+  local string               msg         ;  // reporting string variable
+  
+#endif /* APBREGACCESS_VR */
+  
+
+  //-: ------------------------------------
+  //-: Public Methods
+  //-: ------------------------------------
+
+  //-: new constructor
+  public task new (
+    AhbMaster    ahb_mst,
+    integer      apb_dbw,
+    bit [31:0]   slv_bfm_addr
+    );
+
+  //-: write register
+  public task write (
+    string     reg_name,
+    bit [31:0] wdata,
+    (integer   block=0)
+    );
+
+  //-: read register
+  public task read (
+    string         reg_name,
+    var bit [31:0] rdata
+    );
+
+  //-: read register untill value is read
+  public task read_untill (
+    string         reg_name,
+    bit [31:0]     expdata
+    );
+
+  //-: read register and compare against expdata
+  public function integer read_expect (
+    string         reg_name,
+    bit [31:0]     expdata
+    );
+
+  //-: test write read registers
+  public task test_write_read (
+    string reg_name,
+    (bit [31:0] wdata=32'bx)
+    );
+
+  //-: test read only registers
+  public task test_read_only (
+    string reg_name
+    );
+
+  //-: test register values after reset
+  public task test_reset (
+    string     reg_name,
+    (bit [31:0] expdata=32'bx)
+    );
+
+  //-: write to byte(s) in coherency register
+  public task write_coherency(
+    string     reg_name,
+    bit [31:0] wdata,
+    bit [3:0]  byte_lane,
+    (integer   block=0)
+    );
+
+  //-: read from byte(s) in coherency register
+  public task read_coherency(
+    string         reg_name,
+    var bit [31:0] rdata,
+    bit [3:0]      byte_lane
+    );
+    
+  //-: Auto test write read registers
+  public task auto_test_write_read();
+
+  //-: Auto test read only registers
+  public task auto_test_read_only();
+
+  //-: Auto test register values after reset
+  public task auto_test_reset();
+
+  //-: APB AMBA compliance test
+  public task test_amba_apb_compliance();
+
+  protected task create_hash_table(RegStructure Reg);
+
+  protected task kill_sim();
+  
+#ifdef APBREGACCESS_VR
+  
+  //-: ------------------------------------
+  //-: Local Methods
+  //-: ------------------------------------
+
+  local function integer my_hash(string str);
+
+#endif /* APBREGACCESS_VR */
+    
+}
+
+#endif /* APBREGACCESS_VRH */

@@ -1,0 +1,28 @@
+#pragma vip(65af6c96, 7ee84c98, 00000000, 00000196, "Mar  4 2004", "13:48:22")
+#ifndef AHBDECODERBFMPORTS_VRI
+#define AHBDECODERBFMPORTS_VRI
+
+port AhbDecoderBfmVirtualPort
+{
+  haddr;
+  hsel;
+  hsel_s0;
+  hsel_s1;
+  hsel_s2;
+  hsel_s3;
+  hsel_s4;
+  hsel_s5;
+  hsel_s6;
+  hsel_s7;
+  hsel_s8;
+  hsel_s9;
+  hsel_s10;
+  hsel_s11;
+  hsel_s12;
+  hsel_s13;
+  hsel_s14;
+  hsel_s15;
+  hsel_none;
+  remap_n;
+}
+#endif

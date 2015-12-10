@@ -1,0 +1,31 @@
+#pragma vip(a3804f7a, b2e1611d, 00000004, 0000042f, "Mar  4 2004", "13:48:29")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_TIME_VRH__
+#define __INC_TIME_VRH__
+extern class Time { 
+    task new (integer h = 0, integer m = 0, integer s = 0);
+    function string Ttoa ();
+    function integer nsec ();
+    task nseci (integer nsec);
+}
+#ifdef __INC_TIME_LOCAL__
+class Time {
+    local integer m_hours, m_min, m_sec; 
+    local string m_string;                  
+    local task gen_string();
+    public task new(integer h=0, integer m=0, integer s=0);
+    public function string Ttoa();       
+    public function integer nsec();      
+    public task nseci(integer nsec);     
+}
+#endif
+#endif

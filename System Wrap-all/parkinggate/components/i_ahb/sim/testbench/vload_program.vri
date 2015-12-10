@@ -1,0 +1,26 @@
+#pragma vip(c4b6940e, 45bdf423, 00000000, 00000239, "Jun 16 2014", "16:49:06")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_ahb/amba_dev/sim/testbench/vload_program.vri#4 $
+
+#ifndef VLOAD_PROGRAM_VRI
+#define VLOAD_PROGRAM_VRI
+
+vera_attribute RTIME_LOAD_LIST_AhbTestHarness = "../testbench/AhbTestHarness.vro";
+vera_attribute RTIME_LOAD_LIST_AhbTestLib = "../testbench/AhbTestLib.vro";
+vera_attribute RTIME_LOAD_LIST_test_DW_ahb = "../testbench/test_DW_ahb.vro";
+vera_attribute RTIME_LOAD_LIST_test = "./test.vro";
+
+#endif

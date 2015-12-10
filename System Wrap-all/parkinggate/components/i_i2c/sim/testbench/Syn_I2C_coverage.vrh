@@ -1,0 +1,117 @@
+#pragma vip(36274291, 76dcc5a9, 00000000, 000009ae, "Jun 16 2014", "19:41:35")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_coverage.vrh#4 $
+
+#ifndef SYNI2CCOVERAGE_VRH
+#define SYNI2CCOVERAGE_VRH
+
+#ifndef SYNI2CCOVERAGE_VR
+#define SYNI2CCOVERAGE_EXTERN extern
+#else
+#define SYNI2CCOVERAGE_EXTERN
+#endif
+
+#include "Syn_I2C_checker.vrh"
+
+/*
+class X
+{
+   task x()
+   {
+      integer i = 1;
+   }
+}
+*/
+
+#ifdef SYNI2CCOVERAGE_VR
+coverage_def Syn_i2c_addr_cov (bit[7:0] addr,integer cov_opt, integer cov_goal)
+{
+//  coverage_option = LO;
+
+  state Start_Byte          ( 8'b0000_0001) ;
+  state Gen_Call            ( 8'b0000_0000) ;
+  wildcard state CBUS       ( 8'b0000_001x) ;
+  wildcard state hs_master  ( 8'b0000_1xxx) ;
+  wildcard state tenbit     ( 8'b1111_0xxx) ;
+  wildcard state sevbit     ( 8'b0xxx_xxxx) if ((addr != 8'b0000_0001) && (addr != 8'b0000_0000)&& (addr != 8'b0000_001x)&&
+                                                (addr != 8'b0000_1xxx)&& (addr != 8'b1111_0xxx));
+
+//  bad_state                 ( 8'bzzzz_zzzz);
+  coverage_option =  cov_opt;
+  coverage_goal   =  cov_goal/600;
+  
+}
+
+coverage_def Syn_i2c_tx_bytes_cov (bit transmit,integer cov_opt, integer cov_goal)
+{
+ // coverage_option = LO;
+  
+  state transmit_cov   (1'b1);
+  
+//  bad_state ( 1'b0);
+  coverage_option =  cov_opt;
+  coverage_goal   =  cov_goal/100;
+}
+
+coverage_def Syn_i2c_rx_bytes_cov (bit receive_ack,integer cov_opt, integer cov_goal)
+{
+  state receive_cov   (1'b1) ;
+  
+//  bad_state (not state);
+  coverage_option =  cov_opt;
+  coverage_goal   =  cov_goal/100;
+}
+
+coverage_def Syn_i2c_mode_cov (bit speed_mode,integer cov_opt, integer cov_goal)
+{
+  state hspeed   (1'b1);
+  state fast_std (1'b0);
+  
+ // bad_state (not state);
+  coverage_option =  cov_opt;
+  coverage_goal   =  cov_goal/200;
+
+}
+#endif
+
+SYNI2CCOVERAGE_EXTERN class Syn_I2C_Coverage
+{
+inoutport dutport = ioport;
+bit [7:0]       addr;
+bit             transmit;
+bit             receive_ack;
+bit             speed_mode;
+
+Syn_I2C_Protocol_Checker checker = new;
+
+
+#ifdef SYNI2CCOVERAGE_VR
+local Syn_i2c_addr_cov     addr_cov;
+local Syn_i2c_tx_bytes_cov tx_bytes_cov;
+local Syn_i2c_rx_bytes_cov rx_bytes_cov;
+local Syn_i2c_mode_cov     mode_cov;
+#endif
+
+event start_addr_cov;
+event start_tx_bytes_cov;
+event start_rx_bytes_cov;
+event start_mode_cov;
+
+task coverage_monitor( );
+task coverage_report();
+}
+
+#endif /* SYNI2CCOVERAGE_VRH */

@@ -1,0 +1,31 @@
+#pragma vip(28768918, 3a612249, 00000000, 000003e1, "Mar  4 2004", "13:48:22")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBBYTEMEM_VRH
+#define AHBBYTEMEM_VRH
+#include "amba_defines.vri"
+#include <vera_defines.vrh>
+#ifndef AHBBYTEMEM_VR
+#define AHBBYTEMEM_EXTERN extern
+#else
+#define AHBBYTEMEM_EXTERN
+#endif
+AHBBYTEMEM_EXTERN class AhbByteMem
+{
+#ifdef AHBBYTEMEM_VR
+   local bit[7:0]  m_memory[];
+#endif
+   public task write_byte(AhbAddrType addr, bit [7:0] data);
+   public task read_byte(AhbAddrType addr, var bit [7:0] data);
+   public task flush_mem();
+   public task dump_mem();
+}
+#endif /* AHBBYTEMEM_VRH */

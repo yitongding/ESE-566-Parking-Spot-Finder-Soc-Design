@@ -1,0 +1,111 @@
+#pragma vip(35ba9e34, ac19ab31, 00000000, 00000bba, "May 25 2014", "00:13:37")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/AhbApbTestHarness.vrh#6 $
+
+#ifndef AHBAPBTESTHARNESS_VRH
+#define AHBAPBTESTHARNESS_VRH
+#include "ApbSlave.vri"
+#include "ApbMonitor.vri"  /* for the vmt */
+#undef _COV_ERRORS_
+#include "AhbTestHarness.vrh"
+#include "AhbApbTestHarnessBind.vri"
+#ifndef AHBAPBTESTHARNESS_VR
+#define AHBAPBTESTHARNESS_EXTERN extern
+#else
+#define AHBAPBTESTHARNESS_EXTERN
+#endif
+interface dut_apb_if
+{
+   input pclk CLOCK;
+}
+AHBAPBTESTHARNESS_EXTERN class AhbApbDutHarness extends AhbTestHarness
+{
+   public ParseDefines    apb_cc;
+   public AxbVirtualPort  m_apb_vslv_port[16];
+   public AxbVirtualPort  m_apb_vbus_port;
+#ifdef AHBAPBTESTHARNESS_VR
+   local bit [15:0]       m_slv_present;
+   local bit              m_mon_present;
+#endif
+
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      bit [15:0]   ahb_mst_present,
+      bit [15:0]   ahb_slv_present,
+      bit [15:0]   apb_slv_present,
+      bit          ahb_mon_present,
+      bit          apb_mon_present
+      );
+#ifdef AHBAPBTESTHARNESS_VR
+   local task connect_hdl2vera();
+#endif
+}
+AHBAPBTESTHARNESS_EXTERN class AhbApbVipDutHarness extends AhbApbDutHarness
+{
+   public ApbSlavePort         m_bfm_apb_slv_port[16];
+   public ApbMonitorPort       m_bfm_apb_mon_port;
+#ifdef AHBAPBTESTHARNESS_VR
+   local bit [15:0]            m_apb_slv_present;
+   local bit                   m_apb_mon_present;
+#endif /* AHBAPBTESTHARNESS_VR */
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      bit [15:0]    ahb_mst_present,
+      bit [15:0]    ahb_slv_present,
+      bit [15:0]    apb_slv_present,
+      bit           ahb_mon_present,
+      bit           apb_mon_present
+      );
+#ifdef AHBAPBTESTHARNESS_VR
+   local task connect_vera2vera();
+#endif /* AHBAPBTESTHARNESS_VR */
+}
+AHBAPBTESTHARNESS_EXTERN class AhbApbTestHarness extends AhbApbVipDutHarness
+{
+   public ApbSlave     apb_slv[16];
+   public ApbMonitor   apb_mon;
+   public bit[15:0]    apb_slv_present;
+   public bit          apb_mon_present;
+
+   integer msg_handle[16];            // Message Handler
+   integer wp_handle[16];             // Watchpoint Handler
+   integer buf_handle[16];            // Buffer Handler
+   integer status;
+   rand integer r_pslverr;
+   rand integer r_pready;
+
+   constraint cns_apb3;
+
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      (bit [15:0] ahb_mst_present = 16'hffff),
+      (bit [15:0] ahb_slv_present = 16'hffff),
+      (bit [15:0] apb_slv_present = 16'hffff),
+      (bit ahb_mon_present        = 1'b1),
+      (bit apb_mon_present        = 1'b1)
+      );
+#ifdef AHBAPBTESTHARNESS_VR
+
+   function integer apb_response(integer i);
+
+   local task build_apb_slv();
+   local task build_apb_mon();
+#endif /* AHBAPBTESTHARNESS_VR */
+}
+#endif /* AHBAPBTESTHARNESS_VRH */

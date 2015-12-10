@@ -1,0 +1,33 @@
+#pragma vip(5cc46dae, d43753fd, 00000004, 00000463, "Mar  4 2004", "13:48:29")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_TESTOBJ_VRH__
+#define __INC_TESTOBJ_VRH__
+extern virtual class  TestObj {
+  protected integer     error_mboxid;   
+  task new();
+  virtual task stop();
+  virtual function integer run();
+  virtual function integer status();
+  function integer pop_error(integer option, var integer error_time);
+} 
+#ifdef __INC_TESTOBJ_LOCAL__
+#include <vera_defines.vrh>
+virtual class  TestObj {
+  protected integer     error_mboxid;   
+  task new();
+  virtual task stop();
+  virtual function integer run();
+  virtual function integer status();
+  function integer pop_error(integer option, var integer error_time);
+} 
+#endif  
+#endif  

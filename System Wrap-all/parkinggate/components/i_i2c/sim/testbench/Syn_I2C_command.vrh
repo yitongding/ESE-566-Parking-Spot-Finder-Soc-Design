@@ -1,0 +1,74 @@
+#pragma vip(7e461071, f15eae99, 00000000, 00000657, "Jun 16 2014", "19:41:31")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_command.vrh#4 $
+
+
+#ifndef SYNI2CCOMMAND_VRH
+#define SYNI2CCOMMAND_VRH
+
+#ifndef SYNI2CCOMMAND_VR
+#define SYNI2CCOMMAND_EXTERN extern
+#else
+#define SYNI2CCOMMAND_EXTERN
+#endif
+
+#include "Syn_I2C_slave.vrh"
+#include "Syn_I2C_master.vrh"
+
+SYNI2CCOMMAND_EXTERN class Syn_I2C_Command
+
+{
+  //These are the variables used for random production 
+  integer       master_tx_7bit_w;
+  integer       master_rx_7bit_w;
+  integer       master_tx_10bit_w;
+  integer       master_rx_10bit_w;
+  integer       hw_generalcall_w;
+  integer       sw_rst_generalcall_w;
+  integer       sw_generalcall_w;
+  integer       generalcall_tx_10bit_w;
+  integer       generalcall_rx_10bit_w;
+  integer       start_byte_w;
+  integer       data_error_w;
+  integer       Invalid_gencall_w;
+  integer       start_stop_error_w;
+  integer       cbus_w;
+  
+  integer       slave_normal_w;
+  integer       abort_transfer_w;
+  integer       startbyte_error_w;
+  integer       cbus_error_w;
+  integer       mastercode_error_w;
+  
+  integer       num_of_masters;
+  integer       num_of_slaves;
+  bit           master_enable;
+  bit           slave_enable;
+  bit           first_time = I2C_FALSE;
+  bit           clk_mode = 0;
+  //These are the instances of various modules used
+
+//#ifdef SYNI2CCOMMAND_VR
+  Syn_I2C_Master     master[] ;
+  Syn_I2C_Slave      slave[]  ;
+//#endif
+
+  task set_command_seq( );
+  task new( );
+}
+
+
+#endif /* SYNI2CCOMMAND_VRH */

@@ -1,0 +1,1 @@
+-lang 95e +v2k -full_inf -translate_directive -config_summary -y  $SYNOPSYS/dw/sim_ver -nowarning

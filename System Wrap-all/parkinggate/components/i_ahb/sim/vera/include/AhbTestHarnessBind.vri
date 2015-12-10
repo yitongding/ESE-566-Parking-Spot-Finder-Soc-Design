@@ -1,0 +1,109 @@
+#pragma vip(ad276ecb, ae88d43e, 00000000, 000009c8, "Mar  4 2004", "13:48:24")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBTESTHARNESSBIND_VRI
+#define AHBTESTHARNESSBIND_VRI
+
+bind AhbMonitorPort AhbMonitorVoidBind
+{
+   haddr        void;
+   hburst       void;
+   hclk         void;
+   hmaster      void;
+   hmastlock    void;
+   hprot        void;
+   hrdata       void;
+   hready       void;
+   hresetn      void;
+   hresp        void;
+   hsize        void;
+   htrans       void;
+   hwdata       void;
+   hwrite       void;
+   hsel         void;
+   hsplit_s0    void;
+   hsplit_s1    void;
+   hsplit_s2    void;
+   hsplit_s3    void;
+   hsplit_s4    void;
+   hsplit_s5    void;
+   hsplit_s6    void;
+   hsplit_s7    void;
+   hsplit_s8    void;
+   hsplit_s9    void;
+   hsplit_s10   void;
+   hsplit_s11   void;
+   hsplit_s12   void;
+   hsplit_s13   void;
+   hsplit_s14   void;
+   hsplit_s15   void;
+   hbusreq      void;
+   hgrant       void;
+   hlock        void;
+}
+
+bind AhbBusMst_bus_port AhbMasterVoidBind
+{
+   hclk         void;
+   hresetn      void;
+   hgrant       void;
+   hrdata       void;
+   hready       void;
+   hresp        void;
+   haddr        void;
+   hburst       void;
+   hbusreq      void;
+   hlock        void;
+   hprot        void;
+   hsize        void;
+   htrans       void;
+   hwdata       void;
+   hwrite       void;
+}
+
+bind AhbBusSlv_bus_port AhbSlaveVoidBind
+{
+   hclk         void;
+   hresetn      void;
+   haddr        void;
+   hburst       void;
+   hmaster      void;
+   hmastlock    void;
+   hprot        void;
+   hready       void;
+   hsel         void;
+   hsize        void;
+   htrans       void;
+   hwdata       void;
+   hsel_s0      void;
+   hsel_s1      void;
+   hsel_s2      void;
+   hsel_s3      void;
+   hsel_s4      void;
+   hsel_s5      void;
+   hsel_s6      void;
+   hsel_s7      void;
+   hsel_s8      void;
+   hsel_s9      void;
+   hsel_s10     void;
+   hsel_s11     void;
+   hsel_s12     void;
+   hsel_s13     void;
+   hsel_s14     void;
+   hsel_s15     void;
+   hwrite       void;
+   hrdata       void;
+   hready_resp  void;
+   hresp        void;
+   hsplit       void;
+}  
+
+#endif

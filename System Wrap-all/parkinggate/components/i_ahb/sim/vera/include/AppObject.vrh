@@ -1,0 +1,101 @@
+#pragma vip(22658177, 5b219a52, 00000004, 0000110d, "Mar  4 2004", "13:48:25")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_APPOBJECT_VRH__
+#define __INC_APPOBJECT_VRH__
+#include "Logger.vrh"
+#include "DateTime.vrh"
+#define MAX_TRIGGER 32
+extern class AppObject
+{
+  protected integer     filehandle;      
+  protected integer     object_id;       
+  protected integer     start_app;       
+  protected integer     kill_app;        
+  protected string      object_name;     
+  protected Logger_severity severity;    
+  static protected DateTime    datetime_obj;    
+  static protected event    tarray[MAX_TRIGGER];
+  static public integer  ttype[MAX_TRIGGER];
+  task new ( integer object_id,
+            integer filehandle);
+  task start ();
+  task stop ();
+  task kill ();
+  task set_severity_level (Logger_severity stdo_level,
+                           Logger_severity file_level);  
+  task set_log_max (integer max_debugs, integer max_infos,
+                    integer max_warns, integer max_errors );
+  task make_report ( Logger_severity severity,
+                    string message);
+  task print   (Logger_severity severity, string context, string message,
+		(bit [31:0] n1 = 0, (bit [31:0] n2 = 0, (bit [31:0] n3 = 0,
+		(bit [31:0] n4 = 0, (bit [31:0] n5 = 0, (bit [31:0] n6 = 0,
+		(bit [31:0] n7 = 0, (bit [31:0] n8 = 0)))))))));
+  task print64 (Logger_severity severity, string context, string message,
+		(bit [63:0] n1 = 0, (bit [63:0] n2 = 0, (bit [63:0] n3 = 0,
+		(bit [63:0] n4 = 0, (bit [63:0] n5 = 0, (bit [63:0] n6 = 0,
+		(bit [63:0] n7 = 0, (bit [63:0] n8 = 0)))))))));
+  task printstr (Logger_severity severity, string context, string message,
+		 (string n1 = "", (string n2 = "", (string n3 = "", 
+		 (string n4 = "", (string n5 = "", (string n6 = "",
+	         (string n7 = "", (string n8 = "")))))))));
+  task vsync(integer tvalue);
+  task vtrigger(integer tvalue);
+  protected task started_msg ((string process = ""));
+  protected task stopped_msg ((string process = ""));
+  protected function string get_bind_name(bind_var the_bind);
+} 
+#ifdef __INC_APPOBJECT_LOCAL__
+#include <vera_defines.vrh>
+class AppObject
+{
+  protected integer     filehandle;      
+  protected integer     object_id;       
+  protected integer     start_app;       
+  protected integer     kill_app;        
+  protected string      object_name;     
+  protected Logger_severity severity;    
+  static protected DateTime    datetime_obj;    
+  static protected event    tarray[MAX_TRIGGER];
+  static public integer  ttype[MAX_TRIGGER];
+  local Logger  logger;       
+  task new ( integer object_id,
+            integer filehandle);
+  task start ();
+  task stop ();
+  task kill ();
+  task set_severity_level (Logger_severity stdo_level,
+                           Logger_severity file_level);  
+  task set_log_max (integer max_debugs, integer max_infos,
+                    integer max_warns, integer max_errors );
+  task make_report ( Logger_severity severity,
+                    string message);
+  task print   (Logger_severity severity, string context, string message,
+		(bit [31:0] n1 = 0, (bit [31:0] n2 = 0, (bit [31:0] n3 = 0,
+		(bit [31:0] n4 = 0, (bit [31:0] n5 = 0, (bit [31:0] n6 = 0,
+		(bit [31:0] n7 = 0, (bit [31:0] n8 = 0)))))))));
+  task print64 (Logger_severity severity, string context, string message,
+		(bit [63:0] n1 = 0, (bit [63:0] n2 = 0, (bit [63:0] n3 = 0,
+		(bit [63:0] n4 = 0, (bit [63:0] n5 = 0, (bit [63:0] n6 = 0,
+		(bit [63:0] n7 = 0, (bit [63:0] n8 = 0)))))))));
+  task printstr (Logger_severity severity, string context, string message,
+		 (string n1 = "", (string n2 = "", (string n3 = "", 
+		 (string n4 = "", (string n5 = "", (string n6 = "",
+	         (string n7 = "", (string n8 = "")))))))));
+  task vsync(integer tvalue);
+  task vtrigger(integer tvalue);
+  protected task started_msg ((string process = ""));
+  protected task stopped_msg ((string process = ""));
+  protected function string get_bind_name(bind_var the_bind);
+} 
+#endif  
+#endif  

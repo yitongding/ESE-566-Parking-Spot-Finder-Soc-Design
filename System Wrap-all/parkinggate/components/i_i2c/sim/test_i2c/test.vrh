@@ -1,0 +1,27 @@
+#pragma vip(f2bf188d, 64245f87, 00000000, 00000198, "Jun 16 2014", "19:39:19")
+
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/test_i2c/test.vrh#4 $
+// Abstract: Header file for the test stimulus of the APB I2C
+//           peripheral 
+
+#ifndef TEST_VRH
+#define TEST_VRH
+
+#include "AhbApbI2cTestHarness.vrh"
+#include "I2cTestLib.vrh"
+
+#endif

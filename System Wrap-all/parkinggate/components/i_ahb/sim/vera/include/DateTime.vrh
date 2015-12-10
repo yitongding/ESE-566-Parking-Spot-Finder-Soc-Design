@@ -1,0 +1,35 @@
+#pragma vip(e1a299bb, c037e35a, 00000004, 000004f8, "Mar  4 2004", "13:48:26")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_DATETIME_VRH__
+#define __INC_DATETIME_VRH__
+extern class DateTime { 
+    public task new((integer d=0), (integer m=0), (integer y=0), 
+                    (integer h=0), (integer mi=0), (integer s=0));
+    public function string get_datetime();
+}
+#ifdef __INC_DATETIME_LOCAL__
+#include "Date.vrh"
+#include "Time.vrh"
+class DateTime {
+    local Date m_date;
+    local Time m_time;
+    local static Date m_date_1970;
+    local string m_string;
+    local task gen_string();
+    local task get_systimei();                     
+    local function string DTtoa();                 
+    public task new((integer d=0), (integer m=0), (integer y=0), 
+                    (integer h=0), (integer mi=0), (integer s=0));
+    public function string get_datetime();
+}
+#endif
+#endif

@@ -1,0 +1,39 @@
+****************************
+Report : check_design
+Design : parking
+Version: J-2014.09-SP5
+****************************
+
+ 
+****************************************
+check_design summary:
+Version:     J-2014.09-SP5
+Date:        Sat Nov 28 20:52:04 2015
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     19
+    Constant outputs (LINT-52)                                     19
+--------------------------------------------------------------------------------
+
+Warning: In design 'parking', output port 'i_ahb_hmaster_data[3]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hmaster_data[2]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hmaster_data[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[31]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[30]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[27]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[26]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[24]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[23]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[22]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[19]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[18]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[17]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[15]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[14]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[11]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hrdata_s0[10]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_ahb_hresp_s0[1]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'parking', output port 'i_i2c_debug_hs' is connected directly to 'logic 0'. (LINT-52)
+1

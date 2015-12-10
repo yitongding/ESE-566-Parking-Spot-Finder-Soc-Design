@@ -1,0 +1,28 @@
+#
+# coreKit Build Information
+#
+
+coreKit Name:        DW_apb
+Top Level Design Name:    DW_apb
+coreKit Version:     2.03a
+Encrypted License:     DesignWare
+Source License: DWC-AMBA-Fabric-Source
+
+
+coreBuilder Version: H-2013.03-SP1-2
+RCE Version:  V2013.07
+Build Date:          Tue Jun 24 11:18:13 2014
+
+#
+# Tool version requirements
+#
+
+Minimum version of vip:vmt : 3.90b
+Minimum version of synplicity : 2013.03-SP1
+Minimum version of VCS : 2012.09-SP1
+Minimum version of NC_Verilog : 12.10.015
+Minimum version of MTI_Verilog : 10.0c
+Minimum version of vip:amba : 6.51a
+Minimum version of dc_shell : 2011.09-SP5
+Minimum version of vera : 2009.12-17
+Minimum version of fm_shell : 2013.03-SP2

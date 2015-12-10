@@ -1,0 +1,308 @@
+#pragma vip(29b74a53, 81cba817, 00000000, 00001e6a, "Jun 16 2014", "19:40:50")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/AhbDmaBfm.vrh#5 $
+
+#ifndef AHBDMABFM_VRH
+#define AHBDMABFM_VRH
+
+#include "AhbMaster.vri"
+#include "amba_defines.vri"
+
+#ifndef AHBDMABFM_VR
+#define AHBDMABFM_EXTERN extern
+#else
+#define AHBDMABFM_EXTERN
+#endif
+
+// enum declaration for the DMA BFM configuration setting
+enum AhbDmaConfigs  = DmaNumFrames, DmaFrameSize, DmaCh1BurstSize, DmaCh2BurstSize,
+                      DmaCh1Priority, DmaCh2Priority, DmaCh1DataLevel, DmaCh2DataLevel,
+                      DmaCh1Address, DmaCh2Address, DmaCh1FifoSize, DmaCh2FifoSize,DmaRdFirstData;
+
+// enum declaration for the DMA BFM message logging severity
+enum DmaReportLevel = DMA_INFO, DMA_ERROR, DMA_DEBUG, DMA_UNMASKED;
+
+// Port declartion for the DMA BFM
+port AhbDmaBfmPort
+{
+  pclk;
+  dma_ch1_req;
+  dma_ch2_req;
+  dma_ch1_single;
+  dma_ch2_single;
+  dma_ch1_ack;
+  dma_ch2_ack;
+}
+
+// Class structure to hold the DMA BFM Configuration parameters
+AHBDMABFM_EXTERN class AhbDmaConfig
+{
+  public integer        frame_size;
+  public integer        num_frames;
+  public integer        ch1_burst_size;
+  public integer        ch2_burst_size;
+  public integer        ch1_priority;
+  public integer        ch2_priority;
+  public integer        ch1_data_level;
+  public integer        ch2_data_level;
+  public integer        ch1_fifo_size;
+  public integer        ch2_fifo_size;
+  public bit [63:0]     ch1_addr;
+  public bit [63:0]     ch2_addr;
+  public bit            rd_first_data_status;
+  
+  public task new();
+}
+
+
+AHBDMABFM_EXTERN class dmaevent
+{
+   public event   e;
+   public integer f;
+   public string  name;
+   public task    new((string name = ""));
+   public task    ftrigger(integer ttype = ONE_SHOT);
+}
+
+// Used by Sampler
+AHBDMABFM_EXTERN class AhbDmaInputs
+{
+  public bit   ch1_req;
+  public bit   ch2_req;
+  public bit   ch1_single;
+  public bit   ch2_single;
+}
+
+// Used by driver
+AHBDMABFM_EXTERN class AhbDmaOutputs
+{
+  public bit        ch1_ack;
+  public bit        ch2_ack;
+}
+
+// Used by sampler
+AHBDMABFM_EXTERN class AhbDmaFevent
+{
+  public dmaevent ch1_request     = new;
+  public dmaevent ch2_request     = new;
+  public dmaevent ch2_single      = new;
+  public dmaevent ch1_single      = new;
+}
+
+// Used by driver
+AHBDMABFM_EXTERN class AhbDmaBuf
+{
+  public bit      [15:0] data;
+  public integer         sim_time;
+}
+
+// ---------------------------------------
+// : AHB DMA BFM - Base Class
+// ---------------------------------------
+AHBDMABFM_EXTERN class AhbDmaBaseBfm
+{
+  protected AhbDmaConfig    m_cv = new;    // Handle for AhbDmaConfig object
+  protected integer         kill_app;      // Kill application variable
+  protected integer         start_app;     // Start application variable
+
+#ifdef AHBDMABFM_VR
+  local     string          Header;        // Header for message logging
+  local     integer         Id;            // object id number (used for logging)
+  local     string          ObjName;       // object name (used for logging)
+  local     integer         FileHandle;    // log file handle
+  local     DmaReportLevel  rep_level;     // log severity
+#endif /* AHBDMABFM_VR */
+
+  // Constructor
+  public task new
+    (
+      integer      Id,
+      string       ObjName,
+      integer      FileHandle
+    );
+
+  // Set the severity for message logging
+  public task set_report_level
+    (
+      DmaReportLevel SetLevel
+    );
+
+  // report message to the log file
+  // depending on the severity setting off course
+  public task report
+    (
+      DmaReportLevel level,
+      string msg,
+      (integer sim_time = -1)
+    );
+
+  // Configure the DMA BMF
+  public task configure
+    (
+      AhbDmaConfigs ctype,
+      integer value
+    );
+
+  // Dump out to the log file the DMA Configuration setting
+  public task dump_configs();
+
+  // Start the DMA BFM
+  public task Start();
+
+  // Stop the DMA BFM
+  public task Stop();
+
+  // Kill the DMA BFM object
+  public task Kill();
+
+  // metohd to exit the simulation
+  public task kill_sim();
+  
+}
+
+// ---------------------------------------
+// : AHB DMA BFM - Sampler Class
+// ---------------------------------------
+AHBDMABFM_EXTERN class AhbDmaSampler extends AhbDmaBaseBfm
+{
+  protected AhbDmaBfmPort  m_port;          // handle for DMA port
+  protected AhbDmaInputs   m_iv     = new;  // handle for AhbDmaInputs class
+  protected AhbDmaFevent   m_bus_fe = new;  // handle for AhbDmaFevent class
+  protected integer        m_service;       // thread manager signal
+
+  // Constructor
+  public task new
+    (
+      integer        Id,
+      string         ObjName,
+      integer        FileHandle,
+      AhbDmaBfmPort  dma_port
+    );
+   
+#ifdef AHBDMABFM_VR
+   local task Daemon();
+   local task InfiniteLoop();
+   local task SampleInputs();
+   local task GenBusEvents();
+   local task ResetFlags();
+#endif /* AHBDMABFM_VR */
+} 
+
+// ---------------------------------------
+// : AHB DMA BFM - Driver Class
+// ---------------------------------------
+AHBDMABFM_EXTERN class AhbDmaDriver extends AhbDmaSampler
+{
+#ifdef AHBDMABFM_VR
+  local AhbMaster           m_ahb_mst;
+  local integer             m_apb_dbw;
+  local integer             m_xfer_attr;
+  local integer             m_handle;
+  local integer             m_res_handle;
+  local integer             m_status;
+  local integer             m_size;
+  local integer             m_addr_inc;
+  local integer             m_num_left;
+
+  local AhbAddrType         m_addr;
+  local AhbDataType         m_hwdata;
+  local AhbDataType         m_hrdata;
+  local integer             m_hresp;
+
+  local integer             m_ch1_index;
+  local integer             m_ch2_index;
+  local bit [63:0]          m_ahb_base;
+  
+#endif /* AHBDMABFM_VR */
+  
+  protected AhbDmaOutputs   m_ov = new;
+  protected AhbDmaBuf       m_ch1_buf[];
+  protected AhbDmaBuf       m_ch2_buf[];
+  protected AhbDmaBuf       m_exp_buf[];
+
+  public task new(
+    integer       Id,
+    string        ObjName,
+    integer       FileHandle,
+    AhbDmaBfmPort dma_port,
+    AhbMaster     ahb_mst,
+    integer       apb_dbw,
+    bit [63:0]    ahb_base_addr
+    );
+
+  public task load_ch1_buf(
+    bit     [15:0] data,
+    integer        index
+    );
+  public task get_ch1_buf(
+    integer        index,
+    bit     [15:0] exp_data,
+    var bit [15:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task load_ch2_buf(
+    bit     [15:0] data,
+    integer        index
+    );
+  public task get_ch2_buf(
+    integer        index,
+    bit     [15:0] exp_data,
+    var bit [15:0] rdata,
+    var integer    mismatch,
+    var integer    sim_time
+    );
+  public task dump_ch1_buf();
+  public task dump_ch2_buf();
+  public task flush_ch1_buf();
+  public task flush_ch2_buf();
+  public task pop_ch1_buf( integer index, var bit [15:0] rdata );  
+  public task pop_ch2_buf( integer index, var bit [15:0] rdata );  
+
+#ifdef AHBDMABFM_VR
+  local task Daemon();
+  local task OperationLoop();
+  local task WaitBusEvents();
+  local task Ch1Request();
+  local task Ch2Request();
+//#  local task Ch1Single();
+  local task Ch2Single();
+  local task Ch1Ack();
+  local task Ch2Ack();
+  local task push_ch2_buf();
+  local task mstcmd(string cmd);
+#endif /* AHBDMABFM_VR */
+}
+
+
+// ---------------------------------------
+// : AHB DMA BFM - Top Class
+// ---------------------------------------
+AHBDMABFM_EXTERN class AhbDmaBfm extends AhbDmaDriver
+{
+  // Constructor
+  public task new
+    (
+      integer        Id,
+      string         ObjName,
+      integer        FileHandle,
+      AhbDmaBfmPort  dma_port,
+      AhbMaster      ahb_mst,
+      integer        apb_dbw,
+      bit [63:0]     ahb_base_addr
+    );
+} 
+#endif /* AHBDMABFM_VRH */

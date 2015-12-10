@@ -1,0 +1,113 @@
+#pragma vip(8938e416, c6c7a974, 00000000, 00001349, "Jun 16 2014", "19:41:58")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_slave.vrh#6 $
+
+#ifndef SYNI2CSLAVE_VRH
+#define SYNI2CSLAVE_VRH
+
+#ifndef SYNI2CSLAVE_VR
+#define SYNI2CSLAVE_EXTERN extern
+#else
+#define SYNI2CSLAVE_EXTERN
+#endif
+
+#include "Syn_I2C_defines.vrh"
+#include "Syn_I2C_printout.vrh"
+#include "Syn_I2C_data_generator.vrh"
+#include "Syn_I2C_ports.vri"
+#include "Syn_I2C_binds.vri"
+
+#define startbyte 00000001
+#include<vera_defines.vrh>
+
+SYNI2CSLAVE_EXTERN class Syn_I2C_Slave
+{
+
+  //These are global declarations
+#ifdef SYNI2CSLAVE_VR
+  local bit                                   master_error      = I2C_FALSE;
+  local bit                                   cbus_error_enable = I2C_TRUE;
+  local bit                                   start_error       = I2C_FALSE;
+  local bit                                   high              = 1'bz; 
+  local bit[5:0]                              tenbitslave       = 5'b1111_0;
+  local bit[5:0]                              mastercode        = 5'b0000_1; 
+  local event                                 rise,fall,start_detect,stop_detect;
+  local bit                                   start_detect_var = I2C_FALSE;
+  //RAM  local bit                                   stop_detect_var  = I2C_FALSE;  // prolly should be below to get to work
+  bit                                   stop_detect_var  = I2C_FALSE;
+#endif
+
+  bit                                         addr_abort_enable = I2C_FALSE;
+  bit[7:0]                                    directed_data;
+  integer                                     id;
+  bit                                         gen_call_enabled ;
+  bit[7:0]                                    cbus = 8'b1;
+  bit[9:0]                                    myaddr;
+  bit                                         directed ;
+  bit[7:0]                                    mem_rx_addr; 
+  bit[7:0]                                    mem_addr; 
+  bit                                         hs_slave;
+  bit[7:0]                                    data_tx;
+  bit                                         check_enable = I2C_FALSE;
+  bit                                         tenbit_tx_slave = I2C_FALSE;
+  bit                                         tenbit_tx_slave_ack = I2C_FALSE;
+  bit[7:0]                                    sampled_address;
+
+  bit                                         test_is_dyn_tar = 0; // Avoid combined in dyn tar test
+  bit                                         kill=0;
+  //For binding with the DUT
+  inoutport              hs_dutport = hsbind;
+  inoutport              dutport = ioport;            //virtual bind declaration
+
+  Printout               pr      = new;               //instance for printout class
+
+  Syn_I2C_Data_Generator gen     = new("slave");      //Instance of data generator class
+
+  //These are the tasks used for this module
+
+#ifdef SYNI2CSLAVE_VR
+  local task slave_send_txtenbit_ack( );
+  local task slave_send_ack( );                       //For acknowledgemnt from slave side
+  local task slave_send_data(bit[7:0] data );         //For sending the data from slave
+  local task slave_not_ack( );                        //For sending slave not acknowledgement
+  local task address_compare( );                      //For comparing the address and proceeding
+  local task byte_to_bit(bit[7:0] data);              //To conevrt byte to bit
+  local task seven_bit_respond(bit[7:0] address );    //To respond for seven bit addressing
+  local task cbus_start( );                           //To proceed for cbus addressing
+  local task ten_bit_respond(bit[7:0] address );      //to respond for tenbit addressing
+  local task gencall_start( );                        //To respond for general call addressing
+  local task start_byte_start( );                     //To respond for start byte addressing
+  local task slave_drive_sda(bit data_bit );          //To drive the bit to the line
+  local function byte bit_to_byte( );                 //To convert the bits to byte
+  local task not_ack( );                              //To give not acknowlegement
+  local task do_processing( );
+#endif
+  // Global tasks for slave class
+  
+  task slave_respond(string command);                 //For slave responding with command given
+  task poll_lines( );                                 //Poll the lines continously
+  task new();
+
+#ifdef SYNI2CSLAVE_VR
+  //Thesse are the functions used for this module
+  local function bit slave_sample_sda( );             //To sample the bit from the line
+  local function bit[7:0] slave_recv_data( );         //To receive the data from the line(through bit to byte)
+  local function bit slave_recv_ack( );               //To receive the acknowledgement from the line
+  local function bit read_write_detect(bit[7:0] address );
+#endif
+}
+
+#endif /* SYNI2CSLAVE_VRH */

@@ -1,0 +1,31 @@
+#pragma vip(defdedfb, 73e8e99b, 00000000, 000003c4, "Mar  4 2004", "13:48:20")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_AHBBUSSLV_VRH__
+#define __INC_AHBBUSSLV_VRH__
+#include "AhbBusSlvDrv.vrh"
+#ifndef AHBBUSSLV_VR
+#define AHBBUSSLV_EXTERN extern
+#else
+#define AHBBUSSLV_EXTERN
+#endif
+AHBBUSSLV_EXTERN class AhbBusSlv extends AhbBusSlvDrv
+{
+   public task new(
+      (integer object_id = -1),
+      string object_name,
+      integer bus_bit_width,
+      integer bus_lit_endian,
+      integer filehandle,
+      AhbBusSlv_bus_port slave_bus_port
+   );
+}
+#endif /* AHBBUSSLV_VRH */

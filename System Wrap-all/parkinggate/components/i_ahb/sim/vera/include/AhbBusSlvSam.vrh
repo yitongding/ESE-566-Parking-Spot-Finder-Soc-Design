@@ -1,0 +1,103 @@
+#pragma vip(8dfb8717, 5fed8e98, 00000000, 00000b16, "Mar  4 2004", "13:48:21")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBBUSSLVSAM_VRH
+#define AHBBUSSLVSAM_VRH
+#include "AmbaObject.vrh"
+#include "AhbBusSlv.ports.vri"
+#ifndef AHBBUSSLVSAM_VR
+#define AHBBUSSLVSAM_EXTERN extern
+#else
+#define AHBBUSSLVSAM_EXTERN
+#endif
+typedef class ahb_slv_i;
+typedef class ahb_slv_bus_fe;
+typedef class ahb_slv_bus_s;
+AHBBUSSLVSAM_EXTERN class AhbBusSlvSam extends AmbaObject
+{
+#ifdef AHBBUSSLVSAM_VR
+   local ahb_slv_bus_s               m_bus_s = new;
+   local integer                     m_event_nr = -1;
+#endif
+   protected AhbBusSlv_bus_port      m_port;
+   protected ahb_slv_i               m_iv = new;
+   protected ahb_slv_bus_fe          m_bus_fe = new;
+   protected integer                 m_multi_select;
+   protected integer                 m_or_hsel[16];
+   public task new(
+      (integer object_id = -1),
+      string object_name,
+      integer filehandle,
+      AhbBusSlv_bus_port slave_bus_port
+   );
+#ifdef AHBBUSSLVSAM_VR
+   local task sampler_daemon();
+   local task sampler_loop();
+   local task sample_all();
+   local task update_status();
+   local task reset_flags();
+#endif
+}
+AHBBUSSLVSAM_EXTERN class ahb_slv_i
+{
+   AhbAddrType haddr;
+   bit   [2:0] hburst;
+   bit   [3:0] hmaster;
+   bit         hmastlock;
+   bit   [3:0] hprot;
+   bit         hready;
+   bit         hsel;
+   bit   [2:0] hsize;
+   bit   [1:0] htrans;
+   AhbDataType hwdata;
+   bit         hwrite;
+   bit         hresetn;
+}
+AHBBUSSLVSAM_EXTERN class ahb_slv_bus_fe
+{
+   fevent reset = new("eReset");
+   fevent not_reset = new("eNotReset");
+   fevent idle = new("eIdle");
+   fevent busy = new("eBusy");
+   fevent read = new("eRead");
+   fevent write = new("eWrite");
+   fevent new_read = new("eNewRead");
+   fevent new_write = new("eNewWrite");
+   fevent illegal = new("eIllegal");
+   fevent clock = new("eClock");
+   fevent debug_x_detected = new("eXdetected");
+   fevent not_selected = new("eNotSelected");
+   fevent new_selected = new("eNewSelected");
+}
+#ifdef AHBBUSSLVSAM_VR
+enum ahb_slv_status = 
+   Reset,
+   NotReset,
+   Selected,
+   NewSelected,
+   NotSelected,
+   IdleAny,
+   ReadBusy,
+   ReadNewNseq,
+   ReadNseq,
+   ReadSeq,
+   WriteBusy,
+   WriteNewNseq,
+   WriteNseq,
+   WriteSeq;
+class ahb_slv_bus_s
+{
+   ahb_slv_status reset = Reset;
+   ahb_slv_status sel   = NotSelected;
+   ahb_slv_status req   = IdleAny;
+}
+#endif /* AHBBUSSLVSAM_VR */
+#endif /* AHBBUSSLVSAM_VRH */

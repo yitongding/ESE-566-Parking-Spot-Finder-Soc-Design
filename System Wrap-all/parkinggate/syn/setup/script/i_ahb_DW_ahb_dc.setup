@@ -1,0 +1,5 @@
+# dc_shell setup variables for i_ahb_DW_ahb
+set_app_var hdlin_vrlg_std 2001
+set_app_var suppress_errors {DDB-74 DDB-95 EQN-10 HDL-176 HDL-395 HDL-410 LINT-52 LINT-2 LINT-28 LINT-29 LINT-3 LINT-30 LINT-31 LINT-32 LINT-33 LINT-45 OPT-915 SR-9 SYNDB-26 TIM-103 TIM-134 UID-348 VO-2 VO-4 VER-61 VER-318 VER-314 UCN-4 UCN-1 OPT-800 OPT-801 UIO-78 WL-40 TIM-175 LINT-1 ATTR-1}
+set_app_var synlib_wait_for_design_license {DesignWare DC-Ultra-Opt DC-Ultra-Features}
+set_app_var template_parameter_style %d

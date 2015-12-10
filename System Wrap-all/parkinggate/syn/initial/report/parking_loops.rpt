@@ -1,0 +1,13 @@
+ 
+****************************************
+Report : check_loops
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:04 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+No loops.
+
+1

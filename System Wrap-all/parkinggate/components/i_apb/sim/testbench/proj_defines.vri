@@ -1,0 +1,26 @@
+#pragma vip(73c6e210, e4eca012, 00000000, 00000164, "May 25 2014", "00:14:30")
+
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/proj_defines.vri#4 $
+
+#define int integer
+#define UNKNOWN_INT -2147483647 - 1 
+#define _CD_
+#define _CI_
+#define _CW_
+#define _CE_
+#define _CF_
+#define _CN_

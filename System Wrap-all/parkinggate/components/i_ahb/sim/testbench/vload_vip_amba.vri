@@ -1,0 +1,39 @@
+#pragma vip(621fd327, 113a085f, 00000000, 0000079e, "Jun 16 2014", "16:49:10")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_ahb/amba_dev/sim/testbench/vload_vip_amba.vri#4 $
+
+#ifndef VLOAD_VIP_AMBA_VRI
+#define VLOAD_VIP_AMBA_VRI
+
+vera_attribute RTIME_LOAD_LIST_AppObject = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AppObject.vro";
+vera_attribute RTIME_LOAD_LIST_Date = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/Date.vro";
+vera_attribute RTIME_LOAD_LIST_Time = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/Time.vro";
+vera_attribute RTIME_LOAD_LIST_DateTime = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/DateTime.vro";
+vera_attribute RTIME_LOAD_LIST_Logger = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/Logger.vro";
+vera_attribute RTIME_LOAD_LIST_ParseDefines = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/ParseDefines.vro";
+vera_attribute RTIME_LOAD_LIST_AhbBusMst = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbBusMst.vro";
+vera_attribute RTIME_LOAD_LIST_AhbBusMstDrv = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbBusMstDrv.vro";
+vera_attribute RTIME_LOAD_LIST_AhbBusMstSam = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbBusMstSam.vro";
+vera_attribute RTIME_LOAD_LIST_AhbBusSlv = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbBusSlv.vro";
+vera_attribute RTIME_LOAD_LIST_AhbBusSlvDrv = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbBusSlvDrv.vro";
+vera_attribute RTIME_LOAD_LIST_AhbBusSlvSam = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbBusSlvSam.vro";
+vera_attribute RTIME_LOAD_LIST_AhbByteMem = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbByteMem.vro";
+vera_attribute RTIME_LOAD_LIST_AmbaLib = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AmbaLib.vro";
+vera_attribute RTIME_LOAD_LIST_AmbaObject = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AmbaObject.vro";
+vera_attribute RTIME_LOAD_LIST_AhbDecoderBfm = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbDecoderBfm.vro";
+vera_attribute RTIME_LOAD_LIST_AhbMemoryMap = "${VERA_VRO_CACHE}/${VERA_VMC}/DW_ahb/AhbMemoryMap.vro";
+
+#endif

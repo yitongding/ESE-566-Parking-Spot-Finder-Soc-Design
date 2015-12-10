@@ -1,0 +1,124 @@
+#pragma vip(f22e6246, b0646f99, 00000000, 00001bcd, "Mar  4 2004", "13:48:30")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+/* =========================================================================
+   This confidential and proprietary software may be used only
+   as authorized by a licencing agreement from Synopsys Inc.
+   In the event of publications, the following notice is applicable:
+   (C) COPYRIGHT 2000 SYNOPSYS INC.
+   ALL RIGHTS RESERVED
+   The entire notice above must be reproduced on all authorized copies.
+   -------------------------------------------------------------------------
+   File:        apb_mon_err_messages.vri
+   Author:      Mahesh Asolkar
+   Date:        17-AUG-2001
+   Version:     (see CVS Id and Log information)
+   -------------------------------------------------------------------------
+   Abstract:   
+   This file contains the defines for the messages used in the APB verification
+   monitors.
+   The Messages may refer to a specific requirement of the AMBA Specification.
+   Requirements are numbered, and detailed below:
+   The following numbering convention is used:								
+   <project>_<spec-title>_<spec-version>_<section>_<reference>								
+   So, for a reference in the OCB project in AMBA V2.0 specification,
+   section 5.4.2, an entry might be as follows:
+   ocb_amba_v2.0_5.4.2_1	: Only one select signal can be active during a transfer (Page 5-8)
+   ========================================================================= */
+/* -------------------------------------------------------------------------
+   Messages derived from sections in APB (AMBA 2.0) Specifications
+   ------------------------------------------------------------------------- */
+#define _APB_MULTI_SELECT_ERR_NO_          100
+#define _APB_MULTI_SELECT_ERR_             "Multiple select signals active during transfer (Page 5-8)"
+#define _APB_ILL_TR_SETUP_SETUP_ERR_NO_    110
+#define _APB_ILL_TR_SETUP_SETUP_ERR_       "Bus in SETUP state for more than one clock cycle (Page 5-4)"
+#define _APB_STUCK_SETUP_ERR_NO_           _APB_ILL_TR_SETUP_SETUP_ERR_NO_  
+#define _APB_STUCK_SETUP_ERR_              _APB_ILL_TR_SETUP_SETUP_ERR_  
+#define _APB_ILL_TR_ENABLE_ENABLE_ERR_NO_  120
+#define _APB_ILL_TR_ENABLE_ENABLE_ERR_     "Bus in ENABLE state for more than one clock cycle (Page 5-5)"
+#define _APB_STUCK_ENABLE_ERR_NO_          _APB_ILL_TR_ENABLE_ENABLE_ERR_NO_
+#define _APB_STUCK_ENABLE_ERR_             _APB_ILL_TR_ENABLE_ENABLE_ERR_
+#define _APB_ILL_TR_SETUP_IDLE_ERR_NO_     130
+#define _APB_ILL_TR_SETUP_IDLE_ERR_        "Illegal transition from SETUP state (Page 5-4)"
+#define _APB_ILL_FROM_SETUP_ERR_NO_        _APB_ILL_TR_SETUP_IDLE_ERR_NO_
+#define _APB_ILL_FROM_SETUP_ERR_           _APB_ILL_TR_SETUP_IDLE_ERR_
+#define _APB_ILL_TR_SETUP_DESELECT_ERR_NO_ _APB_ILL_TR_SETUP_IDLE_ERR_NO_
+#define _APB_ILL_TR_SETUP_DESELECT_ERR_    _APB_ILL_TR_SETUP_IDLE_ERR_
+/* -------------------------------------------------------------------------
+   Messages implied from APB (AMBA 2.0) Specifications
+   ------------------------------------------------------------------------- */
+#define _APB_ILL_TR_IDLE_ENABLE_ERR_NO_   200
+#define _APB_ILL_TR_IDLE_ENABLE_ERR_      "Illegal transition: Idle -> Enable"
+#define _APB_ILL_TR_DESEL_ENABLE_ERR_NO_  210
+#define _APB_ILL_TR_DESEL_ENABLE_ERR_     "Illegal transition: Idle -> Enable" /* The message here says Idle - enable
+                                                                               even though it is deselect - enable
+                                                                               transition because, APB specs do not
+                                                                               define a state where SEL = 0 and
+                                                                               enable = 1. APB is idle when SEL = 0
+                                                                            */
+#define _APB_BUS_ACT_NO_SEL_ERR_NO_       230
+#define _APB_BUS_ACT_NO_SEL_ERR_          "Bus activity with no slave selected"
+#define _APB_ABSENT_SLV_SELECT_ERR_NO_    240
+#define _APB_ABSENT_SLV_SELECT_ERR_       "Bridge selected slave that is not present"
+#define _APB_PSEL_CHG_DUR_XFER_ERR_NO_    250
+#define _APB_PSEL_CHG_DUR_XFER_ERR_       "PSEL changed in middle of a transfer"
+/* -------------------------------------------------------------------------
+   Messages for unknown/illegal values on ports
+   ------------------------------------------------------------------------- */
+#define _APB_UNKN_PWRITE_ERR_NO_          300
+#define _APB_UNKN_PWRITE_ERR_             "Unknown value on PWRITE"
+#define _APB_UNKN_PENABLE_ERR_NO_         310
+#define _APB_UNKN_PENABLE_ERR_            "Unknown value on PENABLE"
+#define _APB_UNKN_PSEL_ERR_NO_            320
+#define _APB_UNKN_PSEL_ERR_               "Unknown value on PSEL"
+#define _APB_UNKN_PRDATA_ERR_NO_          330
+#define _APB_UNKN_PRDATA_ERR_             "Unknown value on PRDATA"
+#define _APB_UNKN_PWDATA_ERR_NO_          340
+#define _APB_UNKN_PWDATA_ERR_             "Unknown value on PWDATA"
+#define _APB_UNKN_PRESETN_ERR_NO_         350
+#define _APB_UNKN_PRESETN_ERR_            "Unknown value on PRESETN"
+#define _APB_UNKN_PCLK_ERR_NO_            360
+#define _APB_UNKN_PCLK_ERR_               "Unknown value on PCLK"
+/* -------------------------------------------------------------------------
+   Messages implied from APB ACT Rules
+   ------------------------------------------------------------------------- */
+#define _APB_PWRITE_CHG_DUR_XFER_ERR_NO_  400
+#define _APB_PWRITE_CHG_DUR_XFER_ERR_     "PWRITE changed in middle of a transfer"
+#define _APB_PADDR_CHG_DUR_XFER_ERR_NO_   410
+#define _APB_PADDR_CHG_DUR_XFER_ERR_      "PADDR can change only in setup state of a transfer"
+#define _APB_PWDATA_CHG_DUR_XFER_ERR_NO_  420
+#define _APB_PWDATA_CHG_DUR_XFER_ERR_     "PWDATA can change only in setup state of a transfer"
+#define _APB_PRDATA_CHG_DUR_XFER_ERR_NO_  430
+#define _APB_PRDATA_CHG_DUR_XFER_ERR_     "PRDATA should change only when a peripheral is selected"
+/*
+class MonMsg {
+    integer no;
+    string str;
+    string sec;
+    task new (integer inNo, string inStr, string inSec) {
+        this.no = inNo;
+        this.str = inStr;
+        this.sec = inSec;
+    }
+}
+#define ADD(Nm, No,Str,Sec) \
+    MonMsg Nm = new (No, Str, Sec);
+class APBMonMsgs {
+ADD("ApbMultiSelectErr", "Only one select signal can be active during a transfer (Page 5-8)", "ocb_amba_v2_0_5_4_2_1")
+ADD("ApbUnknPwriteErr",  "Unknown value on PWRITE",                                           "none")
+}
+In the monitor class, include this file and...
+...
+APBMonMsgs msg = new();
+...
+sprintf(msg_str, msg.ApbMultiSelectErr.str);
+push_err(msg.ApbMultiSelectErr.no)
+*/

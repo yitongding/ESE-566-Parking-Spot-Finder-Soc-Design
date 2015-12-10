@@ -1,0 +1,9 @@
+runtest
+coercing
+WARNING - VERA MEMORY model
+ACC/CLI capabilities have been enabled
+Total warnings: 0
+Translating +nowarn
+Total errors/warnings found outside
+errors: 0, warnings:
+Vera Warning: Connecting output signal 

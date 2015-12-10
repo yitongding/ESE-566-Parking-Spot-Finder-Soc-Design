@@ -1,0 +1,73 @@
+#pragma vip(f251d7f6, 97271c54, 00000000, 000005ed, "Jun 16 2014", "19:42:02")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_test_generator.vrh#4 $
+
+
+
+#ifndef SYNI2CTESTGENERATOR_VRH
+#define SYNI2CTESTGENERATOR_VRH
+
+#ifndef SYNI2CTESTGENERATOR_VR
+#define SYNI2CTESTGENERATOR_EXTERN extern
+#else
+#define SYNI2CTESTGENERATOR_EXTERN
+#endif
+
+#include "Syn_I2C_command.vrh"
+#include "Syn_I2C_coverage.vrh"
+
+SYNI2CTESTGENERATOR_EXTERN class Syn_I2C_Test_Gen
+{
+ 
+  bit           repeated_start;
+  bit           multibyte_enable;
+  bit           hs_enable;
+  bit           dir_type_cmd;
+  bit           ser_type_cmd;
+  bit           rnd_type_cmd;
+  bit           directed_enable;
+  bit           directed ;
+  bit           clk_mode;
+  
+  integer       random_w;
+  integer       directed_w;
+  integer       total_bytes;
+  string        directed_cmd_master[];
+  string        directed_cmd_slave[];
+ 
+
+  inoutport                dutport     = ioport;        //  declaration of virtual port
+  
+  //Different instances of modules
+
+  Syn_I2C_Command    cmd       = new;
+  Syn_I2C_Coverage   cover     = new;
+
+  //Task used in this class
+  task setup_test_gen( );
+  task start_test_gen( );
+  task init_test_gen( );
+  task new();
+  task data_tx_checker( );
+  task data_rx_checker( );
+  // task data_rx_checker( );
+#ifdef SYNI2CTESTGENERATOR_VR
+  local task master_init( );
+  local task slave_init( );
+#endif
+
+}
+#endif /* SYNI2CTESTGENERATOR_VRH */

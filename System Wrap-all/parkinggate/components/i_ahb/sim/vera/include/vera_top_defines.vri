@@ -1,0 +1,105 @@
+#pragma vip(4519a210, 66cb6e58, 00000000, 00000d3f, "Mar  4 2004", "13:48:31")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+`ifdef __INC_VERA_TOP_DEFINES_VRI_
+`else
+`define __INC_VERA_TOP_DEFINES_VRI_
+`define SINGLE            3'b000
+`define INCR              3'b001
+`define WRAP4             3'b010
+`define INCR4             3'b011
+`define WRAP8             3'b100
+`define INCR8             3'b101
+`define WRAP16            3'b110
+`define INCR16            3'b111
+`define OKAY              2'b00
+`define ERROR             2'b01
+`define RETRY             2'b10
+`define SPLIT             2'b11
+`define REQ               1'b1
+`define NOREQ             1'b0
+`define LOCK              1'b1
+`define NOLOCK            1'b0
+`define LASTLOCK          1'bz
+`define PROT_0            4'b0000
+`define PROT_1            4'b0001
+`define PROT_2            4'b0010
+`define PROT_3            4'b0011
+`define PROT_4            4'b0100
+`define PROT_5            4'b0101
+`define PROT_6            4'b0110
+`define PROT_7            4'b0111
+`define PROT_8            4'b1000
+`define PROT_9            4'b1001
+`define PROT_10           4'b1010
+`define PROT_11           4'b1011
+`define PROT_12           4'b1100
+`define PROT_13           4'b1101
+`define PROT_14           4'b1110
+`define PROT_15           4'b1111
+`define BYTE              3'b000
+`define WORD16            3'b001
+`define WORD32            3'b010
+`define WORD64            3'b011
+`define WORD128           3'b100
+`define WORD256           3'b101
+`define WORD512           3'b110
+`define WORD1024          3'b111
+`define SIZE8             3'b000
+`define SIZE16            3'b001
+`define SIZE32            3'b010
+`define SIZE64            3'b011
+`define SIZE128           3'b100
+`define SIZE256           3'b101
+`define SIZE512           3'b110
+`define SIZE1024          3'b111
+`define IDLE              2'b00
+`define BUSY              2'b01
+`define NSEQ              2'b10
+`define SEQ               2'b11
+`define WRITE             1'b1
+`define READ              1'b0
+`define NOBUSY            0
+`define BUSY_0            0
+`define BUSY_1            1
+`define BUSY_2            2
+`define BUSY_3            3
+`define BUSY_4            4
+`define BUSY_5            5
+`define BUSY_6            6
+`define BUSY_7            7
+`define BUSY_8            8
+`define BUSY_9            9
+`define BUSY_10           10
+`define HADDR             0
+`define HBURST            1
+`define HBUSREQ           2
+`define HLOCK             3
+`define HPROT             4
+`define HSIZE             5
+`define HTRANS            6
+`define HWDATA            7
+`define HWRITE            8
+`define HGRANT            9
+`define HRDATA            10
+`define HREADY            11
+`define HRESET            12
+`define HRESP             13
+`define TRANS_ANY         0
+`define TRANS_IDLE        1
+`define TRANS_BUSY        2
+`define TRANS_READ        3
+`define TRANS_WRITE       4
+`define TRANS_NEW_READ    5
+`define TRANS_NEW_WRITE   6
+`define ALLONES_1024      {1024{1'b1}}
+`define ALLZEROS_1024     {1024{1'b0}}
+`endif

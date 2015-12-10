@@ -1,0 +1,10 @@
+****************************
+Report : setup
+Design : parking
+Version: J-2014.09-SP5
+****************************
+
+target_library  target_library
+link_library  link_library
+search_path  search_path
+

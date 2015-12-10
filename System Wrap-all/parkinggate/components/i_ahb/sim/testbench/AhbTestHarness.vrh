@@ -1,0 +1,150 @@
+#pragma vip(0f36de47, 1207aac6, 00000000, 0000139b, "Jun 16 2014", "16:48:54")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_ahb/amba_dev/sim/testbench/AhbTestHarness.vrh#3 $
+
+#ifndef AHBTESTHARNESS_VRH
+#define AHBTESTHARNESS_VRH
+
+#include "DutAhbConnector.if.vri"
+#include "DutAhbConnector.ports.vri"
+#include "AhbDecoderBfm.vrh"
+#include "AhbBusMst.vrh"
+#include "AhbBusSlv.vrh"
+#include "AhbMonitor.vri"
+#include "AhbMemoryMap.vrh"
+#include "ParseDefines.vrh"
+#include "proj_defines.vri"
+#include "AhbTestHarnessBind.vri"      /* void bindings */
+
+#define SC_SIGNAL_TB(port,PortSignal,HDLSignal,refClock) \
+  signal_connect(port.$/**/PortSignal,\
+                 psprintf("%s.%s", "test_DW_ahb", HDLSignal),\
+                 "dir=input  itype=PSAMPLE iskew=0  depth=1",\
+                 port.$/**/refClock)
+#define SC_SIGNAL(Instance,port,PortSignal,HDLSignal,refClock) \
+  signal_connect(port.$/**/PortSignal,\
+                 psprintf("%s.%s.%s", "test_DW_ahb", Instance, HDLSignal),\
+                 "dir=input  itype=PSAMPLE iskew=0  depth=1",\
+                 port.$/**/refClock)
+
+#define SC_SIGNAL_EMPTY(port,PortSignal,HDLSignal,refClock) \
+  signal_connect(port.$/**/PortSignal,\
+                 psprintf("%s.%s", "test_DW_ahb", HDLSignal),\
+                 "dir=input  itype=PSAMPLE iskew=0  depth=1",\
+                 port.$/**/refClock)
+
+#define SC_2DUT(port,PortSignal,HDLSignal,refClock) \
+  SC_SIGNAL("U_ahb",port,PortSignal,HDLSignal,refClock)
+
+#ifndef AHBTESTHARNESS_VR
+#define AHBTESTHARNESS_EXTERN extern
+#else
+#define AHBTESTHARNESS_EXTERN
+#endif
+#define TB_AHB_MOD_NAME "test_DW_ahb"
+#define DUT_AHB_INST_NAME "U_ahb"
+#define MAIN_STREAM 0  /* default stream ID */
+#define INTR_STREAM 1  /* interrupt stream ID */
+
+AHBTESTHARNESS_EXTERN class DutAhbConnector
+{
+   public DutAhbMstPort   dut_ahb_mst_port[16];
+   public DutAhbSlvPort   dut_ahb_slv_port[16];
+   public DutAhbBusPort   dut_ahb_bus_port;
+   public DutAhbBusPort   dut_ahb_bus_port_depth1;
+   public DutAhbAuxPort   dut_ahb_aux_port;
+   protected ParseDefines m_cc;
+
+#ifdef AHBTESTHARNESS_VR
+   local string           m_sc_tb_mod_name;
+   local string           m_sc_dut_inst_name;
+   local string           m_sc_vsh_inst_name;
+   local string           m_sc_if_clock_name;
+   local int              m_sc_oskew;
+   local int              m_sc_iskew;
+   local int              m_sc_depth;
+   local string           m_sc_path;
+   local string           m_sc_clock;
+   local string           m_sc_attr_c;
+   local string           m_sc_attr_i;
+   local string           m_sc_attr_o;
+   local string           m_sc_attr_io;
+   local string           m_sc_attr_i_depth1;
+   local string           m_sc_attr_o_depth1;
+   local string           m_sc_attr_io_depth1;
+#endif
+   public task new(ParseDefines cc, string tb_mod_name, string dut_inst_name, (bit mon_umask = 1'b1), (bit ahb_monitor = 1'b1));
+#ifdef AHBTESTHARNESS_VR
+   local task connect_dut_ahb_mst_port();
+   local task connect_dut_ahb_slv_port();
+   local task connect_dut_ahb_bus_port((bit mon_umask = 1'b1));
+   local task connect_dut_ahb_bus_port_depth1((bit mon_umask = 1'b1));
+   local task connect_dut_ahb_aux_port();
+#endif
+}
+AHBTESTHARNESS_EXTERN class DutAhbVipConnector extends DutAhbConnector
+{
+   public AhbBusMst_bus_port   ahb_mst_port[16];
+   public AhbBusSlv_bus_port   ahb_slv_port[16];
+   public AhbMonitorPort       ahb_mon_port;
+   public AhbDecoderBfmVirtualPort bfm_ahb_dec_port;
+   
+   public task new(ParseDefines cc, string tb_mod_name, string dut_inst_name, (bit mon_umask = 1'b1), (bit ahb_monitor = 1'b1));
+#ifdef AHBTESTHARNESS_VR
+   local task connect_ahb_mst_port();
+   local task connect_ahb_slv_port();
+   local task connect_ahb_mon_port();
+   local task connect_ahb_mon_port_depth1();
+   local task connect_ahb_xdcdr_port();
+#endif
+}
+AHBTESTHARNESS_EXTERN class AhbTestHarness extends DutAhbVipConnector
+{ 
+   public AhbBusMst     ahb_mst[16];
+   public AhbBusSlv     ahb_slv[16];
+   public AhbDecoderBfm ahb_dec;
+   public AhbMonitor    ahb_mon;
+   public ParseDefines  ahb_cc;
+   public bit[15:0]     ahb_mst_umask;
+   public bit[15:0]     ahb_slv_umask;
+   public bit           ahb_mon_umask;
+   public bit           has_ahb_monitor;
+   public bit[15:0]     ahb_mst_present;
+   public bit[15:0]     ahb_slv_present;
+   public bit[15:0]     ahb_slv_split_capable;
+   public Logger        log;
+   public AhbMemoryMap  ahb_mm_array[2]; 
+   protected int        m_fh;
+   public task new(
+      var ParseDefines cc,
+      (string tb_mod_name = TB_AHB_MOD_NAME),
+      (string dut_inst_name = DUT_AHB_INST_NAME),
+      (bit[15:0] mst_umask = 16'hffff),
+      (bit[15:0] slv_umask = 16'hffff),
+      (bit mon_umask = 1'b1),
+      (bit ahb_monitor = 1'b1)
+   );
+
+#ifdef AHBTESTHARNESS_VR
+   local function string get_main();
+   local task build_ahb_mst();
+   local task build_ahb_slv();
+   local task build_ahb_mon();
+   local task build_ahb_xdcdr();
+
+#endif
+}
+#endif /* AHBTESTHARNESS_VRH */

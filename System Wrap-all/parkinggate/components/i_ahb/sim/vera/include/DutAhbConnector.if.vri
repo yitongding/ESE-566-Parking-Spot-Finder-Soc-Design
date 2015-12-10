@@ -1,0 +1,18 @@
+#pragma vip(d466bc3c, 363e0c09, 00000000, 0000025e, "Mar  4 2004", "13:48:26")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef DUTAHBCONNECTOR_IF_VRI
+#define DUTAHBCONNECTOR_IF_VRI
+interface dut_ahb_if
+{
+   input hclk CLOCK;
+}
+#endif

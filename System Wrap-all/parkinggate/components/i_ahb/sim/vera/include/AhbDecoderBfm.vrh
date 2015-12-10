@@ -1,0 +1,103 @@
+#pragma vip(e748bbf7, c03fe4dc, 00000000, 0000100c, "Mar  4 2004", "13:48:23")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBDECODERBFM_VRH
+#define AHBDECODERBFM_VRH
+#include "AhbDecoderBfm.ports.vri"
+#include "ParseDefines.vrh"
+#include "AhbMemoryMap.vrh"
+#include <vera_defines.vrh>
+
+#ifndef AHBDECODERBFM_VR
+#define AHBDECODERBFM_EXTERN extern
+#else
+#define AHBDECODERBFM_EXTERN
+#endif
+
+AHBDECODERBFM_EXTERN class AhbDecIO {
+  bit        remap_n;
+  AhbAddrType addr;
+//#  bit [31:0] addr;
+  bit [15:0] sel;
+  bit        sel_none;
+}
+
+enum AHBDECODERBFMMemoryMap = 
+  R1_B_SA_0,  R1_B_EA_0,
+  R1_B_SA_1,  R1_B_EA_1,  R2_B_SA_1,  R2_B_EA_1, R3_B_SA_1, R3_B_EA_1, R4_B_SA_1, R4_B_EA_1, R5_B_SA_1, R5_B_EA_1, R6_B_SA_1, R6_B_EA_1, R7_B_SA_1, R7_B_EA_1, R8_B_SA_1, R8_B_EA_1,
+  R1_B_SA_2,  R1_B_EA_2,  R2_B_SA_2,  R2_B_EA_2,
+  R1_B_SA_3,  R1_B_EA_3,  R2_B_SA_3,  R2_B_EA_3,
+  R1_B_SA_4,  R1_B_EA_4,  R2_B_SA_4,  R2_B_EA_4,
+  R1_B_SA_5,  R1_B_EA_5,  R2_B_SA_5,  R2_B_EA_5,
+  R1_B_SA_6,  R1_B_EA_6,  R2_B_SA_6,  R2_B_EA_6,
+  R1_B_SA_7,  R1_B_EA_7,  R2_B_SA_7,  R2_B_EA_7,
+  R1_B_SA_8,  R1_B_EA_8,  R2_B_SA_8,  R2_B_EA_8,
+  R1_B_SA_9,  R1_B_EA_9,  R2_B_SA_9,  R2_B_EA_9,
+  R1_B_SA_10, R1_B_EA_10, R2_B_SA_10, R2_B_EA_10,
+  R1_B_SA_11, R1_B_EA_11, R2_B_SA_11, R2_B_EA_11,
+  R1_B_SA_12, R1_B_EA_12, R2_B_SA_12, R2_B_EA_12,
+  R1_B_SA_13, R1_B_EA_13, R2_B_SA_13, R2_B_EA_13,
+  R1_B_SA_14, R1_B_EA_14, R2_B_SA_14, R2_B_EA_14,
+  R1_B_SA_15, R1_B_EA_15, R2_B_SA_15, R2_B_EA_15,
+  R1_N_SA_0,  R1_N_EA_0,
+  R1_N_SA_1,  R1_N_EA_1,  R2_N_SA_1,  R2_N_EA_1, R3_N_SA_1, R3_N_EA_1, R4_N_SA_1, R4_N_EA_1, R5_N_SA_1, R5_N_EA_1, R6_N_SA_1, R6_N_EA_1, R7_N_SA_1, R7_N_EA_1, R8_N_SA_1, R8_N_EA_1,
+  R1_N_SA_2,  R1_N_EA_2,  R2_N_SA_2,  R2_N_EA_2,
+  R1_N_SA_3,  R1_N_EA_3,  R2_N_SA_3,  R2_N_EA_3,
+  R1_N_SA_4,  R1_N_EA_4,  R2_N_SA_4,  R2_N_EA_4,
+  R1_N_SA_5,  R1_N_EA_5,  R2_N_SA_5,  R2_N_EA_5,
+  R1_N_SA_6,  R1_N_EA_6,  R2_N_SA_6,  R2_N_EA_6,
+  R1_N_SA_7,  R1_N_EA_7,  R2_N_SA_7,  R2_N_EA_7,
+  R1_N_SA_8,  R1_N_EA_8,  R2_N_SA_8,  R2_N_EA_8,
+  R1_N_SA_9,  R1_N_EA_9,  R2_N_SA_9,  R2_N_EA_9,
+  R1_N_SA_10, R1_N_EA_10, R2_N_SA_10, R2_N_EA_10,
+  R1_N_SA_11, R1_N_EA_11, R2_N_SA_11, R2_N_EA_11,
+  R1_N_SA_12, R1_N_EA_12, R2_N_SA_12, R2_N_EA_12,
+  R1_N_SA_13, R1_N_EA_13, R2_N_SA_13, R2_N_EA_13,
+  R1_N_SA_14, R1_N_EA_14, R2_N_SA_14, R2_N_EA_14,
+  R1_N_SA_15, R1_N_EA_15, R2_N_SA_15, R2_N_EA_15;
+
+AHBDECODERBFM_EXTERN class AhbDecoderBfm {
+
+   ParseDefines m_decoder_cc;
+
+#ifdef AHBDECODERBFM_VR
+   local integer                    m_visible[74];
+   local AhbAddrType                m_start_addr[74];
+   local AhbAddrType                m_end_addr[74];
+   local AhbDecoderBfmVirtualPort   m_port;
+   local AhbDecIO                   m_h;
+   local integer                    m_num_iahb_slaves;
+   local integer                    m_remap;
+   local integer                    m_ahb_has_arbif;
+   local integer                    m_low_index;
+   local integer                    m_high_index;
+   
+   local task async_sample_drive();
+   local task async_remap_n();
+   local task comb_all();
+   local task comb_decoder(
+                        AhbAddrType /*bit [31:0]*/    start_addr[74],
+                        AhbAddrType /*bit [31:0]*/    end_addr[74],
+                        AhbAddrType /*bit [31:0]*/    addr,
+			integer       visible[74],
+                        var bit[15:0] sel,
+                        var bit       sel_none
+                       );
+   local task read_map(
+                        var AhbAddrType start_addr[74],
+                        var AhbAddrType end_addr[74],
+			var integer    visible[74]
+                       );
+#endif
+   public task new(string name, var AhbDecoderBfmVirtualPort vport, var ParseDefines decoder_cc);
+}
+
+#endif

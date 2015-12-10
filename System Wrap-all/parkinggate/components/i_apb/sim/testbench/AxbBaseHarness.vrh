@@ -1,0 +1,148 @@
+#pragma vip(5a2cf4b4, 1983332b, 00000000, 00000a57, "May 25 2014", "00:14:01")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/AxbBaseHarness.vrh#6 $
+
+#ifndef AXBBASEHARNESS_VRH
+#define AXBBASEHARNESS_VRH
+#include <vera_defines.vrh>
+#ifndef AXBBASEHARNESS_VR
+#define AXBBASEHARNESS_EXTERN extern
+#else
+#define AXBBASEHARNESS_EXTERN
+#endif
+#ifndef AXBVIRTUALPORT_VRI
+port AxbVirtualPort
+{
+   haddr;
+   hburst;
+   hbusreq;
+   hclk;
+   hgrant;
+   hlock;
+   hmaster;
+   hmaster_data;
+   hmastlock;
+   hprot;
+   hrdata;
+   hready;
+   hready_resp;
+   hresetn;
+   hresp;
+   hsel;
+
+   hsel_s0;
+   hsel_s1;
+   hsel_s2;
+   hsel_s3;
+   hsel_s4;
+   hsel_s5;
+   hsel_s6;
+   hsel_s7;
+   hsel_s8;
+   hsel_s9;
+   hsel_s10;
+   hsel_s11;
+   hsel_s12;
+   hsel_s13;
+   hsel_s14;
+   hsel_s15;
+
+   hsize;
+   hsplit;
+   htrans;
+   hwdata;
+   hwrite;
+   paddr;
+   pclk;
+   penable;
+   prdata;
+   pready;
+   pslverr;
+   presetn;
+   psel;
+   pwdata;
+   pwrite;
+}
+#endif
+enum AxbSignal_Id = 
+   Haddr,
+   Hburst,
+   Hbusreq,
+   Hclk,
+   Hgrant,
+   Hlock,
+   Hmaster,
+   Hmaster_data,
+   Hmastlock,
+   Hprot,
+   Hrdata,
+   Hready,
+   Hready_resp,
+   Hresetn,
+   Hresp,
+   Hsel,
+   Hsize,
+   Hsplit,
+   Htrans,
+   Hwdata,
+   Hwrite,
+   Paddr,
+   Pclk,
+   Penable,
+   Prdata,
+   Pready,
+   Pslverr,
+   Presetn,
+   Psel,
+   Pwdata,
+   Pwrite;
+enum AxbSignalGroup_Id = 
+   Mst,
+   Slv,
+   Bus,
+   MstLayer,
+   SlvLayer,
+   BusLayer,
+   BusHierar,
+   Explicit,
+   tbSlv;
+AXBBASEHARNESS_EXTERN class AxbBaseHarness
+{
+   public integer m_cfg_debug_mode;
+   public integer m_cfg_call_signal_connect;
+   public string  m_cfg_sc_attr_io;
+   public string  m_cfg_sc_clock_ahb;
+   public string  m_cfg_sc_clock_apb;
+   public task              new();
+   public task              xconnect(var AxbVirtualPort vport, AxbSignalGroup_Id group, string inst_format, AxbSignal_Id signal, integer port_index, integer layer_index);
+   public function string   get_main();
+#ifdef AXBBASEHARNESS_VR
+   local  task              gen_connection(AxbVirtualPort vport, AxbSignal_Id signal, string hdl_path);
+   local  function string   gen_string(AxbSignal_Id signal);
+#endif
+}
+
+// Temporary interface to connect APB4 signals in AhbApbTestHarness.vr.
+// These signals must be connected properly when supporting APB4.
+//  For now using this temporary interface.
+//  Please remove this workaround and connect APB4 signals properly
+//  when supporting APB4 interface
+interface mon_user_apb4_if {
+  input  pstrb PSAMPLE #-1 hdl_node "test_DW_apb.pstrb_apb_mon";
+  input  pprot PSAMPLE #-1 hdl_node "test_DW_apb.pprot_apb_mon";
+}
+
+#endif

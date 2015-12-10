@@ -1,0 +1,17 @@
+// component: /i_apb
+// library: work
+// files:
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_amba_constants.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_cc_constants.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_constants.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_dcdr.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_slcr.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_ahbsif.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_prdmux.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_psel.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_deslcr.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_mux.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb_rdretime.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb.v
+/home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/components/i_apb/src/DW_apb-undef.v
+

@@ -1,0 +1,50 @@
+#pragma vip(2ab6a050, 2f3b5c96, 00000000, 00000552, "Jun 16 2014", "19:41:21")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/ParseDefines.vrh#4 $
+
+#ifndef PARSEDEFINES_VRH
+#define PARSEDEFINES_VRH
+#include <vera_defines.vrh>
+#ifndef PARSEDEFINES_VR
+#define PARSEDEFINES_EXTERN extern
+#else
+#define PARSEDEFINES_EXTERN
+#endif
+#define CC_MAX_HEX_BIT 64
+#define CC_DO_NOT_EXIT 0
+#define CC_EXIT_ON_ERROR 1
+#define CC_VAL_TYPE bit[CC_MAX_HEX_BIT-1:0]
+PARSEDEFINES_EXTERN class ParseDefines
+{
+#ifdef PARSEDEFINES_VR
+   local integer       m_exit_mode = CC_EXIT_ON_ERROR;
+   local integer       m_success;
+   local string        m_stable[];
+   local CC_VAL_TYPE   m_vtable[];
+#endif
+   public task                    new((integer exit_mode = CC_EXIT_ON_ERROR));
+   public task                    set_exit_mode(integer exit_mode);
+   public function CC_VAL_TYPE    get_val(string str, (integer index = -1));
+   public function integer        get_result();
+   public task                    parse_file(string filename);
+   public task                    dump_table();
+   public task                    flush_table();
+#ifdef PARSEDEFINES_VR
+   local task                     parse_line(string line);
+   local function integer         my_hash(string str);
+#endif
+}
+#endif /* PARSEDEFINES_VRH */

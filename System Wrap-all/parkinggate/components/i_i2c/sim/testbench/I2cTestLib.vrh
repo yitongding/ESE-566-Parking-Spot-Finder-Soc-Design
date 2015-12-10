@@ -1,0 +1,618 @@
+#pragma vip(401b55d4, 97ba34a3, 00000000, 00008ee8, "Jun 16 2014", "19:41:12")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/I2cTestLib.vrh#25 $
+// Abstract: Header file for the APB I2C peripheral test library
+#ifndef I2CTESTLIB_VRH
+#define I2CTESTLIB_VRH
+
+#include "AhbApbI2cTestHarness.vrh"
+
+
+#ifndef I2CTESTLIB_VR
+#define I2CTESTLIB_EXTERN extern
+#else
+#define I2CTESTLIB_EXTERN
+#endif
+
+extern hdl_task make_pclk_ic_clk_equal (reg equal);
+extern hdl_task setup_scl_skew (reg direction, reg enable, integer delay);
+
+
+I2CTESTLIB_EXTERN class I2cTestLib
+{
+  protected rand integer             loop_value;
+  protected  string                       msg;
+  protected  AhbApbI2cTestHarness         m_th;
+  protected  integer                      m_ndf;
+  protected  integer                      m_min_fifo_depth;
+  protected  integer                      m_ahb_dbw;
+  protected  integer                      m_apb_dbw;
+  protected  integer                      m_addr_inc;
+  protected  integer                      m_size;
+  protected  integer                      m_xfer_attr;
+  protected  integer                      m_handle;
+  protected  integer                      m_res_handle;
+  protected  integer                      m_status;
+  protected  Logger                       m_log;
+  protected  integer                      m_verbose_debug;
+  protected  AhbAddrType                  m_addr;
+  protected  AhbDataType                  m_hwdata;
+  protected  AhbDataType                  m_hrdata;
+  protected  integer                      m_hresp;
+  protected  integer                      m_SlaveIndex;
+  protected  integer                      m_number_of_address_locations;
+
+  protected bit                          cc_IC_AVOID_RX_FIFO_FLUSH_ON_TX_ABRT;
+  protected bit                          cc_IC_RX_FULL_GEN_NACK;
+  protected bit                          cc_IC_SLV_DATA_NACK_ONLY;
+
+  protected bit                          cc_IC_STOP_DET_IF_MASTER_ACTIVE;
+  protected bit                          cc_I2C_DYNAMIC_TAR_UPDATE;
+  protected bit [1:0]                    cc_ENCODED_APB_DATA_WIDTH;
+  protected bit [7:0]                    cc_ENCODED_IC_TX_BUFFER_DEPTH;
+  protected bit [7:0]                    cc_ENCODED_IC_RX_BUFFER_DEPTH;
+  protected bit [7:0]                    cc_APB_DATA_WIDTH;
+  protected bit [31:0]                   cc_IC_CLOCK_PERIOD;
+  protected bit                          cc_IC_SPEED_SIM;
+  protected bit                          cc_IC_ADD_ENCODED_PARAMS;
+  protected bit [7:0]                    cc_IC_HCNT_LO_LIMIT;
+  protected bit [7:0]                    cc_IC_LCNT_LO_LIMIT;
+  protected bit                          cc_IC_RESTART_EN;
+  protected bit                          cc_IC_SLAVE_DISABLE;
+  protected bit                          cc_IC_10BITADDR_MASTER;
+  protected bit                          cc_IC_SLV_RESTART_DET_EN;
+  protected bit                          cc_IC_DEFAULT_ACK_GENERAL_CALL;
+  protected bit                          cc_IC_10BITADDR_SLAVE;
+  protected bit                          cc_IC_HAS_DMA;
+  protected bit [1:0]                    cc_IC_MAX_SPEED_MODE;
+  protected bit [9:0]                    cc_IC_DEFAULT_SLAVE_ADDR;
+  protected bit [9:0]                    cc_IC_DEFAULT_TAR_SLAVE_ADDR;
+  protected bit                          cc_IC_MASTER_MODE;
+  protected bit [2:0]                    cc_IC_HS_MASTER_CODE;
+  protected bit [15:0]                   cc_IC_SS_SCL_HIGH_COUNT;
+  protected bit [15:0]                   cc_IC_SS_SCL_LOW_COUNT;
+  protected bit [15:0]                   cc_IC_FS_SCL_HIGH_COUNT;
+  protected bit [15:0]                   cc_IC_FS_SCL_LOW_COUNT;
+  protected bit [15:0]                   cc_IC_HS_SCL_HIGH_COUNT;
+  protected bit [15:0]                   cc_IC_HS_SCL_LOW_COUNT;
+  protected bit [7:0]                    cc_IC_RX_TL;
+  protected bit [7:0]                    cc_IC_TX_TL;
+  protected bit [7:0]                    cc_IC_DEFAULT_SDA_SETUP;
+  protected bit [23:0]                   cc_IC_DEFAULT_SDA_HOLD;
+  protected bit [8:0]                    cc_IC_RX_BUFFER_DEPTH;
+  protected bit [8:0]                    cc_IC_TX_BUFFER_DEPTH;
+  protected bit                          cc_IC_INTR_POL;
+  protected bit                          cc_IC_INTR_IO;
+  protected bit [31:0]                   cc_IC_CAP_LOADING;
+  protected bit                          cc_IC_HC_COUNT_VALUES;
+  protected bit                          cc_IC_USE_COUNTS;
+  protected bit [31:0]                   cc_IC_VERSION_ID;
+  protected bit [1:0]                    cc_IC_CLK_TYPE;
+  protected bit                          cc_IC_EMPTYFIFO_HOLD_MASTER_EN;
+  protected bit                          cc_IC_RX_FULL_HLD_BUS_EN;
+  protected bit                          ic_tar_12_reset_val;
+  protected bit [9:0]                    m_slave_addr;
+  protected bit [9:0]                    m_slave_addr_sar;
+  protected bit [9:0]                    m_slave_addr_tar;
+  protected bit [15:0]                   m_tar_address;
+  protected integer                      m_run_testcase;
+  protected integer                      iDebugLevel;
+  protected integer                      ADJ_LCNT_SS;
+  protected integer                      ADJ_HCNT_SS;
+  protected integer                      ADJ_LCNT_FS;
+  protected integer                      ADJ_HCNT_FS;
+  protected integer                      ADJ_LCNT_HS;
+  protected integer                      ADJ_HCNT_HS;
+  protected bit [7:0]                    tx_data_ch1[];
+  protected bit [7:0]                    tx_data_ch2[];
+  protected bit                          cc_IC_DEFAULT_FS_SPKLEN;
+  protected bit                          cc_IC_FIRST_DATA_BYTE_STATUS;
+  protected bit                          cc_IC_TX_CMD_BLOCK;
+  protected bit                          cc_IC_TX_CMD_BLOCK_DEFAULT;
+  protected bit                          cc_IC_STAT_FOR_CLK_STRETCH; //STAR 9000663363
+
+  protected string                       reg_nm[];
+  protected string                       DIR_TYPE[];
+  protected string                       ADD_TYPE[];
+  protected bit [31:0]                   reg_rstv[];
+
+  protected integer                      ic_clk_period;
+  protected integer                      pclk_period;
+  protected integer                      m_over_ride;
+  protected integer                      dut=0;
+  protected integer                      alt_dut=1;
+  protected integer                      m_dma_enable;
+  protected integer                      m_return_early;
+  protected integer                      m_fifo_exceed;
+  protected bit [15:0]                   m_tx_data;
+  protected bit [15:0]                   m_rx_data;
+  protected integer                      lc;
+
+  protected bit [31:0]						 m_ic_con;
+  protected bit [9:0]						 m_slave_addr_2nd_bfm;
+  protected integer semaphore_id; // To Avoid multiple access of the R/W task
+  protected integer reg_access_sema_id; // To Avoid multiple access of the R/W task
+
+  protected integer bfm_setting_for_first_time ;
+  protected bit [9:0] slave2_tar;
+  protected bit [9:0] slave2_sar;
+
+#ifdef I2CTESTLIB_VR
+//# Constraints
+  constraint select_loop_value {
+    loop_value dist { 0:5 := 1, 6:7 := 99 };
+  }
+#endif /* I2CTESTLIB_VR */
+
+
+  public task new(AhbApbI2cTestHarness th);
+
+  //# The following will be used in the test.vr which is external
+  public task test_i2c();
+  public task test_i2c_extd();
+  public task execute_interrupt_checkers();
+  public task test_i2c_fifo_levels();
+  public task test_dma_xfers((integer dut_as_source=1));
+  public task test_dma_xfers_abort((integer dut_as_source=1));
+  public task check_coreKit_version(bit [31:0] version);
+
+  protected  task                 compare_dma_data(var integer match_fails);
+  protected  task                 run_serial_xfer((integer bfm_check=1), (integer test_check=1), (integer log=1), (bit [31:0] wdata=32'bx));
+  protected  task                 run_mst_xfer(integer bfm_check, integer test_check, integer log, (bit [31:0] data=32'bx));
+  protected  task                 enable_i2c((integer apb_slave_index = 0));
+  protected  task                 disable_i2c((integer apb_slave_index = 0));
+  protected  task                 check_enable_i2c((integer apb_slave_index = 0));
+  protected  task                 check_disable_i2c((integer apb_slave_index = 0));
+  protected  task                 test_fifo_levels();
+  protected  task                 test_threshold();
+  protected  task                 test_master_speed();
+  protected  task                 check_addr_uniqueness();
+  protected  task                 test_dual_dut();
+  protected  task                 test_dual_dut_1();
+  protected  task                 test_dual_dut_2();
+  protected  task                 test_dual_dut_3();
+  protected  task                 write_icon(bit[10:0] data, (integer apb_slave_index = 0));
+  protected  task                 write_sar_address(bit[9:0] sar_address, (integer apb_slave_index = 0));
+  protected  task                 write_tar_address(bit[9:0] tar_address, (integer apb_slave_index = 0));
+
+  protected task                 write_ss_cnt(bit[15:0] low, bit[15:0] high, (integer apb_slave_index = 0));
+  protected task                 write_datacmd(bit[10:0] data, (integer apb_slave_index = 0));
+  // Write the data command with semaphore to avoid parallel writes at same time
+  protected task                 write_datacmd_sema(bit[10:0] data, (integer apb_slave_index = 0));
+  protected task                 poll_rd_req_intr((integer apb_slave_index = 0));
+  protected task                 poll_dual_rd_req_intr();
+  protected task                 poll_dual_rxfne_status();
+  protected task                 clear_interrupts((integer apb_slave_index = 0));
+  protected task                 poll_rxfne_status((integer apb_slave_index = 0));
+  protected task                 poll_txfe_status((integer apb_slave_index = 0));
+  protected task                 poll_txfnf_status((integer apb_slave_index = 0));
+  protected task                 poll_txfne_status((integer apb_slave_index = 0));
+  protected task                 poll_end_activity((integer apb_slave_index = 0));
+  protected task                 poll_for_activity((integer apb_slave_index = 0));
+  protected task                 check_rxfifo_level(bit[8:0] data, (integer apb_slave_index = 0));
+  protected task                 check_datacmd(bit[15:0] data, (integer apb_slave_index = 0), (bit first_byte_status = 0));
+  protected task                 check_datacmd_sema(bit[15:0] data, (integer apb_slave_index = 0),(bit first_byte_status = 0));
+  // Terminate when semahore token is avaliable
+
+  protected task                 mstcmd(string cmd);
+  protected task                 get_cnt_adj((integer apb_slave_index = 0));
+  protected task                 write_reg(string reg_name, bit [31:0] wdata, (integer apb_slave_index = 0), (bit auto_ld_ictar_b12 = 1'b1));
+  // write the registers with semaphore to avoid parallel write at same time
+  protected task                 write_reg_sema(string reg_name, bit [31:0] wdata, (integer apb_slave_index = 0), (bit auto_ld_ictar_b12 = 1'b1));
+  protected task                 full_write_reg(string reg_name,bit [31:0] wdata, (integer apb_slave_index = 0));
+  protected task                 check_reg(string reg_name, bit [31:0] exp_data, (integer apb_slave_index = 0), (integer nonzero_data = 1), (bit auto_ld_ictar_b12_exp = 1'b1));
+  protected task                 ack_hold(integer hold_num);
+  protected task                 write_sda(bit [7:0] data,
+                                       (string next_byte = "WRITE"));
+  protected task                 write_sda_cor(bit [7:0] data,
+                                       (string next_byte = "WRITE"));
+  protected task                 check_sda(bit [7:0] exp_data,
+                                       string ack,
+                                       (string next_byte = "READ"));
+  protected task                 force_start_mid();
+  protected task                 force_stop_mid();
+  protected task                 check_hold_sign(string sign_nm,
+                                             bit exp_val,
+                                             integer n_clk,
+                                             string clk_nm);
+  protected task                 gen_one_scl(integer low_count,
+                                         integer high_count);
+  protected task                 gen_scl(integer byte_num,
+                                     integer po_num,
+                                     integer ne_num,
+                                     integer low_num,
+                                     string  speed_type,
+                                     (string dir_type = "Transmitter"),
+                                     (string add_type = "7bit-Address"),
+                                     (string syn_test = "NO_SYN_TEST"));
+  protected task                 call_dut_i2c(string     speed_type,
+                                          string     dir_type,
+                                          string     add_type,
+                                          bit [11:0] ic_tar_val,
+                                          bit [2:0]  ic_hs_mar_val,
+                                          bit [7:0]  data_tx,
+                                          integer    n,
+                                          string     ack_type_1,
+                                          string     ack_type_2, (integer apb_slave_index = 0));
+  protected task                 call_my_i2c(string    speed_type,
+                                         string    dir_type,
+                                         string    add_type,
+                                         bit [9:0] ic_sar_val,
+                                         bit [2:0] ic_hs_mar_val,
+                                         bit [7:0] data_tx,
+                                         string    ack_type,
+                                         (string   arb_type = "NO_ARBITRATION"), (integer apb_slave_index = 0));
+  protected task                 check_start();
+
+  protected task                 gen_start(string speed_type);
+  protected task                 gen_stop(string speed_type);
+  protected task                 wait_rx_full((integer apb_slave_index = 0), (bit [7:0] rx_tl_val = 1'b0));
+  protected task                 set_i2c(string     speed_type,
+                                     string     add_type,
+                                     bit [11:0] ic_tar_val,
+                                     bit [9:0]  ic_sar_val,
+                                     bit [2:0]  ic_hs_mar_val,
+                                     (integer master = 0),
+                                     (integer apb_slave_index = 0));
+  protected function bit [31:0]  calc_exp_data(string reg_name,
+                                           bit [31:0] wdata);
+  protected function bit [31:0]  read_reg(string reg_name, (integer apb_slave_index = 0),(bit first_byte_status = 0));
+  // Read register with semaphore to avoid parallel reads at same time
+  protected function bit [31:0]  read_reg_sema(string reg_name, (integer apb_slave_index = 0),(bit first_byte_status = 0));
+  protected function integer     get_reg_width(string reg_name);
+  protected function AhbAddrType get_offset(string reg_name, (integer apb_slave_index = 0));
+  protected function integer     get_scl_cnt(string speed_type,
+                                         string cnt_type);
+
+  // RAM
+  protected task                 print_time();
+  protected function integer     current_time();
+  protected task                 init_i2c_bfm();
+  protected task                 set_master_bfm_target_addr (bit [9:0] addr, (integer apb_master_index = 0));
+  protected task                 set_master_bfm_dir         (string dir, (integer apb_master_index = 0));
+  protected task                 init_slave_num_xfer_bytes (integer num_xfer_bytes, var bit[7:0] data[], (string
+  init_data = "data_no"), (integer apb_slave_index = 0) );
+  protected task                 set_slave_bfm_addr (bit [9:0] addr, (integer apb_slave_index = 0));
+  protected task                 set_slave_bfm_initial_return_data (bit [7:0] data, (integer apb_slave_index = 0));
+  protected task                 set_master_bfm_initial_transmit_data (bit [7:0] data, (integer apb_master_index = 0));
+  protected task                 monitor_debug_pins (string m_or_s, string speed ,string addr_size, string r_w);
+  protected task                 check_slave_msg (string speed ,string addr_size, string r_w);
+  protected task                 check_slave_msg_wr (string speed ,string addr_size, string r_w);
+  protected task                 check_master_msg (string speed ,string addr_size, string r_w);
+  protected task                 check_master_msg_hs (string speed ,string addr_size, string r_w);
+  protected task                 check_master_msg_10 (string speed ,string addr_size, string r_w);
+  protected task                 real_reset_i2c();
+  protected task                 reset_i2c();
+  protected task                 generate_random_address(bit is_7bit_addr);
+  protected task                 check_intr_output (string set_clear, string intr_name, string err_msg,
+                                                (string cmp = "compare"),(integer apb_slave_index = 0));
+  protected task                 check_a_set_intr (string clear_method, string intr_name,
+                                               (string err_msg = "task check_a_set_intr"),(integer apb_slave_index = 0));
+  protected task                 check_a_not_set_intr (string clear_method, string intr_name,
+                                               (string err_msg = "task check_a_not_set_intr"),(integer apb_slave_index = 0));
+  protected task                 clear_intr (string intr_name, string s_or_c,(integer apb_slave_index = 0));
+  protected function bit         intr_port_val (string intr_name);
+  protected function bit [15:0]  intr_bit_pos (string intr_name);
+  protected function bit [9:0]   calculate_slave_addr (bit [9:0] cc_addr, integer is_7bit_addr, (integer run_mix_7_and_10 = 0));
+  protected function bit [9:0]   calculate_slave_addr_sar (bit [9:0] cc_addr, bit [9:0] slave_addr, integer is_7bit_addr, (integer run_mix_7_and_10 = 0));
+  protected function bit [9:0]   calculate_slave_addr_tar (bit [9:0] cc_addr, bit [9:0] slave_addr, bit [9:0] tar_addr, integer is_7bit_addr, (integer run_mix_7_and_10 = 0));
+
+  protected function bit [7:0]   master_bfm_mem (bit [31:0] loc, (integer apb_slave_index = 0));
+  protected function bit [31:0]  master_bfm_mem_loc ((integer apb_slave_index = 0));
+  protected task                 poll_intr (string intr_name, (string s_or_c = "set"), (string type_o = "reg"), (integer apb_slave_index = 0));
+  protected task                 bfm_clear ();
+  protected task                 set_hcnt_lcnt (integer hval, integer lval, (integer apb_slave_index = 0));
+  protected task                 set_max_bfm_master_speed ();
+  protected task                 force_start(string speed_type);
+  protected task                 check_stop();
+  protected task                 check_ack();
+  protected task                 gen_1_scl(string speed_type);
+  protected task                 cause_arb_sda(bit [7:0] arb_bit);
+  protected task                 check_tx_abrt_source(string tx_abrt_source
+                                        ,(integer apb_slave_index = 0));
+  protected task                 cause_bit_wait(bit [7:0] exp_data,
+                                       string ack,
+                                       (string next_byte = "READ"));
+  protected task                 cause_byte_wait(bit [7:0] exp_data,
+                                       string ack,
+                                       (string next_byte = "READ"));
+  protected task                 read_tx_abrt_source();
+  protected task                 read_and_check_vid();
+  protected task                 common_cfg_reg_setup((integer apb_slave_index = 0));
+
+
+  protected task                 dynamically_wr_tar(bit [31:0] tar_addr, (integer apb_slave_index = 0));
+  protected task                 check_sda_ack(bit [7:0] exp_data, string ack, (string search_st_addr = ""), (integer apb_slave_index = 0));
+  protected task                 set_min_spklen();
+  protected function bit [9:0]   calculate_slave_addr_2nd_sar (bit [9:0] cc_addr, bit [9:0] slave_addr, bit [9:0] tar_addr, bit [9:0] sar_addr, integer is_7bit_addr, (integer run_mix_7_and_10 = 0));
+
+#ifdef I2CTESTLIB_VR
+  local task                 test_amba_apb_compliance();
+  local task                 test_reg_reset();                               //No-1.1
+  local task                 test_read_only_reg();                           //No-1.2
+  local task                 test_write_reg();                               //No-1.3
+  local task                 test_full_write_reg();                          //No-1.3a
+  local task                 test_write_reg_i2c_able();                      //No-1.4
+  local task                 test_write_cnt_reg();                           //No-1.5
+  local task                 test_tx_rx_threshold(string reg_name);          //No-1.6&1.7
+  local task                 test_ic_con_speed_zero();                       //No-1.8&1.9
+  local task                 test_hs_mar_code();                             //No-2.3
+  local task                 test_tx_abrt_intr_sign(string speed_type);      //No-2.11
+  local task                 test_start_byte(string speed_type);             //No-2.13
+
+  local task                 test_9000085866();
+  local task                 test_9000084952();
+  local task                 test_9000082775();
+  local task                 test_9000093545();
+  local task                 test_9000108249();
+  local task                 test_9000105354();
+  local task                 test_9000108249_old();
+  local task                 test_9000076182(string speed_type);
+  local task                 test_9000076630(string speed_type);
+  local task                 test_9000076847(string speed_type);
+  local task                 test_9000075092(string speed_type);
+  local task                 test_9000076846(string speed_type); // No-2.21-1
+  local task                 test_9000093547(string speed_type);
+  local task                 test_9000366029();
+
+  local task                 test_master_arbitration(string speed_type, (integer apb_slave_index = 0));     //No-2.21
+
+  local task                 test_ic_en_sign(string speed_type);             //No-2.22
+  local task                 test_ic_current_src_en_sign();                  //No-2.25
+  local task                 test_master_combined_format(string speed_type); //No-2.26
+  local task                 test_clk_syn(string speed_type);                //No-2.28
+  local task                 test_slave_combined_format(string speed_type, (integer apb_slave_index = 0));  //No-3.15
+
+  local task                 test_master_all();
+  local task                 test_master_1();
+  local task                 test_master_2();
+  local task                 test_master_4();
+  local task                 test_master_5();
+
+
+
+  local task                 test_master_6 ();
+  local task                 test_master_7 ();
+  local task                 test_master_8 ();
+  local task                 test_master_9 ();
+  local task                 test_master_10 ();
+  local task                 test_master_12 ();
+  local task                 test_master_112 ();
+  local task                 test_master_14 ();
+  local task                 test_master_15 ();
+  local task                 test_master_16 ();
+  local task                 test_master_116 ();
+  local task                 test_master_17 ();
+  local task                 test_master_117 ();
+  local task                 test_master_19 ();
+  local task                 test_master_27 ();
+  local task                 test_master_127 ();
+  local task                 test_master_200 ();
+  local task                 test_master_201 ();
+  local task                 test_master_202 ();
+  local task                 test_master_203 ();
+  local task                 test_master_204 ();
+  local task                 test_master_205 ();
+  local task                 test_master_29 ();
+  local task                 test_slave_all ();
+  local task                 test_slave_1 ();
+  local task                 test_slave_2 ();
+  local task                 test_slave_112 ();
+  local task                 test_slave_3 ();
+  local task                 test_slave_113 ();
+  local task                 test_slave_4 ();
+  local task                 test_slave_114 ();
+  local task                 test_slave_5 ();
+  local task                 test_slave_105 ();
+  local task                 test_slave_6 ();
+  local task                 test_slave_7 ();
+  local task                 test_slave_117 ();
+  local task                 test_slave_8 ();
+  local task                 test_slave_118 ();
+  local task                 test_slave_200 ();
+  local task                 test_slave_201 ();
+  local task                 test_slave_202 ();
+  local task                 test_slave_203 ();
+  local task                 test_slave_9 ();
+  local task                 test_slave_10 ();
+  local task                 test_slave_11 ();
+  local task                 test_slave_13 ();
+  local task                 test_intr_all ();
+  local task                 test_intr_1 ();
+  local task                 test_intr_2 ();
+  local task                 test_intr_3 ();
+  local task                 test_intr_4();
+  local task                 test_intr_5();
+  local task                 test_intr_6();
+  local task                 test_intr_6_before_bfm();
+  local task                 test_intr_8();
+  local task                 test_intr_9();
+  local task                 test_intr_10();
+  local task                 test_intr_11();
+  local task                 test_intr_111();
+  local task                 test_intr_12();
+  local task                 test_master_23 ();
+  local task                 test_slave_14 ();
+  local task                 test_master_99 ();
+  local task                 test_slave_99 ();
+  local task                 test_reg_99 ();
+
+
+  //Code coverage enhancments tests
+  local task                 test_master_100 ();
+  local task                 test_master_1100 ();
+  local task                 test_master_101 ();
+  local task                 test_master_102 ();
+  local task                 test_master_103 ();
+  local task                 test_master_104 ();
+  local task                 test_master_105 ();
+  local task                 test_master_106 ();
+  local task                 test_master_107 ();
+  local task                 test_master_108 ();
+  local task                 test_master_109 ();
+  local task                 test_master_110 ();
+  local task                 test_master_111 ();
+  local task                 test_slave_100();
+  local task                 test_slave_101();
+  local task                 test_slave_102();
+  local task                 test_master_two_mst_two_slv_1();
+
+  local task                 test_slave_sw_nack_en();
+  local task                 test_rx_full_nack();
+
+  // test hold time task
+  local task                 test_hold_time();
+
+  // test spike supression task
+  local task                 test_spike_supression();
+
+  // tests for star - 9000481699
+  // Read data received without stop when tx fifo was empty
+  local task  test_tx_emptyfifo_hold_wr();
+  local task  test_tx_emptyfifo_hold_rd();
+  local task  test_tx_emptyfifo_hold_wr_wr();
+  local task  test_tx_emptyfifo_hold_wr_rd();
+  local task  test_tx_emptyfifo_hold_rd_wr();
+  local task  test_tx_emptyfifo_hold_rd_rd();
+  local task  test_empty_fifo_hold_rd_dly_rd_9000481699(bit stop_after_hold,bit stop_before_hold);
+  local task  test_empty_fifo_hold_rd_dly_wr_9000481699(bit stop_after_hold,bit stop_before_hold);
+
+
+ //test for checking user ABORT condition
+ local task test_tx_abort_wr_user(int gen_stop);  
+ local task test_tx_abort_rd_user(int gen_stop);  
+ // Test for star fix : 9000571686
+ local task test_tx_user_abort_rd_recovery(int addr_7_10, int test_option,int abort_in_ack);
+
+ // Test for the 9000554877 : Only generate STOP DET interrupt when acting as the addressed slave
+ local task test_stop_det_if_addressed_tx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_stop_det_if_addressed_rx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_stop_det_if_addressed_with_restart_tx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_stop_det_if_addressed_with_restart_rx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_stop_det_if_addressed_combined_wr_rd(bit [1:0] speed);
+
+ //Test for the 9000553915 : Recieve SDA hold implementation
+ local task test_sda_rx_hold_write(bit is_7bit_addr, bit [1:0] speed);
+ local task test_sda_rx_hold_read(bit is_7bit_addr, bit [1:0] speed);
+
+ 
+ //Test for the 9000557262 : Only generate RESTART DET interrupt when acting as the addressed slave
+ local task test_restart_det_if_addressed_tx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_restart_det_if_addressed_rx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_restart_det_if_addressed_combined_wr_rd(bit [1:0] speed);
+ local task test_restart_det_if_addressed_with_restart_tx(bit is_7bit_addr, bit [1:0] speed);
+ local task test_restart_det_if_addressed_with_restart_rx(bit is_7bit_addr, bit [1:0] speed);
+
+// Test for Tx Empty Intr gen 
+ 
+  public task init_config(bit[1:0] speed, bit addr_mode,bit[2:0] hs_mar_val);
+
+  public task test_tx_empty(bit mst_tx_mode, bit [2:0] hold_restart_stop,bit [1:0] thr_mode,bit addr_mode, bit[1:0] speed,bit [1:0] dual_mode);
+  public task gen_cmds_tx_empty(bit tx_mode,bit [2:0] scenario_mode,integer cmd_count,bit [1:0] dual_mode,var bit[15:0] ic_data_cmd[],var bit [7:0] ic_data[]);
+  public task monitor_sda(integer start_index,integer xact_size, integer track_cnt,bit mst_tx_mode,var event cmd_event ,var integer xact_cnt, bit[15:0] ic_data_cmd[],bit[7:0] ic_data[],bit dual_mode,bit[1:0] speed,bit addr_mode) ;
+  public task track_tx_empty_intr(integer ref_cnt,var event thr_event,bit dut_or_alt_dut,var bit tx_shift_done); 
+  public task load_all_rx_byte(int dut_or_alt_dut,int start_index,int end_index, var bit [7:0] rx_data_array[],var event load_rx_event);
+  public task monitor_tx_empty(bit dut_or_alt_dut,integer th_value,var integer monitor_intr,var bit shift_begin);
+
+  public task test_rx_overflow(bit mst_rx_mode, bit[2:0] hold_stop_cmd, int abort_en, bit addr_mode, bit [1:0] speed ,bit tx_rx_dual_cmd );
+  public task load_rx_byte(int dut_or_alt_dut,int start_index,int end_index, var bit [7:0] rx_data_array[],var event load_rx_event);
+  public task track_cmds(integer xact_size, bit mst_rx_mode,var bit [15:0] ic_data_cmd[],var bit[7:0] rx_data[],var event rx_overflow_event,bit dual_mode,integer over_flow_value,bit hold_mode,bit addr_mode);
+  public task load_cmd(integer start_idx,integer ic_data_cmd_size ,integer dut_or_alt_dut,bit[2:0] hold_stop_cmd,var bit [15:0] ic_data_cmd[]);
+  public task load_ic_data_cmd(var integer cmd_index,int end_index,integer dut_or_alt_dut,var bit [15:0] ic_data_cmd[]);
+  public task gen_ic_data_cmds(bit rx_mode,bit [2:0] hold_stop_cmd,integer rx_overflow_value,int extra_cmds,var bit [15:0] ic_data_cmd[],var bit [7:0] rx_data[],bit dual_mode);
+  public task wait_for_txflr(integer value,integer dut_or_dut);
+   public task test_dynamic_tar_update(bit[3:0] test_scenario, bit [1:0] speed);
+  public task  do_rw_xact(bit slave_is_bfm, bit[31:0] num_bytes, bit [31:0] rd_data_offset, var bit [7:0] rd_xact[], var bit [7:0] wr_xact[], bit cmd , bit [1:0] rst_stop , var event done_event  );
+
+  //Test for FM+
+  public task test_i2c_fmplusspeed(bit is_7bit_addr, bit[1:0] option);
+
+  // Test for the HS mode setup timing check
+  public task test_i2c_timing(bit is_7bit_addr, bit [1:0] options, bit [1:0] speed);
+
+  public task test_multimaster(bit [1:0] speed);
+  public task test_abort_max_count_wr(bit is_7bit_addr,bit [1:0] speed);
+  public task test_first_data_byte(bit is_7bit_addr, bit[1:0] options, bit [1:0] speed);
+  public task test_p_det_if_mst_active(bit is_7bit_addr,bit[1:0] options,bit[1:0] options_p,bit [1:0] speed);
+  public task test_p_det_if_mst_active_nack(bit is_7bit_addr,bit[1:0] options,bit[1:0] options_p,bit [1:0] speed,bit data_phase, bit add_phase);
+  public task                 gen_scl_secondary_master (integer byte_num,
+                                     integer po_num,
+                                     integer ne_num,
+                                     integer low_num,
+                                     string  speed_type,
+                                     (string dir_type = "Transmitter"),
+                                     (string add_type = "7bit-Address"),
+                                     (string syn_test = "NO_SYN_TEST"),
+                                     (bit [11:0] ic_tar_val= 11'b0 ));
+  public task test_p_det_mst_active_arb_lost(bit [1:0] speed,bit add_phase,bit data_phase);
+  public task set_i2c_stop(string     speed_type,
+                         string     add_type,
+                         bit [11:0] ic_tar_val,
+                         bit [9:0]  ic_sar_val,
+                         bit [2:0]  ic_hs_mar_val,
+                         (integer master = 1),
+                         (integer apb_slave_index = 0));
+  public task gen_sda(bit [7:0] data, string     speed_type,
+                              string     dir_type,
+                              string     add_type,
+                              bit [11:0] ic_tar_val,
+                              bit [2:0]  ic_hs_mar_val,
+                              bit [7:0]  data_tx,
+                              integer    n,
+                              string     ack_type_1,
+                              string     ack_type_2,(string   next_byte = "WRITE"),bit add_phase,bit data_phase);
+  public task                 gen_dut_transfer_stop(string     speed_type,
+                                        string     dir_type,
+                                        string     add_type,
+                                        bit [11:0] ic_tar_val,
+                                        bit [2:0]  ic_hs_mar_val,
+                                        bit [7:0]  data_tx,
+                                        integer    n,
+                                        string     ack_type_1,
+                                        string     ack_type_2, (integer apb_slave_index = 0), bit add_phase);
+  public task                 write_sda_stop(bit [7:0] data,
+                                       (string next_byte = "WRITE"));
+
+  public task                 check_sda_stop(bit [7:0] exp_data,
+                                       string ack,
+                                       (string next_byte = "READ"));
+  local task                 gen_dut_transfer(string     speed_type,
+                                        string     dir_type,
+                                        string     add_type,
+                                        bit [11:0] ic_tar_val,
+                                        bit [2:0]  ic_hs_mar_val,
+                                        bit [7:0]  data_tx,
+                                        integer    n,
+                                        string     ack_type_1,
+                                        string     ack_type_2, (integer apb_slave_index = 0));
+                                        
+  public task test_abort_count_rand(bit is_7bit_addr, bit[1:0] options, bit [1:0] speed);
+  public task test_tx_block_rand(bit is_7bit_addr, bit[1:0] options, bit [1:0] speed);
+  public task test_rx_flush_with_slvrd_abort(bit is_7bit_addr, bit[1:0] options, bit [1:0] speed);
+  public task test_rx_flush_with_user_abort(bit is_7bit_addr, bit[1:0] options, bit [1:0] speed);
+
+  //Tests for STAR 9000663363
+  local task test_master_tx_empty_slave_rx_overflow_stall(bit addr_mode, bit [1:0] speed, (integer write_limit = 0), (integer read_limit = 0), (bit rx_hold_en = 1));
+  local task test_master_rx_overflow_slave_tx_empty_stall(bit addr_mode, bit [1:0] speed, (integer write_limit = 0), (integer read_limit = 0), (bit rx_hold_en = 1));
+  local task basic_config(bit[1:0] speed, bit addr_mode,bit[2:0] hs_mar_val, bit rx_hold_en);
+  local task check_master_hold_status(bit rx_hold_en);
+  local task check_slave_hold_status();
+
+#endif /* I2CTESTLIB_VR */
+
+} // class
+
+#endif /* I2CTESTLIB_VRH */

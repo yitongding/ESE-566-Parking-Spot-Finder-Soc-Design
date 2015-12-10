@@ -1,0 +1,112 @@
+#pragma vip(8b93a39e, 16ef6355, 00000000, 00000a27, "May 25 2014", "00:13:45")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/AhbMstCmd.vrh#4 $
+// Abstract: Class to issue commands to the VMT AHB Master BFM
+
+#ifndef AHBMSTCMD_VRH
+#define AHBMSTCMD_VRH
+
+#include <vera_defines.vrh>
+#include "Reporter.vrh"
+#include "AhbMaster.vri"
+#include "proj_defines.vri"
+#include "amba_defines.vri"
+
+#ifndef AHBMSTCMD_VR
+#define AHBMSTCMD_EXTERN extern
+#else
+#define AHBMSTCMD_EXTERN
+#endif
+
+AHBMSTCMD_EXTERN class AhbMstCmd
+{
+   
+#ifdef AHBMSTCMD_VR
+
+  local AhbMaster                    m_ahb_mst;    // ahb master bfm handle
+  local Reporter                     m_log;        // report logger
+  
+  local AhbAddrType                  m_addr;       // ahb address
+  local AhbDataType                  m_hwdata;     // ahb write data
+  local AhbDataType                  m_hrdata;     // ahb read data
+  
+  local integer                      m_hresp;      // ahb response
+  local integer                      m_apb_dbw;    // apb data bus width
+  local integer                      m_size;       // ahb transfer size
+  local integer                      m_xfer_attr;  // ahb transfer type
+  local integer                      m_handle;     // ahb buffer handle
+  local integer                      m_res_handle; // ahb read result buffer handle
+  local integer                      m_status;
+
+  local string                       msg;          // used for reporting
+
+#endif /* AHBMSTCMD_VR */
+
+  //-: ------------------------------------
+  //-: Public Methods
+  //-: ------------------------------------
+
+  //-: new constructor
+  public task new (
+    
+    AhbMaster ahb_mst,
+    integer   apb_dbw
+  );
+
+  //-: AHB Master WRITE command
+  public task write (
+    
+    AhbAddrType   addr,
+    AhbDataType   hwdata,
+    (integer      block=0)
+  );
+
+  //-: AHB Master READ command
+  public task read (
+
+    AhbAddrType     addr,
+    var integer     handle,
+    (integer        block=0)
+  );
+
+  //-: AHB Master GET READ DATA command
+  public task get_read_data (
+
+    integer         handle,
+    var AhbDataType hrdata
+  );
+
+  //-: AHB Master IDLE command
+  public task idle ();
+
+  //-: AHB Master DELETE HANDLE command
+  public task delete_handle ();
+
+  //-: AHB Master Blocking command
+  public task always_blk (integer val);
+  
+#ifdef AHBMSTCMD_VR
+
+  //-: ------------------------------------
+  //-: Local Methods
+  //-: ------------------------------------
+  local task configure();
+
+#endif /* AHBMSTCMD_VR */
+
+}
+
+#endif /* AHBMSTCMD_VRH */

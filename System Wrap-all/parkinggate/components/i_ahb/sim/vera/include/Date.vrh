@@ -1,0 +1,34 @@
+#pragma vip(f16972df, 054c63df, 00000004, 00000492, "Mar  4 2004", "13:48:25")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_DATE_VRH__
+#define __INC_DATE_VRH__
+extern class Date { 
+    task new (integer d = 0, integer m = 0, integer y = 0);
+    function integer julday ();
+    task juldayi (integer j);
+    function string Dtoa ();
+    task incD ();
+}
+#ifdef __INC_DATE_LOCAL__
+class Date {
+    local integer m_year, m_month, m_day;
+    local string m_string;
+    local static integer month_days[13];
+    local task gen_string();
+    public task new(integer d=0, integer m=0, integer y=0);
+    public function integer julday();               
+    public task juldayi(integer j);                 
+    public function string Dtoa();                  
+    public task incD();
+}
+#endif
+#endif

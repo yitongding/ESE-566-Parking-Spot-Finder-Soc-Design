@@ -1,0 +1,155 @@
+#pragma vip(cb5dcb75, be6197b1, 00000000, 00001acc, "Jun 16 2014", "19:41:49")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_master.vrh#4 $
+
+#ifndef SYNI2CMASTER_VRH
+#define SYNI2CMASTER_VRH
+
+#ifndef SYNI2CMASTER_VR
+#define SYNI2CMASTER_EXTERN extern
+#else
+#define SYNI2CMASTER_EXTERN
+#endif  
+
+#include "Syn_I2C_data_generator.vrh"
+#include "Syn_I2C_printout.vrh"
+#include "Syn_I2C_ports.vri"
+#include "Syn_I2C_binds.vri"
+
+SYNI2CMASTER_EXTERN class Syn_I2C_Master
+   {
+        bit[9:0]                myaddr;    
+#ifdef SYNI2CMASTER_VR
+        local bit               high = 1'bz;  // for high impedance state
+#endif
+        rand integer            number_of_bytes;     
+        rand integer            num_of_times;   
+
+         //Global declaration variables
+      
+        string             cmd;
+        integer            id;
+        integer            command_no;
+        
+        bit[7:0]           directed_data;
+        bit                arbiter = I2C_FALSE;
+        bit                sda_o;            // buffer for sda line 
+        bit[7:0]           cbus;      
+        bit                directed_enable;
+        bit                repeated_start_enable;
+        bit                multibyte_enable;                                
+        bit                hspeed_mode;
+        bit tenbit_tx_slave;  // RAM added for combined
+        bit tenbit_tx_slave_ack;  // RAM added for combined
+	bit                clk_mode = 0;
+        // RAM added for combined
+        bit                serialtype_commands;
+        bit                directedtype_commands;
+        bit                randomtype_commands;
+        bit                check_enable = I2C_FALSE;
+        integer            command_array[];
+        bit[7:0]           master_code;
+        bit[7:0]           directed_addr1;
+        bit[7:0]           directed_addr2;
+        bit[7:0]           rx_mem_addr = 30;
+        bit[7:0]           mem_addr = 0;
+        bit[7:0]           data_tx;
+        integer master_tx_7bit_w       = 0;          
+        integer master_rx_7bit_w       = 0;       
+        integer master_tx_10bit_w      = 0;    
+        integer master_rx_10bit_w      = 0;       
+        integer hw_generalcall_w       = 0;         
+        integer sw_rst_generalcall_w   = 0;       
+        integer sw_generalcall_w       = 0;      
+        integer generalcall_tx_10bit_w = 0;        
+        integer generalcall_rx_10bit_w = 0;    
+        integer start_byte_w           = 0;      
+        integer data_error_w           = 0;        
+        integer Invalid_gencall_w      = 0;
+        integer start_stop_error_w     = 0;
+        integer cbus_w                 = 0;
+       
+        
+        Syn_I2C_Data_Generator   gen         = new("master");           // instance of data generator class with object name gen
+        
+        Printout                 pr          = new;           // instance of printout class with object name pr
+        inoutport                dutport     = ioport;
+        inoutport                hs_dutport  = hsbind;
+        inoutport                dutport1    = fsbind;
+#ifdef SYNI2CMASTER_VR
+        constraint num_of_bytes
+        {
+          number_of_bytes in {4:6};
+        }       
+        
+        constraint no_of_times
+        {
+          num_of_times in {2:3};
+        }       
+#endif
+        task command_executer(string cmd);              // to execute command given by upper layer
+        task new( );                                    // constructor for master class
+        
+        // local task declaration
+        
+#ifdef SYNI2CMASTER_VR
+        local task start();                             // generates start 
+        local task stop_tx();                           // generates stop
+        
+        local task change_mode( );                      // change speed mode from fast to high speed
+        local task send_ack();                          // sends ack to slave
+        
+        local task not_ack( );                          // sends nack to slave
+        local task inject_error_data(byte data);        // injects error 
+        
+        local task master_tx_7bit( );                   // Task that responds for tx 7bit      
+        local task master_rx_7bit( );                   // Task that initiates rx 7bit            
+        local task master_tx_10bit( );                  // Task that initiates tx 10 bit      
+        local task master_rx_10bit( );                  // Task that initiates rx 10 bit      
+        local task hw_generalcall( );                   // Task that initiates hw generalcall
+        local task sw_rst_generalcall( );               // Task that initiates sw rst generalcall
+        local task sw_generalcall( );                   // Task that initiates sw generalcall
+        local task start_byte( );                       // Task that makes the start condition
+        local task start_stop_error( );                 // to inject start stop error
+        local task data_error( );                       // to inject data error
+        local task invalid_generalcall( );              // to do invalid generalcall addressing
+        local task cbus_start();                        // to do cbus addressing
+        local task i2c_master_tx(string bitsmode);      // to initiate write operation
+        local task i2c_master_rx(string bitsmode);      // to initiate read operation
+        local task repeated_start();                    // to initaite repeated start
+        local task stop_transaction();                  // to do stop condition
+        local task generalcall_tx_10bit();              // to proceed for generalcall tx 10bit
+        local task generalcall_rx_10bit();              // to initaie generalcall rx 10bit       
+        local task check_start( );
+        local task stop_detect( );
+        local task repeated_detect( );
+        
+        // functions declaration
+        
+        local function bit    master_sample_sda();         // samples sda line
+        local function byte   bit_to_byte();               // converts bit to byte
+        local function bit    recv_ack();                  // receives ack
+        local function byte   recv_data();                 // receives data byte   
+        local function string get_command( );              // it takes the command given by user
+        local function bit    recv_not_ack( );             // receives nack
+        local function bit master_drive_sda (bit data_bit );    // drives data on sda line
+        local function bit send_addr(byte addr);                // sends address
+        local function bit send_data(byte data);                // sends data 
+        local function bit byte_to_bit(byte send_data);         // converts byte to bit
+#endif
+}  // end of class
+
+#endif /* SYNI2CMASTER_VRH */

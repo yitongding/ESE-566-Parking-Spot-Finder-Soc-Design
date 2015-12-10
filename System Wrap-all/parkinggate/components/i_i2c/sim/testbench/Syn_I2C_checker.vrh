@@ -1,0 +1,87 @@
+#pragma vip(77fdfa03, 2ff3c9c2, 00000000, 00000b9d, "Jun 16 2014", "19:41:25")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_checker.vrh#4 $
+
+
+#ifndef SYNI2CCHECKER_VRH
+#define SYNI2CCHECKER_VRH
+
+#ifndef SYNI2CCHECKER_VR
+#define SYNI2CCHECKER_EXTERN extern
+#else
+#define SYNI2CCHECKER_EXTERN
+#endif
+
+#include <vera_defines.vrh>
+#include "Syn_I2C_printout.vrh"
+#include "Syn_I2C_ports.vri"
+#include "Syn_I2C_binds.vri"
+   
+SYNI2CCHECKER_EXTERN class Syn_I2C_Protocol_Checker
+{
+#ifdef SYNI2CCHECKER_VR
+  local event           rise,fall;
+  local event           start_detect,stop_detect;
+  local bit             stop_detect_var,start_detect_var;
+  local bit             high;
+  local bit[7:0]        general_call;
+  local bit[7:0]        startbyte_val;
+  local bit[6:0]        reserved_med;
+  local bit[4:0]        hspeed;
+  local bit[4:0]        reserved_high;
+  local bit[4:0]        tenbit;
+  local bit[7:0]        soft_reset_write;
+  local bit[7:0]        soft_write ;
+  local bit[7:0]        zero ;
+  local bit             skip;
+  local bit             first_start_detect;
+#endif
+  bit [7:0]             addr;
+  bit                   data_tx_ack;
+  bit                   data_rx_ack;
+  bit                   hsmode;
+  bit                   master_enable;
+  bit                   slave_enable;
+  bit                   mast_tx_check_enable = I2C_FALSE;
+  bit                   slave_tx_check_enable  = I2C_FALSE;
+  integer               num_of_bytes = 0;
+  bit[7:0]              rec_data;
+  Printout              pr   = new;
+  inoutport             Dutport;
+ 
+  task protocol_monitor( );                                   //Initiates the protocol monitoring
+  task poll_lines( );                                         //Poll the ines continously
+  task new();
+  
+#ifdef SYNI2CCHECKER_VR
+  local task check_lines( );                                  //Checks the lines and processes
+  local task sevenbitcheck(bit read );                        //Checks for seven bit adddressing
+  local task tenbit_check(bit[7:0] temp_addr);                //Checks for 10bit addressing check
+  local task master_code_check( );                            //Checks for mastercode checking
+  local task generalcall_check( );                            //Checks for generalcall addresing
+  local task startbyte_check( );                              //Checks for startbyte mode
+  local task cbus_check( );                                   //Checks for cbus mode violation
+  
+  //These are the functions used in this module
+  
+  local function bit ack_check( );                            //Acknowledgemnet checking
+  local function bit sample_sda();                            //Sampling SDA line
+  local function bit[7:0] bit_to_byte( );                     //Coverts Bits to Byte
+  local function bit[7:0] sample_data_check( );               //Samples the data
+#endif
+}
+
+#endif /* SYNI2CCHECKER_VRH */

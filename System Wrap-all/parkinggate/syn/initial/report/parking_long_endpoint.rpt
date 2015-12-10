@@ -1,0 +1,2755 @@
+RPT_INFO:Input Ports  
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Master
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)       0.07       1.27 f
+  ex_i_ahb_AHB_Master_haddr[16] (net)     1     0.00     1.27 f
+  U5170/Z2 (B2I)                           0.97       2.24 f
+  n5011 (net)                    3         0.00       2.24 f
+  U5182/Z (ND2P)                           1.00       3.24 r
+  n5199 (net)                    3         0.00       3.24 r
+  U5181/Z (IVAP)                           0.17       3.41 f
+  n4969 (net)                    1         0.00       3.41 f
+  U5189/Z (ND2)                            0.64       4.05 r
+  n5267 (net)                    1         0.00       4.05 r
+  U4948/Z (AO6)                            0.43       4.49 f
+  n5266 (net)                    1         0.00       4.49 f
+  U5966/Z (NR2P)                           1.20       5.69 r
+  ex_i_ahb_AHB_Slave_hsel (net)     2      0.00       5.69 r
+  ex_i_ahb_AHB_Slave_hsel (out)            0.00       5.69 r
+  data arrival time                                   5.69
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)                      0.07       1.27 f
+  ex_i_ahb_AHB_Master_haddr[16] (net)           1         0.00       1.27 f
+  U5170/Z1 (B2I)                                          1.00       2.27 r
+  n5010 (net)                                   2         0.00       2.27 r
+  U5050/Z (NR2)                                           0.31       2.58 f
+  n5190 (net)                                   1         0.00       2.58 f
+  U5713/Z (AN3)                                           0.91       3.49 f
+  n5188 (net)                                   1         0.00       3.49 f
+  U5073/Z (ND4)                                           0.93       4.42 r
+  n5406 (net)                                   1         0.00       4.42 r
+  U5021/Z (IVDAP)                                         0.72       5.14 r
+  n5405 (net)                                   4         0.00       5.14 r
+  U5004/Z (IVA)                                           0.37       5.51 f
+  n4765 (net)                                   1         0.00       5.51 f
+  U5191/Z (AO3P)                                          1.03       6.54 r
+  n6298 (net)                                   2         0.00       6.54 r
+  U5869/Z (ND4P)                                          0.79       7.33 f
+  n6970 (net)                                   3         0.00       7.33 f
+  U5174/Z (ENP)                                           1.26       8.58 f
+  n6942 (net)                                   4         0.00       8.58 f
+  U5164/Z (ND2)                                           0.78       9.36 r
+  n8792 (net)                                   2         0.00       9.36 r
+  U7713/Z2 (B2I)                                          0.85      10.20 r
+  n8797 (net)                                   6         0.00      10.20 r
+  U9459/Z (ND2)                                           0.22      10.42 f
+  n8557 (net)                                   1         0.00      10.42 f
+  U9461/Z (ND2)                                           0.64      11.05 r
+  n4622 (net)                                   1         0.00      11.05 r
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       0.00      11.05 r
+  data arrival time                                                 11.05
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hburst[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hburst[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hburst[2] (in)       0.36       1.56 r
+  ex_i_ahb_AHB_Master_hburst[2] (net)     2     0.00     1.56 r
+  U5862/Z (IVA)                            0.37       1.93 f
+  n5174 (net)                    2         0.00       1.93 f
+  U5926/Z (OR2P)                           1.08       3.01 f
+  n6752 (net)                    2         0.00       3.01 f
+  U4959/Z (IVP)                            0.88       3.89 r
+  ex_i_ahb_AHB_Slave_hburst[2] (net)     3     0.00     3.89 r
+  ex_i_ahb_AHB_Slave_hburst[2] (out)       0.00       3.89 r
+  data arrival time                                   3.89
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Master_hburst[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_hburst[1] (in)                      0.51       1.71 r
+  ex_i_ahb_AHB_Master_hburst[1] (net)           3         0.00       1.71 r
+  U5853/Z (IVA)                                           0.31       2.02 f
+  n5260 (net)                                   1         0.00       2.02 f
+  U5954/Z (OR2P)                                          1.08       3.10 f
+  n5814 (net)                                   2         0.00       3.10 f
+  U5925/Z (ND2P)                                          1.12       4.22 r
+  n5702 (net)                                   9         0.00       4.22 r
+  U6442/Z (ND2)                                           0.22       4.44 f
+  n5625 (net)                                   1         0.00       4.44 f
+  U6446/Z (NR2)                                           1.33       5.76 r
+  n5709 (net)                                   3         0.00       5.76 r
+  U5345/Z (IVDA)                                          0.62       6.39 r
+  n5021 (net)                                   1         0.00       6.39 r
+  U5319/Z (OR2P)                                          0.53       6.91 r
+  n4952 (net)                                   1         0.00       6.91 r
+  U4939/Z (NR2)                                           0.37       7.28 f
+  n5253 (net)                                   1         0.00       7.28 f
+  U5946/Z (ND4P)                                          0.91       8.19 r
+  n5718 (net)                                   2         0.00       8.19 r
+  U5945/Z (ND2P)                                          0.34       8.54 f
+  n5720 (net)                                   2         0.00       8.54 f
+  U5912/Z (AO2P)                                          0.93       9.47 r
+  n3929 (net)                                   1         0.00       9.47 r
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           0.00       9.47 r
+  data arrival time                                                  9.47
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hbusreq
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_hbusreq (in)                        0.18       1.38 f
+  ex_i_ahb_AHB_Master_hbusreq (net)             2         0.00       1.38 f
+  U6481/Z (NR2)                                           0.81       2.19 r
+  n5674 (net)                                   1         0.00       2.19 r
+  U6165/Z (ND2)                                           0.22       2.40 f
+  n5395 (net)                                   1         0.00       2.40 f
+  U6188/Z (AO3)                                           0.78       3.19 r
+  n5676 (net)                                   1         0.00       3.19 r
+  U5972/Z (ND2)                                           0.22       3.40 f
+  n5310 (net)                                   1         0.00       3.40 f
+  U6059/Z (AN2P)                                          0.94       4.34 f
+  n5714 (net)                                   2         0.00       4.34 f
+  U5887/Z (ND4P)                                          0.84       5.18 r
+  n5196 (net)                                   1         0.00       5.18 r
+  U5886/Z (IVAP)                                          0.21       5.39 f
+  n5721 (net)                                   1         0.00       5.39 f
+  U5912/Z (AO2P)                                          0.93       6.33 r
+  n3929 (net)                                   1         0.00       6.33 r
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           0.00       6.33 r
+  data arrival time                                                  6.33
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hlock
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_hlock (in)                          0.07       1.27 f
+  ex_i_ahb_AHB_Master_hlock (net)               1         0.00       1.27 f
+  U6407/Z (AN2P)                                          0.94       2.22 f
+  n5602 (net)                                   2         0.00       2.22 f
+  U5949/Z (AO3P)                                          0.90       3.11 r
+  n5812 (net)                                   2         0.00       3.11 r
+  U5304/Y (IVDA)                                          0.43       3.54 f
+  n4862 (net)                                   1         0.00       3.54 f
+  U5948/Z (AO7P)                                          1.29       4.84 r
+  n7442 (net)                                   5         0.00       4.84 r
+  U5997/Z (ND4P)                                          0.57       5.40 f
+  n5692 (net)                                   2         0.00       5.40 f
+  U5976/Z (EOP)                                           0.98       6.39 r
+  n5271 (net)                                   1         0.00       6.39 r
+  U5975/Z (ND2P)                                          0.30       6.68 f
+  n5712 (net)                                   2         0.00       6.68 f
+  U5887/Z (ND4P)                                          0.84       7.52 r
+  n5196 (net)                                   1         0.00       7.52 r
+  U5886/Z (IVAP)                                          0.21       7.73 f
+  n5721 (net)                                   1         0.00       7.73 f
+  U5912/Z (AO2P)                                          0.93       8.67 r
+  n3929 (net)                                   1         0.00       8.67 r
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           0.00       8.67 r
+  data arrival time                                                  8.67
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hprot[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hprot[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hprot[1] (in)        0.22       1.42 r
+  ex_i_ahb_AHB_Master_hprot[1] (net)     1     0.00     1.42 r
+  U5857/Z (IVA)                            0.31       1.73 f
+  n6815 (net)                    1         0.00       1.73 f
+  U7543/Z (ND2)                            1.33       3.05 r
+  ex_i_ahb_AHB_Slave_hprot[1] (net)     1     0.00     3.05 r
+  ex_i_ahb_AHB_Slave_hprot[1] (out)        0.00       3.05 r
+  data arrival time                                   3.05
+  -----------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hsize[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsize[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hsize[2] (in)        0.22       1.42 r
+  ex_i_ahb_AHB_Master_hsize[2] (net)     1     0.00     1.42 r
+  U5850/Z (IVA)                            0.31       1.73 f
+  n5539 (net)                    1         0.00       1.73 f
+  U5903/Z (OR2P)                           1.18       2.91 f
+  n7744 (net)                    5         0.00       2.91 f
+  U6497/Z (IVP)                            0.75       3.66 r
+  ex_i_ahb_AHB_Slave_hsize[2] (net)     1     0.00     3.66 r
+  ex_i_ahb_AHB_Slave_hsize[2] (out)        0.00       3.66 r
+  data arrival time                                   3.66
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Master_hsize[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_arbif_ireg_hrdata_reg_8_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_hsize[2] (in)                       0.22       1.42 r
+  ex_i_ahb_AHB_Master_hsize[2] (net)            1         0.00       1.42 r
+  U5850/Z (IVA)                                           0.31       1.73 f
+  n5539 (net)                                   1         0.00       1.73 f
+  U5903/Z (OR2P)                                          1.18       2.91 f
+  n7744 (net)                                   5         0.00       2.91 f
+  U6379/Z (AN2P)                                          0.87       3.79 f
+  n5540 (net)                                   1         0.00       3.79 f
+  U5002/Z (ND4)                                           0.93       4.72 r
+  n5552 (net)                                   1         0.00       4.72 r
+  U5901/Z (AO3P)                                          0.59       5.30 f
+  n5211 (net)                                   2         0.00       5.30 f
+  U5902/Z (OR2P)                                          1.11       6.42 f
+  n5770 (net)                                   4         0.00       6.42 f
+  U6043/Z (AO3P)                                          1.29       7.71 r
+  n6750 (net)                                   3         0.00       7.71 r
+  U5984/Z (B4I)                                           0.47       8.18 f
+  n10051 (net)                                 16         0.00       8.18 f
+  U7767/Z (ND2)                                           0.64       8.82 r
+  n7007 (net)                                   1         0.00       8.82 r
+  U7768/Z (AO3)                                           0.50       9.32 f
+  n4359 (net)                                   1         0.00       9.32 f
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_8_/D (FD2)          0.00       9.32 f
+  data arrival time                                                  9.32
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_htrans[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_htrans[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_htrans[1] (in)       0.44       1.64 r
+  ex_i_ahb_AHB_Master_htrans[1] (net)     2     0.00     1.64 r
+  U6417/Y (IVDAP)                          0.37       2.01 f
+  n5778 (net)                    4         0.00       2.01 f
+  U5344/Z (IVP)                            0.88       2.89 r
+  n5162 (net)                    8         0.00       2.89 r
+  U6390/Z (AN2P)                           1.47       4.37 r
+  ex_i_ahb_AHB_Slave_htrans[1] (net)     6     0.00     4.37 r
+  ex_i_ahb_AHB_Slave_htrans[1] (out)       0.00       4.37 r
+  data arrival time                                   4.37
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Master_htrans[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_htrans[1] (in)                      0.44       1.64 r
+  ex_i_ahb_AHB_Master_htrans[1] (net)           2         0.00       1.64 r
+  U6417/Z (IVDAP)                                         0.62       2.26 r
+  n5777 (net)                                   4         0.00       2.26 r
+  U5898/Z (AN2P)                                          0.68       2.94 r
+  n5250 (net)                                   1         0.00       2.94 r
+  U5894/Z (ND4P)                                          0.86       3.80 f
+  n5308 (net)                                   5         0.00       3.80 f
+  U5126/Z (NR2)                                           0.81       4.61 r
+  n4802 (net)                                   1         0.00       4.61 r
+  U5125/Z (ND2)                                           0.30       4.91 f
+  n5226 (net)                                   1         0.00       4.91 f
+  U5184/Z (AO7P)                                          0.90       5.81 r
+  n5324 (net)                                   3         0.00       5.81 r
+  U5167/Z (AO7)                                           0.53       6.34 f
+  n4800 (net)                                   1         0.00       6.34 f
+  U5230/Z (ND4P)                                          0.84       7.18 r
+  n5325 (net)                                   2         0.00       7.18 r
+  U6097/Y (IVDAP)                                         0.34       7.52 f
+  n5150 (net)                                   3         0.00       7.52 f
+  U5225/Z (ND4P)                                          0.77       8.29 r
+  n8524 (net)                                   1         0.00       8.29 r
+  U5232/Z2 (B2IP)                                         1.87      10.16 r
+  n10165 (net)                                 29         0.00      10.16 r
+  U10983/Z (MUX21L)                                       0.83      10.98 r
+  n4602 (net)                                   1         0.00      10.98 r
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/D (FD2)     0.00      10.98 r
+  data arrival time                                                 10.98
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwdata[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwdata[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwdata[1] (in)       0.44       1.64 r
+  ex_i_ahb_AHB_Master_hwdata[1] (net)     3     0.00     1.64 r
+  U7685/Z (AN2P)                           1.11       2.75 r
+  ex_i_ahb_AHB_Slave_hwdata[1] (net)     2     0.00     2.75 r
+  ex_i_ahb_AHB_Slave_hwdata[1] (out)       0.00       2.75 r
+  data arrival time                                   2.75
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Master_hwdata[3]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_arbif_ipl1_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_hwdata[3] (in)                      0.07       1.27 f
+  ex_i_ahb_AHB_Master_hwdata[3] (net)           1         0.00       1.27 f
+  U7379/Z (AN2P)                                          1.15       2.42 f
+  ex_i_ahb_AHB_Slave_hwdata[3] (net)            3         0.00       2.42 f
+  U8708/Z (NR2)                                           1.33       3.75 r
+  n8126 (net)                                   2         0.00       3.75 r
+  U8715/Z (AO1P)                                          0.32       4.08 f
+  n7838 (net)                                   1         0.00       4.08 f
+  U8716/Z (ND2)                                           1.60       5.68 r
+  n7845 (net)                                   4         0.00       5.68 r
+  U8725/Z (MUX21L)                                        0.83       6.50 r
+  n4553 (net)                                   1         0.00       6.50 r
+  i_ahb_U_arb_U_arbif_ipl1_reg_0_/D (FD4)                 0.00       6.50 r
+  data arrival time                                                  6.50
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwrite
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwrite
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwrite (in)          0.29       1.49 r
+  ex_i_ahb_AHB_Master_hwrite (net)     1     0.00     1.49 r
+  U5439/Z (IVDAP)                          0.75       2.24 r
+  n6293 (net)                    5         0.00       2.24 r
+  U6103/Z (AN2P)                           1.15       3.39 r
+  ex_i_ahb_AHB_Slave_hwrite (net)     3     0.00      3.39 r
+  ex_i_ahb_AHB_Slave_hwrite (out)          0.00       3.39 r
+  data arrival time                                   3.39
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Master_hwrite
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwrite (in)                         0.29       1.49 r
+  ex_i_ahb_AHB_Master_hwrite (net)              1         0.00       1.49 r
+  U5439/Z (IVDAP)                                         0.75       2.24 r
+  n6293 (net)                                   5         0.00       2.24 r
+  U7038/Z (ND2)                                           0.22       2.46 f
+  n6294 (net)                                   1         0.00       2.46 f
+  U5172/Z (AN2P)                                          0.91       3.37 f
+  n4684 (net)                                   1         0.00       3.37 f
+  U5171/Z (ND2P)                                          0.75       4.12 r
+  n4783 (net)                                   1         0.00       4.12 r
+  U5185/Z (B4I)                                           0.21       4.33 f
+  n6296 (net)                                   4         0.00       4.33 f
+  U5191/Z (AO3P)                                          1.03       5.36 r
+  n6298 (net)                                   2         0.00       5.36 r
+  U5869/Z (ND4P)                                          0.79       6.14 f
+  n6970 (net)                                   3         0.00       6.14 f
+  U5174/Z (ENP)                                           1.26       7.40 f
+  n6942 (net)                                   4         0.00       7.40 f
+  U5164/Z (ND2)                                           0.78       8.17 r
+  n8792 (net)                                   2         0.00       8.17 r
+  U7713/Z2 (B2I)                                          0.85       9.02 r
+  n8797 (net)                                   6         0.00       9.02 r
+  U9459/Z (ND2)                                           0.22       9.23 f
+  n8557 (net)                                   1         0.00       9.23 f
+  U9461/Z (ND2)                                           0.64       9.87 r
+  n4622 (net)                                   1         0.00       9.87 r
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       0.00       9.87 r
+  data arrival time                                                  9.87
+  --------------------------------------------------------------------------
+
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Slave
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hrdata[29]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hrdata[29]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hrdata[29] (in)                      0.15       1.35 r
+  ex_i_ahb_AHB_Slave_hrdata[29] (net)           1         0.00       1.35 r
+  U7492/Z (ND2)                                           0.30       1.65 f
+  n6779 (net)                                   1         0.00       1.65 f
+  U7494/Z (AO3P)                                          1.29       2.94 r
+  ex_i_ahb_AHB_Master_hrdata[29] (net)          1         0.00       2.94 r
+  ex_i_ahb_AHB_Master_hrdata[29] (out)                    0.00       2.94 r
+  data arrival time                                                  2.94
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hready_resp (in)      0.73       1.93 r
+  ex_i_ahb_AHB_Slave_hready_resp (net)     4     0.00     1.93 r
+  U6367/Z (ND2P)                           0.66       2.59 f
+  n5623 (net)                    7         0.00       2.59 f
+  U6334/Z (ND2P)                           1.25       3.83 r
+  ex_i_ahb_AHB_Slave_hready (net)     2     0.00      3.83 r
+  ex_i_ahb_AHB_Master_hready (out)         0.00       3.83 r
+  data arrival time                                   3.83
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Slave_hready_resp (in)                     0.36       1.56 f
+  ex_i_ahb_AHB_Slave_hready_resp (net)          4         0.00       1.56 f
+  U5043/Z (ND2)                                           1.74       3.30 r
+  n5776 (net)                                   7         0.00       3.30 r
+  U5832/Z (IVP)                                           0.23       3.52 f
+  n5172 (net)                                   2         0.00       3.52 f
+  U5888/Z (ND2)                                           0.78       4.30 r
+  n5239 (net)                                   2         0.00       4.30 r
+  U5896/Z (OR2P)                                          0.59       4.89 r
+  n5206 (net)                                   1         0.00       4.89 r
+  U5870/Z (AO3P)                                          0.53       5.42 f
+  n5313 (net)                                   2         0.00       5.42 f
+  U4977/Z (ND2)                                           0.78       6.20 r
+  n5181 (net)                                   1         0.00       6.20 r
+  U5869/Z (ND4P)                                          0.79       6.98 f
+  n6970 (net)                                   3         0.00       6.98 f
+  U5174/Z (ENP)                                           1.26       8.24 f
+  n6942 (net)                                   4         0.00       8.24 f
+  U5164/Z (ND2)                                           0.78       9.02 r
+  n8792 (net)                                   2         0.00       9.02 r
+  U7713/Z2 (B2I)                                          0.85       9.86 r
+  n8797 (net)                                   6         0.00       9.86 r
+  U9459/Z (ND2)                                           0.22      10.08 f
+  n8557 (net)                                   1         0.00      10.08 f
+  U9461/Z (ND2)                                           0.64      10.71 r
+  n4622 (net)                                   1         0.00      10.71 r
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       0.00      10.71 r
+  data arrival time                                                 10.71
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hresp[0]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hresp[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hresp[0] (in)         0.44       1.64 r
+  ex_i_ahb_AHB_Slave_hresp[0] (net)     2     0.00     1.64 r
+  U5037/Z (MUX21L)                         0.53       2.16 f
+  n5587 (net)                    2         0.00       2.16 f
+  U6302/Z (ND2P)                           0.75       2.91 r
+  n5491 (net)                    1         0.00       2.91 r
+  U5554/Z2 (B3IP)                          0.68       3.59 r
+  ex_i_ahb_AHB_Master_hresp[0] (net)     4     0.00     3.59 r
+  ex_i_ahb_AHB_Master_hresp[0] (out)       0.00       3.59 r
+  data arrival time                                   3.59
+  -----------------------------------------------------------
+
+  Startpoint: ex_i_ahb_AHB_Slave_hresp[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Slave_hresp[1] (in)                        0.18       1.38 f
+  ex_i_ahb_AHB_Slave_hresp[1] (net)             2         0.00       1.38 f
+  U5033/Z (ND2)                                           1.19       2.57 r
+  n5597 (net)                                   3         0.00       2.57 r
+  U5923/Z (IVAP)                                          0.59       3.16 f
+  ex_i_ahb_AHB_Master_hresp[1] (net)            7         0.00       3.16 f
+  U6423/Z (ND2)                                           0.64       3.80 r
+  n5594 (net)                                   1         0.00       3.80 r
+  U6426/Z (AO7)                                           0.45       4.25 f
+  n5596 (net)                                   1         0.00       4.25 f
+  U6089/Z (OR2P)                                          1.18       5.43 f
+  n7443 (net)                                   6         0.00       5.43 f
+  U6289/Z (ND4)                                           0.79       6.22 r
+  n8405 (net)                                   1         0.00       6.22 r
+  U5492/Z (AO6)                                           0.35       6.58 f
+  n5311 (net)                                   1         0.00       6.58 f
+  U6059/Z (AN2P)                                          0.94       7.52 f
+  n5714 (net)                                   2         0.00       7.52 f
+  U5887/Z (ND4P)                                          0.84       8.36 r
+  n5196 (net)                                   1         0.00       8.36 r
+  U5886/Z (IVAP)                                          0.21       8.57 f
+  n5721 (net)                                   1         0.00       8.57 f
+  U5912/Z (AO2P)                                          0.93       9.50 r
+  n3929 (net)                                   1         0.00       9.50 r
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           0.00       9.50 r
+  data arrival time                                                  9.50
+  --------------------------------------------------------------------------
+
+RPT_INFO:Port Group Manually exported pins
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_pause
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 f
+  i_ahb_pause (in)                                        0.07       1.27 f
+  i_ahb_pause (net)                             1         0.00       1.27 f
+  U6461/Z (ND3)                                           1.00       2.27 r
+  n5682 (net)                                   2         0.00       2.27 r
+  U5582/Z (IVA)                                           0.31       2.58 f
+  n5648 (net)                                   1         0.00       2.58 f
+  U5492/Z (AO6)                                           1.08       3.66 r
+  n5311 (net)                                   1         0.00       3.66 r
+  U6059/Z (AN2P)                                          0.76       4.42 r
+  n5714 (net)                                   2         0.00       4.42 r
+  U5887/Z (ND4P)                                          0.64       5.06 f
+  n5196 (net)                                   1         0.00       5.06 f
+  U5886/Z (IVAP)                                          0.33       5.39 r
+  n5721 (net)                                   1         0.00       5.39 r
+  U5912/Z (AO2P)                                          0.42       5.81 f
+  n3929 (net)                                   1         0.00       5.81 f
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           0.00       5.81 f
+  data arrival time                                                  5.81
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_apb_pclk_en
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    3.96       3.96 r
+  i_apb_pclk_en (in)                                      0.58       4.54 r
+  i_apb_pclk_en (net)                           3         0.00       4.54 r
+  U5432/Y (IVDAP)                                         0.37       4.92 f
+  n5784 (net)                                   3         0.00       4.92 f
+  U5909/Z (AO6P)                                          1.06       5.98 r
+  n5219 (net)                                   1         0.00       5.98 r
+  U5241/Z (AO3P)                                          0.75       6.74 f
+  n5217 (net)                                   5         0.00       6.74 f
+  U6005/Z2 (B2I)                                          0.93       7.66 f
+  n5281 (net)                                   3         0.00       7.66 f
+  U5225/Z (ND4P)                                          0.77       8.43 r
+  n8524 (net)                                   1         0.00       8.43 r
+  U5232/Z2 (B2IP)                                         1.87      10.30 r
+  n10165 (net)                                 29         0.00      10.30 r
+  U10983/Z (MUX21L)                                       0.83      11.13 r
+  n4602 (net)                                   1         0.00      11.13 r
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/D (FD2)     0.00      11.13 r
+  data arrival time                                                 11.13
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_ic_clk_in_a
+              (input port clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_rx_filter_U_scl_sync_U_SYNC_sample_meta_reg_0_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    2.40       2.40 r
+  i_i2c_ic_clk_in_a (in)                                  0.22       2.62 r
+  i_i2c_ic_clk_in_a (net)                       1         0.00       2.62 r
+  U5859/Z (IVA)                                           0.31       2.93 f
+  i_i2c_U_DW_apb_i2c_rx_filter_U_scl_sync_U_SYNC_N2 (net)     1     0.00     2.93 f
+  i_i2c_U_DW_apb_i2c_rx_filter_U_scl_sync_U_SYNC_sample_meta_reg_0_/D (FD2)     0.00     2.93 f
+  data arrival time                                                  2.93
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_ic_data_in_a
+              (input port clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_rx_filter_U_sda_sync_U_SYNC_sample_meta_reg_0_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    2.40       2.40 r
+  i_i2c_ic_data_in_a (in)                                 0.15       2.55 r
+  i_i2c_ic_data_in_a (net)                      1         0.00       2.55 r
+  i_i2c_U_DW_apb_i2c_rx_filter_U_sda_sync_U_SYNC_sample_meta_reg_0_/D (FD4)     0.00     2.55 r
+  data arrival time                                                  2.55
+  --------------------------------------------------------------------------
+
+RPT_INFO:Output Ports  
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Master
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hrdata[29]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hrdata[29]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hrdata[29] (in)                      0.15       1.35 r
+  ex_i_ahb_AHB_Slave_hrdata[29] (net)           1         0.00       1.35 r
+  U7492/Z (ND2)                                           0.30       1.65 f
+  n6779 (net)                                   1         0.00       1.65 f
+  U7494/Z (AO3P)                                          1.29       2.94 r
+  ex_i_ahb_AHB_Master_hrdata[29] (net)          1         0.00       2.94 r
+  ex_i_ahb_AHB_Master_hrdata[29] (out)                    0.00       2.94 r
+  data arrival time                                                  2.94
+  --------------------------------------------------------------------------
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hrdata[13]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/QN (FD2P)                  2.02       2.02 f
+  n11047 (net)                                  1         0.00       2.02 f
+  U5430/Z (IVDAP)                                         0.65       2.66 f
+  n5201 (net)                                   3         0.00       2.66 f
+  U6305/Z (NR2P)                                          0.82       3.48 r
+  n6763 (net)                                   2         0.00       3.48 r
+  U6335/Z (ND2)                                           0.39       3.87 f
+  n6781 (net)                                   1         0.00       3.87 f
+  U7473/Z (IVAP)                                          0.79       4.66 r
+  n10373 (net)                                 16         0.00       4.66 r
+  U7524/Z (ND2)                                           0.30       4.96 f
+  n6806 (net)                                   1         0.00       4.96 f
+  U7526/Z (AO3P)                                          1.29       6.25 r
+  ex_i_ahb_AHB_Master_hrdata[13] (net)          1         0.00       6.25 r
+  ex_i_ahb_AHB_Master_hrdata[13] (out)                    0.00       6.25 r
+  data arrival time                                                  6.25
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hready_resp (in)      0.73       1.93 r
+  ex_i_ahb_AHB_Slave_hready_resp (net)     4     0.00     1.93 r
+  U6367/Z (ND2P)                           0.66       2.59 f
+  n5623 (net)                    7         0.00       2.59 f
+  U6334/Z (ND2P)                           1.25       3.83 r
+  ex_i_ahb_AHB_Slave_hready (net)     2     0.00      3.83 r
+  ex_i_ahb_AHB_Master_hready (out)         0.00       3.83 r
+  data arrival time                                   3.83
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/Q (FD2P)                   1.70       1.70 r
+  i_ahb_U_mux_hsel_prev[1] (net)                3         0.00       1.70 r
+  U6243/Z (ND2)                                           0.30       2.00 f
+  n5440 (net)                                   2         0.00       2.00 f
+  U6079/Z (OR2P)                                          1.15       3.15 f
+  n5644 (net)                                   4         0.00       3.15 f
+  U5379/Z (AO7P)                                          1.16       4.31 r
+  n5254 (net)                                   3         0.00       4.31 r
+  U5877/Z (NR2P)                                          0.29       4.60 f
+  n5197 (net)                                   2         0.00       4.60 f
+  U6334/Z (ND2P)                                          1.25       5.85 r
+  ex_i_ahb_AHB_Slave_hready (net)               2         0.00       5.85 r
+  ex_i_ahb_AHB_Master_hready (out)                        0.00       5.85 r
+  data arrival time                                                  5.85
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hresp[0]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hresp[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hresp[0] (in)         0.44       1.64 r
+  ex_i_ahb_AHB_Slave_hresp[0] (net)     2     0.00     1.64 r
+  U5037/Z (MUX21L)                         0.53       2.16 f
+  n5587 (net)                    2         0.00       2.16 f
+  U6302/Z (ND2P)                           0.75       2.91 r
+  n5491 (net)                    1         0.00       2.91 r
+  U5554/Z2 (B3IP)                          0.68       3.59 r
+  ex_i_ahb_AHB_Master_hresp[0] (net)     4     0.00     3.59 r
+  ex_i_ahb_AHB_Master_hresp[0] (out)       0.00       3.59 r
+  data arrival time                                   3.59
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hresp[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/Q (FD2P)                   1.70       1.70 r
+  i_ahb_U_mux_hsel_prev[1] (net)                3         0.00       1.70 r
+  U5244/Z (IVP)                                           0.36       2.06 f
+  n5189 (net)                                   5         0.00       2.06 f
+  U5401/Z (ND2)                                           1.12       3.18 r
+  n5511 (net)                                   4         0.00       3.18 r
+  U5695/Z (IVA)                                           0.37       3.55 f
+  n5371 (net)                                   1         0.00       3.55 f
+  U6162/Z (ND2P)                                          0.69       4.23 r
+  n5586 (net)                                   2         0.00       4.23 r
+  U6302/Z (ND2P)                                          0.34       4.57 f
+  n5491 (net)                                   1         0.00       4.57 f
+  U5554/Z2 (B3IP)                                         0.68       5.26 f
+  ex_i_ahb_AHB_Master_hresp[0] (net)            4         0.00       5.26 f
+  ex_i_ahb_AHB_Master_hresp[0] (out)                      0.00       5.26 f
+  data arrival time                                                  5.26
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hgrant
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_1_/CP (FD2)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_1_/Q (FD2)           2.36       2.36 r
+  ex_i_ahb_AHB_Master_hgrant (net)              6         0.00       2.36 r
+  ex_i_ahb_AHB_Master_hgrant (out)                        0.00       2.36 r
+  data arrival time                                                  2.36
+  --------------------------------------------------------------------------
+
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Slave
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_haddr[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_haddr[1] (in)        0.36       1.56 r
+  ex_i_ahb_AHB_Master_haddr[1] (net)     2     0.00     1.56 r
+  U5855/Z (IVA)                            0.37       1.93 f
+  n5515 (net)                    1         0.00       1.93 f
+  U6356/Z (NR2P)                           0.94       2.88 r
+  n11154 (net)                   3         0.00       2.88 r
+  U9750/Z (IVDA)                           1.49       4.37 r
+  ex_i_ahb_AHB_Slave_haddr[1] (net)     2     0.00     4.37 r
+  ex_i_ahb_AHB_Slave_haddr[1] (out)        0.00       4.37 r
+  data arrival time                                   4.37
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_haddr[26]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6378/Z2 (B3IP)                                         0.61       2.80 f
+  n6957 (net)                                   3         0.00       2.80 f
+  U5111/Z2 (B2IP)                                         1.33       4.13 f
+  n10169 (net)                                 21         0.00       4.13 f
+  U7742/Z (NR2P)                                          1.65       5.78 r
+  ex_i_ahb_AHB_Slave_haddr[26] (net)            3         0.00       5.78 r
+  ex_i_ahb_AHB_Slave_haddr[26] (out)                      0.00       5.78 r
+  data arrival time                                                  5.78
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hburst[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hburst[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hburst[2] (in)       0.36       1.56 r
+  ex_i_ahb_AHB_Master_hburst[2] (net)     2     0.00     1.56 r
+  U5862/Z (IVA)                            0.37       1.93 f
+  n5174 (net)                    2         0.00       1.93 f
+  U5926/Z (OR2P)                           1.08       3.01 f
+  n6752 (net)                    2         0.00       3.01 f
+  U4959/Z (IVP)                            0.88       3.89 r
+  ex_i_ahb_AHB_Slave_hburst[2] (net)     3     0.00     3.89 r
+  ex_i_ahb_AHB_Slave_hburst[2] (out)       0.00       3.89 r
+  data arrival time                                   3.89
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hburst[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6373/Z (IVDAP)                                         0.71       2.89 f
+  n5555 (net)                                   5         0.00       2.89 f
+  U5926/Z (OR2P)                                          1.08       3.97 f
+  n6752 (net)                                   2         0.00       3.97 f
+  U4959/Z (IVP)                                           0.88       4.85 r
+  ex_i_ahb_AHB_Slave_hburst[2] (net)            3         0.00       4.85 r
+  ex_i_ahb_AHB_Slave_hburst[2] (out)                      0.00       4.85 r
+  data arrival time                                                  4.85
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_gctrl_ihmastlock_reg
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hmastlock
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_ihmastlock_reg/CP (FD2)             0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_ihmastlock_reg/Q (FD2)              1.63       1.63 r
+  ex_i_ahb_AHB_Slave_hmastlock (net)            1         0.00       1.63 r
+  ex_i_ahb_AHB_Slave_hmastlock (out)                      0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hprot[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hprot[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hprot[1] (in)        0.22       1.42 r
+  ex_i_ahb_AHB_Master_hprot[1] (net)     1     0.00     1.42 r
+  U5857/Z (IVA)                            0.31       1.73 f
+  n6815 (net)                    1         0.00       1.73 f
+  U7543/Z (ND2)                            1.33       3.05 r
+  ex_i_ahb_AHB_Slave_hprot[1] (net)     1     0.00     3.05 r
+  ex_i_ahb_AHB_Slave_hprot[1] (out)        0.00       3.05 r
+  data arrival time                                   3.05
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hprot[3]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6378/Z2 (B3IP)                                         0.61       2.80 f
+  n6957 (net)                                   3         0.00       2.80 f
+  U5111/Z1 (B2IP)                                         1.49       4.29 r
+  n10004 (net)                                 10         0.00       4.29 r
+  U10899/Z (AN2P)                                         0.97       5.26 r
+  ex_i_ahb_AHB_Slave_hprot[3] (net)             1         0.00       5.26 r
+  ex_i_ahb_AHB_Slave_hprot[3] (out)                       0.00       5.26 r
+  data arrival time                                                  5.26
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hready_resp (in)      0.73       1.93 r
+  ex_i_ahb_AHB_Slave_hready_resp (net)     4     0.00     1.93 r
+  U6367/Z (ND2P)                           0.66       2.59 f
+  n5623 (net)                    7         0.00       2.59 f
+  U6334/Z (ND2P)                           1.25       3.83 r
+  ex_i_ahb_AHB_Slave_hready (net)     2     0.00      3.83 r
+  ex_i_ahb_AHB_Slave_hready (out)          0.00       3.83 r
+  data arrival time                                   3.83
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/Q (FD2P)                   1.70       1.70 r
+  i_ahb_U_mux_hsel_prev[1] (net)                3         0.00       1.70 r
+  U6243/Z (ND2)                                           0.30       2.00 f
+  n5440 (net)                                   2         0.00       2.00 f
+  U6079/Z (OR2P)                                          1.15       3.15 f
+  n5644 (net)                                   4         0.00       3.15 f
+  U5379/Z (AO7P)                                          1.16       4.31 r
+  n5254 (net)                                   3         0.00       4.31 r
+  U5877/Z (NR2P)                                          0.29       4.60 f
+  n5197 (net)                                   2         0.00       4.60 f
+  U6334/Z (ND2P)                                          1.25       5.85 r
+  ex_i_ahb_AHB_Slave_hready (net)               2         0.00       5.85 r
+  ex_i_ahb_AHB_Slave_hready (out)                         0.00       5.85 r
+  data arrival time                                                  5.85
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)       0.07       1.27 f
+  ex_i_ahb_AHB_Master_haddr[16] (net)     1     0.00     1.27 f
+  U5170/Z2 (B2I)                           0.97       2.24 f
+  n5011 (net)                    3         0.00       2.24 f
+  U5182/Z (ND2P)                           1.00       3.24 r
+  n5199 (net)                    3         0.00       3.24 r
+  U5181/Z (IVAP)                           0.17       3.41 f
+  n4969 (net)                    1         0.00       3.41 f
+  U5189/Z (ND2)                            0.64       4.05 r
+  n5267 (net)                    1         0.00       4.05 r
+  U4948/Z (AO6)                            0.43       4.49 f
+  n5266 (net)                    1         0.00       4.49 f
+  U5966/Z (NR2P)                           1.20       5.69 r
+  ex_i_ahb_AHB_Slave_hsel (net)     2      0.00       5.69 r
+  ex_i_ahb_AHB_Slave_hsel (out)            0.00       5.69 r
+  data arrival time                                   5.69
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6378/Z2 (B3IP)                                         0.61       2.80 f
+  n6957 (net)                                   3         0.00       2.80 f
+  U5111/Z1 (B2IP)                                         1.49       4.29 r
+  n10004 (net)                                 10         0.00       4.29 r
+  U5291/Z (ND2)                                           0.30       4.59 f
+  n8874 (net)                                   2         0.00       4.59 f
+  U4948/Z (AO6)                                           1.34       5.93 r
+  n5266 (net)                                   1         0.00       5.93 r
+  U5966/Z (NR2P)                                          0.33       6.26 f
+  ex_i_ahb_AHB_Slave_hsel (net)                 2         0.00       6.26 f
+  ex_i_ahb_AHB_Slave_hsel (out)                           0.00       6.26 f
+  data arrival time                                                  6.26
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hsize[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsize[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hsize[2] (in)        0.22       1.42 r
+  ex_i_ahb_AHB_Master_hsize[2] (net)     1     0.00     1.42 r
+  U5850/Z (IVA)                            0.31       1.73 f
+  n5539 (net)                    1         0.00       1.73 f
+  U5903/Z (OR2P)                           1.18       2.91 f
+  n7744 (net)                    5         0.00       2.91 f
+  U6497/Z (IVP)                            0.75       3.66 r
+  ex_i_ahb_AHB_Slave_hsize[2] (net)     1     0.00     3.66 r
+  ex_i_ahb_AHB_Slave_hsize[2] (out)        0.00       3.66 r
+  data arrival time                                   3.66
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsize[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6378/Z2 (B3IP)                                         0.61       2.80 f
+  n6957 (net)                                   3         0.00       2.80 f
+  U5111/Z2 (B2IP)                                         1.33       4.13 f
+  n10169 (net)                                 21         0.00       4.13 f
+  U8571/Z (NR2P)                                          1.52       5.65 r
+  ex_i_ahb_AHB_Slave_hsize[0] (net)             2         0.00       5.65 r
+  ex_i_ahb_AHB_Slave_hsize[0] (out)                       0.00       5.65 r
+  data arrival time                                                  5.65
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_htrans[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_htrans[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_htrans[1] (in)       0.44       1.64 r
+  ex_i_ahb_AHB_Master_htrans[1] (net)     2     0.00     1.64 r
+  U6417/Y (IVDAP)                          0.37       2.01 f
+  n5778 (net)                    4         0.00       2.01 f
+  U5344/Z (IVP)                            0.88       2.89 r
+  n5162 (net)                    8         0.00       2.89 r
+  U6390/Z (AN2P)                           1.47       4.37 r
+  ex_i_ahb_AHB_Slave_htrans[1] (net)     6     0.00     4.37 r
+  ex_i_ahb_AHB_Slave_htrans[1] (out)       0.00       4.37 r
+  data arrival time                                   4.37
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_htrans[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6373/Y (IVDAP)                                         0.94       3.13 r
+  n6948 (net)                                   7         0.00       3.13 r
+  U6390/Z (AN2P)                                          1.47       4.60 r
+  ex_i_ahb_AHB_Slave_htrans[1] (net)            6         0.00       4.60 r
+  ex_i_ahb_AHB_Slave_htrans[1] (out)                      0.00       4.60 r
+  data arrival time                                                  4.60
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwdata[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwdata[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwdata[1] (in)       0.44       1.64 r
+  ex_i_ahb_AHB_Master_hwdata[1] (net)     3     0.00     1.64 r
+  U7685/Z (AN2P)                           1.11       2.75 r
+  ex_i_ahb_AHB_Slave_hwdata[1] (net)     2     0.00     2.75 r
+  ex_i_ahb_AHB_Slave_hwdata[1] (out)       0.00       2.75 r
+  data arrival time                                   2.75
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwdata[3]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/CP (FD2)         0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/Q (FD2)          1.48       1.48 r
+  i_ahb_U_arb_U_arbif_r_hmaster_d_0_ (net)      1         0.00       1.48 r
+  U6464/Z2 (B2IP)                                         1.42       2.90 r
+  i_ahb_hmaster_data[0] (net)                  34         0.00       2.90 r
+  U7379/Z (AN2P)                                          1.19       4.09 r
+  ex_i_ahb_AHB_Slave_hwdata[3] (net)            3         0.00       4.09 r
+  ex_i_ahb_AHB_Slave_hwdata[3] (out)                      0.00       4.09 r
+  data arrival time                                                  4.09
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwrite
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwrite
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwrite (in)          0.29       1.49 r
+  ex_i_ahb_AHB_Master_hwrite (net)     1     0.00     1.49 r
+  U5439/Z (IVDAP)                          0.75       2.24 r
+  n6293 (net)                    5         0.00       2.24 r
+  U6103/Z (AN2P)                           1.15       3.39 r
+  ex_i_ahb_AHB_Slave_hwrite (net)     3     0.00      3.39 r
+  ex_i_ahb_AHB_Slave_hwrite (out)          0.00       3.39 r
+  data arrival time                                   3.39
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwrite
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6378/Z2 (B3IP)                                         0.61       2.80 f
+  n6957 (net)                                   3         0.00       2.80 f
+  U5111/Z1 (B2IP)                                         1.49       4.29 r
+  n10004 (net)                                 10         0.00       4.29 r
+  U6103/Z (AN2P)                                          1.15       5.44 r
+  ex_i_ahb_AHB_Slave_hwrite (net)               3         0.00       5.44 r
+  ex_i_ahb_AHB_Slave_hwrite (out)                         0.00       5.44 r
+  data arrival time                                                  5.44
+  --------------------------------------------------------------------------
+
+RPT_INFO:Port Group Manually exported pins
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_en_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_en
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_en_reg/CP (FD2)            0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_en_reg/Q (FD2)             2.21       2.21 r
+  i_i2c_ic_en (net)                             5         0.00       2.21 r
+  i_i2c_ic_en (out)                                       0.00       2.21 r
+  data arrival time                                                  2.21
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rd_req_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rd_req_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_rd_req_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rd_req_intr_reg/Q (FD2)     1.63      1.63 r
+  i_i2c_ic_rd_req_intr (net)                    1         0.00       1.63 r
+  i_i2c_ic_rd_req_intr (out)                              0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_gen_call_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_gen_call_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_gen_call_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_gen_call_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_gen_call_intr (net)                  1         0.00       1.63 r
+  i_i2c_ic_gen_call_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_tx_empty_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_tx_empty_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_empty_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_empty_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_tx_empty_intr (net)                  1         0.00       1.63 r
+  i_i2c_ic_tx_empty_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_ic_data_oe
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_reg/CP (FD2)     0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_reg/Q (FD2)      2.21       2.21 r
+  i_i2c_ic_data_oe (net)                        4         0.00       2.21 r
+  i_i2c_ic_data_oe (out)                                  0.00       2.21 r
+  data arrival time                                                  2.21
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_ic_clk_oe
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg/CP (FD2)      0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg/Q (FD2)       1.77       1.77 r
+  i_i2c_ic_clk_oe (net)                         2         0.00       1.77 r
+  i_i2c_ic_clk_oe (out)                                   0.00       1.77 r
+  data arrival time                                                  1.77
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_activity_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_activity_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_activity_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_activity_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_activity_intr (net)                  1         0.00       1.63 r
+  i_i2c_ic_activity_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_tx_shift_tx_data_capture_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_wr
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_tx_shift_tx_data_capture_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_tx_shift_tx_data_capture_reg/Q (FD2)     2.06     2.06 r
+  i_i2c_debug_wr (net)                          4         0.00       2.06 r
+  i_i2c_debug_wr (out)                                    0.00       2.06 r
+  data arrival time                                                  2.06
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_done_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_done_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_done_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_done_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_done_intr (net)                   1         0.00       1.63 r
+  i_i2c_ic_rx_done_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_full_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_full_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_full_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_full_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_full_intr (net)                   1         0.00       1.63 r
+  i_i2c_ic_rx_full_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_over_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_over_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_over_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_over_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_over_intr (net)                   1         0.00       1.63 r
+  i_i2c_ic_rx_over_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_under_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_under_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_under_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_under_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_under_intr (net)                  1         0.00       1.63 r
+  i_i2c_ic_rx_under_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_start_det_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_start_det_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_start_det_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_start_det_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_start_det_intr (net)                 1         0.00       1.63 r
+  i_i2c_ic_start_det_intr (out)                           0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_stop_det_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_stop_det_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_stop_det_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_stop_det_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_stop_det_intr (net)                  1         0.00       1.63 r
+  i_i2c_ic_stop_det_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_tx_abrt_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_tx_abrt_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_abrt_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_abrt_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_tx_abrt_intr (net)                   1         0.00       1.63 r
+  i_i2c_ic_tx_abrt_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_tx_over_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_tx_over_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_over_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_over_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_tx_over_intr (net)                   1         0.00       1.63 r
+  i_i2c_ic_tx_over_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_data_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_data
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_data_reg/CP (FD2)       0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_data_reg/Q (FD2)        1.63       1.63 r
+  i_i2c_debug_data (net)                        1         0.00       1.63 r
+  i_i2c_debug_data (out)                                  0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_ebt_ahbarbint_reg
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_ahbarbint
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_ebt_ahbarbint_reg/CP (FD2)                0.00       0.00 r
+  i_ahb_U_arb_U_ebt_ahbarbint_reg/Q (FD2)                 1.77       1.77 r
+  i_ahb_ahbarbint (net)                         2         0.00       1.77 r
+  i_ahb_ahbarbint (out)                                   0.00       1.77 r
+  data arrival time                                                  1.77
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hmaster_data[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/CP (FD2)         0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/Q (FD2)          1.48       1.48 r
+  i_ahb_U_arb_U_arbif_r_hmaster_d_0_ (net)      1         0.00       1.48 r
+  U6464/Z2 (B2IP)                                         1.42       2.90 r
+  i_ahb_hmaster_data[0] (net)                  34         0.00       2.90 r
+  i_ahb_hmaster_data[0] (out)                             0.00       2.90 r
+  data arrival time                                                  2.90
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_ireg_hrdata_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hrdata_s0[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_1_/CP (FD2)         0.00       0.00 r
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_1_/Q (FD2)          2.36       2.36 r
+  i_ahb_hrdata_s0[1] (net)                      2         0.00       2.36 r
+  i_ahb_hrdata_s0[1] (out)                                0.00       2.36 r
+  data arrival time                                                  2.36
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hready_resp_s0_reg
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hready_resp_s0
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_arbif_r_hready_resp_s0_reg/CP (FD2P)      0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hready_resp_s0_reg/QN (FD2P)      2.35       2.35 r
+  n11184 (net)                                  4         0.00       2.35 r
+  U6418/Z2 (B3IP)                                         0.88       3.23 r
+  i_ahb_hready_resp_s0 (net)                    7         0.00       3.23 r
+  i_ahb_hready_resp_s0 (out)                              0.00       3.23 r
+  data arrival time                                                  3.23
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hresp_s0_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hresp_s0[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_arbif_r_hresp_s0_reg_0_/CP (FD2)          0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hresp_s0_reg_0_/Q (FD2)           2.06       2.06 r
+  i_ahb_hresp_s0[0] (net)                       1         0.00       2.06 r
+  i_ahb_hresp_s0[0] (out)                                 0.00       2.06 r
+  data arrival time                                                  2.06
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[15]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_hsel_s0
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[15] (in)       0.14       1.34 f
+  ex_i_ahb_AHB_Master_haddr[15] (net)     2     0.00     1.34 f
+  U5854/Z (IVDA)                           0.83       2.17 f
+  n5486 (net)                    2         0.00       2.17 f
+  U5227/Z (NR2P)                           0.94       3.12 r
+  n5276 (net)                    3         0.00       3.12 r
+  U5285/Z (ND3)                            0.60       3.71 f
+  n7679 (net)                    2         0.00       3.71 f
+  U6287/Z (NR2)                            0.81       4.52 r
+  n5787 (net)                    1         0.00       4.52 r
+  U6177/Z (AN2P)                           0.76       5.28 r
+  i_ahb_hsel_s0 (net)            1         0.00       5.28 r
+  i_ahb_hsel_s0 (out)                      0.00       5.28 r
+  data arrival time                                   5.28
+  -----------------------------------------------------------
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hsel_s0
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/Q (FD2P)           1.99       1.99 r
+  i_ahb_hmaster_0_ (net)                        5         0.00       1.99 r
+  U5056/Y (IVDAP)                                         0.30       2.28 f
+  n5536 (net)                                   3         0.00       2.28 f
+  U6285/Z (NR2)                                           0.81       3.09 r
+  n5460 (net)                                   1         0.00       3.09 r
+  U5285/Z (ND3)                                           0.60       3.69 f
+  n7679 (net)                                   2         0.00       3.69 f
+  U6287/Z (NR2)                                           0.81       4.50 r
+  n5787 (net)                                   1         0.00       4.50 r
+  U6177/Z (AN2P)                                          0.76       5.26 r
+  i_ahb_hsel_s0 (net)                           1         0.00       5.26 r
+  i_ahb_hsel_s0 (out)                                     0.00       5.26 r
+  data arrival time                                                  5.26
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_addr_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_addr
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_reg/CP (FD2)       0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_reg/Q (FD2)        1.63       1.63 r
+  i_i2c_debug_addr (net)                        1         0.00       1.63 r
+  i_i2c_debug_addr (out)                                  0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_addr_10bit_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_addr_10bit
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_10bit_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_10bit_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_addr_10bit (net)                  1         0.00       1.63 r
+  i_i2c_debug_addr_10bit (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_slv_cstate_reg_3_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_slv_cstate[3]
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_slv_cstate_reg_3_/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_slv_cstate_reg_3_/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_slv_cstate[3] (net)               1         0.00       1.63 r
+  i_i2c_debug_slv_cstate[3] (out)                         0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+No paths.
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_master_act_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_master_act
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_master_act_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_master_act_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_master_act (net)                  1         0.00       1.63 r
+  i_i2c_debug_master_act (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_mst_cstate_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_mst_cstate[4]
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_mst_cstate_reg_4_/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_mst_cstate_reg_4_/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_mst_cstate[4] (net)               1         0.00       1.63 r
+  i_i2c_debug_mst_cstate[4] (out)                         0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_p_gen_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_p_gen
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_p_gen_reg/CP (FD2)      0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_p_gen_reg/Q (FD2)       1.63       1.63 r
+  i_i2c_debug_p_gen (net)                       1         0.00       1.63 r
+  i_i2c_debug_p_gen (out)                                 0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_rd_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_rd
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_rd_reg/CP (FD2)         0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_rd_reg/Q (FD2)          1.63       1.63 r
+  i_i2c_debug_rd (net)                          1         0.00       1.63 r
+  i_i2c_debug_rd (out)                                    0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_s_gen_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_s_gen
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_s_gen_reg/CP (FD2)      0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_s_gen_reg/Q (FD2)       1.63       1.63 r
+  i_i2c_debug_s_gen (net)                       1         0.00       1.63 r
+  i_i2c_debug_s_gen (out)                                 0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_slave_act_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_slave_act
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_toggle_debug_slave_act_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_slave_act_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_slave_act (net)                   1         0.00       1.63 r
+  i_i2c_debug_slave_act (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+  --------------------------------------------------------------------------
+
+1

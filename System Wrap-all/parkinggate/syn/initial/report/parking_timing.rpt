@@ -1,0 +1,1156 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                        Fanout      Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)       0.07       1.27 f
+  ex_i_ahb_AHB_Master_haddr[16] (net)     1     0.00     1.27 f
+  U5170/Z2 (B2I)                           0.97       2.24 f
+  n5011 (net)                    3         0.00       2.24 f
+  U5182/Z (ND2P)                           1.00       3.24 r
+  n5199 (net)                    3         0.00       3.24 r
+  U5181/Z (IVAP)                           0.17       3.41 f
+  n4969 (net)                    1         0.00       3.41 f
+  U5189/Z (ND2)                            0.64       4.05 r
+  n5267 (net)                    1         0.00       4.05 r
+  U4948/Z (AO6)                            0.43       4.49 f
+  n5266 (net)                    1         0.00       4.49 f
+  U5966/Z (NR2P)                           1.20       5.69 r
+  ex_i_ahb_AHB_Slave_hsel (net)     2      0.00       5.69 r
+  ex_i_ahb_AHB_Slave_hsel (out)            0.00       5.69 r
+  data arrival time                                   5.69
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -5.69
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.49
+
+
+  Startpoint: i_apb_U_DW_apb_ahbsif_state_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: HCLK_hclk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_apb_U_DW_apb_ahbsif_state_reg_0_/CP (FD2P)            0.00       0.00 r
+  i_apb_U_DW_apb_ahbsif_state_reg_0_/QN (FD2P)            2.04       2.04 f
+  n5160 (net)                                   2         0.00       2.04 f
+  U5872/Z (ND2P)                                          0.69       2.73 r
+  n5305 (net)                                   2         0.00       2.73 r
+  U5871/Z (ND2P)                                          0.30       3.03 f
+  n6666 (net)                                   3         0.00       3.03 f
+  U5169/Z (AN3)                                           0.91       3.94 f
+  n4760 (net)                                   1         0.00       3.94 f
+  U5172/Z (AN2P)                                          0.91       4.85 f
+  n4684 (net)                                   1         0.00       4.85 f
+  U5171/Z (ND2P)                                          0.75       5.59 r
+  n4783 (net)                                   1         0.00       5.59 r
+  U5185/Z (B4I)                                           0.21       5.80 f
+  n6296 (net)                                   4         0.00       5.80 f
+  U5191/Z (AO3P)                                          1.03       6.83 r
+  n6298 (net)                                   2         0.00       6.83 r
+  U5869/Z (ND4P)                                          0.79       7.62 f
+  n6970 (net)                                   3         0.00       7.62 f
+  U5174/Z (ENP)                                           1.26       8.88 f
+  n6942 (net)                                   4         0.00       8.88 f
+  U5164/Z (ND2)                                           0.78       9.65 r
+  n8792 (net)                                   2         0.00       9.65 r
+  U7713/Z2 (B2I)                                          0.85      10.50 r
+  n8797 (net)                                   6         0.00      10.50 r
+  U9459/Z (ND2)                                           0.22      10.71 f
+  n8557 (net)                                   1         0.00      10.71 f
+  U9461/Z (ND2)                                           0.64      11.35 r
+  n4622 (net)                                   1         0.00      11.35 r
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       0.00      11.35 r
+  data arrival time                                                 11.35
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/CP (FD2)      0.00       6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -11.35
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -6.20
+
+
+  Startpoint: i_apb_U_DW_apb_ahbsif_paddr_reg_12_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_i2c_U_DW_apb_i2c_fifo_U_rx_fifo_almost_full_int_reg
+            (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Path Group: PCLK_pclk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_apb_U_DW_apb_ahbsif_paddr_reg_12_/CP (FD2P)           0.00       0.00 r
+  i_apb_U_DW_apb_ahbsif_paddr_reg_12_/Q (FD2P)            1.56       1.56 r
+  i_apb_paddr[12] (net)                         2         0.00       1.56 r
+  U6559/Z (ND2)                                           0.30       1.86 f
+  n5820 (net)                                   1         0.00       1.86 f
+  U6560/Z (NR2P)                                          0.82       2.67 r
+  n6417 (net)                                   2         0.00       2.67 r
+  U6563/Z (AN3)                                           0.98       3.65 r
+  n5821 (net)                                   1         0.00       3.65 r
+  U6564/Z (ND4P)                                          0.86       4.52 f
+  n6426 (net)                                   4         0.00       4.52 f
+  U7204/Z (IVDAP)                                         0.59       5.10 f
+  n6408 (net)                                   1         0.00       5.10 f
+  U7205/Z (ND2P)                                          0.62       5.73 r
+  n6409 (net)                                   1         0.00       5.73 r
+  U7206/Z (AO3P)                                          0.48       6.20 f
+  n6412 (net)                                   1         0.00       6.20 f
+  U7207/Z (EOP)                                           1.26       7.46 f
+  n6883 (net)                                   3         0.00       7.46 f
+  U7624/Z (OR2P)                                          0.97       8.43 f
+  n6885 (net)                                   1         0.00       8.43 f
+  U7625/Z (AO3)                                           0.78       9.22 r
+  i_i2c_U_DW_apb_i2c_fifo_U_rx_fifo_N36 (net)     1       0.00       9.22 r
+  i_i2c_U_DW_apb_i2c_fifo_U_rx_fifo_almost_full_int_reg/D (FD1)     0.00     9.22 r
+  data arrival time                                                  9.22
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_i2c_U_DW_apb_i2c_fifo_U_rx_fifo_almost_full_int_reg/CP (FD1)     0.00     6.00 r
+  library setup time                                     -0.80       5.20
+  data required time                                                 5.20
+  --------------------------------------------------------------------------
+  data required time                                                 5.20
+  data arrival time                                                 -9.22
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.02
+
+
+  Startpoint: i_apb_pclk_en
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    3.96       3.96 r
+  i_apb_pclk_en (in)                                      0.58       4.54 r
+  i_apb_pclk_en (net)                           3         0.00       4.54 r
+  U5432/Y (IVDAP)                                         0.37       4.92 f
+  n5784 (net)                                   3         0.00       4.92 f
+  U5909/Z (AO6P)                                          1.06       5.98 r
+  n5219 (net)                                   1         0.00       5.98 r
+  U5241/Z (AO3P)                                          0.75       6.74 f
+  n5217 (net)                                   5         0.00       6.74 f
+  U6005/Z2 (B2I)                                          0.93       7.66 f
+  n5281 (net)                                   3         0.00       7.66 f
+  U5225/Z (ND4P)                                          0.77       8.43 r
+  n8524 (net)                                   1         0.00       8.43 r
+  U5232/Z2 (B2IP)                                         1.87      10.30 r
+  n10165 (net)                                 29         0.00      10.30 r
+  U10983/Z (MUX21L)                                       0.83      11.13 r
+  n4602 (net)                                   1         0.00      11.13 r
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/D (FD2)     0.00      11.13 r
+  data arrival time                                                 11.13
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/CP (FD2)     0.00      6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -11.13
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -5.98
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  n11048 (net)                                  3         0.00       2.19 f
+  U6378/Z2 (B3IP)                                         0.61       2.80 f
+  n6957 (net)                                   3         0.00       2.80 f
+  U5111/Z1 (B2IP)                                         1.49       4.29 r
+  n10004 (net)                                 10         0.00       4.29 r
+  U5291/Z (ND2)                                           0.30       4.59 f
+  n8874 (net)                                   2         0.00       4.59 f
+  U4948/Z (AO6)                                           1.34       5.93 r
+  n5266 (net)                                   1         0.00       5.93 r
+  U5966/Z (NR2P)                                          0.33       6.26 f
+  ex_i_ahb_AHB_Slave_hsel (net)                 2         0.00       6.26 f
+  ex_i_ahb_AHB_Slave_hsel (out)                           0.00       6.26 f
+  data arrival time                                                  6.26
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -6.26
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -2.06
+
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_1_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: i_i2c_ic_clk
+  Path Type: max
+
+  Point                                       Fanout      Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  n11038 (net)                                  2         0.00       2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  n5913 (net)                                   1         0.00       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  n5915 (net)                                   1         0.00       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  n5916 (net)                                   1         0.00       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  n5954 (net)                                   2         0.00       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  n5973 (net)                                   2         0.00       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  n5990 (net)                                   2         0.00       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  n6194 (net)                                   2         0.00       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  n5991 (net)                                   1         0.00       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  n6642 (net)                                   4         0.00       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  n6200 (net)                                   2         0.00       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  n6018 (net)                                   1         0.00       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  n6599 (net)                                   3         0.00      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  n6655 (net)                                   1         0.00      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  n6658 (net)                                   1         0.00      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  n6663 (net)                                   2         0.00      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  n6662 (net)                                   1         0.00      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  n10091 (net)                                 16         0.00      13.68 f
+  U10857/Z (ND2)                                          0.64      14.31 r
+  n9967 (net)                                   1         0.00      14.31 r
+  U10859/Z (ND2)                                          0.22      14.53 f
+  n4098 (net)                                   1         0.00      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_1_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_1_/CP (FD2P)     0.00     6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -14.53
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -9.38
+
+
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path only
+        -delay max
+        -group QtoD
+        -max_paths 25
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_6_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10877/Z (ND2)                                          0.64      14.31 r
+  U10879/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_6_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_10_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10873/Z (ND2)                                          0.64      14.31 r
+  U10874/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_10_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_13_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10848/Z (ND2)                                          0.64      14.31 r
+  U10849/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_13_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_14_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10821/Z (ND2)                                          0.64      14.31 r
+  U10823/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_14_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_15_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10829/Z (ND2)                                          0.64      14.31 r
+  U10830/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_15_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_4_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10947/Z (ND2)                                          0.64      14.31 r
+  U10948/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_4_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_5_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10833/Z (ND2)                                          0.64      14.31 r
+  U10835/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_5_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_8_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10837/Z (ND2)                                          0.64      14.31 r
+  U10839/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_8_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_9_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10842/Z (ND2)                                          0.64      14.31 r
+  U10844/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_9_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_7_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10853/Z (ND2)                                          0.64      14.31 r
+  U10856/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_7_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_3_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10862/Z (ND2)                                          0.64      14.31 r
+  U10864/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_3_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_12_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10940/Z (ND2)                                          0.64      14.31 r
+  U10941/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_12_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_11_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10867/Z (ND2)                                          0.64      14.31 r
+  U10869/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_11_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_1_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10857/Z (ND2)                                          0.64      14.31 r
+  U10859/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_1_/D (FD2P)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_2_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.99       7.35 r
+  U6780/Z (IVP)                                           0.23       7.58 f
+  U6781/Z (ND2P)                                          0.87       8.45 r
+  U6322/Z (ND2P)                                          0.30       8.75 f
+  U6803/Z (AO3P)                                          0.76       9.52 r
+  U6810/Z (AO3P)                                          0.59      10.10 f
+  U7328/Z (ND2)                                           0.78      10.88 r
+  U7356/Z (AO3P)                                          0.53      11.41 f
+  U7357/Z (AO6P)                                          1.06      12.47 r
+  U7358/Z (OR2P)                                          0.98      13.46 r
+  U7359/Z (B4IP)                                          0.22      13.68 f
+  U10963/Z (ND2)                                          0.64      14.31 r
+  U10964/Z (ND2)                                          0.22      14.53 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_2_/D (FD2)     0.00    14.53 f
+  data arrival time                                                 14.53
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_0_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6759/Z (IVDAP)                                         0.65       6.36 f
+  U6779/Z (MUX21LP)                                       0.79       7.15 f
+  U6780/Z (IVP)                                           0.49       7.65 r
+  U6781/Z (ND2P)                                          0.43       8.08 f
+  U7300/Z (ND3)                                           0.93       9.01 r
+  U7303/Z (ND2P)                                          0.30       9.31 f
+  U7317/Z (NR2P)                                          0.82      10.12 r
+  U7321/Z (ND4P)                                          0.64      10.76 f
+  U7322/Z (ND2)                                           0.78      11.54 r
+  U7357/Z (AO6P)                                          0.27      11.81 f
+  U7361/Z (ND2)                                           1.33      13.13 r
+  U7362/Z (IVAP)                                          0.45      13.58 f
+  U7363/Z (IVP)                                           0.49      14.08 r
+  U7364/Z (MUX21L)                                        0.42      14.50 f
+  i_i2c_U_DW_apb_i2c_tx_shift_sda_hold_count_r_reg_0_/D (FD2)     0.00    14.50 f
+  data arrival time                                                 14.50
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_mstfsm_re_start_en_int_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/Q (FD2P)     1.77     1.77 r
+  U5102/Z (EOP)                                           1.13       2.90 f
+  U6953/Z (NR2P)                                          0.69       3.59 r
+  U6954/Z (AN3)                                           0.98       4.57 r
+  U6962/Z (ND3P)                                          0.63       5.20 f
+  U7593/Z (ND2)                                           0.91       6.11 r
+  U7636/Z (ND4)                                           1.01       7.13 f
+  U4991/Z1 (B3IP)                                         0.67       7.80 r
+  U7637/Z (ND2P)                                          0.57       8.37 f
+  U8153/Z (ND2)                                           0.64       9.00 r
+  U8154/Z (AO3)                                           0.62       9.62 f
+  U8155/Z (OR4P)                                          2.03      11.65 f
+  U8156/Z (IVP)                                           0.43      12.07 r
+  U8200/Z (AN3P)                                          1.06      13.13 r
+  U10542/Z (AO3P)                                         0.53      13.66 f
+  U10543/Z (MUX21L)                                       0.83      14.49 r
+  i_i2c_U_DW_apb_i2c_mstfsm_re_start_en_int_reg/D (FD2)     0.00    14.49 r
+  data arrival time                                                 14.49
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_early_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_/QN (FD2P)     2.09     2.09 r
+  U6619/Z (IVAP)                                          0.38       2.47 f
+  U6620/Z (NR2P)                                          0.69       3.16 r
+  U6621/Z (ND4)                                           0.73       3.89 f
+  U6622/Z (NR2P)                                          0.94       4.83 r
+  U6770/Z2 (B2I)                                          0.70       5.54 r
+  U6874/Z (EN)                                            1.19       6.73 f
+  U6875/Z (NR2P)                                          0.82       7.54 r
+  U6891/Z (AO3)                                           0.50       8.05 f
+  U6894/Z (ND2)                                           0.78       8.82 r
+  U6895/Z (ND2)                                           0.30       9.12 f
+  U6904/Z (AN2P)                                          0.98      10.10 f
+  U6308/Z (AO3)                                           1.04      11.14 r
+  U6935/Z (ND2P)                                          0.34      11.49 f
+  U6936/Z (IVP)                                           0.56      12.04 r
+  U6937/Z (ND2P)                                          0.34      12.38 f
+  U6998/Z (AO3P)                                          0.76      13.15 r
+  U6999/Z (AO6P)                                          0.22      13.37 f
+  U5071/Z (AO6)                                           1.08      14.45 r
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_early_reg/D (FD2)     0.00    14.45 r
+  data arrival time                                                 14.45
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_data_sda_prev_r_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_/QN (FD2P)     2.09     2.09 r
+  U6619/Z (IVAP)                                          0.38       2.47 f
+  U6620/Z (NR2P)                                          0.69       3.16 r
+  U6621/Z (ND4)                                           0.73       3.89 f
+  U6622/Z (NR2P)                                          0.94       4.83 r
+  U6770/Z2 (B2I)                                          0.70       5.54 r
+  U6874/Z (EN)                                            1.19       6.73 f
+  U6875/Z (NR2P)                                          0.82       7.54 r
+  U6891/Z (AO3)                                           0.50       8.05 f
+  U6894/Z (ND2)                                           0.78       8.82 r
+  U6895/Z (ND2)                                           0.30       9.12 f
+  U6904/Z (AN2P)                                          0.98      10.10 f
+  U6308/Z (AO3)                                           1.04      11.14 r
+  U6935/Z (ND2P)                                          0.34      11.49 f
+  U6936/Z (IVP)                                           0.56      12.04 r
+  U6326/Z (ND3)                                           0.71      12.76 f
+  U10967/Z (ND2P)                                         0.81      13.57 r
+  U10969/Z (MUX21L)                                       0.83      14.39 r
+  i_i2c_U_DW_apb_i2c_tx_shift_data_sda_prev_r_reg/D (FD4)     0.00    14.39 r
+  data arrival time                                                 14.39
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_mstfsm_start_en_int_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/Q (FD2P)     1.77     1.77 r
+  U5102/Z (EOP)                                           1.13       2.90 f
+  U6953/Z (NR2P)                                          0.69       3.59 r
+  U6954/Z (AN3)                                           0.98       4.57 r
+  U6962/Z (ND3P)                                          0.63       5.20 f
+  U7593/Z (ND2)                                           0.91       6.11 r
+  U7636/Z (ND4)                                           1.01       7.13 f
+  U4991/Z1 (B3IP)                                         0.67       7.80 r
+  U7637/Z (ND2P)                                          0.57       8.37 f
+  U8153/Z (ND2)                                           0.64       9.00 r
+  U8154/Z (AO3)                                           0.62       9.62 f
+  U8155/Z (OR4P)                                          2.03      11.65 f
+  U8156/Z (IVP)                                           0.43      12.07 r
+  U8200/Z (AN3P)                                          1.06      13.13 r
+  U8216/Z (ND2)                                           0.30      13.43 f
+  U5099/Z (AO6P)                                          0.93      14.36 r
+  i_i2c_U_DW_apb_i2c_mstfsm_start_en_int_reg/D (FD2)      0.00      14.36 r
+  data arrival time                                                 14.36
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_4_/QN (FD2P)     2.04     2.04 f
+  U6702/Z (EOP)                                           1.13       3.18 f
+  U6703/Z (NR2P)                                          0.82       3.99 r
+  U6705/Z (AO7P)                                          0.37       4.36 f
+  U6706/Z (AO7P)                                          0.90       5.26 r
+  U6712/Z (AO7P)                                          0.46       5.72 f
+  U6760/Z (IVDAP)                                         0.65       6.36 f
+  U6713/Z (EOP)                                           1.23       7.60 f
+  U6714/Z (ND2P)                                          0.75       8.35 r
+  U6715/Z (ND2P)                                          0.34       8.69 f
+  U6348/Z (AO7)                                           0.78       9.47 r
+  U6767/Z (AO3)                                           0.50       9.97 f
+  U6768/Z (OR2P)                                          1.08      11.05 f
+  U6769/Z (IVP)                                           0.56      11.61 r
+  U7004/Z (AO7P)                                          0.37      11.98 f
+  U7005/Z (AO3P)                                          0.90      12.87 r
+  U10803/Z (ND2)                                          0.22      13.09 f
+  U10804/Z (ND2)                                          0.78      13.86 r
+  U5100/Z (MUX21LP)                                       0.39      14.26 f
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg/D (FD2)       0.00      14.26 f
+  data arrival time                                                 14.26
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_mstfsm_byte_waiting_q_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_rx_filter_ic_scl_spklen_cnt_reg_6_/Q (FD2P)     1.77     1.77 r
+  U5102/Z (EOP)                                           1.13       2.90 f
+  U6953/Z (NR2P)                                          0.69       3.59 r
+  U6954/Z (AN3)                                           0.98       4.57 r
+  U6962/Z (ND3P)                                          0.63       5.20 f
+  U7591/Z (OR2P)                                          1.04       6.24 f
+  U7636/Z (ND4)                                           1.21       7.46 r
+  U4991/Z1 (B3IP)                                         0.34       7.79 f
+  U7637/Z (ND2P)                                          1.06       8.85 r
+  U7638/Z (IVP)                                           0.23       9.08 f
+  U7641/Z (ND2)                                           0.78       9.86 r
+  U8072/Z (ND2)                                           0.30      10.16 f
+  U8198/Z (NR3)                                           1.20      11.35 r
+  U8199/Z (ND2)                                           0.47      11.82 f
+  U10537/Z (ND3)                                          0.79      12.62 r
+  U10538/Z (AO7)                                          0.45      13.07 f
+  U10539/Z (AO6)                                          1.08      14.15 r
+  i_i2c_U_DW_apb_i2c_mstfsm_byte_waiting_q_reg/D (FD2)     0.00     14.15 r
+  data arrival time                                                 14.15
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_tx_shift_mst_slv_ack_ext_r_reg
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_sync_U_ic_sda_hold_sync_sample_syncl_reg_3_/QN (FD2P)     2.09     2.09 r
+  U6619/Z (IVAP)                                          0.38       2.47 f
+  U6620/Z (NR2P)                                          0.69       3.16 r
+  U6621/Z (ND4)                                           0.73       3.89 f
+  U6622/Z (NR2P)                                          0.94       4.83 r
+  U6623/Z (NR2P)                                          0.33       5.16 f
+  U6724/Z2 (B2IP)                                         0.94       6.10 f
+  U6842/Z (MUX21L)                                        0.83       6.93 r
+  U6843/Z (ND2)                                           0.30       7.23 f
+  U6844/Z (AO7P)                                          0.76       7.99 r
+  U6847/Z (MUX21LP)                                       0.49       8.48 f
+  U6917/Z (ND2P)                                          0.75       9.23 r
+  U5070/Z (AN3)                                           0.98      10.21 r
+  U6308/Z (AO3)                                           0.62      10.83 f
+  U6935/Z (ND2P)                                          0.75      11.58 r
+  U6936/Z (IVP)                                           0.26      11.84 f
+  U6326/Z (ND3)                                           1.07      12.91 r
+  U10967/Z (ND2P)                                         0.39      13.30 f
+  U10977/Z (NR2)                                          0.81      14.11 r
+  i_i2c_U_DW_apb_i2c_tx_shift_mst_slv_ack_ext_r_reg/D (FD2)     0.00    14.11 r
+  data arrival time                                                 14.11
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_0_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_8_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_0_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_0_/Q (FD2P)     1.77     1.77 r
+  U10141/Z (AO7)                                          0.53       2.31 f
+  U5097/Z (AO7P)                                          0.63       2.94 r
+  U10142/Z (AO6)                                          0.35       3.29 f
+  U10144/Z (OR3)                                          1.38       4.67 f
+  U5098/Z (AO6P)                                          0.93       5.61 r
+  U10149/Z (AO7)                                          0.45       6.06 f
+  U10150/Z (ND2)                                          0.64       6.70 r
+  U10151/Z (ND2)                                          0.22       6.91 f
+  U10152/Z (ND2)                                          0.64       7.55 r
+  U10158/Z (AO6)                                          0.35       7.90 f
+  U10162/Z (OR3)                                          1.38       9.29 f
+  U10164/Z (AO6P)                                         1.06      10.35 r
+  U10167/Z (AO7P)                                         0.39      10.74 f
+  U5457/Z (IVA)                                           0.31      11.05 r
+  U10169/Z (AN2P)                                         1.19      12.24 r
+  U5355/Z2 (B2I)                                          0.94      13.18 r
+  U10323/Z (ND2)                                          0.22      13.39 f
+  U10326/Z (ND2)                                          0.64      14.03 r
+  i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_8_/D (FD2)     0.00    14.03 r
+  data arrival time                                                 14.03
+  --------------------------------------------------------------------------
+
+  Startpoint: i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_0_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_9_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: QtoD
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_0_/CP (FD2P)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_0_/Q (FD2P)     1.77     1.77 r
+  U10141/Z (AO7)                                          0.53       2.31 f
+  U5097/Z (AO7P)                                          0.63       2.94 r
+  U10142/Z (AO6)                                          0.35       3.29 f
+  U10144/Z (OR3)                                          1.38       4.67 f
+  U5098/Z (AO6P)                                          0.93       5.61 r
+  U10149/Z (AO7)                                          0.45       6.06 f
+  U10150/Z (ND2)                                          0.64       6.70 r
+  U10151/Z (ND2)                                          0.22       6.91 f
+  U10152/Z (ND2)                                          0.64       7.55 r
+  U10158/Z (AO6)                                          0.35       7.90 f
+  U10162/Z (OR3)                                          1.38       9.29 f
+  U10164/Z (AO6P)                                         1.06      10.35 r
+  U10167/Z (AO7P)                                         0.39      10.74 f
+  U5457/Z (IVA)                                           0.31      11.05 r
+  U10169/Z (AN2P)                                         1.19      12.24 r
+  U5355/Z2 (B2I)                                          0.94      13.18 r
+  U10318/Z (ND2)                                          0.22      13.39 f
+  U10322/Z (ND2)                                          0.64      14.03 r
+  i_i2c_U_DW_apb_i2c_clk_gen_scl_low_cntr_reg_9_/D (FD2)     0.00    14.03 r
+  data arrival time                                                 14.03
+  --------------------------------------------------------------------------
+
+1

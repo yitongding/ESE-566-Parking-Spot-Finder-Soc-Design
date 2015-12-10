@@ -1,0 +1,153 @@
+RPT_INFO:Time Scale 1
+
+RPT_INFO:Time Units ns
+
+ 
+****************************************
+Report : qor
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+
+  Timing Path Group 'FEEDTHROUGH'
+  -----------------------------------
+  Levels of Logic:               6.00
+  Critical Path Length:          4.49
+  Critical Path Slack:          -1.49
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:         -3.01
+  No. of Violating Paths:        6.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'HCLK_hclk'
+  -----------------------------------
+  Levels of Logic:              13.00
+  Critical Path Length:         11.35
+  Critical Path Slack:          -6.20
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:      -1148.11
+  No. of Violating Paths:      235.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'PCLK_pclk'
+  -----------------------------------
+  Levels of Logic:              10.00
+  Critical Path Length:          9.22
+  Critical Path Slack:          -4.02
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:      -1190.29
+  No. of Violating Paths:      354.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'REGIN'
+  -----------------------------------
+  Levels of Logic:               7.00
+  Critical Path Length:          7.17
+  Critical Path Slack:          -5.98
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:      -1045.17
+  No. of Violating Paths:      235.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'REGOUT'
+  -----------------------------------
+  Levels of Logic:               5.00
+  Critical Path Length:          6.26
+  Critical Path Slack:          -2.06
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:       -115.39
+  No. of Violating Paths:       91.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+  Timing Path Group 'i_i2c_ic_clk'
+  -----------------------------------
+  Levels of Logic:              19.00
+  Critical Path Length:         14.53
+  Critical Path Slack:          -9.38
+  Critical Path Clk Period:      6.00
+  Total Negative Slack:      -2089.95
+  No. of Violating Paths:      340.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:               7442
+  Buf/Inv Cell Count:             871
+  Buf Cell Count:                 255
+  Inv Cell Count:                 871
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      6301
+  Sequential Cell Count:         1141
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    11146.000000
+  Noncombinational Area: 10272.000000
+  Buf/Inv Area:           1095.000000
+  Total Buffer Area:           433.00
+  Total Inverter Area:        1095.00
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:             21418.000000
+  Design Area:           21418.000000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          8464
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: linuxlab011.seas.wustl.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    6.11
+  Logic Optimization:                 55.34
+  Mapping Optimization:              275.92
+  -----------------------------------------
+  Overall Compile Time:              359.65
+  Overall Compile Wall Clock Time:   362.03
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 9.38  TNS: 4572.45  Number of Violating Paths: 1021
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+tot_cpu_time = 359.648041

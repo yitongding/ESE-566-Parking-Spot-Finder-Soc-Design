@@ -1,0 +1,92 @@
+#pragma vip(be7ab038, daccca85, 00000000, 00000a0f, "Mar  4 2004", "13:48:19")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBBUSMSTSAM_VRH
+#define AHBBUSMSTSAM_VRH
+#include "AmbaObject.vrh"
+#include "AhbBusMst.ports.vri"
+#ifndef AHBBUSMSTSAM_VR
+#define AHBBUSMSTSAM_EXTERN extern
+#else
+#define AHBBUSMSTSAM_EXTERN
+#endif
+typedef class ahb_mst_i;
+typedef class ahb_mst_bus_fe;
+typedef class ahb_mst_bus_s;
+AHBBUSMSTSAM_EXTERN class AhbBusMstSam extends AmbaObject
+{
+#ifdef AHBBUSMSTSAM_VR
+   local ahb_mst_bus_s                    m_bus_s = new;
+#endif
+   protected AhbBusMst_bus_port           m_port;
+   protected ahb_mst_i                    m_iv = new;
+   protected ahb_mst_bus_fe               m_bus_fe = new;
+   public task new(
+       (integer object_id = -1),
+       string object_name,
+       integer filehandle,
+       AhbBusMst_bus_port master_bus_port
+   );
+#ifdef AHBBUSMSTSAM_VR
+   local task sampler_daemon();
+   local task sampler_loop();
+   local task sample_all();
+   local task update_status();
+   local task reset_flags();
+   local task reset_grant_flags();
+#endif
+}
+AHBBUSMSTSAM_EXTERN class ahb_mst_i
+{
+   bit         hgrant;
+   AhbDataType hrdata;
+   bit         hready;
+   bit         hresetn;
+   bit   [1:0] hresp;
+}
+AHBBUSMSTSAM_EXTERN class ahb_mst_bus_fe
+{
+   fevent reset = new("eReset");
+   fevent not_reset = new("eNotReset");
+   fevent granted = new("eGranted");
+   fevent new_granted = new("eNewGranted");
+   fevent not_granted = new("eNotGranted");
+   fevent wait_error = new("eWaitError");
+   fevent wait_okay = new("eWaitOkay");
+   fevent wait_retry = new("eWaitRetry");
+   fevent error = new("eError");
+   fevent okay = new("eOkay");
+   fevent retry = new("eRetry");
+   fevent clock = new("eClock");
+   fevent busy_clock = new("eBusyClock");
+   fevent errsresp = new("eIllegalSlaveResponse");
+}
+#ifdef AHBBUSMSTSAM_VR
+enum ahb_mst_status = 
+   Reset,
+   NotReset,
+   Granted,
+   NewGranted,
+   NotGranted,
+   Error,
+   Okay,
+   Retry,
+   WaitError,
+   WaitOkay,
+   WaitRetry;
+class ahb_mst_bus_s
+{
+   ahb_mst_status reset = Reset;
+   ahb_mst_status grant = NotGranted;
+   ahb_mst_status resp  = Okay;
+}
+#endif /* AHBBUSMSTSAM_VR */
+#endif /* AHBBUSMSTSAM_VRH */

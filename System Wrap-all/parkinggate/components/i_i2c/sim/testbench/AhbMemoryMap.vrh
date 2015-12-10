@@ -1,0 +1,80 @@
+#pragma vip(fa8b85d0, df622209, 00000000, 00000b7d, "Jun 16 2014", "19:40:54")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/AhbMemoryMap.vrh#4 $
+
+#ifndef AHBMEMORYMAP_VRH
+#define AHBMEMORYMAP_VRH
+#include "ParseDefines.vrh"
+#include "proj_defines.vri"
+#include "amba_defines.vri"
+#ifndef AHBMEMORYMAP_VR
+#define AHBMEMORYMAP_EXTERN extern
+#else
+#define AHBMEMORYMAP_EXTERN
+#endif
+#define MM_BOOT_MODE 0
+#define MM_NORM_MODE 1
+#define MM_DO_NOT_EXIT 0
+#define MM_EXIT_ON_ERROR 1
+typedef class AhbAddrRegion;
+typedef class AddrStack;
+typedef class AddrOrdStack;
+AHBMEMORYMAP_EXTERN class AhbMemoryMap
+{
+#ifdef AHBMEMORYMAP_VR
+   local int           m_exit_mode;
+   local int           m_map_mode;
+   local string        m_mode_str;
+   local AhbAddrRegion m_cc_r[9][16];  
+   local int           m_cc_visible[16];
+   local int           m_cc_mr[16];
+   local int           m_cc_hsel_only[16];
+   local int           m_cc_split_capable[16];
+   local int           m_cc_num_iahb_slaves;
+   local int           m_cc_remap;
+   local int           m_cc_ahb_lite;
+   local int           m_cc_ahb_has_arbif;
+   local AddrStack     m_stack = new;
+   local AddrOrdStack  m_ostack_sa = new;
+   local AddrOrdStack  m_ostack_ea = new;
+   local int           m_slave_ptr = 1;
+   local int           m_full_slave_ptr = 1;
+   local int           m_split_slave_ptr = 1;
+#endif
+   public task                 new(ParseDefines cc, int map_mode);
+   public function int         gen_select(AhbAddrType addr, var bit [15:0] sel, var int region_num, var int slave_num);
+   public function int         hsel2slave(bit [15:0] hsel, int num_bits, var int slave_num);
+   public task                 dump();
+   public function int         pop_addr(var AhbAddrType addr, var int region_num, var int slave_num);
+   public function AhbAddrType get_start_addr(int region_num, int slave_num);
+   public function AhbAddrType get_end_addr(int region_num, int slave_num);
+   public task                 set_ptr(int region_num, int slave_num);
+   public task                 rst_ptr();
+   public function int         pop_osaddr(var AhbAddrType addr);
+   public function int         pop_oeaddr(var AhbAddrType addr);
+   public task                 rst_oaddr();
+   public function int         pop_slave(var int slave_num, var AhbAddrType start_addr, var AhbAddrType end_addr);
+   public function int         pop_full_slave(var int slave_num, var AhbAddrType start_addr, var AhbAddrType end_addr);
+   public function int         pop_split_slave(var int slave_num, var AhbAddrType start_addr, var AhbAddrType end_addr);
+   public task                 rst_slave();
+#ifdef AHBMEMORYMAP_VR
+   local function int is_visible(int slave_num);
+   local function int is_full(int slave_num);
+   local function int is_split(int slave_num);
+   local function int check_overlap();
+#endif
+}
+#endif /* AHBMEMORYMAP_VRH */

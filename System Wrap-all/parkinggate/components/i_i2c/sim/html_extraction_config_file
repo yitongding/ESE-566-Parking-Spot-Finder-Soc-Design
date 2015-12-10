@@ -1,0 +1,7 @@
+# Use this file to configure the RCE's HTML result extraction scripts.
+# Strings to be treated as error conditions are indicated by the word "errorConditions:"
+# on a continuous line as shown.
+# Strings to be treated as exceptions are indicated by the word "errorExceptions:"
+
+errorConditions:"error|fatal|Design has unresolved objects|does not exist in the libraries|violated|Violation|Unknown option|UVM_ERROR|UVM_WARNING"
+errorExceptions:"librterrorinf|liberrorinf|an error in a future release|Region:|strerror|_error|errors: 0|error_| 0 error|        error|       error|Parsing design file|recompiling module|Attempting to set|Violation of Reset Pulse Width|m_enIgnoreErrorResponse|errors/warnings|:ERROR:150:|:ERROR:102:|Checking parameter propagation error|vca_error|demoted errors|Missing connection for port|Internet error trying to check for automatic IP updates|no OVA rule from the group was violated|protocol violations are produced|Detected errors sourcing DC setup file|m_envStatusError|stop_after_n_errors|vmm_log_default=error|m_enIgnoreErrorResponse|Number of demoted|Number of caught|UVM_FATAL :    0|UVM_ERROR :    0|UVM_WARNING :    0|Timing violation in"

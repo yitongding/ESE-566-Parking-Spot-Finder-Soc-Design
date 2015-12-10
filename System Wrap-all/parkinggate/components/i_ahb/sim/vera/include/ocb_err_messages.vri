@@ -1,0 +1,62 @@
+#pragma vip(c332da6e, 8d444695, 00000000, 00001499, "Mar  4 2004", "13:48:31")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#define _AHB_UNKN_STATE_ERR_    "Cannot determine state of AHB, based on HTRANS = %h, HWRITE = %h"
+#define _AHB_UNKN_SIZE_ERR_     "Cannot determine transfer size from sampled HSIZE = %h"
+#define _AHB_UNKN_BURST_ERR_    "Cannot determine burst mode from sampled HBURST = %h"
+#define _AHB_IDLE2SEQ_ERR_      "Illegal HTRANS transition from IDLE to SEQ on the bus (Page 3-9)"
+#define _AHB_IDLE2BUSY_ERR_     "Illegal HTRANS transition from IDLE to BUSY on the bus (Page 3-9)"
+#define _AHB_ADD_MIS_ERR_       "A misaligned %s xfer was attempted at HADDR = %h (Page 3-25)"
+#define _AHB_CROS_1K_ERR_       "During a BURST HADDR = %h crossed 1KByte boundary. Previous HADDR = %h (Page 3-11)"
+#define _AHB_INCR_1K_ERR_       "BURST starting at HADDR = %h will cross 1KByte boundary (Page 3-11)"
+#define _AHB_HSEL_CHG_ERR_      "Illegal HSEL%0d changed during a BURST transfer (Page 3-11)"
+#define _AHB_BURST_SIZ_ERR_     "Transfer performed more than the specified number (%0d) of beats in a burst (Page 3-11)"
+#define _AHB_BURST_TRANS_ERR_   "Illegal transition from NONSEQ to %s, when HBURST=SINGLE (Page 3-11)"
+#define _AHB_IDLE_OK_ERR_       "Slave responded with HRESP = %h to an IDLE. Should have been zero wait state OKAY (Page 3-9)"
+#define _AHB_BUSY_OK_ERR_       "Slave responded with HRESP = %h to a BUSY. Should have been zero wait state OKAY (Page 3-9)"
+#define _AHB_CTRL_CHG_ERR_      "Illegal change on %s, on transition %s to %s (Page 3-9)" 
+#define _AHB_ADD_CHG_ERR_       "Illegal address transition to HADDR = %h from HADDR = %h, during transfer (Page 3-9)"
+#define _AHB_NO_NSEQ_ERR_       "First transfer of a single or burst must be NONSEQ, HBURST = %h (Page 3-9)"
+#define _AHB_MULT_HSEL_ERR_     "More than one HSEL is asserted (Page 3-19)"
+#define _AHB_16WAITS_WARN_      "RECOMMENDED 16 wait states has been exceeded in this access (Page 3-20)"
+#define _AHB_SPUR_ERROR_ERR_    "Incorrect Slave ERROR response detected during wait state (Page 3-22)"
+#define _AHB_SPUR_RETRY_ERR_    "Incorrect Slave RETRY response detected during wait state (Page 3-22)"
+#define _AHB_SPUR_SPLIT_ERR_    "Incorrect Slave SPLIT response detected during wait state (Page 3-22)"
+#define _AHB_2CYCLE_ERROR_ERR_  "ERROR response did not have a two cycle response (Page 3-22)"
+#define _AHB_2CYCLE_SPLIT_ERR_  "SPLIT response did not have a two cycle response (Page 3-22)"
+#define _AHB_2CYCLE_RETRY_ERR_  "RETRY response did not have a two cycle response (Page 3-22)"
+#define _AHB_BADHBUSREQ_ERR_    "Master[%0d] removed HBUSREQ prematurely (Page 3-29)"
+#define _AHB_NOHBUSREQ_ERR_     "Master[%0d] did not remove HBUSREQ between xfers (Page 3-29)"
+#define _AHB_HMASTER_EQ_ERR_    "HMASTER=%0d does not reflect granted master[%0d] (Page 3-30)"
+#define _AHB_HMASTER_CHG_ERR_   "HMASTER changed on a waitstate (Page 3-30)"
+#define _AHB_GNT_LK_CHG_ERR_    "MASTER changed illegally during locked transfer (Page 3-30)"
+#define _AHB_ONEHGRANT_ERR_     "More than one HGRANT asserted, with master[%0d] (Page 3-30)"
+#define _AHB_BADHMLOCK_ERR_     "HMASTLOCK was not asserted correctly for master[%0d] (Page 3-34)"
+#define _AHB_LKDUMMY_ERR_       "Dummy master was not assigned to SPLIT lock"
+#define _AHB_LKIDLE_ERR_        "IDLE not driven on a SPLIT locked transfer"
+#define _AHB_MASK_GRANT_ERR_    "HGRANT for master %0d, not masked for SPLIT on slave %0d (Page 3-35)"
+#define _AHB_MULT_HSPLIT_ERR_   "Slave %0d, is asserting HSPLIT %0d incorrectly at the same time as slave %0d (Page 3-35)"
+#define _AHB_TOUT_RESP_ERR_     "Slave took %0d cycles to respond, exceeding %0d expected max (Page 3-37)"
+#define _AHB_2CYC_IDLE_ERR_     "SPLIT or RETRY response not followed by an IDLE, HTRANS=%h (Page 3-39)"
+#define _AHB_SPLIT_1CLK_ERR_    "Slave[%0d] asserted HSPLIT[%0d] for more than 1 clock (Page 3-39)"
+#define _AHB_HTRANS_RESET_ERR_  "During Reset HTRANS not IDLE (Page 3-40)"
+#define _AHB_HWDATA_RESET_ERR_  "During Reset HWDATA invalid value (Page 3-40)"
+#define _AHB_HWRITE_RESET_ERR_  "During Reset HWRITE invalid value (Page 3-40)"
+#define _AHB_HADDR_RESET_ERR_   "During Reset HADDR invalid value (Page 3-40)"
+#define _AHB_HPROT_RESET_ERR_   "During Reset HPROT invalid value (Page 3-40)"
+#define _AHB_HSIZE_RESET_ERR_   "During Reset HSIZE invalid value (Page 3-40)"
+#define _AHB_HBURST_RESET_ERR_  "During Reset HBURST invalid value (Page 3-40)"
+#define _AHB_HBUSREQ_RESET_ERR_ "During Reset HBUSREQ invalid value (Page 3-40)"
+#define _AHB_HLOCK_RESET_ERR_   "During Reset HLOCK invalid value (Page 3-40)"
+#define _AHB_INVALID_ERR_       "Invalid value detected on %s (Page 3-40)"
+#define _AHB_NO_HREADY_ERR_    "HREADY was not asserted when changing state from %s to %s"
+#define _AHB_EBT_MSG_           "Early Burst Termination detected occurred"
+#include "apb_mon_err_messages.vri"

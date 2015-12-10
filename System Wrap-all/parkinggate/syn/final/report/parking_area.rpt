@@ -1,0 +1,45 @@
+RPT_INFO:Area Scale 1
+RPT_INFO:Area Units libArea
+ 
+****************************************
+Report : area
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+Library(s) Used:
+
+    lsi_10k (File: /project/linuxlab/synopsys/syncore/libraries/syn/lsi_10k.db)
+
+Number of ports:                          315
+Number of nets:                          8464
+Number of cells:                         7442
+Number of combinational cells:           6301
+Number of sequential cells:              1141
+Number of macros/black boxes:               0
+Number of buf/inv:                        871
+Number of references:                      65
+
+Combinational area:              11146.000000
+Buf/Inv area:                     1095.000000
+Noncombinational area:           10272.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 21418.000000
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+parking                           21418.0000    100.0  11146.0000  10272.0000  0.0000  parking
+--------------------------------  ----------  -------  ----------  ----------  ------  ---------
+Total                                                  11146.0000  10272.0000  0.0000
+
+1

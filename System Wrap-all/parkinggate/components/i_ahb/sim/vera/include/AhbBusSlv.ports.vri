@@ -1,0 +1,50 @@
+#pragma vip(78ff4c0a, 0b0ecf53, 00000000, 000003d9, "Mar  4 2004", "13:48:20")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef __INC_AHBBUSSLV_PORTS_VRI__
+#define __INC_AHBBUSSLV_PORTS_VRI__
+port AhbBusSlv_bus_port
+{
+   hclk;
+   hresetn;
+   haddr;
+   hburst;
+   hmaster;
+   hmastlock;
+   hprot;
+   hready;
+   hsel;
+   hsize;
+   htrans;
+   hwdata;
+   hwrite;
+   hsel_s0;
+   hsel_s1;
+   hsel_s2;
+   hsel_s3;
+   hsel_s4;
+   hsel_s5;
+   hsel_s6;
+   hsel_s7;
+   hsel_s8;
+   hsel_s9;
+   hsel_s10;
+   hsel_s11;
+   hsel_s12;
+   hsel_s13;
+   hsel_s14;
+   hsel_s15;
+   hrdata;
+   hready_resp;
+   hresp;
+   hsplit;
+}
+#endif

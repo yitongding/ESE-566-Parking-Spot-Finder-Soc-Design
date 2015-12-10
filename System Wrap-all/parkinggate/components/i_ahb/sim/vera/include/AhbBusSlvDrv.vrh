@@ -1,0 +1,154 @@
+#pragma vip(07995c12, e8026f21, 00000000, 00001549, "Mar  4 2004", "13:48:21")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBBUSSLVDRV_VRH
+#define AHBBUSSLVDRV_VRH
+#include "AhbBusSlvSam.vrh"
+#include "AhbByteMem.vrh"
+#ifndef AHBBUSSLVDRV_VR
+#define AHBBUSSLVDRV_EXTERN extern
+#else
+#define AHBBUSSLVDRV_EXTERN
+#endif
+typedef class ahb_slv_o;
+typedef class ahb_slv_p;
+typedef class ahb_slv_c;
+typedef class ahb_slv_bfm_s;
+typedef class ahb_slv_bfm_e;
+typedef class ahb_slv_resp_descr;
+#ifdef AHBBUSSLVDRV_VR
+enum ahb_slv_resp_type = Okay = 0, Error = 1, Retry = 2, Split = 3;
+enum ahb_slv_operation = Nop, Read, Write;
+#endif
+AHBBUSSLVDRV_EXTERN class AhbBusSlvDrv extends AhbBusSlvSam
+{
+#ifdef AHBBUSSLVDRV_VR
+    local ahb_slv_o       m_ov = new;     
+    local ahb_slv_p       m_pv = new;     
+    local ahb_slv_c       m_cv = new;     
+    local ahb_slv_bfm_s   m_bfm_s = new;  
+    local ahb_slv_bfm_e   m_bfm_e = new;
+    local integer         m_errors_cnt = 0;
+    local integer         m_retries_cnt = 0;
+#endif
+    protected AhbByteMem  m_memory;   
+    public task new(
+        (integer object_id = -1),
+        string object_name,
+        integer bus_bit_width,
+        integer bus_lit_endian,
+        integer filehandle,
+        AhbBusSlv_bus_port slave_bus_port
+    );
+    public task split_cycle(bit [15:0] hsplit = 0);
+    public task split_status(var bit [15:0] hsplit);
+    public task configure (
+        AmbaConfigs ctype,
+        integer ivalue_0,
+        (integer ivalue_1 = 0),
+        ((integer ivalue_2 = 0)),
+        (((integer ivalue_3 = 0))),
+        ((((integer ivalue_4 = 0))))
+    );
+    public task flush_mem();
+    public task dump_mem();
+    public task gen_config_report(integer fdescr, (string msg = ""));
+#ifdef AHBBUSSLVDRV_VR
+    local task driver_daemon();
+    local task illegal_loop();
+    local task operation_loop();
+    local task split_counter_loop();
+    local task ins_pattern_loop();
+    local task drive_pattern_loop();
+    local task wait_bus_events();
+    local task drive_reset();
+    local task drive_wait_states(integer cycles_nr, ahb_slv_resp_type hresp);
+    local task drive_response(ahb_slv_resp_type hresp);
+    local task drive_rdata(AhbDataType hrdata);
+    local task drive_split(bit [15:0] hsplit = 0);
+    local task gen_response(ahb_slv_operation op, ahb_slv_resp_descr descr);
+    local task write_mem(AhbAddrType haddr, bit [2:0] hsize, AhbDataType hwdata);
+    local task read_mem(AhbAddrType haddr, bit [2:0] hsize, var AhbDataType hwdata);
+    local task assign_descriptor(
+        AmbaConfigs ctype,
+        integer ivalue_1,
+        integer ivalue_2,
+        integer ivalue_3 = 0,
+        integer ivalue_4 = 0,
+        var ahb_slv_resp_descr descriptor
+    );
+    local task restore_descriptor(var ahb_slv_resp_descr descriptor);
+#endif /* AHBBUSSLVDRV_VR */
+}
+#ifdef AHBBUSSLVDRV_VR
+class ahb_slv_o {
+    AhbDataType hrdata;
+    bit         hready_resp;  
+    bit   [1:0] hresp;  
+    bit  [15:0] hsplit;
+}
+class ahb_slv_p {
+    integer bus_size = 2;
+    integer bus_lit_endian = 1;
+    integer bus_bit_width = 32;
+    integer bus_byte_width = (1 << bus_size);
+}
+class ahb_slv_bfm_s {
+    integer resp_cnt = -1;
+    integer event_cnt = -1;
+    integer config_cnt = -1;
+    integer split_status = 0;
+    integer retry_status = 0;
+    integer master_index = 0;
+}
+class ahb_slv_resp_descr {
+    integer                  ignore_addr_check = 1;  
+    rand ahb_slv_resp_type   resp = Okay;            
+    rand integer             ws_okay_nr = 0;         
+    rand integer             ws_resp_nr = 1;         
+    ahb_slv_resp_type        fix_resp = resp;
+    integer                  fix_ws_okay_nr = ws_okay_nr;
+    integer                  fix_ws_resp_nr = ws_resp_nr;
+    integer                  p_okay = 1;
+    integer                  p_error = 0;
+    integer                  p_retry = 0;
+    integer                  p_split = 0;
+    integer                  ws_okay_min = 0;
+    integer                  ws_okay_max = 0;
+    integer                  ws_resp_min = 1;
+    integer                  ws_resp_max = 1;
+    local constraint filter_descr {
+        resp dist {Okay := p_okay, Error := p_error, Retry := p_retry, Split := p_split};
+        ws_okay_nr dist {ws_okay_min:ws_okay_max :/ 100};
+        ws_resp_nr dist {ws_resp_min:ws_resp_max :/ 100};
+    }
+    public task gen_report(integer fdescr);
+}
+class ahb_slv_c {
+    integer random_mode = 0;
+    integer split_bus_supported = 1;
+    integer split_manual_mode = 1;
+    integer split_delay = 128;
+    integer ins_pattern = 0;  
+    integer max_errors = 100000;
+    integer max_retries = 100000;
+    ahb_slv_resp_descr        idle_descriptor = new;
+    ahb_slv_resp_descr        busy_descriptor = new;
+    ahb_slv_resp_descr        read_descriptor = new;
+    ahb_slv_resp_descr        write_descriptor = new;
+    ahb_slv_resp_descr        new_read_descriptor = new;
+    ahb_slv_resp_descr        new_write_descriptor = new;
+}
+class ahb_slv_bfm_e {
+    event start_split_cnt;
+}
+#endif /* AHBBUSSLVDRV_VR */
+#endif /* AHBBUSSLVDRV_VRH */

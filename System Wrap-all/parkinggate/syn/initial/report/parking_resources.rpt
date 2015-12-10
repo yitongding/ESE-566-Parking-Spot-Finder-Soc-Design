@@ -1,0 +1,343 @@
+ 
+****************************************
+Report : resources
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:08 2015
+****************************************
+
+
+Resource Report for this hierarchy in file ../src/DW_ahb_mux.v
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| lte_x_10       | DW_cmp         | width=32   | i_ahb/U_dcdr/lte_61 (DW_ahb_dcdr.v:61) |
+| gte_x_11       | DW_cmp         | width=32   | i_ahb/U_dcdr/gte_62 (DW_ahb_dcdr.v:62) |
+| lte_x_12       | DW_cmp         | width=32   | i_ahb/U_dcdr/lte_62 (DW_ahb_dcdr.v:62) |
+| gte_x_13       | DW_cmp         | width=32   | i_ahb/U_dcdr/gte_79 (DW_ahb_dcdr.v:79) |
+| lte_x_14       | DW_cmp         | width=32   | i_ahb/U_dcdr/lte_79 (DW_ahb_dcdr.v:79) |
+| gte_x_77       | DW_cmp         | width=32   | i_apb/U_DW_apb_dcdr/gte_64 (DW_apb_dcdr.v:64) |
+| lte_x_78       | DW_cmp         | width=32   | i_apb/U_DW_apb_dcdr/lte_64 (DW_apb_dcdr.v:64) |
+| gte_x_134      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_tx_shift/gte_882 (DW_apb_i2c_tx_shift.v:882) |
+| gte_x_135      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_tx_shift/gte_882_2 (DW_apb_i2c_tx_shift.v:882) |
+| lt_x_136       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_tx_shift/lt_930 (DW_apb_i2c_tx_shift.v:930) |
+| add_x_137      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_tx_shift/add_931 (DW_apb_i2c_tx_shift.v:931) |
+| gte_x_140      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_tx_shift/gte_955 (DW_apb_i2c_tx_shift.v:955) |
+| add_x_152      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_tx_shift/add_1065 (DW_apb_i2c_tx_shift.v:1065) |
+| gt_x_178       | DW_cmp         | width=4    | i_i2c/U_DW_apb_i2c_tx_shift/gt_1128 (DW_apb_i2c_tx_shift.v:1128) |
+| add_x_179      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_tx_shift/add_1164 (DW_apb_i2c_tx_shift.v:1164) |
+| eq_x_197       | DW_cmp         | width=7    | i_i2c/U_DW_apb_i2c_rx_shift/eq_298 (DW_apb_i2c_rx_shift.v:298) |
+| eq_x_198       | DW_cmp         | width=7    | i_i2c/U_DW_apb_i2c_rx_shift/eq_300 (DW_apb_i2c_rx_shift.v:300) |
+| eq_x_199       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_shift/eq_302 (DW_apb_i2c_rx_shift.v:302) |
+| sub_x_200      | DW01_dec       | width=4    | i_i2c/U_DW_apb_i2c_rx_shift/sub_316 (DW_apb_i2c_rx_shift.v:316) |
+| add_x_201      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_rx_shift/add_320 (DW_apb_i2c_rx_shift.v:320) |
+| add_x_239      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_rx_shift/add_527 (DW_apb_i2c_rx_shift.v:527) |
+| gte_x_316      | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_slvfsm/gte_860 (DW_apb_i2c_slvfsm.v:860) |
+| add_x_317      | DW01_inc       | width=8    | i_i2c/U_DW_apb_i2c_slvfsm/add_863 (DW_apb_i2c_slvfsm.v:863) |
+| lt_x_435       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/lt_378 (DW_apb_i2c_rx_filter.v:378) |
+| add_x_436      | DW01_inc       | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/add_384 (DW_apb_i2c_rx_filter.v:384) |
+| eq_x_440       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/eq_393 (DW_apb_i2c_rx_filter.v:393) |
+| lt_x_442       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/lt_418 (DW_apb_i2c_rx_filter.v:418) |
+| add_x_443      | DW01_inc       | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/add_424 (DW_apb_i2c_rx_filter.v:424) |
+| eq_x_447       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/eq_433 (DW_apb_i2c_rx_filter.v:433) |
+| gt_x_449       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/gt_453 (DW_apb_i2c_rx_filter.v:453) |
+| lt_x_450       | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/lt_453 (DW_apb_i2c_rx_filter.v:453) |
+| add_x_451      | DW01_inc       | width=8    | i_i2c/U_DW_apb_i2c_rx_filter/add_455 (DW_apb_i2c_rx_filter.v:455) |
+| add_x_455      | DW01_inc       | width=2    | i_i2c/U_DW_apb_i2c_rx_filter/add_517 (DW_apb_i2c_rx_filter.v:517) |
+| add_x_466      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_156 (DW_apb_i2c_clk_gen.v:156) |
+| gte_x_467      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/gte_168 (DW_apb_i2c_clk_gen.v:168) |
+| add_x_469      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_180 (DW_apb_i2c_clk_gen.v:180) |
+| lt_x_470       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_189 (DW_apb_i2c_clk_gen.v:189) |
+| sub_x_471      | DW01_dec       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/sub_214 (DW_apb_i2c_clk_gen.v:214) |
+| add_x_472      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_217 (DW_apb_i2c_clk_gen.v:217) |
+| lt_x_473       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_230 (DW_apb_i2c_clk_gen.v:230) |
+| gte_x_474      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/gte_235 (DW_apb_i2c_clk_gen.v:235) |
+| add_x_478      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_248 (DW_apb_i2c_clk_gen.v:248) |
+| lt_x_479       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_261 (DW_apb_i2c_clk_gen.v:261) |
+| gte_x_480      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/gte_266 (DW_apb_i2c_clk_gen.v:266) |
+| add_x_484      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_301 (DW_apb_i2c_clk_gen.v:301) |
+| lt_x_485       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_315 (DW_apb_i2c_clk_gen.v:315) |
+| add_x_489      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_340 (DW_apb_i2c_clk_gen.v:340) |
+| lt_x_490       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_356 (DW_apb_i2c_clk_gen.v:356) |
+| add_x_494      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_376 (DW_apb_i2c_clk_gen.v:376) |
+| lt_x_495       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_390 (DW_apb_i2c_clk_gen.v:390) |
+| add_x_499      | DW01_inc       | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/add_411 (DW_apb_i2c_clk_gen.v:411) |
+| lt_x_500       | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_clk_gen/lt_424 (DW_apb_i2c_clk_gen.v:424) |
+| sub_x_506      | DW01_dec       | width=4    | i_i2c/U_DW_apb_i2c_regfile/sub_636 (DW_apb_i2c_regfile.v:636) |
+| add_x_512      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_regfile/add_680 (DW_apb_i2c_regfile.v:680) |
+| sub_x_513      | DW01_dec       | width=4    | i_i2c/U_DW_apb_i2c_regfile/sub_685 (DW_apb_i2c_regfile.v:685) |
+| lte_x_519      | DW_cmp         | width=2    | i_i2c/U_DW_apb_i2c_regfile/lte_774 (DW_apb_i2c_regfile.v:774) |
+| gte_x_532      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_regfile/gte_895 (DW_apb_i2c_regfile.v:895) |
+| add_x_561      | DW01_inc       | width=3    | i_i2c/U_DW_apb_i2c_fifo/add_232 (DW_apb_i2c_fifo.v:232) |
+| lte_x_566      | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_fifo/lte_253 (DW_apb_i2c_fifo.v:253) |
+| eq_x_587       | DW_cmp         | width=10   | i_ahb/U_arb/U_arbif/eq_300_3 (DW_ahb_arbif.v:300) |
+| gt_x_596       | DW_cmp         | width=4    | i_ahb/U_arb/U_arbif/gt_450 (DW_ahb_arbif.v:450) |
+| sub_x_609      | DW01_dec       | width=10   | i_ahb/U_arb/U_ebt/sub_192 (DW_ahb_ebt.v:192) |
+| gte_x_617      | DW_cmp         | width=4    | i_ahb/U_arb/U_mask/gte_214 (DW_ahb_mask.v:214) |
+| gte_x_618      | DW_cmp         | width=4    | i_ahb/U_arb/U_mask/gte_214_I2 (DW_ahb_mask.v:214) |
+| sub_x_626      | DW01_dec       | width=4    | i_ahb/U_arb/U_gctrl/sub_308 (DW_ahb_gctrl.v:308) |
+| gt_x_628       | DW_cmp         | width=3    | i_ahb/U_arb/U_gctrl/gt_364 (DW_ahb_gctrl.v:364) |
+| sub_x_629      | DW01_dec       | width=4    | i_ahb/U_arb/U_gctrl/sub_371 (DW_ahb_gctrl.v:371) |
+| gt_x_633       | DW_cmp         | width=4    | i_ahb/U_arb/U_gctrl/gt_395 (DW_ahb_gctrl.v:395) |
+| ne_x_639       | DW_cmp         | width=2    | i_ahb/U_arb/U_gctrl/ne_414 (DW_ahb_gctrl.v:414) |
+| eq_x_646       | DW_cmp         | width=1    | i_ahb/U_arb/U_gctrl/eq_762_2 (DW_ahb_gctrl.v:762) |
+| add_x_706      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_fifo/U_tx_fifo/add_107 (DW_apb_i2c_bcm06.v:107) |
+| add_x_708      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_fifo/U_tx_fifo/add_111 (DW_apb_i2c_bcm06.v:111) |
+| sub_x_709      | DW01_dec       | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_tx_fifo/sub_119 (DW_apb_i2c_bcm06.v:119) |
+| add_x_710      | DW01_inc       | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_tx_fifo/add_121 (DW_apb_i2c_bcm06.v:121) |
+| lte_x_715      | DW_cmp         | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_tx_fifo/lte_132 (DW_apb_i2c_bcm06.v:132) |
+| gte_x_716      | DW_cmp         | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_tx_fifo/gte_138 (DW_apb_i2c_bcm06.v:138) |
+| add_x_727      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_fifo/U_rx_fifo/add_107 (DW_apb_i2c_bcm06.v:107) |
+| add_x_729      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_fifo/U_rx_fifo/add_111 (DW_apb_i2c_bcm06.v:111) |
+| sub_x_730      | DW01_dec       | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_rx_fifo/sub_119 (DW_apb_i2c_bcm06.v:119) |
+| add_x_731      | DW01_inc       | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_rx_fifo/add_121 (DW_apb_i2c_bcm06.v:121) |
+| gte_x_736      | DW_cmp         | width=3    | i_i2c/U_DW_apb_i2c_fifo/U_rx_fifo/gte_138 (DW_apb_i2c_bcm06.v:138) |
+| add_x_752      | DW01_add       | width=10   | i_i2c/U_DW_apb_i2c_tx_shift/add_879 (DW_apb_i2c_tx_shift.v:879) |
+|         | i_i2c/U_DW_apb_i2c_tx_shift/add_882 (DW_apb_i2c_tx_shift.v:882) |
+| gte_x_753      | DW_cmp         | width=16   | i_i2c/U_DW_apb_i2c_regfile/gte_900 (DW_apb_i2c_regfile.v:900) |
+|           | i_i2c/U_DW_apb_i2c_regfile/gte_901 (DW_apb_i2c_regfile.v:901) |
+| lte_x_754      | DW_cmp         | width=8    | i_i2c/U_DW_apb_i2c_regfile/lte_1060 (DW_apb_i2c_regfile.v:1060) |
+|         | i_i2c/U_DW_apb_i2c_regfile/lte_1086 (DW_apb_i2c_regfile.v:1086) |
+| lte_x_755      | DW_cmp         | width=3    | i_ahb/U_arb/U_arbif/lte_214 (DW_ahb_arbif.v:214) |
+            |            | i_ahb/U_arb/U_arbif/lte_328 (DW_ahb_arbif.v:328) |
+| eq_x_756       | DW_cmp         | width=4    | i_ahb/U_arb/U_gctrl/eq_435 (DW_ahb_gctrl.v:435) |
+             |            | i_ahb/U_arb/U_gctrl/eq_797_2 (DW_ahb_gctrl.v:797) |
+| add_x_505      | DW01_inc       | width=4    | i_i2c/U_DW_apb_i2c_regfile/add_631 (DW_apb_i2c_regfile.v:631) |
+|           | i_i2c/U_DW_apb_i2c_regfile/add_657 (DW_apb_i2c_regfile.v:657) |
+| DP_OP_1163J1_122_7889           |            |                            |
+|                | DP_OP_1163J1_122_7889 |     |                            |
+| DP_OP_1164J1_123_264            |            |                            |
+|                | DP_OP_1164J1_123_264 |      |                            |
+| DP_OP_1157_132_9325             |            |                            |
+|                | DP_OP_1157_132_9325 |       |                            |
+| DP_OP_1158_133_7451             |            |                            |
+|                | DP_OP_1158_133_7451 |       |                            |
+| DP_OP_1160_134_2391             |            |                            |
+|                | DP_OP_1160_134_2391 |       |                            |
+| DP_OP_1161_135_2391             |            |                            |
+|                | DP_OP_1161_135_2391 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_1163J1_122_7889
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1163J1_122_7889 | i_i2c/U_DW_apb_i2c_rx_filter/sub_453 (DW_apb_i2c_rx_filter.v:453) |
+        | i_i2c/U_DW_apb_i2c_rx_filter/sub_463 (DW_apb_i2c_rx_filter.v:463) |
+         | i_i2c/U_DW_apb_i2c_rx_filter/eq_463 (DW_apb_i2c_rx_filter.v:463) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| O1    | PO   | Signed   | 8     | I1 - $unsigned(1'b1) ( DW_apb_i2c_rx_filter.v:453 DW_apb_i2c_rx_filter.v:463 ) |
+| O2    | PO   | Unsigned | 1     | I2 == $unsigned(O1) (DW_apb_i2c_rx_filter.v:463) |
+==============================================================================
+
+Datapath Report for DP_OP_1164J1_123_264
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1164J1_123_264 | i_i2c/U_DW_apb_i2c_clk_gen/sub_215 (DW_apb_i2c_clk_gen.v:215) |
+             | i_i2c/U_DW_apb_i2c_clk_gen/add_216 (DW_apb_i2c_clk_gen.v:216) |
+             | i_i2c/U_DW_apb_i2c_clk_gen/add_216_2 (DW_apb_i2c_clk_gen.v:216) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| O1    | PO   | Signed   | 16    | I1 - $unsigned(1'b1) (DW_apb_i2c_clk_gen.v:215) |
+| O2    | PO   | Unsigned | 16    | O1 + I2 + $unsigned(3'b111) (DW_apb_i2c_clk_gen.v:216) |
+==============================================================================
+
+Datapath Report for DP_OP_1157_132_9325
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1157_132_9325  | i_i2c/U_DW_apb_i2c_tx_shift/sub_882_aco (DW_apb_i2c_tx_shift.v:882) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 2     |                                          |
+| O1    | PO   | Signed   | 16    | I1 - I2 (DW_apb_i2c_tx_shift.v:882)      |
+==============================================================================
+
+Datapath Report for DP_OP_1158_133_7451
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1158_133_7451  | i_i2c/U_DW_apb_i2c_tx_shift/add_879 (DW_apb_i2c_tx_shift.v:879) |
+           | i_i2c/U_DW_apb_i2c_tx_shift/sub_882_2 (DW_apb_i2c_tx_shift.v:882) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Signed   | 16    |                                          |
+| O1    | PO   | Signed   | 16    | -$unsigned(3'b100) - I1 + I2 ( DW_apb_i2c_tx_shift.v:879 DW_apb_i2c_tx_shift.v:882 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1160_134_2391
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1160_134_2391  | i_i2c/U_DW_apb_i2c_fifo/sub_246 (DW_apb_i2c_fifo.v:246) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| O1    | PO   | Signed   | 8     | I1 - $unsigned(1'b1) (DW_apb_i2c_fifo.v:246) |
+==============================================================================
+
+Datapath Report for DP_OP_1161_135_2391
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1161_135_2391  | i_i2c/U_DW_apb_i2c_fifo/add_248 (DW_apb_i2c_fifo.v:248) |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| O1    | PO   | Unsigned | 8     | I1 + $unsigned(1'b1) (DW_apb_i2c_fifo.v:248) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'i_i2c/U_DW_apb_i2c_tx_shift/add_879 (DW_apb_i2c_tx_shift.v:879) i_i2c/U_DW_apb_i2c_tx_shift/add_882 (DW_apb_i2c_tx_shift.v:882)' in design 'parking' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'i_i2c/U_DW_apb_i2c_tx_shift/gte_882 (DW_apb_i2c_tx_shift.v:882)'.  (HDL-120)
+
+Information: Operator associated with resources 'i_i2c/U_DW_apb_i2c_rx_filter/sub_453 (DW_apb_i2c_rx_filter.v:453) i_i2c/U_DW_apb_i2c_rx_filter/sub_463 (DW_apb_i2c_rx_filter.v:463)' in design 'parking' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'i_i2c/U_DW_apb_i2c_rx_filter/lt_453 (DW_apb_i2c_rx_filter.v:453)'.  (HDL-120)
+
+Information: Operator associated with resources 'i_i2c/U_DW_apb_i2c_clk_gen/add_156 (DW_apb_i2c_clk_gen.v:156)' in design 'parking' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'i_i2c/U_DW_apb_i2c_clk_gen/gte_168 (DW_apb_i2c_clk_gen.v:168)'.  (HDL-120)
+
+Information: Operator associated with resources 'i_i2c/U_DW_apb_i2c_clk_gen/sub_214 (DW_apb_i2c_clk_gen.v:214)' in design 'parking' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'i_i2c/U_DW_apb_i2c_clk_gen/lt_230 (DW_apb_i2c_clk_gen.v:230)'.  (HDL-120)
+
+Information: Operator associated with resources 'i_i2c/U_DW_apb_i2c_clk_gen/lt_261 (DW_apb_i2c_clk_gen.v:261)' in design 'parking' breaks the datapath extraction because there is leakage due to truncation on the fanout of its driver 'i_i2c/U_DW_apb_i2c_clk_gen/sub_215 (DW_apb_i2c_clk_gen.v:215)'.  (HDL-120)
+
+Information: Operator associated with resources 'i_i2c/U_DW_apb_i2c_clk_gen/add_216 (DW_apb_i2c_clk_gen.v:216) i_i2c/U_DW_apb_i2c_clk_gen/add_216_2 (DW_apb_i2c_clk_gen.v:216)' in design 'parking' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'i_i2c/U_DW_apb_i2c_clk_gen/lt_315 (DW_apb_i2c_clk_gen.v:315)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| lte_x_10           | DW_cmp           | apparch (area)     |                |
+| gte_x_11           | DW_cmp           | apparch (area)     |                |
+| lte_x_12           | DW_cmp           | apparch (area)     |                |
+| gte_x_13           | DW_cmp           | apparch (area)     |                |
+| lte_x_14           | DW_cmp           | apparch (area)     |                |
+| gte_x_77           | DW_cmp           | apparch (area)     |                |
+| lte_x_78           | DW_cmp           | apparch (area)     |                |
+| gte_x_134          | DW_cmp           | apparch (area)     |                |
+| gte_x_135          | DW_cmp           | apparch (area)     |                |
+| lt_x_136           | DW_cmp           | apparch (area)     |                |
+| add_x_137          | DW01_inc         | pparch (area,speed)                 |
+| gte_x_140          | DW_cmp           | apparch (area)     |                |
+| add_x_152          | DW01_inc         | apparch (area)     |                |
+| gt_x_178           | DW_cmp           | apparch (area)     |                |
+| add_x_179          | DW01_inc         | apparch (area)     |                |
+| eq_x_197           | DW_cmp           | apparch (area)     |                |
+| eq_x_198           | DW_cmp           | apparch (area)     |                |
+| eq_x_199           | DW_cmp           | apparch (area)     |                |
+| sub_x_200          | DW01_dec         | apparch (area)     |                |
+| add_x_201          | DW01_inc         | apparch (area)     |                |
+| add_x_239          | DW01_inc         | apparch (area)     |                |
+| gte_x_316          | DW_cmp           | apparch (area)     |                |
+| add_x_317          | DW01_inc         | apparch (area)     |                |
+| lt_x_435           | DW_cmp           | apparch (area)     |                |
+| add_x_436          | DW01_inc         | apparch (area)     |                |
+| eq_x_440           | DW_cmp           | apparch (area)     |                |
+| lt_x_442           | DW_cmp           | apparch (area)     |                |
+| add_x_443          | DW01_inc         | apparch (area)     |                |
+| eq_x_447           | DW_cmp           | apparch (area)     |                |
+| gt_x_449           | DW_cmp           | apparch (area)     |                |
+| lt_x_450           | DW_cmp           | apparch (area)     |                |
+| add_x_451          | DW01_inc         | pparch (area,speed)                 |
+| add_x_455          | DW01_inc         | apparch (area)     |                |
+| add_x_466          | DW01_inc         | apparch (area)     |                |
+| gte_x_467          | DW_cmp           | apparch (area)     |                |
+| add_x_469          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_470           | DW_cmp           | apparch (area)     |                |
+| sub_x_471          | DW01_dec         | apparch (area)     |                |
+| add_x_472          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_473           | DW_cmp           | apparch (area)     |                |
+| gte_x_474          | DW_cmp           | apparch (area)     |                |
+| add_x_478          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_479           | DW_cmp           | apparch (area)     |                |
+| gte_x_480          | DW_cmp           | apparch (area)     |                |
+| add_x_484          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_485           | DW_cmp           | apparch (area)     |                |
+| add_x_489          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_490           | DW_cmp           | apparch (area)     |                |
+| add_x_494          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_495           | DW_cmp           | apparch (area)     |                |
+| add_x_499          | DW01_inc         | pparch (area,speed)                 |
+| lt_x_500           | DW_cmp           | apparch (area)     |                |
+| sub_x_506          | DW01_dec         | apparch (area)     |                |
+| add_x_512          | DW01_inc         | apparch (area)     |                |
+| sub_x_513          | DW01_dec         | apparch (area)     |                |
+| lte_x_519          | DW_cmp           | apparch (area)     |                |
+| add_x_561          | DW01_inc         | apparch (area)     |                |
+| lte_x_566          | DW_cmp           | apparch (area)     |                |
+| eq_x_587           | DW_cmp           | apparch (area)     |                |
+| gt_x_596           | DW_cmp           | apparch (area)     |                |
+| sub_x_609          | DW01_dec         | apparch (area)     |                |
+| gte_x_617          | DW_cmp           | apparch (area)     |                |
+| gte_x_618          | DW_cmp           | apparch (area)     |                |
+| sub_x_626          | DW01_dec         | apparch (area)     |                |
+| gt_x_628           | DW_cmp           | apparch (area)     |                |
+| sub_x_629          | DW01_dec         | apparch (area)     |                |
+| gt_x_633           | DW_cmp           | apparch (area)     |                |
+| ne_x_639           | DW_cmp           | apparch (area)     |                |
+| eq_x_646           | DW_cmp           | apparch (area)     |                |
+| add_x_706          | DW01_inc         | apparch (area)     |                |
+| add_x_708          | DW01_inc         | apparch (area)     |                |
+| sub_x_709          | DW01_dec         | apparch (area)     |                |
+| add_x_710          | DW01_inc         | apparch (area)     |                |
+| lte_x_715          | DW_cmp           | apparch (area)     |                |
+| gte_x_716          | DW_cmp           | apparch (area)     |                |
+| add_x_727          | DW01_inc         | apparch (area)     |                |
+| add_x_729          | DW01_inc         | apparch (area)     |                |
+| sub_x_730          | DW01_dec         | apparch (area)     |                |
+| add_x_731          | DW01_inc         | apparch (area)     |                |
+| gte_x_736          | DW_cmp           | apparch (area)     |                |
+| add_x_752          | DW01_add         | apparch (area)     |                |
+| gte_x_753          | DW_cmp           | apparch (area)     |                |
+| lte_x_754          | DW_cmp           | apparch (area)     |                |
+| lte_x_755          | DW_cmp           | apparch (area)     |                |
+| eq_x_756           | DW_cmp           | apparch (area)     |                |
+| add_x_505          | DW01_inc         | apparch (area)     |                |
+| DP_OP_1163J1_122_7889                 |                    |                |
+|                    | DP_OP_1163J1_122_7889 | str (area,speed)               |
+| DP_OP_1164J1_123_264                  |                    |                |
+|                    | DP_OP_1164J1_123_264 | str (area)     |                |
+| DP_OP_1157_132_9325                   |                    |                |
+|                    | DP_OP_1157_132_9325 | str (area,speed)                 |
+| DP_OP_1158_133_7451                   |                    |                |
+|                    | DP_OP_1158_133_7451 | str (area,speed)                 |
+| DP_OP_1160_134_2391                   |                    |                |
+|                    | DP_OP_1160_134_2391 | str (area,speed)                 |
+| DP_OP_1161_135_2391                   |                    |                |
+|                    | DP_OP_1161_135_2391 | str (area,speed)                 |
+===============================================================================
+
+1

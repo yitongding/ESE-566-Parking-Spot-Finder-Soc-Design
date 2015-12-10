@@ -1,0 +1,762 @@
+<HTML>
+<HEAD><TITLE>Connection Details Report for parking</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+<HR WIDTH="100%">
+<H1><A NAME="TOP">Connection Details Report for parking</NAME></H1>
+<UL>
+<LI><a href="#AutoConnections"><B>Automatic Connections</B></a></LI>
+<LI><a href="#AllConnections">All Connections</a></LI>
+<LI><a href="#UnconnectedPorts">Unconnected Ports</a></LI>
+<LI><a href="#UnconnectedPins">Unconnected Pins</a></LI>
+</UL>
+<hr><H1><a name="AutoConnections">Automatic Connections</a></H1>
+
+<table border=0 cellspacing=6>
+<tr valign=top><td><B>Status:</B></td><td><font color=green><B>Finished successfully.</B></font></td></tr>
+</table>
+<H1><a name="CreateExPort">Auto-Created Subsystem Ports</a></H1><table border><tr>
+<th>Direction</th>
+<th>Name</th>
+<th>Range</th>
+<th>Interface Port</th>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_haddr</tt></td>
+<td>31 : 0</td>
+<td>ex_i_ahb_AHB_Master/haddr</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hburst</tt></td>
+<td>2 : 0</td>
+<td>ex_i_ahb_AHB_Master/hburst</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hbusreq</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Master/hbusreq</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Master_hgrant</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Master/hgrant</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hlock</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Master/hlock</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hprot</tt></td>
+<td>3 : 0</td>
+<td>ex_i_ahb_AHB_Master/hprot</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Master_hrdata</tt></td>
+<td>31 : 0</td>
+<td>ex_i_ahb_AHB_Master/hrdata</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Master_hready</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Master/hready</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Master_hresp</tt></td>
+<td>1 : 0</td>
+<td>ex_i_ahb_AHB_Master/hresp</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hsize</tt></td>
+<td>2 : 0</td>
+<td>ex_i_ahb_AHB_Master/hsize</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_htrans</tt></td>
+<td>1 : 0</td>
+<td>ex_i_ahb_AHB_Master/htrans</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hwdata</tt></td>
+<td>31 : 0</td>
+<td>ex_i_ahb_AHB_Master/hwdata</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Master_hwrite</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Master/hwrite</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_haddr</tt></td>
+<td>31 : 0</td>
+<td>ex_i_ahb_AHB_Slave/haddr</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hburst</tt></td>
+<td>2 : 0</td>
+<td>ex_i_ahb_AHB_Slave/hburst</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hmastlock</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Slave/hmastlock</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hprot</tt></td>
+<td>3 : 0</td>
+<td>ex_i_ahb_AHB_Slave/hprot</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Slave_hrdata</tt></td>
+<td>31 : 0</td>
+<td>ex_i_ahb_AHB_Slave/hrdata</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hready</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Slave/hready</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Slave_hready_resp</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Slave/hready_resp</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>ex_i_ahb_AHB_Slave_hresp</tt></td>
+<td>1 : 0</td>
+<td>ex_i_ahb_AHB_Slave/hresp</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hsel</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Slave/hsel</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hsize</tt></td>
+<td>2 : 0</td>
+<td>ex_i_ahb_AHB_Slave/hsize</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_htrans</tt></td>
+<td>1 : 0</td>
+<td>ex_i_ahb_AHB_Slave/htrans</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hwdata</tt></td>
+<td>31 : 0</td>
+<td>ex_i_ahb_AHB_Slave/hwdata</td>
+</tr>
+<tr>
+<td>output</td>
+<td><tt>ex_i_ahb_AHB_Slave_hwrite</tt></td>
+<td><I>single bit</I></td>
+<td>ex_i_ahb_AHB_Slave/hwrite</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>HCLK_hclk</tt></td>
+<td><I>single bit</I></td>
+<td>HCLK/hclk</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>HRESETn_hresetn</tt></td>
+<td><I>single bit</I></td>
+<td>HRESETn/hresetn</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>PCLK_pclk</tt></td>
+<td><I>single bit</I></td>
+<td>PCLK/pclk</td>
+</tr>
+<tr>
+<td>input</td>
+<td><tt>PRESETn_presetn</tt></td>
+<td><I>single bit</I></td>
+<td>PRESETn/presetn</td>
+</tr>
+</table>
+<H1><a name="Connect">Auto-Created Connections</a></H1><table border><tr>
+<th>Source<br>Pin / Port / <I>constant</I></th>
+<th>Load<br>Pin / Port</th>
+</tr>
+<tr>
+<td><tt>i_ahb/hmaster</tt></td>
+<td><I>open (unconnected)</I></td>
+</tr>
+<tr>
+<td><tt>i_apb/paddr[31:8]</tt></td>
+<td><I>open (unconnected)</I></td>
+</tr>
+<tr>
+<td><tt>HCLK_hclk</tt></td>
+<td><tt>i_ahb/hclk</tt></td>
+</tr>
+<tr>
+<td><tt>HCLK_hclk</tt></td>
+<td><tt>i_apb/hclk</tt></td>
+</tr>
+<tr>
+<td><tt>HRESETn_hresetn</tt></td>
+<td><tt>i_ahb/hresetn</tt></td>
+</tr>
+<tr>
+<td><tt>HRESETn_hresetn</tt></td>
+<td><tt>i_apb/hresetn</tt></td>
+</tr>
+<tr>
+<td><tt>PCLK_pclk</tt></td>
+<td><tt>i_i2c/pclk</tt></td>
+</tr>
+<tr>
+<td><tt>PRESETn_presetn</tt></td>
+<td><tt>i_i2c/presetn</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_haddr</tt></td>
+<td><tt>i_ahb/haddr_m1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hburst</tt></td>
+<td><tt>i_ahb/hburst_m1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hbusreq</tt></td>
+<td><tt>i_ahb/hbusreq_m1</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hgrant_m1</tt></td>
+<td><tt>ex_i_ahb_AHB_Master_hgrant</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hlock</tt></td>
+<td><tt>i_ahb/hlock_m1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hprot</tt></td>
+<td><tt>i_ahb/hprot_m1</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hrdata</tt></td>
+<td><tt>ex_i_ahb_AHB_Master_hrdata</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hready</tt></td>
+<td><tt>ex_i_ahb_AHB_Master_hready</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hresp</tt></td>
+<td><tt>ex_i_ahb_AHB_Master_hresp</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hsize</tt></td>
+<td><tt>i_ahb/hsize_m1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_htrans</tt></td>
+<td><tt>i_ahb/htrans_m1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hwdata</tt></td>
+<td><tt>i_ahb/hwdata_m1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Master_hwrite</tt></td>
+<td><tt>i_ahb/hwrite_m1</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/haddr</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_haddr</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/haddr</tt></td>
+<td><tt>i_apb/haddr</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hburst</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hburst</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hburst</tt></td>
+<td><tt>i_apb/hburst</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hmastlock</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hmastlock</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hprot</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hprot</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Slave_hrdata</tt></td>
+<td><tt>i_ahb/hrdata_s2</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/hrdata</tt></td>
+<td><tt>i_ahb/hrdata_s1</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hready</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hready</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hready</tt></td>
+<td><tt>i_apb/hready</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Slave_hready_resp</tt></td>
+<td><tt>i_ahb/hready_resp_s2</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/hready_resp</tt></td>
+<td><tt>i_ahb/hready_resp_s1</tt></td>
+</tr>
+<tr>
+<td><tt>ex_i_ahb_AHB_Slave_hresp</tt></td>
+<td><tt>i_ahb/hresp_s2</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/hresp</tt></td>
+<td><tt>i_ahb/hresp_s1</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hsel_s2</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hsel</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hsel_s1</tt></td>
+<td><tt>i_apb/hsel</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hsize</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hsize</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hsize</tt></td>
+<td><tt>i_apb/hsize</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/htrans</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_htrans</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/htrans</tt></td>
+<td><tt>i_apb/htrans</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hwdata</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hwdata</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hwdata</tt></td>
+<td><tt>i_apb/hwdata</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hwrite</tt></td>
+<td><tt>ex_i_ahb_AHB_Slave_hwrite</tt></td>
+</tr>
+<tr>
+<td><tt>i_ahb/hwrite</tt></td>
+<td><tt>i_apb/hwrite</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/paddr[7:0]</tt></td>
+<td><tt>i_i2c/paddr</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/penable</tt></td>
+<td><tt>i_i2c/penable</tt></td>
+</tr>
+<tr>
+<td><tt>i_i2c/prdata</tt></td>
+<td><tt>i_apb/prdata_s0</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/psel_s0</tt></td>
+<td><tt>i_i2c/psel</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/pwdata</tt></td>
+<td><tt>i_i2c/pwdata</tt></td>
+</tr>
+<tr>
+<td><tt>i_apb/pwrite</tt></td>
+<td><tt>i_i2c/pwrite</tt></td>
+</tr>
+</table>
+<div align=right><a href="#TOP">Top of report.</a></div>
+<hr><H1><a name="AllConnections">All Connections</a></H1>
+<table border>
+<tr><th>Sources</th><th>Loads</th></tr>
+<tr valign=top><td nowrap><B>Interface associated?</B><br><tt>-&nbsp;&nbsp; </tt>no<br><tt>?&nbsp;&nbsp; </tt>partial<br><tt>*&nbsp;&nbsp; </tt>yes</td>
+    <td nowrap><B>Directions:</B><br><tt>&nbsp;&nbsp;I </tt>input<br><tt>&nbsp;&nbsp;O </tt>output<br><tt>&nbsp;&nbsp;B </tt>inout<br><tt>&nbsp;&nbsp;? </tt>connected to a net</td></tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_haddr[31:0]</tt></td>
+<td nowrap><tt>* I i_ahb/haddr_m1[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hburst[2:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hburst_m1[2:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hbusreq</tt></td>
+<td nowrap><tt>* I i_ahb/hbusreq_m1</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hlock</tt></td>
+<td nowrap><tt>* I i_ahb/hlock_m1</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hprot[3:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hprot_m1[3:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hsize[2:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hsize_m1[2:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_htrans[1:0]</tt></td>
+<td nowrap><tt>* I i_ahb/htrans_m1[1:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hwdata[31:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hwdata_m1[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Master_hwrite</tt></td>
+<td nowrap><tt>* I i_ahb/hwrite_m1</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Slave_hrdata[31:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hrdata_s2[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Slave_hready_resp</tt></td>
+<td nowrap><tt>* I i_ahb/hready_resp_s2</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I ex_i_ahb_AHB_Slave_hresp[1:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hresp_s2[1:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I HCLK_hclk</tt></td>
+<td nowrap><tt>* I i_ahb/hclk</tt><br><tt>* I i_apb/hclk</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I HRESETn_hresetn</tt></td>
+<td nowrap><tt>* I i_ahb/hresetn</tt><br><tt>* I i_apb/hresetn</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_ahb/ahbarbint</tt></td>
+<td nowrap><tt>- O i_ahb_ahbarbint</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/haddr[31:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_haddr[31:0]</tt><br><tt>* I i_apb/haddr[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hburst[2:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hburst[2:0]</tt><br><tt>* I i_apb/hburst[2:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hgrant_m1</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Master_hgrant</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hmaster[3:0]</tt></td>
+<td nowrap><I>logic 'open'</I></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_ahb/hmaster_data[3:0]</tt></td>
+<td nowrap><tt>- O i_ahb_hmaster_data[3:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hmastlock</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hmastlock</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hprot[3:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hprot[3:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hrdata[31:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Master_hrdata[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_ahb/hrdata_s0[31:0]</tt></td>
+<td nowrap><tt>- O i_ahb_hrdata_s0[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hready</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Master_hready</tt><br><tt>* O ex_i_ahb_AHB_Slave_hready</tt><br><tt>* I i_apb/hready</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_ahb/hready_resp_s0</tt></td>
+<td nowrap><tt>- O i_ahb_hready_resp_s0</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hresp[1:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Master_hresp[1:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_ahb/hresp_s0[1:0]</tt></td>
+<td nowrap><tt>- O i_ahb_hresp_s0[1:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_ahb/hsel_s0</tt></td>
+<td nowrap><tt>- O i_ahb_hsel_s0</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hsel_s1</tt></td>
+<td nowrap><tt>* I i_apb/hsel</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hsel_s2</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hsel</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hsize[2:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hsize[2:0]</tt><br><tt>* I i_apb/hsize[2:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/htrans[1:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_htrans[1:0]</tt><br><tt>* I i_apb/htrans[1:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hwdata[31:0]</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hwdata[31:0]</tt><br><tt>* I i_apb/hwdata[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_ahb/hwrite</tt></td>
+<td nowrap><tt>* O ex_i_ahb_AHB_Slave_hwrite</tt><br><tt>* I i_apb/hwrite</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- I i_ahb_pause</tt></td>
+<td nowrap><tt>- I i_ahb/pause</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/hrdata[31:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hrdata_s1[31:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/hready_resp</tt></td>
+<td nowrap><tt>* I i_ahb/hready_resp_s1</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/hresp[1:0]</tt></td>
+<td nowrap><tt>* I i_ahb/hresp_s1[1:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/paddr[7:0]</tt></td>
+<td nowrap><tt>* I i_i2c/paddr[7:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/paddr[31:8]</tt></td>
+<td nowrap><I>logic 'open'</I></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/penable</tt></td>
+<td nowrap><tt>* I i_i2c/penable</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/psel_s0</tt></td>
+<td nowrap><tt>* I i_i2c/psel</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/pwdata[15:0]</tt></td>
+<td nowrap><tt>* I i_i2c/pwdata[15:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_apb/pwrite</tt></td>
+<td nowrap><tt>* I i_i2c/pwrite</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- I i_apb_pclk_en</tt></td>
+<td nowrap><tt>- I i_apb/pclk_en</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_addr</tt></td>
+<td nowrap><tt>- O i_i2c_debug_addr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_addr_10bit</tt></td>
+<td nowrap><tt>- O i_i2c_debug_addr_10bit</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_data</tt></td>
+<td nowrap><tt>- O i_i2c_debug_data</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_hs</tt></td>
+<td nowrap><tt>- O i_i2c_debug_hs</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_master_act</tt></td>
+<td nowrap><tt>- O i_i2c_debug_master_act</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_mst_cstate[4:0]</tt></td>
+<td nowrap><tt>- O i_i2c_debug_mst_cstate[4:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_p_gen</tt></td>
+<td nowrap><tt>- O i_i2c_debug_p_gen</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_rd</tt></td>
+<td nowrap><tt>- O i_i2c_debug_rd</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_s_gen</tt></td>
+<td nowrap><tt>- O i_i2c_debug_s_gen</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_slave_act</tt></td>
+<td nowrap><tt>- O i_i2c_debug_slave_act</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_slv_cstate[3:0]</tt></td>
+<td nowrap><tt>- O i_i2c_debug_slv_cstate[3:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/debug_wr</tt></td>
+<td nowrap><tt>- O i_i2c_debug_wr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_activity_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_activity_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_clk_oe</tt></td>
+<td nowrap><tt>- O i_i2c_ic_clk_oe</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_data_oe</tt></td>
+<td nowrap><tt>- O i_i2c_ic_data_oe</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_en</tt></td>
+<td nowrap><tt>- O i_i2c_ic_en</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_gen_call_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_gen_call_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_rd_req_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_rd_req_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_rx_done_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_rx_done_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_rx_full_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_rx_full_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_rx_over_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_rx_over_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_rx_under_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_rx_under_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_start_det_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_start_det_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_stop_det_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_stop_det_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_tx_abrt_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_tx_abrt_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_tx_empty_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_tx_empty_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- O i_i2c/ic_tx_over_intr</tt></td>
+<td nowrap><tt>- O i_i2c_ic_tx_over_intr</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* O i_i2c/prdata[15:0]</tt></td>
+<td nowrap><tt>* I i_apb/prdata_s0[15:0]</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- I i_i2c_ic_clk</tt></td>
+<td nowrap><tt>- I i_i2c/ic_clk</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- I i_i2c_ic_clk_in_a</tt></td>
+<td nowrap><tt>- I i_i2c/ic_clk_in_a</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- I i_i2c_ic_data_in_a</tt></td>
+<td nowrap><tt>- I i_i2c/ic_data_in_a</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>- I i_i2c_ic_rst_n</tt></td>
+<td nowrap><tt>- I i_i2c/ic_rst_n</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I PCLK_pclk</tt></td>
+<td nowrap><tt>* I i_i2c/pclk</tt></td>
+</tr>
+<tr>
+<td nowrap><tt>* I PRESETn_presetn</tt></td>
+<td nowrap><tt>* I i_i2c/presetn</tt></td>
+</tr>
+</table>
+<div align=right><a href="#TOP">Top of report.</a></div>
+<hr><H1><a name="UnconnectedPorts">Unconnected Ports</a></H1>
+No unconnected ports in this subsystem.
+<div align=right><a href="#TOP">Top of report.</a></div>
+<hr><H1><a name="UnconnectedPins">Unconnected Pins</a></H1>
+No unconnected pins in this subsystem.
+<div align=right><a href="#TOP">Top of report.</a></div>
+
+<HR WIDTH="100%">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./synopsys_logo.gif" ALT="Synopsys"></td>
+   <td><div align=right>coreAssembler</div></td>
+  </tr>
+</table>
+</BODY></HTML>
+

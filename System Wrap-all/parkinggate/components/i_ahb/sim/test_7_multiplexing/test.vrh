@@ -1,0 +1,22 @@
+#pragma vip(6135aef2, 5cb18bc3, 00000004, 0000013c, "Jun 16 2014", "16:50:31")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_ahb/amba_dev/sim/test_7_multiplexing/test.vrh#4 $
+
+#ifndef TEST_VRH
+#define TEST_VRH
+#include "test_DW_ahb.vrh"
+#include "AhbTestLib.vrh"
+#endif

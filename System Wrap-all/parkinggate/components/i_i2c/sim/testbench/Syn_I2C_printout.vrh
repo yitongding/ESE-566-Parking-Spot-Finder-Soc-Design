@@ -1,0 +1,95 @@
+#pragma vip(90fe6401, 299640e6, 00000000, 00000d38, "Jun 16 2014", "19:41:53")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Syn_I2C_printout.vrh#4 $
+
+#ifndef SYNI2CPRINTOUT_VRH
+#define SYNI2CPRINTOUT_VRH
+
+#ifndef SYNI2CPRINTOUT_VR
+#define SYNI2CPRINTOUT_EXTERN extern
+#else
+#define SYNI2CPRINTOUT_EXTERN
+#endif
+
+#include <vera_defines.vrh>
+#include "Syn_I2C_defines.vrh"
+
+enum SEVERITY = SEV_DEBUG, SEV_INFO, SEV_WARN, SEV_ERROR, SEV_FATAL;
+
+SYNI2CPRINTOUT_EXTERN class Printout {
+#ifdef SYNI2CPRINTOUT_VR
+  local bit DEBUG_ON = I2C_FALSE;
+  local bit WARNING_ON = I2C_TRUE;
+  local bit ERROR_ON  = I2C_TRUE;
+  local bit INFO_ON   = I2C_TRUE;
+  local bit MASTER_ON = I2C_TRUE;
+  local bit SLAVE_ON  = I2C_TRUE;
+  local bit MONITOR_ON = I2C_TRUE;
+  local bit CHECKER_ON = I2C_TRUE;
+  local bit LOGONFILE  = I2C_TRUE;
+  local bit first_time_master = I2C_TRUE;
+  local bit first_time_slave  = I2C_TRUE;
+  local bit first_time_checker = I2C_TRUE;
+  local bit first_time_monitor = I2C_TRUE;
+  local bit first_time_default = I2C_TRUE;
+  local string lstr;
+#endif
+  integer fp_master,fp_checker,fp_slave,fp_monitor,fp_default;
+  string  filename = "Syn_I2C_";
+  // The default is like a global.  Instantiate this class in the program
+  // and set the level at time 0
+//  static SEVERITY default_print_severity = SEV_INFO;  
+  static SEVERITY default_print_severity = SEV_DEBUG;  
+  // Every Vera object that uses Printout will have their local severity
+  // level initialized to the default above.
+  SEVERITY print_severity;
+  string pstr; // For your use storing a temporary string
+  // Variables to track number of prints, max number for each severity
+  static integer debugs = 0,        // Number of debug messages printed
+                 infos = 0,         // Number of info messages printed
+                 warns = 0,         // Number of warning messages printed
+	         errors = 0,        // Number of error messages printed
+                 // Only one fatal is tolerated
+
+    // The following are the maximum number of debugs/info/... that are allowed
+    // during a simulation.  Set to -1 to stop this check
+		 max_debugs ,   // Maximum number of debugs tolerated
+		 max_infos ,    // Maximum number of infos tolerated
+		 max_warns ;    // Maximum number of warns tolerated
+	integer	 max_errors ;    // Maximum number of errors tolerated
+
+  task new();
+  task print   (SEVERITY severity, string context, string message,
+		(integer n1 = 0, (bit [31:0] n2 = 0, (bit [31:0] n3 = 0,
+		(bit [31:0] n4 = 0, (bit [31:0] n5 = 0, (bit [31:0] n6 = 0,
+		(bit [31:0] n7 = 0, (bit [31:0] n8 = 0)))))))));
+  task print64 (SEVERITY severity, string context, string message,
+		(bit [63:0] n1 = 0, (bit [63:0] n2 = 0, (bit [63:0] n3 = 0,
+		(bit [63:0] n4 = 0, (bit [63:0] n5 = 0, (bit [63:0] n6 = 0,
+		(bit [63:0] n7 = 0, (bit [63:0] n8 = 0)))))))));
+  task printstr (SEVERITY severity, string context, string message,
+		 (string n1 = "", (string n2 = "", (string n3 = "", 
+		 (string n4 = "", (string n5 = "", (string n6 = "",
+	         (string n7 = "", (string n8 = "")))))))));
+  task print_summary();
+#ifdef SYNI2CPRINTOUT_VR
+  local task final_error(string message);
+  local task doprint (string level, string context, string message,integer n1);
+#endif
+ 
+}  // class Printout
+
+#endif /* SYNI2CPRINTOUT_VRH */

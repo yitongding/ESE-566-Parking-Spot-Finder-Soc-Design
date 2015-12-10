@@ -1,0 +1,66 @@
+#pragma vip(0a9cc5f7, f5a6ddb1, 00000000, 00000c6b, "Mar  4 2004", "13:48:24")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AMBALIB_VRH
+#define AMBALIB_VRH
+#include "amba_defines.vri"
+#include "proj_defines.vri"
+#include <vera_defines.vrh>
+#ifndef AMBALIB_VR
+#define AMBALIB_EXTERN extern
+#else
+#define AMBALIB_EXTERN
+#endif
+AMBALIB_EXTERN class AmbaLib
+{
+#ifdef AMBALIB_VR
+   local static string m_err_string_table[];
+#endif
+   public task            new();
+   public task            init_string_table();
+   public function string get_err_string(int errno);
+   public function int    check_natural(int n);
+   public function int    check_boolean(int b);
+   public function int    check_ahb_data_bit_width(int max_dbw, int dbw);
+   public function int    check_ahb_addr_bit_width(int max_dbw, int dbw);
+   public function int    check_ahb_size(AhbAddrType addr, int size, int bus_size, var int errno);
+   public function int    dec_byte_lanes(AhbAddrType addr, int size, int bus_size, var int num_bytes, var int bus_offs, var int errno);
+   public function int    dec_byte_lanes_bit(int lit_endian, int bus_byte_width, int num_bytes, int bus_offs, var int msb, var int lsb, var int errno);
+   public function bit [31:0] gen_addr_string(int n);
+   public function bit [31:0] gen_data_string(int n);
+   public function int log2(int n);
+   public function int pow2(int n);
+   public function int check_bus_param(
+                        int bus_bit_width_max_define,
+                        int bus_bit_width_define,
+                        int lit_endian_define,
+                        var int bus_bit_width,
+                        var int bus_byte_width,
+                        var int bus_size,
+                        var int lit_endian
+                       );
+   public task dec_byte_en(
+                        AhbAddrType addr,
+                        bit [2:0] size,
+                        int bus_size,
+                        int lit_endian,
+                        int bus_byte_width,
+                        var AhbAddrType bus_base,
+                        var AhbAddrType bus_offs,
+                        var bit [AHB_DBW_MAX/8-1:0] byte_en
+                       );
+   public task gen_next_addr(AhbAddrType addr, bit [2:0] burst, bit [2:0] size, var AhbAddrType next_addr, var int cross_boundary, var int aligned_addr, var int wrapped_addr);
+   public function int dec_burst_beats(bit [2:0] hburst, int undef_length);
+   public task test_dec_byte_lanes();
+   public task drive_wdata_new(AhbAddrType addr, AhbDataType data, int size, int bus_size, int bus_byte_width, int lit_endian, var AhbDataType wdata);
+   public task drive_wdata_old(AhbAddrType addr, AhbDataType data, int size, int bus_size, int bus_byte_width, int lit_endian, var AhbDataType wdata);
+}
+#endif /* AMBALIB_VRH */

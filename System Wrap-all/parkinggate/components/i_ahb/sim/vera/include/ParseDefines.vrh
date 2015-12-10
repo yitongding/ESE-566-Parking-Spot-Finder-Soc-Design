@@ -1,0 +1,44 @@
+#pragma vip(346ad081, 819ed1e9, 00000004, 0000065d, "Mar  4 2004", "13:48:28")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef PARSEDEFINES_VRH
+#define PARSEDEFINES_VRH
+#include <vera_defines.vrh>
+#ifndef PARSEDEFINES_VR
+#define PARSEDEFINES_EXTERN extern
+#else
+#define PARSEDEFINES_EXTERN
+#endif
+#define CC_MAX_HEX_BIT 64
+#define CC_DO_NOT_EXIT 0
+#define CC_EXIT_ON_ERROR 1
+#define CC_VAL_TYPE bit[CC_MAX_HEX_BIT-1:0]
+PARSEDEFINES_EXTERN class ParseDefines
+{
+#ifdef PARSEDEFINES_VR
+   local integer       m_exit_mode = CC_EXIT_ON_ERROR;
+   local integer       m_success;
+   local string        m_stable[];
+   local CC_VAL_TYPE   m_vtable[];
+#endif
+   public task                    new((integer exit_mode = CC_EXIT_ON_ERROR));
+   public task                    set_exit_mode(integer exit_mode);
+   public function CC_VAL_TYPE    get_val(string str, (integer index = -1));
+   public function integer        get_result();
+   public task                    parse_file(string filename);
+   public task                    dump_table();
+   public task                    flush_table();
+#ifdef PARSEDEFINES_VR
+   local task                     parse_line(string line);
+   local function integer         my_hash(string str);
+#endif
+}
+#endif /* PARSEDEFINES_VRH */

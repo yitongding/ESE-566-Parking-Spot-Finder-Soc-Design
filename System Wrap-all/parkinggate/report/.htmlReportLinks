@@ -1,0 +1,8 @@
+set ::sHtml::reports(MemoryAddressMaps) [list {Memory Address Maps} {AHB and APB Memory Address Maps} /home/warehouse/shenkaijie/Documents/coreAssembler/design/parkinggate/report/address_map.html]
+set ::sHtml::reports(Connection) [list Connection {This report documents the automatic (interface-based)
+and manual (user-driven) connections in the subsystem, including all
+ports created within hierarchical components in the subsystem.} ./Connection.html]
+set ::sHtml::reports(SubsystemContents) [list {Subsystem Contents} {This report documents each component instantiated in the subsystem
+and the interface level connectivity of those components.} ./SubsystemContents.html]
+set ::sHtml::reports(ReportInterfaceInstances) [list {Report Interface Instances} {Report On All Interface Instances} ./ReportInterfaceInstances.html]
+set ::sHtml::reports(SubsystemSourceCode) [list {Subsystem Source Code} {Documents the source files of the subsystem.} ./SubsystemSourceCode.html]

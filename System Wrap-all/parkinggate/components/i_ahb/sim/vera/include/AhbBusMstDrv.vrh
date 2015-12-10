@@ -1,0 +1,246 @@
+#pragma vip(3e428f2f, 43499dba, 00000000, 00001df8, "Mar  4 2004", "13:48:18")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBBUSMSTDRV_VRH
+#define AHBBUSMSTDRV_VRH
+#include "AhbBusMstSam.vrh"
+#ifndef AHBBUSMSTDRV_VR
+#define AHBBUSMSTDRV_EXTERN extern
+#else
+#define AHBBUSMSTDRV_EXTERN
+#endif
+typedef class ahb_mst_o;
+typedef class ahb_mst_p;
+typedef class ahb_mst_c;
+typedef class ahb_mst_rbuf;
+typedef class ahb_mst_bfm_s;
+typedef class ahb_mst_bfm_e;
+AHBBUSMSTDRV_EXTERN class AhbBusMstDrv extends AhbBusMstSam
+{
+#ifdef AHBBUSMSTDRV_VR
+   local ahb_mst_o                 m_ov = new;     
+   local ahb_mst_c                 m_cv = new;     
+   local ahb_mst_bfm_s             m_bfm_s = new;  
+   local fevent                    m_suspend = new("eSuspend");          
+   local fevent                    m_restart = new("eRestart");          
+   local fevent                    m_nseq_restart = new("eNseqRestart"); 
+   local ahb_mst_rbuf              m_rbuf[];       
+   local ahb_mst_i                 m_ireg = new;   
+   local ahb_mst_o                 m_oreg = new;   
+   local int                       m_clock_period = 100;
+   local int                       m_rbuf_mismatch = 0; 
+   local int                       m_rbuf_nookay = 0; 
+#endif /* AHBBUSMSTDRV_VR */
+   protected ahb_mst_p             m_pv = new;     
+   public int                      m_timeout_clock_cycles = 10000;
+   public task new(
+      (int object_id = -1),
+      string object_name,
+      int bus_bit_width,
+      int bus_lit_endian,
+      int filehandle,
+      AhbBusMst_bus_port master_bus_port
+   );
+   public task configure (
+      AmbaConfigs ctype,
+      int ivalue_0,
+      (int ivalue_1 = 0),
+      ((int ivalue_2 = 0)),
+      (((int ivalue_3 = 0))),
+      ((((int ivalue_4 = 0))))
+   );
+   public task get_configure(AmbaConfigs ctype, var int ivalue);
+   public task atom_cycle(
+      AhbAddrType     haddr,
+      bit       [2:0] hburst,
+      bit             hbusreq,
+      bit             hlock,
+      bit       [3:0] hprot,
+      bit       [2:0] hsize,
+      bit       [1:0] htrans,
+      AhbDataType     hwdata,
+      bit             hwrite,
+      var bit         hgrant,
+      var AhbDataType hrdata,
+      var bit         hready,
+      var bit   [1:0] hresp,
+      var bit         hresetn
+   );
+   public task drive_cycle();
+   public task set_signal(
+      int         register_num,
+      AhbDataType register_val
+   );
+   public task get_signal(
+      int             register_num,
+      var AhbDataType register_val
+   );
+   public task write(
+      AhbAddrType haddr,
+      bit   [2:0] hburst,
+      bit         hbusreq,
+      bit         hlock,
+      bit   [3:0] hprot,
+      bit   [2:0] hsize,
+      AhbDataType hwdata,
+      int         index
+   );
+   public task write_continue(
+      bit         hbusreq,
+      bit         hlock,
+      int         busy_cycles,
+      AhbDataType hwdata,
+      int         index
+   );
+   public task read(
+      AhbAddrType haddr,
+      bit   [2:0] hburst,
+      bit         hbusreq,
+      bit         hlock,
+      bit   [3:0] hprot,
+      bit   [2:0] hsize,
+      AhbDataType hrdata_exp,
+      int         index
+   );
+   public task read_continue(
+      bit         hbusreq,
+      bit         hlock,
+      int         busy_cycles,
+      AhbDataType hrdata_exp,
+      int         index
+   );
+   public task idle(
+      bit         hbusreq,
+      bit         hlock,
+      int         index
+   );
+   public task gen_config_report(int fdescr, (string msg = ""));
+   public function int get_rbuf(
+      int             index,
+      var AhbDataType hrdata,
+      var bit   [1:0] hresp,
+      var bit         hready,
+      var int         trans_nr,
+      var int         sim_time,
+      var int         mismatch
+   );
+   public function int get_rbufx(
+      int             index,
+      var AhbAddrType haddr,
+      var AhbDataType hrdata,
+      var bit   [1:0] hresp,
+      var bit         hready,
+      var int         trans_nr,
+      var int         sim_time,
+      var int         mismatch
+   );
+   public task dump_rbuf();
+   public task flush_rbuf();
+   public function int check_rbuf();
+   public task drive_addr_pattern();
+#ifdef AHBBUSMSTDRV_VR
+   local task driver_daemon();
+   local task reset_loop();
+   local task illegal_loop();
+   local task transfer(var ahb_mst_o mo, event data_ready);
+   local task drive_reset();
+   local task drive_arb(int hbusreq, int hlock);
+   local task drive_arb_soft(int hbusreq, int hlock);
+   local task drive_trans(int htrans);
+   local task drive_trans_soft(int htrans);
+   local task drive_addr(AhbAddrType haddr, bit [2:0] hburst, bit [3:0] hprot, bit [2:0] hsize, bit [1:0] htrans, bit hwrite);
+   local task drive_wdata(var ahb_mst_o mo);
+   local task gen_addr_phase(ahb_mst_o mo);
+   local task gen_data_phase(var ahb_mst_o mo, event data_ready);
+   local task wait_clock_cycles(int cycles);
+   local task wait_granted();
+   local task wait_not_granted();
+   local task wait_hready();
+   local task wait_data_phase(ahb_mst_o mo, int doretry, event data_ready, var int restart);
+   local task process_twocycle(ahb_mst_o mo, int doretry, var int restart);
+   local task ins_idle(ahb_mst_o mo, int doretry);
+   local task load_rbuf(ahb_mst_o mo, ahb_mst_i d_mi, int rdata_mismatch, int index);
+   local task check_rdata(AhbDataType hrdata, AhbDataType hrdata_exp, int trans_nr, AhbAddrType haddr, var int rdata_mismatch);
+   local task check_rdata_size(AhbDataType hrdata, AhbDataType hrdata_exp, var ahb_mst_o mo, var int rdata_mismatch);
+   local task plotter_loop();
+   local task events2hdl_loop();
+   local task set_htrans(var ahb_mst_o mo, int value, string msg_func);
+   local task get_clock();
+   local task sync_timeout(var int flag);
+   local task byte_route(var AhbDataType data, int num_bytes);
+#endif /* AHBBUSMSTDRV_VR */
+}
+AHBBUSMSTDRV_EXTERN class ahb_mst_p
+{
+   int bus_size = 2;
+   int bus_lit_endian = 1;
+   int bus_bit_width = 32;
+   int bus_byte_width = (1 << bus_size);
+}
+#ifdef AHBBUSMSTDRV_VR
+class ahb_mst_o
+{
+   AhbAddrType haddr;
+   AhbDataType hwdata;
+   int         hburst;
+   int         hbusreq;
+   int         hlock;
+   int         hprot;
+   int         hsize;
+   int         htrans;
+   int         hwrite;
+   int         burst_type;
+   int         busy_cycles;
+   int         busy_done_cycles;
+   int         busy_abs_cycles;
+   int         busy_init_cycle;
+   int         busy_to_idle;
+   int         busy_last;
+   int         trans_nr;
+   int         wrapped_addr;
+   int         cross_boundary;
+   int         beat_nr;
+   int         num_bytes;
+   int         hi;
+   int         lo;
+   ahb_mst_c   c = new;
+   int         is_continue;
+}
+class ahb_mst_c
+{
+   int idle_cycles = 1;        
+   int ignore_retries = 0;     
+   int ignore_error = 0;       
+   int max_retries = 10;       
+   int rebuild_burst_mode = 1; 
+   int auto_align_data = 0;    
+   int full_check_data = 0;    
+   int ins_pattern = 0;        
+}
+class ahb_mst_rbuf
+{
+   AhbAddrType haddr;
+   AhbDataType hrdata;
+   bit   [1:0] hresp;
+   bit         hready;
+   int     mismatch;
+   int     trans_nr;
+   int     sim_time;
+}
+class ahb_mst_bfm_s
+{
+   int     burst_retried = 0;
+   int     burst_type = 1;
+   int     beat_number;
+   int     trans_cnt = 0;
+}
+#endif /* AHBBUSMSTDRV_VR */
+#endif /* AHBBUSMSTDRV_VRH */

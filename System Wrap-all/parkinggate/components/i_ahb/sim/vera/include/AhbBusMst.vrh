@@ -1,0 +1,107 @@
+#pragma vip(5266c6ad, 46b30893, 00000000, 00000e83, "Mar  4 2004", "13:48:17")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AHBBUSMST_VRH
+#define AHBBUSMST_VRH
+#include "AhbBusMstDrv.vrh"
+#ifndef AHBBUSMST_VR
+#define AHBBUSMST_EXTERN extern
+#else
+#define AHBBUSMST_EXTERN
+#endif
+#ifdef AHBBUSMST_VR
+enum AhbBursttype = one_beat, single_noreq, single_req, incr_noreq, incr_req, fixlen;
+#endif
+AHBBUSMST_EXTERN class AhbBusMst extends AhbBusMstDrv
+{
+#ifdef AHBBUSMST_VR
+   local static int          m_init_static = 1;
+   local static int          m_log_count = 0;
+   local static string       m_haddr_str;
+   local static string       m_hwrite_str[2];
+   local static string       m_hburst_str[8];
+   local static string       m_hsize_str[8];
+   local static string       m_hbusreq_str[2];
+   local static string       m_hlock_str[2];
+   local static string       m_hprot_str[16];
+   local static string       m_busy_str;
+   local static string       m_incr_str;
+   local static int          m_wbuf_depth;
+   local static AhbDataType  m_wdata[];
+   local static AhbDataType  m_rdata_exp[];
+#endif
+   public AhbAddrType        m_haddr_base;
+   public int                m_hsize_weight[8];
+   public int                m_hburst_weight[8];
+   public int                m_hbusreq_weight[2];
+   public int                m_hlock_weight[2];
+   public int                m_hprot_weight[16];
+   public int                m_busy_max;
+   public int                m_incr_max;
+   public task new(
+      (int object_id = -1),
+      string object_name,
+      int bus_bit_width,
+      int bus_lit_endian,
+      int filehandle,
+      AhbBusMst_bus_port bus_port
+    );
+   public task write_burst(
+      AhbAddrType haddr,
+      bit   [2:0] hburst,
+      bit         hbusreq,
+      bit         hlock,
+      bit   [3:0] hprot,
+      bit   [2:0] hsize,
+      int         busy_cycles,
+      int         incr_beats,
+      int         index
+   );
+   public task read_burst(
+      AhbAddrType haddr,
+      bit   [2:0] hburst,
+      bit         hbusreq,
+      bit         hlock,
+      bit   [3:0] hprot,
+      bit   [2:0] hsize,
+      int         busy_cycles,
+      int         incr_beats,
+      int         index
+   );
+   public task                 gen_random_wbuf(int bit_width, int buf_depth);
+   public function AhbDataType get_wbuf(int index);
+   public task                 set_wbuf(int index, AhbDataType data);
+   public function AhbDataType get_ebuf(int index);
+   public task                 set_ebuf(int index, AhbDataType data);
+   public task                 test_random_wbuf();
+   public task                 dump_random_wbuf(int bit_width, int buf_depth);
+   public task  random_stream_rw(int num_transfers);
+#ifdef AHBBUSMST_VR
+   //local task   checkOutLicense();
+   //function int checkLicenseOverride(var string feature);
+   local task   dec_btype(bit [2:0] hburst, bit hbusreq, int incr_beats, var int num_beats, var AhbBursttype btype);
+   local task   init_strings();
+   local task   init_weights();
+   local task   weights_daemon();
+   local task   log_burst(
+      AhbAddrType haddr,
+      bit   [2:0] hburst,
+      bit         hbusreq,
+      bit         hlock,
+      bit   [3:0] hprot,
+      bit   [2:0] hsize,
+      bit         hwrite,
+      int         busy_cycles,
+      int         incr_beats
+   );
+#endif
+}
+#endif /* AHBBUSMST_VRH */

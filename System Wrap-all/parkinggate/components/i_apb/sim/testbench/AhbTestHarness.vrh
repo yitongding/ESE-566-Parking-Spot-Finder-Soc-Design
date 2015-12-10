@@ -1,0 +1,94 @@
+#pragma vip(39ced0cd, ad663bab, 00000000, 000009d6, "May 25 2014", "00:13:49")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2002 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb/amba_dev/sim/testbench/AhbTestHarness.vrh#4 $
+
+#ifndef AHBTESTHARNESS_VRH
+#define AHBTESTHARNESS_VRH
+#include "AxbBaseHarness.vrh"
+#include "AhbMaster.vri"
+#include "AhbSlave.vri"
+#include "AhbMonitor.vri"
+#include "AhbMemoryMap.vrh"
+#include "ParseDefines.vrh"
+#include "proj_defines.vri"
+#include "AhbTestHarnessBind.vri"
+#ifndef AHBTESTHARNESS_VR
+#define AHBTESTHARNESS_EXTERN extern
+#else
+#define AHBTESTHARNESS_EXTERN
+#endif
+#define MAIN_STREAM 0  /* default stream ID */
+#define INTR_STREAM 1  /* interrupt stream ID */
+interface dut_ahb_if
+{
+   input hclk CLOCK;
+}
+port AhbAuxVirtualPort
+{
+   pause;
+   remap_n;
+   ahbarbint;
+   ahb_wt_aps;
+   ahb_wt_mask;
+}
+AHBTESTHARNESS_EXTERN class AhbDutHarness extends AxbBaseHarness
+{
+   protected ParseDefines     m_cc;
+   public AxbVirtualPort      m_ahb_vmst_port[16][16]; 
+   public AxbVirtualPort      m_ahb_vslv_port[16][16]; 
+   public AxbVirtualPort      m_ahb_vbus_port[16];     
+   public AhbAuxVirtualPort   m_ahb_vaux_port[16];     
+   public task new(ParseDefines cc, (bit mon_umask = 1'b1));
+#ifdef AHBTESTHARNESS_VR
+   local task connect_hdl2vera((bit mon_umask = 1'b1));
+#endif
+}
+AHBTESTHARNESS_EXTERN class AhbVipDutHarness extends AhbDutHarness
+{
+   public AhbMasterPort       m_bfm_ahb_mst_port[16][16];
+   public AhbSlavePort        m_bfm_ahb_slv_port[16][16];
+   public AhbMonitorPort      m_bfm_ahb_mon_port[16];
+   public task new(ParseDefines cc, (bit mon_umask = 1'b1));
+#ifdef AHBTESTHARNESS_VR
+   local task connect_vera2vera((bit mon_umask = 1'b1));
+#endif
+}
+AHBTESTHARNESS_EXTERN class AhbTestHarness extends AhbVipDutHarness
+{ 
+   public AhbMaster    ahb_mst[16];
+   public AhbSlave     ahb_slv[16];
+   public AhbMonitor   ahb_mon;
+   public ParseDefines ahb_cc;
+   public bit[15:0]    ahb_mst_umask;
+   public bit[15:0]    ahb_slv_umask;
+   public bit          ahb_mon_umask;
+   public bit[15:0]    ahb_mst_present;
+   public bit[15:0]    ahb_slv_present;
+   public bit[15:0]    ahb_slv_split_capable;
+   public AhbMemoryMap ahb_mm_array[2]; 
+   public task new(
+      var ParseDefines cc,
+      (bit[15:0] mst_umask = 16'hffff),
+      (bit[15:0] slv_umask = 16'hffff),
+      (bit mon_umask = 1'b1)
+   );
+#ifdef AHBTESTHARNESS_VR
+   local task build_ahb_mst();
+   local task build_ahb_slv();
+   local task build_ahb_mon();
+#endif
+}
+#endif /* AHBTESTHARNESS_VRH */

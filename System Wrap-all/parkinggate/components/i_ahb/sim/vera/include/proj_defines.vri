@@ -1,0 +1,19 @@
+#pragma vip(a93131ba, 90807e84, 00000000, 00000272, "Mar  4 2004", "13:48:31")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#define int integer
+#define UNKNOWN_INT -2147483647 - 1 
+#define _CD_
+#define _CI_
+#define _CW_
+#define _CE_
+#define _CF_
+#define _CN_

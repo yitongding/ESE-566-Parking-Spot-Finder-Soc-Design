@@ -1,0 +1,88 @@
+#pragma vip(e895beca, 9fdcb2d2, 00000000, 00000bbc, "Mar  4 2004", "13:48:25")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AMBAOBJECT_VRH
+#define AMBAOBJECT_VRH
+#include "proj_defines.vri"
+#include "amba_defines.vri"
+#include "amba_enums.vri"
+#include "AmbaLib.vrh"
+#include "AppObject.vrh"
+#include <vera_defines.vrh>
+#define _DEBUG_   0
+#define _INFO_    1
+#define _WARNING_ 2
+#define _ERROR_   3
+#define _FAILURE_ 4
+#define _FATAL_   5
+#ifndef AMBAOBJECT_VR
+#define AMBAOBJECT_EXTERN extern
+#else
+#define AMBAOBJECT_EXTERN
+#endif
+#ifdef AMBA_OBJECT_DEBUG_MODE
+typedef class SysLog;
+#endif
+AMBAOBJECT_EXTERN class fevent
+{
+   public event e;
+   public int f;
+   public string name;
+   public task         new((string name = ""));
+   public task         ftrigger(int ttype = ONE_SHOT);
+}
+AMBAOBJECT_EXTERN class reg16b_ror
+{
+#ifdef AMBAOBJECT_VR
+   local bit [15:0] m_reg_value = 0;
+#endif /* AMBAOBJECT_VR */
+   public function int get_val(var bit [15:0] reg_value);
+   public task         set_bit(int index);
+}
+AMBAOBJECT_EXTERN class AmbaObject extends AppObject
+{
+#ifdef AMBAOBJECT_VR
+   local            int     m_obj_id;
+#ifdef AMBA_OBJECT_DEBUG_MODE
+   local            SysLog  m_log;
+#endif
+   local            int     m_ibuf[];
+   local            int     m_ibuf_cnt = -1;
+   local static     int     m_init_static = 1;
+#endif /* AMBAOBJECT_VR */
+   protected static AmbaLib     m_ambalib;
+   protected static string      m_sHtrans[4];
+   protected static reg16b_ror  m_ahb_mst_reg[SIG_NUMBER];
+   protected task           load_illegal();
+   protected task           send_msg (int severity,
+      string msg_func,
+      int index= UNKNOWN_INT,
+      string msg_text,
+      (int val_1 = UNKNOWN_INT),
+      ((int val_2 = UNKNOWN_INT)),
+      (((int val_3 = UNKNOWN_INT)))
+   );
+   protected task           send_sig(int sig_id);
+   protected function int   get_object_id();
+   protected function int   started();
+   protected function int   killed();
+   protected task           wait_stop_kill();
+   protected task           syncx(fevent the_event, int index, string msg_func, var int flag);
+   public    task           new((int id = -1), string name, int filehandle);
+   public    task           set_stdo_mask(int report_mask);
+   public    task           set_file_mask(int report_mask);
+   public    task           mask2filter(int mask, var Logger_severity filter);
+   public    task           filter2mask(Logger_severity filter, var int mask);
+   public    function int   check_illegal();
+   public    function int   get_illegal(int index); 
+   public    task           flush_illegal();
+}
+#endif /* AMBAOBJECT_VRH */

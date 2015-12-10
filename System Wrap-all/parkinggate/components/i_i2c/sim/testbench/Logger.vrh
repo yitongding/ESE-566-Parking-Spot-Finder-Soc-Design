@@ -1,0 +1,52 @@
+#pragma vip(c84ae3e2, 95db389a, 00000000, 00000445, "Jun 16 2014", "19:41:17")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/Logger.vrh#4 $
+// Abstract: Logger Class
+#ifndef AHBICMBASE_VRH
+#define AHBICMBASE_VRH
+
+#include <vera_defines.vrh>
+
+#ifndef AHBICMBASE_VR
+#define AHBICMBASE_EXTERN extern
+#else
+#define AHBICMBASE_EXTERN
+#endif /* AHBICMBASE_VR */
+
+enum ReportLevel = REP_INFO, REP_ERROR, REP_DEBUG, REP_UNMASKED;
+
+// ---------------------------------------
+// : AHB ICM - Logger Class
+// ---------------------------------------
+AHBICMBASE_EXTERN class Logger
+{
+#ifdef AHBICMBASE_VR
+  local string          Header;
+  local integer         Id;
+  local string          ObjName;
+  local integer         FileHandle;
+  local ReportLevel     rep_level;
+#endif /* AHBICMBASE_VR */
+  
+  public task new( integer Id, string ObjName, integer FileHandle);
+
+  public task configure( ReportLevel SetLevel );
+
+  public task report( ReportLevel level, string msg, (integer sim_time = -1) );
+}
+#endif /* AHBICMBASE_VRH */
+
+

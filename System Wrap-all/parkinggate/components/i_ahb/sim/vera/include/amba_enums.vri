@@ -1,0 +1,101 @@
+#pragma vip(cd3b6482, 06dd4a83, 00000000, 00000930, "Mar  4 2004", "13:48:30")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef AMBA_ENUMS_VRI
+#define AMBA_ENUMS_VRI
+enum AmbaConfigs =  
+    _Hlit_endian,
+    _Hdata_bit_width,
+    _Haddr_bit_width,
+    _Hstdo_severity,
+    _Hfile_severity,
+    _Hidle_cycles,
+    _Hignore_nookay,
+    _Hmax_nookay,
+    _Hrebuild_mode,
+    _Hsplit_support,
+    _Hsplit_manual_mode,
+    _Hsplit_delay,
+    _Hrandom_mode,
+    _Hrandom_response_prob,
+    _Hrandom_wait_states_okay_range,
+    _Hrandom_wait_states_nookay_range,
+    _Hresponse_type,
+    _Hresponse_wait_states_okay,
+    _Hresponse_wait_states_nookay,
+    bus_bitwidth,
+    bus_litendian,
+    ins_pattern,
+    max_retries,
+    max_errors,
+    idle_cycles,
+    ignore_retries,
+    ignore_error,
+    rebuild_burst_mode,
+    auto_align_data,
+    full_check_data, 
+    random_mode,
+    wait_states_okay_rand_range,
+    wait_states_resp_rand_range,
+    response_type,
+    response_prob,
+    split_manual_mode,
+    split_bus_supported,
+    multi_select, 
+    data_width,
+    slave_count,
+    translog,
+    protmon,
+    wdogtout,
+    covmon,
+    verbose,
+    error_trig,
+    error_fifo,
+    dummy_mst,
+    default_mst,
+    _Htranslog,
+    _Hprotmon,
+    _Hwdogtout,
+    _Hcovmon,
+    _Hverbose,
+    _Herror_trig,
+    _Herror_fifo,
+    _Hmst_present,
+    _Hslv_present,
+    _Hsplit_cap,
+    _Hen_arbmon,
+    _Hdummy_mst,
+    _Hdefault_mst,
+   _Perr_en,
+   _Pdata_bit_width,
+   _Perr_data_mask,
+   _Pstdo_severity,
+   _Pfile_severity,
+   _Pauto_aline
+;
+enum AmbaSignals = 
+   _Hresetn,
+   _Hgrant,
+   _Hrdata,
+   _Hready,
+   _Hresp,
+   _Haddr,
+   _Hburst, _Hsingle, _Hincr, _Hwrap4, _Hincr4, _Hwrap8, _Hincr8, _Hwrap16, _Hincr16,
+   _Hbusreq, _Hnoreq, _Hreq, 
+   _Hnolock, _Hlock, 
+   _Hprot, _Hprot_[16],
+   _Hsize, _Hsize8, _Hsize16, _Hsize32, _Hsize64, _Hsize128, _Hsize256, _Hsize512, _Hsize1024,
+   _Htrans, _Hidle, _Hbusy, _Hnseq, _Hseq,
+   _Hwdata,
+   _Hread, _Hwrite,
+   _Hnoarg
+;
+#endif

@@ -1,0 +1,71 @@
+#pragma vip(e30cd86d, c36b17be, 00000000, 000004b1, "Mar  4 2004", "13:48:27")
+// -------------------------------------------------------------------
+//
+//    Copyright 2002 by Synopsys Inc., ALL RIGHTS RESERVED
+//
+//    This program is proprietary and confidential information of
+//    Synopsys Inc. and may be used and disclosed only as authorized
+//    in a license agreement controlling such use and disclosure.
+//
+// -------------------------------------------------------------------
+
+#ifndef DUTAHBCONNECTOR_PORTS_VRI
+#define DUTAHBCONNECTOR_PORTS_VRI
+port DutAhbMstPort
+{
+   haddr_m;
+   hburst_m;
+   hbusreq_m;
+   hlock_m;
+   hprot_m;
+   hsize_m;
+   htrans_m;
+   hwdata_m;
+   hwrite_m;
+   hgrant_m;
+}
+port DutAhbSlvPort
+{
+   hsel_s;
+   hready_resp_s;
+   hresp_s;
+   hrdata_s;
+   hsplit_s;
+}
+port DutAhbBusPort
+{
+   haddr;
+   hburst;
+   hclk;
+   hmaster;
+   hmaster_data;
+   hmastlock;
+   hprot;
+   hrdata;
+   hready;
+   hresetn;
+   hresp;
+   hsize;
+   htrans;
+   hwdata;
+   hwrite;
+
+   // added for the new monitor
+   hsel;
+   hbusreq;
+   hgrant;
+   hlock;
+}
+port DutAhbAuxPort
+{
+   pause;
+   ahb_big_endian;
+   remap_n;
+   ahbarbint;
+   ahb_wt_aps;
+   ahb_wt_mask;
+   testcase_id;
+}
+#endif
+
+

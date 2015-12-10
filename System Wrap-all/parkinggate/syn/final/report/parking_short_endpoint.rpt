@@ -1,0 +1,3199 @@
+RPT_INFO:Input Ports  
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Master
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)       0.07       1.27 f
+  ...
+  ex_i_ahb_AHB_Slave_hsel (out)            4.42       5.69 r
+  data arrival time                                   5.69
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -5.69
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.49
+
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)                      0.07       1.27 f
+  ...
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       9.78      11.05 r
+  data arrival time                                                 11.05
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/CP (FD2)      0.00       6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -11.05
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -5.90
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hburst[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hburst[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hburst[2] (in)       0.36       1.56 r
+  ...
+  ex_i_ahb_AHB_Slave_hburst[2] (out)       2.33       3.89 r
+  data arrival time                                   3.89
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.89
+  -----------------------------------------------------------
+  slack (MET)                                         0.31
+
+
+  Startpoint: ex_i_ahb_AHB_Master_hburst[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_hburst[1] (in)                      0.51       1.71 r
+  ...
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           7.76       9.47 r
+  data arrival time                                                  9.47
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/CP (FD4)          0.00       6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -9.47
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.37
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hbusreq
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_hbusreq (in)                        0.18       1.38 f
+  ...
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           4.95       6.33 r
+  data arrival time                                                  6.33
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/CP (FD4)          0.00       6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -6.33
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.23
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hlock
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_hlock (in)                          0.07       1.27 f
+  ...
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           7.39       8.67 r
+  data arrival time                                                  8.67
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/CP (FD4)          0.00       6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -8.67
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -3.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hprot[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hprot[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hprot[1] (in)        0.22       1.42 r
+  ...
+  ex_i_ahb_AHB_Slave_hprot[1] (out)        1.64       3.05 r
+  data arrival time                                   3.05
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.05
+  -----------------------------------------------------------
+  slack (MET)                                         1.15
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hsize[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsize[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hsize[2] (in)        0.22       1.42 r
+  ...
+  ex_i_ahb_AHB_Slave_hsize[2] (out)        2.24       3.66 r
+  data arrival time                                   3.66
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.66
+  -----------------------------------------------------------
+  slack (MET)                                         0.54
+
+
+  Startpoint: ex_i_ahb_AHB_Master_hsize[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_arbif_ireg_hrdata_reg_8_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_hsize[2] (in)                       0.22       1.42 r
+  ...
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_8_/D (FD2)          7.90       9.32 f
+  data arrival time                                                  9.32
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_8_/CP (FD2)         0.00       6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                 -9.32
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.17
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_htrans[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_htrans[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_htrans[1] (in)       0.44       1.64 r
+  ...
+  ex_i_ahb_AHB_Slave_htrans[1] (out)       2.73       4.37 r
+  data arrival time                                   4.37
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -4.37
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.17
+
+
+  Startpoint: ex_i_ahb_AHB_Master_htrans[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_htrans[1] (in)                      0.44       1.64 r
+  ...
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/D (FD2)     9.35      10.98 r
+  data arrival time                                                 10.98
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/CP (FD2)     0.00      6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -10.98
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -5.83
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwdata[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwdata[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwdata[1] (in)       0.44       1.64 r
+  ...
+  ex_i_ahb_AHB_Slave_hwdata[1] (out)       1.11       2.75 r
+  data arrival time                                   2.75
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -2.75
+  -----------------------------------------------------------
+  slack (MET)                                         1.45
+
+
+  Startpoint: ex_i_ahb_AHB_Master_hwdata[3]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_arbif_ipl1_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Master_hwdata[3] (in)                      0.07       1.27 f
+  ...
+  i_ahb_U_arb_U_arbif_ipl1_reg_0_/D (FD4)                 5.23       6.50 r
+  data arrival time                                                  6.50
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_arbif_ipl1_reg_0_/CP (FD4)                0.00       6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -6.50
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.40
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwrite
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwrite
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwrite (in)          0.29       1.49 r
+  ...
+  ex_i_ahb_AHB_Slave_hwrite (out)          1.90       3.39 r
+  data arrival time                                   3.39
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.39
+  -----------------------------------------------------------
+  slack (MET)                                         0.81
+
+
+  Startpoint: ex_i_ahb_AHB_Master_hwrite
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwrite (in)                         0.29       1.49 r
+  ...
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       8.38       9.87 r
+  data arrival time                                                  9.87
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/CP (FD2)      0.00       6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                 -9.87
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.72
+
+
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Slave
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hrdata[29]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hrdata[29]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hrdata[29] (in)                      0.15       1.35 r
+  ...
+  ex_i_ahb_AHB_Master_hrdata[29] (out)                    1.59       2.94 r
+  data arrival time                                                  2.94
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -2.94
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.26
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hready_resp (in)      0.73       1.93 r
+  ...
+  ex_i_ahb_AHB_Master_hready (out)         1.91       3.83 r
+  data arrival time                                   3.83
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.83
+  -----------------------------------------------------------
+  slack (MET)                                         0.37
+
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Slave_hready_resp (in)                     0.36       1.56 f
+  ...
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/D (FD2)       9.15      10.71 r
+  data arrival time                                                 10.71
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_haddr_reg_13_/CP (FD2)      0.00       6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -10.71
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -5.56
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hresp[0]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hresp[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hresp[0] (in)         0.44       1.64 r
+  ...
+  ex_i_ahb_AHB_Master_hresp[0] (out)       1.96       3.59 r
+  data arrival time                                   3.59
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.59
+  -----------------------------------------------------------
+  slack (MET)                                         0.61
+
+
+  Startpoint: ex_i_ahb_AHB_Slave_hresp[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  ex_i_ahb_AHB_Slave_hresp[1] (in)                        0.18       1.38 f
+  ...
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           8.12       9.50 r
+  data arrival time                                                  9.50
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/CP (FD4)          0.00       6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -9.50
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -4.40
+
+
+RPT_INFO:Port Group Manually exported pins
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_pause
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 f
+  i_ahb_pause (in)                                        0.07       1.27 f
+  ...
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/D (FD4)           4.54       5.81 f
+  data arrival time                                                  5.81
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_0_/CP (FD4)          0.00       6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -5.81
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.71
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_apb_pclk_en
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_
+            (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    3.96       3.96 r
+  i_apb_pclk_en (in)                                      0.58       4.54 r
+  ...
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/D (FD2)     6.59      11.13 r
+  data arrival time                                                 11.13
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_apb_U_DW_apb_ahbsif_saved_hwdata32_reg_0_/CP (FD2)     0.00      6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                -11.13
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -5.98
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_ic_clk_in_a
+              (input port clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_rx_filter_U_scl_sync_U_SYNC_sample_meta_reg_0_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.40       2.40 r
+  i_i2c_ic_clk_in_a (in)                                  0.22       2.62 r
+  ...
+  i_i2c_U_DW_apb_i2c_rx_filter_U_scl_sync_U_SYNC_sample_meta_reg_0_/D (FD2)     0.31     2.93 f
+  data arrival time                                                  2.93
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_i2c_U_DW_apb_i2c_rx_filter_U_scl_sync_U_SYNC_sample_meta_reg_0_/CP (FD2)     0.00     6.00 r
+  library setup time                                     -0.85       5.15
+  data required time                                                 5.15
+  --------------------------------------------------------------------------
+  data required time                                                 5.15
+  data arrival time                                                 -2.93
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.22
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_ic_data_in_a
+              (input port clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_U_DW_apb_i2c_rx_filter_U_sda_sync_U_SYNC_sample_meta_reg_0_
+            (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Path Group: REGIN
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.40       2.40 r
+  i_i2c_ic_data_in_a (in)                                 0.15       2.55 r
+  i_i2c_U_DW_apb_i2c_rx_filter_U_sda_sync_U_SYNC_sample_meta_reg_0_/D (FD4)     0.00     2.55 r
+  data arrival time                                                  2.55
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  i_i2c_U_DW_apb_i2c_rx_filter_U_sda_sync_U_SYNC_sample_meta_reg_0_/CP (FD4)     0.00     6.00 r
+  library setup time                                     -0.90       5.10
+  data required time                                                 5.10
+  --------------------------------------------------------------------------
+  data required time                                                 5.10
+  data arrival time                                                 -2.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.55
+
+
+RPT_INFO:Output Ports  
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Master
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hrdata[29]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hrdata[29]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hrdata[29] (in)                      0.15       1.35 r
+  ...
+  ex_i_ahb_AHB_Master_hrdata[29] (out)                    1.59       2.94 r
+  data arrival time                                                  2.94
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -2.94
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.26
+
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hrdata[13]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/QN (FD2P)                  2.02       2.02 f
+  ...
+  ex_i_ahb_AHB_Master_hrdata[13] (out)                    4.23       6.25 r
+  data arrival time                                                  6.25
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -6.25
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -2.05
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hready_resp (in)      0.73       1.93 r
+  ...
+  ex_i_ahb_AHB_Master_hready (out)         1.91       3.83 r
+  data arrival time                                   3.83
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.83
+  -----------------------------------------------------------
+  slack (MET)                                         0.37
+
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/Q (FD2P)                   1.70       1.70 r
+  ...
+  ex_i_ahb_AHB_Master_hready (out)                        4.15       5.85 r
+  data arrival time                                                  5.85
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.85
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.65
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hresp[0]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hresp[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hresp[0] (in)         0.44       1.64 r
+  ...
+  ex_i_ahb_AHB_Master_hresp[0] (out)       1.96       3.59 r
+  data arrival time                                   3.59
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.59
+  -----------------------------------------------------------
+  slack (MET)                                         0.61
+
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hresp[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/Q (FD2P)                   1.70       1.70 r
+  ...
+  ex_i_ahb_AHB_Master_hresp[0] (out)                      3.56       5.26 f
+  data arrival time                                                  5.26
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.26
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.06
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_gctrl_bus_hgrant_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Master_hgrant
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_1_/CP (FD2)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_bus_hgrant_reg_1_/Q (FD2)           2.36       2.36 r
+  ex_i_ahb_AHB_Master_hgrant (out)                        0.00       2.36 r
+  data arrival time                                                  2.36
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -2.36
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.84
+
+
+RPT_INFO:Port Group Interface ex_i_ahb_AHB_Slave
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_haddr[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_haddr[1] (in)        0.36       1.56 r
+  ...
+  ex_i_ahb_AHB_Slave_haddr[1] (out)        2.80       4.37 r
+  data arrival time                                   4.37
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -4.37
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.17
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_haddr[26]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_haddr[26] (out)                      3.59       5.78 r
+  data arrival time                                                  5.78
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.78
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.58
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hburst[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hburst[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hburst[2] (in)       0.36       1.56 r
+  ...
+  ex_i_ahb_AHB_Slave_hburst[2] (out)       2.33       3.89 r
+  data arrival time                                   3.89
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.89
+  -----------------------------------------------------------
+  slack (MET)                                         0.31
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hburst[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_hburst[2] (out)                      2.67       4.85 r
+  data arrival time                                                  4.85
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -4.85
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.65
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_gctrl_ihmastlock_reg
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hmastlock
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_ihmastlock_reg/CP (FD2)             0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_ihmastlock_reg/Q (FD2)              1.63       1.63 r
+  ex_i_ahb_AHB_Slave_hmastlock (out)                      0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hprot[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hprot[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hprot[1] (in)        0.22       1.42 r
+  ...
+  ex_i_ahb_AHB_Slave_hprot[1] (out)        1.64       3.05 r
+  data arrival time                                   3.05
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.05
+  -----------------------------------------------------------
+  slack (MET)                                         1.15
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hprot[3]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_hprot[3] (out)                       3.07       5.26 r
+  data arrival time                                                  5.26
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.26
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.06
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Slave_hready_resp
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Slave_hready_resp (in)      0.73       1.93 r
+  ...
+  ex_i_ahb_AHB_Slave_hready (out)          1.91       3.83 r
+  data arrival time                                   3.83
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.83
+  -----------------------------------------------------------
+  slack (MET)                                         0.37
+
+
+  Startpoint: i_ahb_U_mux_hsel_prev_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hready
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_mux_hsel_prev_reg_1_/CP (FD2P)                  0.00       0.00 r
+  i_ahb_U_mux_hsel_prev_reg_1_/Q (FD2P)                   1.70       1.70 r
+  ...
+  ex_i_ahb_AHB_Slave_hready (out)                         4.15       5.85 r
+  data arrival time                                                  5.85
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.85
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.65
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[16]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[16] (in)       0.07       1.27 f
+  ...
+  ex_i_ahb_AHB_Slave_hsel (out)            4.42       5.69 r
+  data arrival time                                   5.69
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -5.69
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.49
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsel
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_hsel (out)                           4.07       6.26 f
+  data arrival time                                                  6.26
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -6.26
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -2.06
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hsize[2]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsize[2]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hsize[2] (in)        0.22       1.42 r
+  ...
+  ex_i_ahb_AHB_Slave_hsize[2] (out)        2.24       3.66 r
+  data arrival time                                   3.66
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.66
+  -----------------------------------------------------------
+  slack (MET)                                         0.54
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hsize[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_hsize[0] (out)                       3.46       5.65 r
+  data arrival time                                                  5.65
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.65
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.45
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_htrans[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_htrans[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_htrans[1] (in)       0.44       1.64 r
+  ...
+  ex_i_ahb_AHB_Slave_htrans[1] (out)       2.73       4.37 r
+  data arrival time                                   4.37
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -4.37
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.17
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_htrans[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_htrans[1] (out)                      2.42       4.60 r
+  data arrival time                                                  4.60
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -4.60
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.40
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwdata[1]
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwdata[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwdata[1] (in)       0.44       1.64 r
+  ...
+  ex_i_ahb_AHB_Slave_hwdata[1] (out)       1.11       2.75 r
+  data arrival time                                   2.75
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -2.75
+  -----------------------------------------------------------
+  slack (MET)                                         1.45
+
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwdata[3]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/CP (FD2)         0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/Q (FD2)          1.48       1.48 r
+  ...
+  ex_i_ahb_AHB_Slave_hwdata[3] (out)                      2.61       4.09 r
+  data arrival time                                                  4.09
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -4.09
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.11
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_hwrite
+              (input port clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwrite
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 r
+  ex_i_ahb_AHB_Master_hwrite (in)          0.29       1.49 r
+  ...
+  ex_i_ahb_AHB_Slave_hwrite (out)          1.90       3.39 r
+  data arrival time                                   3.39
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -3.39
+  -----------------------------------------------------------
+  slack (MET)                                         0.81
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: ex_i_ahb_AHB_Slave_hwrite
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/QN (FD2P)          2.19       2.19 f
+  ...
+  ex_i_ahb_AHB_Slave_hwrite (out)                         3.25       5.44 r
+  data arrival time                                                  5.44
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.44
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.24
+
+
+RPT_INFO:Port Group Manually exported pins
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_en_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_en
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_en_reg/CP (FD2)            0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_en_reg/Q (FD2)             2.21       2.21 r
+  i_i2c_ic_en (out)                                       0.00       2.21 r
+  data arrival time                                                  2.21
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -3.60       2.40
+  data required time                                                 2.40
+  --------------------------------------------------------------------------
+  data required time                                                 2.40
+  data arrival time                                                 -2.21
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.19
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rd_req_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rd_req_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_rd_req_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rd_req_intr_reg/Q (FD2)     1.63      1.63 r
+  i_i2c_ic_rd_req_intr (out)                              0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_gen_call_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_gen_call_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_gen_call_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_gen_call_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_gen_call_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_tx_empty_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_tx_empty_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_empty_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_empty_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_tx_empty_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_ic_data_oe
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_reg/CP (FD2)     0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_data_oe_reg/Q (FD2)      2.21       2.21 r
+  i_i2c_ic_data_oe (out)                                  0.00       2.21 r
+  data arrival time                                                  2.21
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -2.21
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.99
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_ic_clk_oe
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg/CP (FD2)      0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_tx_shift_ic_clk_oe_reg/Q (FD2)       1.77       1.77 r
+  i_i2c_ic_clk_oe (out)                                   0.00       1.77 r
+  data arrival time                                                  1.77
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.77
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.43
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_activity_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_activity_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_activity_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_activity_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_activity_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_tx_shift_tx_data_capture_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_wr
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_tx_shift_tx_data_capture_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_tx_shift_tx_data_capture_reg/Q (FD2)     2.06     2.06 r
+  i_i2c_debug_wr (out)                                    0.00       2.06 r
+  data arrival time                                                  2.06
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -2.06
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.14
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_done_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_done_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_done_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_done_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_done_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_full_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_full_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_full_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_full_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_full_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_over_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_over_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_over_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_over_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_over_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_rx_under_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_rx_under_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_under_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_rx_under_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_rx_under_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_start_det_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_start_det_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_start_det_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_start_det_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_start_det_intr (out)                           0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_stop_det_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_stop_det_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_stop_det_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_stop_det_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_stop_det_intr (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_tx_abrt_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_tx_abrt_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_abrt_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_abrt_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_tx_abrt_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_intctl_ic_tx_over_intr_reg
+              (rising edge-triggered flip-flop clocked by PCLK_pclk)
+  Endpoint: i_i2c_ic_tx_over_intr
+            (output port clocked by PCLK_pclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock PCLK_pclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_over_intr_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_intctl_ic_tx_over_intr_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_ic_tx_over_intr (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock PCLK_pclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_data_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_data
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_data_reg/CP (FD2)       0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_data_reg/Q (FD2)        1.63       1.63 r
+  i_i2c_debug_data (out)                                  0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_ebt_ahbarbint_reg
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_ahbarbint
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_ebt_ahbarbint_reg/CP (FD2)                0.00       0.00 r
+  i_ahb_U_arb_U_ebt_ahbarbint_reg/Q (FD2)                 1.77       1.77 r
+  i_ahb_ahbarbint (out)                                   0.00       1.77 r
+  data arrival time                                                  1.77
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.77
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.43
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hmaster_data[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/CP (FD2)         0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hmaster_d_reg_0_/Q (FD2)          1.48       1.48 r
+  ...
+  i_ahb_hmaster_data[0] (out)                             1.42       2.90 r
+  data arrival time                                                  2.90
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -2.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.30
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_ireg_hrdata_reg_1_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hrdata_s0[1]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_1_/CP (FD2)         0.00       0.00 r
+  i_ahb_U_arb_U_arbif_ireg_hrdata_reg_1_/Q (FD2)          2.36       2.36 r
+  i_ahb_hrdata_s0[1] (out)                                0.00       2.36 r
+  data arrival time                                                  2.36
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -4.20       1.80
+  data required time                                                 1.80
+  --------------------------------------------------------------------------
+  data required time                                                 1.80
+  data arrival time                                                 -2.36
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.56
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hready_resp_s0_reg
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hready_resp_s0
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_arbif_r_hready_resp_s0_reg/CP (FD2P)      0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hready_resp_s0_reg/QN (FD2P)      2.35       2.35 r
+  ...
+  i_ahb_hready_resp_s0 (out)                              0.88       3.23 r
+  data arrival time                                                  3.23
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -4.20       1.80
+  data required time                                                 1.80
+  --------------------------------------------------------------------------
+  data required time                                                 1.80
+  data arrival time                                                 -3.23
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.43
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_ahb_U_arb_U_arbif_r_hresp_s0_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hresp_s0[0]
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_arbif_r_hresp_s0_reg_0_/CP (FD2)          0.00       0.00 r
+  i_ahb_U_arb_U_arbif_r_hresp_s0_reg_0_/Q (FD2)           2.06       2.06 r
+  i_ahb_hresp_s0[0] (out)                                 0.00       2.06 r
+  data arrival time                                                  2.06
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -4.20       1.80
+  data required time                                                 1.80
+  --------------------------------------------------------------------------
+  data required time                                                 1.80
+  data arrival time                                                 -2.06
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.26
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: ex_i_ahb_AHB_Master_haddr[15]
+              (input port clocked by HCLK_hclk)
+  Endpoint: i_ahb_hsel_s0
+            (output port clocked by HCLK_hclk)
+  Path Group: FEEDTHROUGH
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock HCLK_hclk (rise edge)              0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     1.20       1.20 f
+  ex_i_ahb_AHB_Master_haddr[15] (in)       0.14       1.34 f
+  ...
+  i_ahb_hsel_s0 (out)                      3.93       5.28 r
+  data arrival time                                   5.28
+
+  clock HCLK_hclk (rise edge)              6.00       6.00
+  clock network delay (ideal)              0.00       6.00
+  output external delay                   -1.80       4.20
+  data required time                                  4.20
+  -----------------------------------------------------------
+  data required time                                  4.20
+  data arrival time                                  -5.28
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.08
+
+
+  Startpoint: i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_
+              (rising edge-triggered flip-flop clocked by HCLK_hclk)
+  Endpoint: i_ahb_hsel_s0
+            (output port clocked by HCLK_hclk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock HCLK_hclk (rise edge)                             0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/CP (FD2P)          0.00       0.00 r
+  i_ahb_U_arb_U_gctrl_r_hmaster_reg_0_/Q (FD2P)           1.99       1.99 r
+  ...
+  i_ahb_hsel_s0 (out)                                     3.27       5.26 r
+  data arrival time                                                  5.26
+
+  clock HCLK_hclk (rise edge)                             6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -5.26
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -1.06
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_addr_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_addr
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_reg/CP (FD2)       0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_reg/Q (FD2)        1.63       1.63 r
+  i_i2c_debug_addr (out)                                  0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_addr_10bit_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_addr_10bit
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_10bit_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_addr_10bit_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_addr_10bit (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_slv_cstate_reg_3_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_slv_cstate[3]
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_slv_cstate_reg_3_/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_slv_cstate_reg_3_/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_slv_cstate[3] (out)                         0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+No paths.
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_master_act_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_master_act
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_master_act_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_master_act_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_master_act (out)                            0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_mst_cstate_reg_4_
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_mst_cstate[4]
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_mst_cstate_reg_4_/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_mst_cstate_reg_4_/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_mst_cstate[4] (out)                         0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_p_gen_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_p_gen
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_p_gen_reg/CP (FD2)      0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_p_gen_reg/Q (FD2)       1.63       1.63 r
+  i_i2c_debug_p_gen (out)                                 0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_rd_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_rd
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_rd_reg/CP (FD2)         0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_rd_reg/Q (FD2)          1.63       1.63 r
+  i_i2c_debug_rd (out)                                    0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_s_gen_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_s_gen
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_s_gen_reg/CP (FD2)      0.00       0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_s_gen_reg/Q (FD2)       1.63       1.63 r
+  i_i2c_debug_s_gen (out)                                 0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+ 
+****************************************
+Report : timing
+        -path short
+        -delay max
+        -max_paths 1
+Design : parking
+Version: J-2014.09-SP5
+Date   : Sat Nov 28 20:52:07 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: i_i2c_U_DW_apb_i2c_toggle_debug_slave_act_reg
+              (rising edge-triggered flip-flop clocked by i_i2c_ic_clk)
+  Endpoint: i_i2c_debug_slave_act
+            (output port clocked by i_i2c_ic_clk)
+  Path Group: REGOUT
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock i_i2c_ic_clk (rise edge)                          0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  i_i2c_U_DW_apb_i2c_toggle_debug_slave_act_reg/CP (FD2)     0.00     0.00 r
+  i_i2c_U_DW_apb_i2c_toggle_debug_slave_act_reg/Q (FD2)     1.63     1.63 r
+  i_i2c_debug_slave_act (out)                             0.00       1.63 r
+  data arrival time                                                  1.63
+
+  clock i_i2c_ic_clk (rise edge)                          6.00       6.00
+  clock network delay (ideal)                             0.00       6.00
+  output external delay                                  -1.80       4.20
+  data required time                                                 4.20
+  --------------------------------------------------------------------------
+  data required time                                                 4.20
+  data arrival time                                                 -1.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.57
+
+
+1

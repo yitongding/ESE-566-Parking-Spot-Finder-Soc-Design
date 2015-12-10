@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# Force in the correct directory
+root=`cd \`dirname $0\`/../;pwd`
+cd $root/syn
+
+# Set up guard file handling
+guard=.command_in_progress_Synthesize
+shutDown () {
+  /bin/rm -f $guard
+  /project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "Synthesize" -w "$root" -d "parking" -b "$begin" -e "`date`" -s "Killed" -r "$root/report/synthesis.html" -m "$root/syn/.initialMailFile"  | /bin/mail -s "Command for Activity Synthesize Killed" shenkaijie
+  sleep 1
+  kill -9 0
+  exit
+}
+trap shutDown TERM INT
+
+# Check for guard file and create if needed
+if [ -f $guard ]
+then
+  echo "##################################################################"
+  echo "Unable to run the command for activity 'Synthesize'"
+  echo "This program has detected the presence of the following guard file:"
+  echo 
+  echo "  `pwd`/.command_in_progress_Synthesize"
+  echo 
+  echo "Usually this indicates that the command is already in progress."
+  echo "When the command has completed the guard file is automatically"
+  echo "removed. If you believe the command is no longer running"
+  echo "(due to system crash, etc.) then remove the guard file and"
+  echo "try running the command again."
+  echo "##################################################################"
+  exit 1
+else
+  /bin/touch $guard
+fi
+
+# Capture starting time for execution
+begin=`date`
+
+# Excute user supplied commands
+
+# Remove old log file and create link to new one if needed
+/bin/touch $root/syn/initial.log
+if [ -f "$root/syn/run.log" ]
+then
+  /bin/rm -f "$root/syn/run.log"
+fi
+/bin/ln -s $root/syn/initial.log $root/syn/run.log
+/project/linuxlab/synopsys/syncore/bin/dc_shell-t  -f initial.tcl < /dev/null > run.log 2>&1
+/project/linuxlab/synopsys/coreTools/linux/dware/bin/gen_synth_index.pl -f -r /project/linuxlab/synopsys/coreTools -t coreAssembler -d $root/syn
+/project/linuxlab/synopsys/coreTools/linux/dware/bin/genSynthesisErrorSummary.pl -m "$root/syn/.initialMailFile" -l "$root/syn/initial.log" -s initial
+sleep 5
+
+
+# Send email notification to users that command has completed
+/project/linuxlab/synopsys/coreTools/linux/dware/bin/genSubProcMailFile.pl -a "Synthesize" -w "$root" -d "parking" -b "$begin" -e "`date`" -s "Completed" -r "$root/report/synthesis.html" -m "$root/syn/.initialMailFile" | /bin/mail -s "Command for Activity Synthesize Completed" shenkaijie
+
+# Remove guard file before exiting
+/bin/rm $guard
+
+# End of generated script file

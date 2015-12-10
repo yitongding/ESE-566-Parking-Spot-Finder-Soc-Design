@@ -1,0 +1,95 @@
+#pragma vip(744d3cee, 9f0aee47, 00000000, 00000754, "Jun 16 2014", "19:42:11")
+//  ------------------------------------------------------------------------
+//
+//                    (C) COPYRIGHT 2003 - 2014 SYNOPSYS, INC.
+//                            ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this
+//  software is subject to the terms and conditions of a written
+//  license agreement between you, or your company, and Synopsys, Inc.
+//
+// The entire notice above must be reproduced on all authorized copies.
+//
+//  ------------------------------------------------------------------------
+
+// Revision: $Id: //dwh/DW_ocb/DW_apb_i2c/amba_dev/sim/testbench/AhbTestHarnessBind.vri#4 $
+
+#ifndef AHBTESTHARNESSBIND_VRI
+#define AHBTESTHARNESSBIND_VRI
+bind AhbMonitorPort AhbMonitorVoidBind
+{
+   haddr        void;
+   hburst       void;
+   hclk         void;
+   hmaster      void;
+   hmastlock    void;
+   hprot        void;
+   hrdata       void;
+   hready       void;
+   hresetn      void;
+   hresp        void;
+   hsize        void;
+   htrans       void;
+   hwdata       void;
+   hwrite       void;
+   hsel         void;
+   hsplit_s0    void;
+   hsplit_s1    void;
+   hsplit_s2    void;
+   hsplit_s3    void;
+   hsplit_s4    void;
+   hsplit_s5    void;
+   hsplit_s6    void;
+   hsplit_s7    void;
+   hsplit_s8    void;
+   hsplit_s9    void;
+   hsplit_s10   void;
+   hsplit_s11   void;
+   hsplit_s12   void;
+   hsplit_s13   void;
+   hsplit_s14   void;
+   hsplit_s15   void;
+   hbusreq      void;
+   hgrant       void;
+   hlock        void;
+}
+bind AhbMasterPort AhbMasterVoidBind
+{
+   hclk         void;
+   hresetn      void;
+   hgrant       void;
+   hrdata       void;
+   hready       void;
+   hresp        void;
+   haddr        void;
+   hburst       void;
+   hbusreq      void;
+   hlock        void;
+   hprot        void;
+   hsize        void;
+   htrans       void;
+   hwdata       void;
+   hwrite       void;
+}
+bind AhbSlavePort AhbSlaveVoidBind
+{
+   hclk         void;
+   hresetn      void;
+   haddr        void;
+   hburst       void;
+   hmaster      void;
+   hmastlock    void;
+   hprot        void;
+   hready       void;
+   hsel         void;
+   hsize        void;
+   htrans       void;
+   hwdata       void;
+   hwrite       void;
+   hrdata       void;
+   hready_resp  void;
+   hresp        void;
+   hsplit       void;
+}  
+#endif
